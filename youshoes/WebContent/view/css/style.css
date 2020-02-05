@@ -141,6 +141,58 @@ sup {
     z-index: 1
 }
 
+
+/* 탭 메뉴 */
+ul {
+	list-style: none;
+}
+
+.tabmenu {
+	max-width: 600px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.tabmenu ul li {
+	display: inline-block;
+	width: 33.33%;
+	float: left;
+	text-align: center;
+	background: #f9f9f9;
+	line-height: 40px;
+}
+
+.tabmenu label {
+	display: block;
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+}
+
+.tabmenu input {
+	display: none;
+}
+
+.tabCon {
+	display: none;
+	text-align: left;
+	padding: 20px;
+	position: absolute;
+	left: 0;
+	top: 40px;
+	box-sizing: border-box;
+	border: 5px solid #f9f9f9;
+}
+
+.tabmenu input:checked ~ label {
+	background: #ccc;
+}
+
+.tabmenu input:checked ~ .tabCon {
+	display: block;
+}
+/* // 탭 메뉴 */
+
 /* sideabr  */
 body.menuactive {
     overflow: hidden;

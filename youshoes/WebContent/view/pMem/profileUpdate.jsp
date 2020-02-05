@@ -35,112 +35,105 @@
 
 <body>
     <div class="wrapper">
-        <div class="header">
-            <div class="row no-gutters">
-                <div class="col-auto">
-                    <a href="javascript:void(0)" onClick="javascript:history.go(-1)" class="btn  btn-link text-dark"><i class="material-icons">navigate_before</i></a>
-                </div>
-                <div class="col text-center"><img src="img/logo-header.png" alt="" class="header-logo"></div>
-                <div class="col-auto">
-                    <a href="profile.html" class="btn  btn-link text-dark"><i class="material-icons">account_circle</i></a>
-                </div>
-            </div>
-        </div>
+        <!-- 상단에 따라다니는 줄 -->
+		<div class="header">
+			<div class="row no-gutters">
+				<div class="col-auto">
+					<a href="javascript:void(0)" onclick="location.href='pMem.jsp'" class="btn  btn-link text-dark"> <i class="material-icons">navigate_before</i></a>
+				</div>
+				<div class="col text-center">
+					<img src="../img/logo-header.png" alt="" class="header-logo">
+				</div>
+				<div class="col-auto">
+					<a href="profile.jsp" class="btn  btn-link text-dark"><i class="material-icons">account_circle</i></a>
+				</div>
+			</div>
+		</div>
+		<!-- // 상단에 따라다니는 줄 -->
         <div class="container">
-            <div class="text-center">
-                <div class="figure-profile shadow my-4">
-                    <figure><img src="img/user1.png" alt=""></figure>
-                    <div class="btn btn-dark text-white floating-btn">
-                        <i class="material-icons">camera_alt</i>
-                        <input type="file" class="float-file">
+            <!-- 프로필 이미지 사진  -->
+			<div class="text-center">
+				<div class="figure-profile shadow my-4">
+					<figure>
+						<img src="../img/user1.png" alt="">
+					</figure>
+					<div class="btn btn-dark text-white floating-btn">
+						<i class="material-icons">camera_alt</i> <input type="file" class="float-file">
+					</div>
+				</div>
+			</div>
+			<!-- // 프로필 이미지 사진  -->
+			
+			<!-- 안쪽에 프로필 수정하려는 입력 값 받는 곳 -->
+            <h6 class="subtitle">기본 정보</h6>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="form-group float-label active">
+                        <input type="text" class="form-control" required="" value="wow">
+                        <label class="form-control-label">이름</label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-group float-label active">
+                        <input type="email" class="form-control" required="" value="wow@gmail.com">
+                        <label class="form-control-label">이메일</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="form-group float-label active">
+                        <input type="tel" class="form-control" required="" value="010-1234-5678">
+                        <label class="form-control-label">전화번호</label>
                     </div>
                 </div>
             </div>
 
-            <h6 class="subtitle">Basic Information</h6>
-            <div class="row">
-                <div class="col-12 col-md-6">
-                    <div class="form-group float-label active">
-                        <input type="text" class="form-control" required="" value="Ammy Johnson">
-                        <label class="form-control-label">Name</label>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="form-group float-label active">
-                        <input type="email" class="form-control" required="" value="ammyjohnson@maxartkiller.com">
-                        <label class="form-control-label">Email address</label>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 col-md-6">
-                    <div class="form-group float-label active">
-                        <input type="tel" class="form-control" required="" value="55 5555 555555 55">
-                        <label class="form-control-label">Phone Number</label>
-                    </div>
-                </div>
-            </div>
-
-            <h6 class="subtitle">Address</h6>
+            <h6 class="subtitle">주소</h6>
 
             <div class="row">
                 <div class="col-12 col-md-6">
                     <div class="form-group float-label active">
-                        <input type="text" class="form-control" required="" value="58, Lajpat Nagar">
-                        <label class="form-control-label">Address line 1</label>
+                        <input type="text" class="form-control" required="" value="58, 어딘가">
+                        <label class="form-control-label">주소 1</label>
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-group float-label active">
-                        <input type="text" class="form-control" value="Holand Street four">
-                        <label class="form-control-label">Address line 2</label>
+                        <input type="text" class="form-control" value="중구 어딘가">
+                        <label class="form-control-label">주소 2</label>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-6">
-                    <div class="form-group float-label active">
-                        <input type="tel" class="form-control" required="" value="Sydney">
-                        <label class="form-control-label">City</label>
-                    </div>
-                </div>
                 <div class="col-6">
                     <div class="form-group float-label active">
                         <input type="tel" class="form-control" required="" value="25468">
-                        <label class="form-control-label">Pin Code</label>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 col-md-6">
-                    <div class="form-group float-label active">
-                        <select class="form-control">
-                            <option>Australia</option>
-                            <option>America</option>
-                            <option>Africa</option>
-                            <option>France</option>
-                        </select>
-                        <label class="form-control-label">Country</label>
+                        <label class="form-control-label">우편 번호</label>
                     </div>
                 </div>
             </div>
 
-
-            <a href="profile-edit.html" class="btn btn-lg btn-default text-white btn-block btn-rounded shadow"><span>Submit</span><i class="material-icons">arrow_forward</i></a>
+            <a href="profile.jsp" class="btn btn-lg btn-default text-white btn-block btn-rounded shadow">
+            	<span>수정 완료</span>
+            	<i class="material-icons">arrow_forward</i>
+            </a>
             <br>
         </div>
+        <!-- // 안쪽에 프로필 수정하려는 입력 값 받는 곳 -->
 
+        <!-- 하단에 아이콘 버튼 이동 부분 -->
         <div class="footer">
             <div class="no-gutters">
                 <div class="col-auto mx-auto">
                     <div class="row no-gutters justify-content-center">
                         <div class="col-auto">
-                            <a href="index.html" class="btn btn-link-default ">
+                            <a href="pMem.jsp" class="btn btn-link-default active">
                                 <i class="material-icons">store_mall_directory</i>
                             </a>
                         </div>
                         <div class="col-auto">
-                            <a href="statistics.html" class="btn btn-link-default">
+                            <a href="orderHistory.jsp" class="btn btn-link-default">
                                 <i class="material-icons">insert_chart_outline</i>
                             </a>
                         </div>
@@ -150,12 +143,12 @@
                             </a>
                         </div>
                         <div class="col-auto">
-                            <a href="favorite-products.html" class="btn btn-link-default">
+                            <a href="bookmark.jsp" class="btn btn-link-default">
                                 <i class="material-icons">favorite</i>
                             </a>
                         </div>
                         <div class="col-auto">
-                            <a href="profile.html" class="btn btn-link-default active">
+                            <a href="profile.jsp" class="btn btn-link-default">
                                 <i class="material-icons">account_circle</i>
                             </a>
                         </div>
@@ -163,6 +156,7 @@
                 </div>
             </div>
         </div>
+        <!-- // 하단에 아이콘 버튼 이동 부분 -->
     </div>
 
 

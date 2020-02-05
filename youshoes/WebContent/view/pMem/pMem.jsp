@@ -123,20 +123,30 @@
                 </div>
             </div>
         </div>
-
     </div>
+    <!-- // 사이드바 -->
+    <!-- 상단에 따라다니는 줄 -->
     <div class="wrapper">
         <div class="header">
             <div class="row no-gutters">
                 <div class="col-auto">
-                    <button class="btn  btn-link text-dark menu-btn"><img src="img/menu.png" alt=""><span class="new-notification"></span></button>
+                    <button class="btn  btn-link text-dark menu-btn">
+                    	<img src="../img/menu.png" alt="">
+                    	<span class="new-notification"></span>
+                    </button>
                 </div>
-                <div class="col text-center"><img src="img/logo-header.png" alt="" class="header-logo"></div>
+               		<div class="col text-center">
+               			<img src="../img/logo-header.png" alt="" class="header-logo">
+               		</div>
                 <div class="col-auto">
-                    <a href="profile.jsp" class="btn  btn-link text-dark"><i class="material-icons">account_circle</i></a>
+                    <a href="profile.jsp" class="btn  btn-link text-dark">
+                    <i class="material-icons">account_circle</i>
+                    </a>
                 </div>
             </div>
         </div>
+        <!-- // 상단에 따라다니는 줄 -->
+        
         <!-- 내부 내용 전체 감싸는 부분 -->
         <div class="container">
         	<!-- 검색창 부분 -->
@@ -152,7 +162,7 @@
                             <div class="card shadow-sm border-0">
                                 <div class="card-body">
                                     <div class="row no-gutters h-100">
-                                        <img src="img/image-1.png" alt="" class="small-slide-right">
+                                        <img src="../img/image-1.png" alt="" class="small-slide-right">
                                         <div class="col-8">
                                             <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
                                             <a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">남성기성</a>
@@ -168,7 +178,7 @@
                             <div class="card shadow-sm border-0">
                                 <div class="card-body">
                                     <div class="row no-gutters h-100">
-                                        <img src="img/image-2.png" alt="" class="small-slide-right">
+                                        <img src="../img/image-2.png" alt="" class="small-slide-right">
                                         <div class="col-8">
                                             <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite</i></button>
                                             <a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">여성기성</a>
@@ -184,7 +194,7 @@
                             <div class="card shadow-sm border-0">
                                 <div class="card-body">
                                     <div class="row no-gutters h-100">
-                                        <img src="img/image-3.png" alt="" class="small-slide-right">
+                                        <img src="../img/image-3.png" alt="" class="small-slide-right">
                                         <div class="col-9">
                                             <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
                                             <a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">남성수제</a>
@@ -200,7 +210,7 @@
                             <div class="card shadow-sm border-0">
                                 <div class="card-body">
                                     <div class="row no-gutters h-100">
-                                        <img src="img/image-1.png" alt="" class="small-slide-right">
+                                        <img src="../img/image-1.png" alt="" class="small-slide-right">
                                         <div class="col-8">
                                             <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
                                             <a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">여성수제</a>
@@ -216,7 +226,7 @@
                             <div class="card shadow-sm border-0">
                                 <div class="card-body">
                                     <div class="row no-gutters h-100">
-                                        <img src="img/image-2.png" alt="" class="small-slide-right">
+                                        <img src="../img/image-2.png" alt="" class="small-slide-right">
                                         <div class="col-8">
                                             <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite</i></button>
                                             <a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">남성 구두</a>
@@ -232,7 +242,7 @@
                             <div class="card shadow-sm border-0">
                                 <div class="card-body">
                                     <div class="row no-gutters h-100">
-                                        <img src="img/image-3.png" alt="" class="small-slide-right">
+                                        <img src="../img/image-3.png" alt="" class="small-slide-right">
                                         <div class="col-9">
                                             <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
                                             <a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">여자 구두</a>
@@ -248,7 +258,7 @@
                             <div class="card shadow-sm border-0">
                                 <div class="card-body">
                                     <div class="row no-gutters h-100">
-                                        <img src="img/image-1.png" alt="" class="small-slide-right">
+                                        <img src="../img/image-1.png" alt="" class="small-slide-right">
                                         <div class="col-8">
                                             <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
                                             <a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">남성신발</a>
@@ -264,7 +274,7 @@
                             <div class="card shadow-sm border-0">
                                 <div class="card-body">
                                     <div class="row no-gutters h-100">
-                                        <img src="img/image-2.png" alt="" class="small-slide-right">
+                                        <img src="../img/image-2.png" alt="" class="small-slide-right">
                                         <div class="col-8">
                                             <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite</i></button>
                                             <a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">여성 신발</a>
@@ -280,7 +290,7 @@
                             <div class="card shadow-sm border-0">
                                 <div class="card-body">
                                     <div class="row no-gutters h-100">
-                                        <img src="img/image-3.png" alt="" class="small-slide-right">
+                                        <img src="../img/image-3.png" alt="" class="small-slide-right">
                                         <div class="col-9">
                                             <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
                                             <a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">누구신발</a>
