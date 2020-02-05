@@ -95,13 +95,10 @@
                 <div class="form-group my-4 text-left"><!-- 체크가 다됨... -->
                     <div class="custom-control custom-checkbox">
                         <input type="checkbox" class="custom-control-input" id="privacy" name="privacy">
-                        <label class="custom-control-label" for="privacy">약관 동의 <a href="#">구매회원 이용약관</a></label>
-                        
-                        <input type="checkbox" class="custom-control-input" id="serviceTOS" name="serviceTOS">
-                        <label class="custom-control-label" for="serviceTOS">약관 동의 <a href="#">전자금융서비스 이용약관</a></label>
-                        
-                        <input type="checkbox" class="custom-control-input" id="privacyInformOther" name="privacyInformOther">
-                        <label class="custom-control-label" for="privacyInformOther">정보수집 동의 <a href="#">개인정보 수집 및 이용</a></label>
+                        <label class="custom-control-label" for="privacy">약관 및 개인정보수집 동의</label><br>
+                        <a href="#">구매회원 이용약관</a><br>
+                        <a href="#">전자금융서비스 이용약관</a><br>
+                        <a href="#">개인정보 수집 및 이용</a>
                     </div>
                 </div>
 

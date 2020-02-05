@@ -119,7 +119,7 @@
                     <a href="all-products.html" class="list-group-item list-group-item-action">모든 제품</a>
                     <a href="orderHistory.jsp" class="list-group-item list-group-item-action">주문내역</a>
                     <a href="profile.jsp" class="list-group-item list-group-item-action">프로필</a>
-                    <a href="#" class="list-group-item list-group-item-action mt-4">로그아웃</a>
+                    <a href="../login.jsp" class="list-group-item list-group-item-action mt-4">로그아웃</a>
                 </div>
             </div>
         </div>
@@ -395,19 +395,19 @@
         <div class="container mb-3">
             <div class="row">
                 <div class="col text-center">
-                	<a class="txt2" href="">
-							이용약관 
+                	<a class="txt2" href="serviceTOS.jsp">
+							이용약관 |
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 					</a>
-					<a class="txt2" href="#">
-							개인정보 처리방침
+					<a class="txt2" href="privacy.jsp">
+							개인정보 처리방침 |
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 					</a>
-					<a class="txt2" href="#">
-							사업자 정보 확인
+					<a class="txt2" href="sMemInform.jsp">
+							사업자 정보 확인 |
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 					</a>
-					<a class="txt2" href="#">
+					<a class="txt2" href="privacyInformOther.jsp">
 							개인정보 제 3자 제공 동의
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 					</a>
