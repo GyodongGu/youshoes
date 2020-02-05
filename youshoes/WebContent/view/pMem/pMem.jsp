@@ -136,7 +136,7 @@
                     </button>
                 </div>
                		<div class="col text-center">
-               			<img src="../img/logo-header.png" alt="" class="header-logo">
+               			<img src="../img/logo.png" alt="" class="header-logo"> YouSheos
                		</div>
                 <div class="col-auto">
                     <a href="profile.jsp" class="btn  btn-link text-dark">
@@ -162,7 +162,7 @@
                             <div class="card shadow-sm border-0">
                                 <div class="card-body">
                                     <div class="row no-gutters h-100">
-                                        <img src="../img/image-1.png" alt="" class="small-slide-right">
+                                        <img src="../img/shoes1.png" alt="" class="small-slide-right">
                                         <div class="col-8">
                                             <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
                                             <a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">남성기성</a>
@@ -178,7 +178,7 @@
                             <div class="card shadow-sm border-0">
                                 <div class="card-body">
                                     <div class="row no-gutters h-100">
-                                        <img src="../img/image-2.png" alt="" class="small-slide-right">
+                                        <img src="../img/shoes2.png" alt="" class="small-slide-right">
                                         <div class="col-8">
                                             <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite</i></button>
                                             <a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">여성기성</a>
@@ -194,7 +194,7 @@
                             <div class="card shadow-sm border-0">
                                 <div class="card-body">
                                     <div class="row no-gutters h-100">
-                                        <img src="../img/image-3.png" alt="" class="small-slide-right">
+                                        <img src="../img/shoes3.png" alt="" class="small-slide-right">
                                         <div class="col-9">
                                             <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
                                             <a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">남성수제</a>
@@ -210,7 +210,7 @@
                             <div class="card shadow-sm border-0">
                                 <div class="card-body">
                                     <div class="row no-gutters h-100">
-                                        <img src="../img/image-1.png" alt="" class="small-slide-right">
+                                        <img src="../img/shoes4.png" alt="" class="small-slide-right">
                                         <div class="col-8">
                                             <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
                                             <a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">여성수제</a>
@@ -226,7 +226,7 @@
                             <div class="card shadow-sm border-0">
                                 <div class="card-body">
                                     <div class="row no-gutters h-100">
-                                        <img src="../img/image-2.png" alt="" class="small-slide-right">
+                                        <img src="../img/shoes5.png" alt="" class="small-slide-right">
                                         <div class="col-8">
                                             <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite</i></button>
                                             <a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">남성 구두</a>
@@ -242,7 +242,7 @@
                             <div class="card shadow-sm border-0">
                                 <div class="card-body">
                                     <div class="row no-gutters h-100">
-                                        <img src="../img/image-3.png" alt="" class="small-slide-right">
+                                        <img src="../img/shoes6.png" alt="" class="small-slide-right">
                                         <div class="col-9">
                                             <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
                                             <a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">여자 구두</a>
@@ -258,7 +258,7 @@
                             <div class="card shadow-sm border-0">
                                 <div class="card-body">
                                     <div class="row no-gutters h-100">
-                                        <img src="../img/image-1.png" alt="" class="small-slide-right">
+                                        <img src="../img/shoes1.png" alt="" class="small-slide-right">
                                         <div class="col-8">
                                             <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
                                             <a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">남성신발</a>
@@ -274,7 +274,7 @@
                             <div class="card shadow-sm border-0">
                                 <div class="card-body">
                                     <div class="row no-gutters h-100">
-                                        <img src="../img/image-2.png" alt="" class="small-slide-right">
+                                        <img src="../img/shoes5.png" alt="" class="small-slide-right">
                                         <div class="col-8">
                                             <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite</i></button>
                                             <a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">여성 신발</a>
@@ -290,7 +290,7 @@
                             <div class="card shadow-sm border-0">
                                 <div class="card-body">
                                     <div class="row no-gutters h-100">
-                                        <img src="../img/image-3.png" alt="" class="small-slide-right">
+                                        <img src="../img/shoes2.png" alt="" class="small-slide-right">
                                         <div class="col-9">
                                             <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
                                             <a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">누구신발</a>
@@ -305,18 +305,14 @@
                 </div>
             </div>
 			<!-- 구매 회원 메인 페이지의 가게 -->
-            <h6 class="subtitle">가게 <a href="all-products.html" class="float-right small">가게 더보기</a></h6>
+            <h6 class="subtitle">가게 <a href="searchShop.jsp" class="float-right small">가게 더보기</a></h6>
             <div class="row">
                 <div class="col-6 col-md-4 col-lg-3 col-xl-2">
                     <div class="card shadow-sm border-0 mb-4">
                         <div class="card-body">
                             <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
-                            <div class="badge badge-success float-right mt-1">10% off</div>
-                            <figure class="product-image"><img src="img/image-4.png" alt="" class=""></figure>
-                            <a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">Grey Sofa</a>
-                            <p class="text-secondary small mb-2">Imported from Simla</p>
-                            <h5 class="text-success font-weight-normal mb-0">$ 120<sup>.00</sup></h5>
-                            <p class="text-secondary small text-mute mb-0">1.0 kg</p>
+                            <figure class="product-image"><img src="../img/shop1.jpg" alt="" class=""></figure>
+                            <a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">가게1</a>
                             <button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right"><i class="material-icons md-18">shopping_cart</i></button>
                         </div>
                     </div>
@@ -325,12 +321,8 @@
                     <div class="card shadow-sm border-0 mb-4">
                         <div class="card-body">
                             <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
-                            <div class="badge badge-success float-right mt-1">10% off</div>
-                            <figure class="product-image"><img src="img/image-5.png" alt="" class=""></figure>
-                            <a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">Antique Table</a>
-                            <p class="text-secondary small mb-2">Unique Collection</p>
-                            <h5 class="text-success font-weight-normal mb-0">$ 100<sup>.00</sup></h5>
-                            <p class="text-secondary small text-mute mb-0">1.0 kg</p>
+                            <figure class="product-image"><img src="../img/shop2.JPG" alt="" class=""></figure>
+                            <a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">가게2</a>
                             <button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right"><i class="material-icons md-18">shopping_cart</i></button>
                         </div>
                     </div>
@@ -339,12 +331,8 @@
                     <div class="card shadow-sm border-0 mb-4">
                         <div class="card-body">
                             <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
-                            <div class="badge badge-primary float-right mt-1">10% off</div>
-                            <figure class="product-image"><img src="img/image-6.png" alt="" class=""></figure>
-                            <a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">King Sofa</a>
-                            <p class="text-secondary small mb-2">Royal & Luxurious</p>
-                            <h5 class="text-success font-weight-normal mb-0">$ 120<sup>.00</sup></h5>
-                            <p class="text-secondary small text-mute mb-0">1.0 kg</p>
+                            <figure class="product-image"><img src="../img/shop3.JPG" alt="" class=""></figure>
+                            <a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">가게3</a>
                             <button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right"><i class="material-icons md-18">shopping_cart</i></button>
                         </div>
                     </div>
@@ -353,12 +341,8 @@
                     <div class="card shadow-sm border-0 mb-4">
                         <div class="card-body">
                             <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
-                            <div class="badge badge-info float-right mt-1">50% off</div>
-                            <figure class="product-image"><img src="img/image-7.png" alt="" class=""></figure>
-                            <a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">Hangings</a>
-                            <p class="text-secondary small mb-2">Most Demanded</p>
-                            <h5 class="text-success font-weight-normal mb-0">$ 120<sup>.00</sup></h5>
-                            <p class="text-secondary small text-mute mb-0">1.0 kg</p>
+                            <figure class="product-image"><img src="../img/shop4.JPG" alt="" class=""></figure>
+                            <a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">가게4</a>
                             <button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right"><i class="material-icons md-18">shopping_cart</i></button>
                         </div>
                     </div>
@@ -367,12 +351,8 @@
                     <div class="card shadow-sm border-0 mb-4">
                         <div class="card-body">
                             <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
-                            <div class="badge badge-success float-right mt-1">10% off</div>
-                            <figure class="product-image"><img src="img/image-4.png" alt="" class=""></figure>
-                            <a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">Grey Sofa</a>
-                            <p class="text-secondary small mb-2">Imported from Simla</p>
-                            <h5 class="text-success font-weight-normal mb-0">$ 120<sup>.00</sup></h5>
-                            <p class="text-secondary small text-mute mb-0">1.0 kg</p>
+                            <figure class="product-image"><img src="../img/shop5.JPG" alt="" class=""></figure>
+                            <a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">가게5</a>
                             <button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right"><i class="material-icons md-18">shopping_cart</i></button>
                         </div>
                     </div>
@@ -381,12 +361,8 @@
                     <div class="card shadow-sm border-0 mb-4">
                         <div class="card-body">
                             <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
-                            <div class="badge badge-success float-right mt-1">10% off</div>
-                            <figure class="product-image"><img src="img/image-5.png" alt="" class=""></figure>
-                            <a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">Antique Table</a>
-                            <p class="text-secondary small mb-2">Unique Collection</p>
-                            <h5 class="text-success font-weight-normal mb-0">$ 100<sup>.00</sup></h5>
-                            <p class="text-secondary small text-mute mb-0">1.0 kg</p>
+                            <figure class="product-image"><img src="../img/shop6.PNG" alt="" class=""></figure>
+                            <a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">가게6</a>
                             <button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right"><i class="material-icons md-18">shopping_cart</i></button>
                         </div>
                     </div>
@@ -419,7 +395,7 @@
         <div class="container mb-3">
             <div class="row">
                 <div class="col text-center">
-                	<a class="txt2" href="#">
+                	<a class="txt2" href="">
 							이용약관 
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 					</a>

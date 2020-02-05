@@ -176,7 +176,7 @@
 					</button>
 				</div>
 				<div class="col text-center">
-					<img src="../img/logo-header.png" alt="" class="header-logo">
+					<img src="../img/logo.png" alt="" class="header-logo"> YouSheos
 				</div>
 				<div class="col-auto">
 					<a href="profile.jsp" class="btn  btn-link text-dark"><i class="material-icons">account_circle</i></a>
