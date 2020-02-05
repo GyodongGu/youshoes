@@ -11,8 +11,8 @@
 	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
 	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
 	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-	<link rel="stylesheet" type="text/css" href="../css/util.css">
-	<link rel="stylesheet" type="text/css" href="../css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
 	
@@ -20,10 +20,10 @@
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<div class="login100-pic js-tilt" data-tilt>
-					<img src="../img/img-01.png" alt="IMG">
+					<img src="img/img-01.png" alt="IMG">
 				</div>
 
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" action="pMem/pMem.jsp" method="post">
 					<span class="login100-form-title">
 						환영합니다.
 					</span>
@@ -45,7 +45,7 @@
 					</div>
 					
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn" onClick="location.href='pMem/pMem.jsp'">
+						<button class="login100-form-btn" onclick="location.href='pMem/pMem.jsp'">
 							로그인
 						</button>
 					</div>
