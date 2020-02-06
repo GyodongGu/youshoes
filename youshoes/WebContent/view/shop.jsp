@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!doctype html>
-<html lang="en">
+<html lang="en" class="blue-theme">
+
 <head>
 <meta charset="utf-8">
 <meta name="viewport"
@@ -406,7 +407,7 @@ tr, td {
 			</div>
 		</div>
 	</div>
-	
+
     <!-- swiper js -->
     <script src="vendor/swiper/js/swiper.min.js"></script>
 
