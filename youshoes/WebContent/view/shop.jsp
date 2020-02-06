@@ -32,25 +32,23 @@
 
 <!-- Custom styles for this template -->
 <link href="css/style.css" rel="stylesheet">
-<link rel="stylesheet"
-	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<!-- Tab키 스크립트 및 CSS -->
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="/resources/demos/style.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<!-- // Tab키 스크립트 및 CSS -->
+
 <script>
 	$(function() {
-		$("#tabs")
-				.tabs(
-						{
-							beforeLoad : function(event, ui) {
-								ui.jqXHR
-										.fail(function() {
-											ui.panel
-													.html("Couldn't load this tab. We'll try to fix this as soon as possible. "
-															+ "If this wouldn't be a demo.");
-										});
-							}
-						});
+		$("#tabs").tabs({beforeLoad : function(event, ui) {
+				ui.jqXHR.fail(function() {
+					ui.panel.html("Couldn't load this tab. We'll try to fix this as soon as possible. "
+								+ "If this wouldn't be a demo.");
+			        });
+				}
+		});
 	});
 </script>
 <script>
@@ -112,8 +110,8 @@ tr, td {
 		<div class="header">
 			<div class="row no-gutters">
 				<div class="col-auto">
-					<a href="all-products.html" class="btn  btn-link text-dark"><i
-						class="material-icons">navigate_before</i></a>
+					<a href="all-products.html" class="btn  btn-link text-dark">
+					<i class="material-icons">navigate_before</i></a>
 				</div>
 				<div class="col text-center">
 					<img src="img/logo-header.png" alt="" class="header-logo">
@@ -357,9 +355,12 @@ tr, td {
 
 						</div>
 					</div>
+					
 				</div>
+				
 			</div>
 		</div>
+		
 	</div>
 
 
