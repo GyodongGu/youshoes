@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!doctype html>
-<html lang="en" class="blue-theme">
+<html lang="en" class="brown-theme">
 
 <head>
 <meta charset="utf-8">
@@ -27,22 +27,78 @@
 </head>
 
 <body>
-	<div class="row no-gutters vh-100 proh bg-template">
-		<div class="col align-self-center text-center">
-			<div class="container">
-				<div class="card mb-3">
-					<img src="view/img/index.jpg" class="card-img-top" alt="로고">
-					<div class="card-body">
-						<h5 class="card-title">대구 수제화 골목을 찾아서</h5>
-						<p class="card-text">대구 수제화 골목 내에 위치한 향촌수제화 센터는 1, 2층에는 수제화의 역사와 관련 컨텐츠를 접할 수 있는 전시공간이 조성되어 있고, 3층은 제화공장이, 4층에는 사무실과 가죽공예를 체험할 수 있는 체험교육장으로 연면적 800.01㎡의 4층 건물이다. 요즘 핫하게 뜨고 있는 근대골목 1코스에 위치한 향촌수제화센터는 수제화 골목과 관련된 다양한 정보와 체험거리를 접할 수 있고, 10명 이상 단체예약 시(재료비 별도) 가죽공예 소품을 직접 제작해서 기념으로 가져갈 수도 있다. 향촌수제화센터의 개관으로 새로이 활기를 띠고 있는 향촌동 수제화골목을 더욱 활성화 시키고 수제화의 장인 역사 등을 재조명함으로써 대구 수제화의 재도약을 기대한다.</p>
-						<div align="right">
-							<button type="button" class="btn btn-outline-primary" onclick="location.href='view/login.jsp'">로그인</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="row no-gutters vh-100 loader-screen">
+        <div class="col align-self-center text-white text-center">
+            <img src="view/img/logo.png" alt="logo">
+            <h1><span class="font-weight-light">You</span>Shoes</h1>
+            <div class="laoderhorizontal">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <a href="view/login.jsp" class="btn btn-default button-rounded-54 shadow text-white float-bottom-right"><span>시작</span></a>
+    <!-- Swiper -->
+    <div class="swiper-container introduction vh-100">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide overflow-hidden bg-success text-white">
+                <div class="row no-gutters h-100">
+                    <img src="view/img/" alt="" class="pinapple right-image align-self-center">
+                    <div class="col align-self-center px-3">
+                        <div class="row">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-6 text-left">
+                                        <h1 class="text-uppercase">소제목1</h1>
+                                        <p>내용1</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="swiper-slide overflow-hidden bg-King Sofa text-white">
+                <div class="row no-gutters h-100">
+                    <img src="view/img/shoes06.png" alt="" class="orange right-image align-self-center">
+                    <div class="col align-self-center px-3">
+                        <div class="row">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-6 text-left">
+                                        <h1 class="text-uppercase">소제목2</h1>
+                                        <p>내용2</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide overflow-hidden bg-warning text-white">
+                <div class="row no-gutters h-100">
+                    <img src="view/img/" alt="" class="banana right-image align-self-center">
+                    <div class="col align-self-center px-3">
+                        <div class="row">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-6 text-left">
+                                        <h1 class="text-uppercase">소제목3</h1>
+                                        <p>내용3</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
 	<!-- jquery, popper and bootstrap js -->
 	<script src="view/js/jquery-3.3.1.min.js"></script>
 	<script src="view/js/popper.min.js"></script>
@@ -53,6 +109,18 @@
 
 	<!-- template custom js -->
 	<script src="view/js/main.js"></script>
+	
+	<!-- page level script -->
+    <script>
+        $(window).on('load', function() {
+            var swiper = new Swiper('.introduction', {
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+            });
+});
+
+    </script>
 </body>
 
 </html>
