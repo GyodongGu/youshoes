@@ -114,9 +114,9 @@
                 </div>
                 <h5 class="subtitle text-uppercase"><span>Menu</span></h5>
                 <div class="list-group main-menu">
-                    <a href="pMem.jsp" class="list-group-item list-group-item-action active">스토어</a>
-                    <a href="notification.html" class="list-group-item list-group-item-action">공지사항<span class="badge badge-dark text-white">2</span></a>
-                    <a href="all-products.html" class="list-group-item list-group-item-action">모든 제품</a>
+                    <a href="searchShop.jsp" class="list-group-item list-group-item-action active">스토어</a>
+                    <a href="pMemEvent.jsp" class="list-group-item list-group-item-action">공지사항</a>
+                    <a href="product.jsp" class="list-group-item list-group-item-action">모든 제품</a>
                     <a href="orderHistory.jsp" class="list-group-item list-group-item-action">주문내역</a>
                     <a href="profile.jsp" class="list-group-item list-group-item-action">프로필</a>
                     <a href="../login.jsp" class="list-group-item list-group-item-action mt-4">로그아웃</a>
@@ -166,7 +166,6 @@
                                         <div class="col-8">
                                             <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
                                             <a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">남성기성</a>
-                                            <p class="text-secondary small">MII, Apples, Samssung</p>
                                         </div>
                                     </div>
                                 </div>
@@ -182,7 +181,6 @@
                                         <div class="col-8">
                                             <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite</i></button>
                                             <a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">여성기성</a>
-                                            <p class="text-secondary small">Assemble, Brand, Parts</p>
                                         </div>
                                     </div>
                                 </div>
@@ -198,7 +196,6 @@
                                         <div class="col-9">
                                             <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
                                             <a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">남성수제</a>
-                                            <p class="text-secondary small">DSLR, Pointshoot, Lense</p>
                                         </div>
                                     </div>
                                 </div>
@@ -214,7 +211,6 @@
                                         <div class="col-8">
                                             <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
                                             <a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">여성수제</a>
-                                            <p class="text-secondary small">MII, Apples, Samssung</p>
                                         </div>
                                     </div>
                                 </div>
@@ -230,7 +226,6 @@
                                         <div class="col-8">
                                             <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite</i></button>
                                             <a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">남성 구두</a>
-                                            <p class="text-secondary small">Assemble, Brand, Parts</p>
                                         </div>
                                     </div>
                                 </div>
@@ -246,7 +241,6 @@
                                         <div class="col-9">
                                             <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
                                             <a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">여자 구두</a>
-                                            <p class="text-secondary small">DSLR, Pointshoot, Lense</p>
                                         </div>
                                     </div>
                                 </div>
@@ -262,7 +256,6 @@
                                         <div class="col-8">
                                             <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
                                             <a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">남성신발</a>
-                                            <p class="text-secondary small">MII, Apples, Samssung</p>
                                         </div>
                                     </div>
                                 </div>
@@ -278,7 +271,6 @@
                                         <div class="col-8">
                                             <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite</i></button>
                                             <a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">여성 신발</a>
-                                            <p class="text-secondary small">Assemble, Brand, Parts</p>
                                         </div>
                                     </div>
                                 </div>
@@ -294,7 +286,6 @@
                                         <div class="col-9">
                                             <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
                                             <a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">누구신발</a>
-                                            <p class="text-secondary small">DSLR, Pointshoot, Lense</p>
                                         </div>
                                     </div>
                                 </div>
@@ -395,22 +386,20 @@
         <div class="container mb-3">
             <div class="row">
                 <div class="col text-center">
-                	<a class="txt2" href="serviceTOS.jsp">
-							이용약관 |
-							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
-					</a>
-					<a class="txt2" href="privacy.jsp">
-							개인정보 처리방침 |
-							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
-					</a>
-					<a class="txt2" href="sMemInform.jsp">
-							사업자 정보 확인 |
-							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
-					</a>
-					<a class="txt2" href="privacyInformOther.jsp">
-							개인정보 제 3자 제공 동의
-							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
-					</a>
+                	<ul>
+                		<li>
+                			<a class="txt2" href="serviceTOS.jsp">이용약관</a>
+                			<span> | </span>
+                			<a class="txt2" href="privacy.jsp">개인정보 처리방침</a>
+                			<span> | </span>
+                			<a class="txt2" href="sMemInform.jsp">사업자 정보 확인</a>
+                			<span> | </span>
+                			<a class="txt2" href="privacyInformOther.jsp">개인정보 제 3자 제공 동의</a>
+                		</li>
+                		<li>
+                			
+                		</li>
+                	</ul>
                     <p class="text-secondary">YouShoes는 통신판매중개자이며, 통신판매의 당사자가 아닙니다.
                     	<br>따라서 YouShoes는 상품거래 정보 및 거래에 대한 책임을 지지 않습니다.
                     </p>
