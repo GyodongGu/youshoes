@@ -135,11 +135,10 @@
 					</button>
 				</div>
 				<div class="col text-center">
-					<img src="../img/logo.png" alt="" class="header-logo"> YouShoes
+					<img src="../img/logo.png" alt="logo" class="header-logo"> YouShoes
 				</div>
 				<div class="col-auto">
-					<a href="profile.jsp" class="btn  btn-link text-dark"> <i class="material-icons">account_circle</i>
-					</a>
+					<a href="profile.jsp" class="btn  btn-link text-dark"><i class="material-icons">account_circle</i></a>
 				</div>
 			</div>
 		</div>
