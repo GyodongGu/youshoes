@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="author" content="Maxartkiller">
 
-<title>이용약관</title>
+<title>개인정보 처리방침</title>
 
 <!-- Material design icons CSS -->
 <link rel="stylesheet" href="../vendor/materializeicon/material-icons.css">
@@ -97,31 +97,48 @@
 			</div>
 		</div>
 		<!-- // 상단에 따라다니는 줄 -->
+		
 		<!-- 내부 내용 전체 감싸는 부분 -->
-		<div class="container">
-			<!-- 프로필 이미지 사진  -->
-			<div class="text-center">
-				<div class="figure-profile shadow my-4">
-					<figure>
-						<img src="../img/user1.png" alt="">
-					</figure>
-					<div class="btn btn-dark text-white floating-btn">
-						<i class="material-icons">camera_alt</i> <input type="file" class="float-file">
-					</div>
-				</div>
-			</div>
-			<!-- // 프로필 이미지 사진  -->
-
-			<!-- 프로필 탭 메뉴 -->
+		<div class="container" align="center">
+			<!-- 내용입력 -->
 			<div id="tabs">
-				<ul>
-					<li><a href="myReview.jsp">내 스토리</a></li>
-					<li><a href="point.jsp">내 포인트</a></li>
-					<li><a href="profileSet.jsp">설정</a></li>
-				</ul>
-
+				<h3>개인정보 처리방침</h3>
+				<br/>
+				<table border="1">
+					<thead>
+						<tr>
+						<th scope="col">목적</th>
+						<th scope="col">항목</th>
+						</tr>
+					</thead>
+					<tfoot>
+						<tr>
+						<th scope="row" colspan="2" class="imp_txt"><strong>보유기간 : 회원탈퇴 후 5일 이내 또는 법령에 따른 보존기간 (단, 부정거래 확인 시 회원탈퇴 후 6개월)</strong></th>
+						</tr>
+					</tfoot>
+					<tbody>   
+						<tr> 
+							<td>본인여부 확인</td> 
+							<td>이름, 아이디, 비밀번호, 휴대폰번호, 이메일주소</td> 
+						</tr>
+						<tr> 
+							<td>계약이행 및 약관변경 등의 고지를 위한 연락, 본인의사<br />확인및 민원 등의 고객불만처리
+							</td> 
+							<td>이름, 아이디, 휴대폰번호, 이메일주소, 전화번호, 주소</td> 
+						</tr>
+						<tr> 
+							<td>부정이용방지, 비인가사용방지, 서비스 제공 및 계약의 <br />이행
+							</td> 
+							<td>방문일시, 서비스 이용 기록 및 기기정보</td> 
+						</tr>
+						<tr> 
+							<td>부정거래의 배제 (가입 후 부정거래가 확인된 경우만)</td> 
+							<td><span>ID</span>, 휴대폰번호, 이메일주소, 전화번호, 생년월일, 부정거<br>래사유, 탈퇴 시 회원 상태값</td> 
+						</tr>
+					</tbody>
+				</table>
 			</div>
-			<!-- // 프로필 탭 메뉴 -->
+			<!-- // 내용입력 -->
 
 			<!-- 하단에 아이콘 버튼 이동 부분 -->
 			<div class="footer">
