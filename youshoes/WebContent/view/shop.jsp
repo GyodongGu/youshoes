@@ -34,25 +34,22 @@
 <!-- Custom styles for this template -->
 <link href="css/style.css" rel="stylesheet">
 
-<link rel="stylesheet"
-	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<!-- Tab키 스크립트 및 CSS -->
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="/resources/demos/style.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<!-- // Tab키 스크립트 및 CSS -->
+
 <script>
 	$(function() {
-		$("#tabs")
-				.tabs(
-						{
-							beforeLoad : function(event, ui) {
-								ui.jqXHR
-										.fail(function() {
-											ui.panel
-													.html("Couldn't load this tab. We'll try to fix this as soon as possible. "
-															+ "If this wouldn't be a demo.");
-										});
-							}
-						});
+		$("#tabs").tabs({beforeLoad : function(event, ui) {
+				ui.jqXHR.fail(function() {
+					ui.panel.html("Couldn't load this tab. We'll try to fix this as soon as possible. "
+								+ "If this wouldn't be a demo.");
+			        });
+				}
+		});
 	});
 </script>
 <script>
@@ -94,21 +91,6 @@
 		});
 	});
 </script>
-    <!-- page level script -->
-    <script>
-        $(window).on('load', function() {
-            var swiper = new Swiper('.product-details ', {
-                slidesPerView: 1,
-                spaceBetween: 0,
-                pagination: {
-                    el: '.swiper-pagination'
-                }
-            });
-
-
-        });
-
-    </script>
 <style>
 #accordion1, #accordion2, #accordion3, #accordion4, #accordion5,
 	#accordion6 {
@@ -129,8 +111,8 @@ tr, td {
 		<div class="header">
 			<div class="row no-gutters">
 				<div class="col-auto">
-					<a href="all-products.html" class="btn  btn-link text-dark"><i
-						class="material-icons">navigate_before</i></a>
+					<a href="all-products.html" class="btn  btn-link text-dark">
+					<i class="material-icons">navigate_before</i></a>
 				</div>
 				<div class="col text-center">
 					<img src="img/logo-header.png" alt="" class="header-logo">
@@ -374,50 +356,20 @@ tr, td {
 
 						</div>
 					</div>
+					
 				</div>
+				
 			</div>
 		</div>
-				<!-- 하단에 아이콘 버튼 이동 부분 -->
-		<div class="footer">
-			<div class="no-gutters">
-				<div class="col-auto mx-auto">
-					<div class="row no-gutters justify-content-center">
-						<div class="col-auto">
-							<a href="pMem.jsp" class="btn btn-link-default active"> <i class="material-icons">store_mall_directory</i>
-							</a>
-						</div>
-						<div class="col-auto">
-							<a href="orderHistory.jsp" class="btn btn-link-default"> <i class="material-icons">insert_chart_outline</i>
-							</a>
-						</div>
-						<div class="col-auto">
-							<a href="cart.html" class="btn btn-default shadow centerbutton"> <i class="material-icons">local_mall</i>
-							</a>
-						</div>
-						<div class="col-auto">
-							<a href="bookmark.jsp" class="btn btn-link-default"> <i class="material-icons">favorite</i>
-							</a>
-						</div>
-						<div class="col-auto">
-							<a href="profile.jsp" class="btn btn-link-default"> <i class="material-icons">account_circle</i>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+		
 	</div>
+<<<<<<< HEAD
 
     <!-- swiper js -->
     <script src="vendor/swiper/js/swiper.min.js"></script>
+=======
+>>>>>>> branch 'master' of https://github.com/GyodongGu/youshoes.git
 
-    <!-- nouislider js -->
-    <script src="vendor/nouislider/nouislider.min.js"></script>
 
-    <!-- chosen multiselect js -->
-    <script src="vendor/chosen_v1.8.7/chosen.jquery.min.js"></script>
-
-    <!-- template custom js -->
-    <script src="js/main.js"></script>
 </body>
 </html>

@@ -31,11 +31,12 @@
 <!-- Custom styles for this template -->
 <link href="../css/style.css" rel="stylesheet">
 
+<!-- Tab키 스크립트 및 CSS -->
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="/resources/demos/style.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
+<!-- // Tab키 스크립트 및 CSS -->
 
 </head>
 
@@ -119,46 +120,41 @@
 
 	<!-- jquery, popper and bootstrap js -->
 	<script src="js/jquery-3.3.1.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="vendor/bootstrap-4.4.1/js/bootstrap.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="vendor/bootstrap-4.4.1/js/bootstrap.min.js"></script>
 
-<!-- swiper js -->
-<script src="vendor/swiper/js/swiper.min.js"></script>
+	<!-- swiper js -->
+	<script src="vendor/swiper/js/swiper.min.js"></script>
 
-<!-- nouislider js -->
-<script src="vendor/nouislider/nouislider.min.js"></script>
+	<!-- nouislider js -->
+	<script src="vendor/nouislider/nouislider.min.js"></script>
 
-<!-- chart js -->
-<script src="vendor/chartjs/Chart.min.js"></script>
-<script src="vendor/chartjs/utils.js"></script>
+	<!-- chart js -->
+	<script src="vendor/chartjs/Chart.min.js"></script>
+	<script src="vendor/chartjs/utils.js"></script>
 
-<!-- chosen multiselect js -->
-<script src="vendor/chosen_v1.8.7/chosen.jquery.min.js"></script>
+	<!-- chosen multiselect js -->
+	<script src="vendor/chosen_v1.8.7/chosen.jquery.min.js"></script>
 
-<!-- template custom js -->
-<script src="js/main.js"></script>
+	<!-- template custom js -->
+	<script src="js/main.js"></script>
 
-<!-- page level script -->
-<script>
+	<!-- page level script -->
+	<script>
 		$(window).on('load', function() {
 		});
 	</script>
 
-<!-- 탭 메뉴를 위한 스크립트 -->
-<script>
+	<!-- 탭 메뉴를 위한 스크립트 -->
+	<script>
 		$(function() {
-			$("#tabs")
-					.tabs(
-							{
-								beforeLoad : function(event, ui) {
-									ui.jqXHR
-											.fail(function() {
-												ui.panel
-														.html("Couldn't load this tab. We'll try to fix this as soon as possible. "
-																+ "If this wouldn't be a demo.");
-											});
-								}
-							});
+			$("#tabs").tabs({beforeLoad : function(event, ui) {
+				ui.jqXHR.fail(function() {
+					ui.panel.html("Couldn't load this tab. We'll try to fix this as soon as possible. "
+								+ "If this wouldn't be a demo.");
+					});
+				}
+			});
 		});
 	</script>
 </body>
