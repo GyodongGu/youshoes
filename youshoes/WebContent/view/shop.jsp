@@ -1,11 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!doctype html>
-<html lang="en">
+<html lang="en" class="blue-theme">
 <head>
 <meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover, user-scalable=no">
 <meta name="description" content="">
 <meta name="author" content="Maxartkiller">
 <title>jQuery UI Tabs - Collapse content</title>
@@ -13,13 +11,10 @@
 <link rel="stylesheet" href="vendor/materializeicon/material-icons.css">
 
 <!-- Roboto fonts CSS -->
-<link
-	href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
 
 <!-- Bootstrap core CSS -->
-<link href="vendor/bootstrap-4.4.1/css/bootstrap.min.css"
-	rel="stylesheet">
+<link href="vendor/bootstrap-4.4.1/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Swiper CSS -->
 <link href="vendor/swiper/css/swiper.min.css" rel="stylesheet">
@@ -40,17 +35,18 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <!-- // Tab키 스크립트 및 CSS -->
 
-<script>
-	$(function() {
-		$("#tabs").tabs({beforeLoad : function(event, ui) {
+<!-- 탭 메뉴를 위한 스크립트 -->
+	<script>
+		$(function() {
+			$("#tabs").tabs({beforeLoad : function(event, ui) {
 				ui.jqXHR.fail(function() {
 					ui.panel.html("Couldn't load this tab. We'll try to fix this as soon as possible. "
 								+ "If this wouldn't be a demo.");
-			        });
+					});
 				}
+			});
 		});
-	});
-</script>
+	</script>
 <script>
 	$(function() {
 		$("#accordion").accordion({
@@ -90,6 +86,19 @@
 		});
 	});
 </script>
+<!-- page level script -->
+<script>
+	$(window).on('load', function() {
+		var swiper = new Swiper('.product-details ', {
+			slidesPerView : 1,
+			spaceBetween : 0,
+			pagination : {
+				el : '.swiper-pagination'
+			}
+		});
+
+	});
+</script>
 <style>
 #accordion1, #accordion2, #accordion3, #accordion4, #accordion5,
 	#accordion6 {
@@ -106,25 +115,67 @@ tr, td {
 </style>
 </head>
 <body>
+	<!-- 사이드바 -->
+	<div class="sidebar">
+		<div class="text-center">
+			<div class="figure-menu shadow">
+				<figure>
+					<img src="img/user1.png" alt="">
+				</figure>
+			</div>
+			<h5 class="mb-1 ">사용자 1</h5>
+			<p class="text-mute small">서울, 대한민국</p>
+		</div>
+		<br>
+		<div class="row mx-0">
+			<div class="col">
+				<div class="card mb-3 border-0 shadow-sm bg-template-light">
+					<div class="card-body">
+						<div class="row">
+							<div class="col">
+								<p class="text-secondary small mb-0">현재 포인트</p>
+								<h6 class="text-dark my-0">$2585.00</h6>
+							</div>
+							<div class="col-auto">
+								<button class="btn btn-default button-rounded-36 shadow">
+									<i class="material-icons">add</i>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<h5 class="subtitle text-uppercase">
+					<span>Menu</span>
+				</h5>
+				<div class="list-group main-menu">
+					<a href="searchShop.jsp" class="list-group-item list-group-item-action active">스토어</a> <a href="pMemEvent.jsp" class="list-group-item list-group-item-action">공지사항</a> <a href="product.jsp" class="list-group-item list-group-item-action">모든 제품</a> <a href="orderHistory.jsp" class="list-group-item list-group-item-action">주문내역</a> <a href="profile.jsp" class="list-group-item list-group-item-action">프로필</a> <a href="../login.jsp" class="list-group-item list-group-item-action mt-4">로그아웃</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- // 사이드바 -->
+	<!-- 상단에 따라다니는 줄 -->
 	<div class="wrapper">
 		<div class="header">
 			<div class="row no-gutters">
 				<div class="col-auto">
-					<a href="all-products.html" class="btn  btn-link text-dark">
-					<i class="material-icons">navigate_before</i></a>
+					<button class="btn  btn-link text-dark menu-btn">
+						<img src="img/menu.png" alt=""> <span class="new-notification"></span>
+					</button>
 				</div>
 				<div class="col text-center">
-					<img src="img/logo-header.png" alt="" class="header-logo">
+					<img src="img/logo.png" alt="" class="header-logo"> YouSheos
 				</div>
 				<div class="col-auto">
-					<a href="profile.html" class="btn  btn-link text-dark"><i
-						class="material-icons">account_circle</i></a>
+					<a href="profile.jsp" class="btn  btn-link text-dark"> <i class="material-icons">account_circle</i>
+					</a>
 				</div>
 			</div>
 		</div>
+		<!-- // 상단에 따라다니는 줄 -->
 
 
-		<!-- Swiper -->
+		<!-- 가게 사진 이미지 -->
 		<div class="swiper-container product-details">
 			<div class="swiper-wrapper">
 				<div class="swiper-slide" style="padding: 0px">
@@ -137,46 +188,27 @@ tr, td {
 					<img src="img/handmade.jpg" alt="">
 				</div>
 			</div>
-			<!-- Add Pagination -->
+			<!-- 가게 사진 이미지의 pagination -->
 			<div class="swiper-pagination"></div>
 		</div>
-
+		<!-- // 가게 사진 이미지 -->
+		
+		<!-- 가게별 페이지 -->
 		<div class="container">
-
-			<button class="btn btn-sm btn-link p-0">
-				<i class="material-icons md-18">favorite_outline</i>
-			</button>
-			<a href="javascript:void(0)"
-				class="btn btn-sm btn-default btn-rounded ml-2" data-toggle="modal"
-				data-target="#share"><i class="material-icons mb-18 mr-2">share</i>Share</a>
-			<div class="badge badge-success float-right mt-1">10% off</div>
-
-			<p class="text-secondary my-3 small">
-				<i class="material-icons text-warning md-18 vm">star</i> <i
-					class="material-icons text-warning md-18 vm">star</i> <i
-					class="material-icons text-warning md-18 vm">star</i> <i
-					class="material-icons text-secondary md-18 vm">star</i> <i
-					class="material-icons text-secondary md-18 vm">star</i> <span
-					class="text-dark vm ml-2">Rating 4.2</span> <span class="vm">based
-					on 245 reviews</span>
-			</p>
-
+			<!-- 가게 문구  -->
 			<a href="#" class="text-dark mb-1 mt-2 h3 d-block">맨즈 슈즈</a>
-
-			<p class="text-secondary">저희 맨즈슈즈는 20년 전통을 자랑하는 전통 수제화 상점입니다.
-				편안하고 디자인이 다양합니다.</p>
-
-
-
-
+			<p class="text-secondary">저희 맨즈슈즈는 20년 전통을 자랑하는 전통 수제화 상점입니다. 편안하고 디자인이 다양합니다.</p>
+			<!-- // 가게 문구  -->
+			<!-- 가게 사진 이미지 -->
 			<p class="text-center">
-				<i class="material-icons h3 text-warning vm">star</i> <i
-					class="material-icons h3 text-warning vm">star</i> <i
-					class="material-icons h3 text-warning vm">star</i> <i
-					class="material-icons h3 text-secondary vm">star</i> <i
-					class="material-icons h3 text-secondary vm">star</i>
+				<i class="material-icons h3 text-warning vm">star</i> 
+				<i class="material-icons h3 text-warning vm">star</i> 
+				<i class="material-icons h3 text-warning vm">star</i> 
+				<i class="material-icons h3 text-secondary vm">star</i> 
+				<i class="material-icons h3 text-secondary vm">star</i>
 			</p>
-
+			<!-- // 가게 사진 이미지 -->
+			<!-- 가게별 페이지 탭 부분 -->
 			<div id="tabs">
 				<ul>
 					<li><a href="#tabs-1">가게 정보</a></li>
@@ -218,13 +250,11 @@ tr, td {
 									<table>
 										<tr>
 											<td>브라운슈즈</td>
-											<td><img src="img/brownshoes.png" alt="" height="50"
-												width="50"></td>
+											<td><img src="img/brownshoes.png" alt="" height="50" width="50"></td>
 										</tr>
 										<tr>
 											<td>블랙슈즈</td>
-											<td><img src="img/blackshoes.jpg" alt="" height="50"
-												width="50"></td>
+											<td><img src="img/blackshoes.jpg" alt="" height="50" width="50"></td>
 										</tr>
 									</table>
 								</div>
@@ -233,13 +263,11 @@ tr, td {
 									<table>
 										<tr>
 											<td>운동화(white)</td>
-											<td><img src="img/shoes2.png" alt="" height="50"
-												width="50"></td>
+											<td><img src="img/shoes2.png" alt="" height="50" width="50"></td>
 										</tr>
 										<tr>
 											<td>운동화(black)</td>
-											<td><img src="img/blacksports.jpg" alt="" height="50"
-												width="50"></td>
+											<td><img src="img/blacksports.jpg" alt="" height="50" width="50"></td>
 										</tr>
 									</table>
 								</div>
@@ -254,13 +282,11 @@ tr, td {
 									<table>
 										<tr>
 											<td>브라운슈즈</td>
-											<td><img src="img/brownshoes.png" alt="" height="50"
-												width="50"></td>
+											<td><img src="img/brownshoes.png" alt="" height="50" width="50"></td>
 										</tr>
 										<tr>
 											<td>블랙슈즈</td>
-											<td><img src="img/blackshoes.jpg" alt="" height="50"
-												width="50"></td>
+											<td><img src="img/blackshoes.jpg" alt="" height="50" width="50"></td>
 										</tr>
 									</table>
 								</div>
@@ -269,13 +295,11 @@ tr, td {
 									<table>
 										<tr>
 											<td>운동화(white)</td>
-											<td><img src="img/shoes2.png" alt="" height="50"
-												width="50"></td>
+											<td><img src="img/shoes2.png" alt="" height="50" width="50"></td>
 										</tr>
 										<tr>
 											<td>운동화(black)</td>
-											<td><img src="img/blacksports.jpg" alt="" height="50"
-												width="50"></td>
+											<td><img src="img/blacksports.jpg" alt="" height="50" width="50"></td>
 										</tr>
 									</table>
 								</div>
@@ -292,13 +316,11 @@ tr, td {
 									<table>
 										<tr>
 											<td>브라운슈즈</td>
-											<td><img src="img/brownshoes.png" alt="" height="50"
-												width="50"></td>
+											<td><img src="img/brownshoes.png" alt="" height="50" width="50"></td>
 										</tr>
 										<tr>
 											<td>블랙슈즈</td>
-											<td><img src="img/blackshoes.jpg" alt="" height="50"
-												width="50"></td>
+											<td><img src="img/blackshoes.jpg" alt="" height="50" width="50"></td>
 										</tr>
 									</table>
 								</div>
@@ -307,13 +329,11 @@ tr, td {
 									<table>
 										<tr>
 											<td>운동화(white)</td>
-											<td><img src="img/shoes2.png" alt="" height="50"
-												width="50"></td>
+											<td><img src="img/shoes2.png" alt="" height="50" width="50"></td>
 										</tr>
 										<tr>
 											<td>운동화(black)</td>
-											<td><img src="img/blacksports.jpg" alt="" height="50"
-												width="50"></td>
+											<td><img src="img/blacksports.jpg" alt="" height="50" width="50"></td>
 										</tr>
 									</table>
 								</div>
@@ -326,13 +346,11 @@ tr, td {
 									<table>
 										<tr>
 											<td>브라운슈즈</td>
-											<td><img src="img/brownshoes.png" alt="" height="50"
-												width="50"></td>
+											<td><img src="img/brownshoes.png" alt="" height="50" width="50"></td>
 										</tr>
 										<tr>
 											<td>블랙슈즈</td>
-											<td><img src="img/blackshoes.jpg" alt="" height="50"
-												width="50"></td>
+											<td><img src="img/blackshoes.jpg" alt="" height="50" width="50"></td>
 										</tr>
 									</table>
 								</div>
@@ -341,13 +359,11 @@ tr, td {
 									<table>
 										<tr>
 											<td>운동화(white)</td>
-											<td><img src="img/shoes2.png" alt="" height="50"
-												width="50"></td>
+											<td><img src="img/shoes2.png" alt="" height="50" width="50"></td>
 										</tr>
 										<tr>
 											<td>운동화(black)</td>
-											<td><img src="img/blacksports.jpg" alt="" height="50"
-												width="50"></td>
+											<td><img src="img/blacksports.jpg" alt="" height="50" width="50"></td>
 										</tr>
 									</table>
 								</div>
@@ -355,14 +371,54 @@ tr, td {
 
 						</div>
 					</div>
-					
+
 				</div>
-				
+
 			</div>
 		</div>
-		
+		<!-- 가게별 페이지 탭 부분 -->
+		<!-- 하단에 아이콘 버튼 이동 부분 -->
+			<div class="footer">
+				<div class="no-gutters">
+					<div class="col-auto mx-auto">
+						<div class="row no-gutters justify-content-center">
+							<div class="col-auto">
+								<a href="pMem/pMem.jsp" class="btn btn-link-default "> <i class="material-icons">store_mall_directory</i>
+								</a>
+							</div>
+							<div class="col-auto">
+								<a href="pMem/orderHistory.jsp" class="btn btn-link-default"> <i class="material-icons">insert_chart_outline</i>
+								</a>
+							</div>
+							<div class="col-auto">
+								<a href="cart.html" class="btn btn-default shadow centerbutton"> <i class="material-icons">local_mall</i>
+								</a>
+							</div>
+							<div class="col-auto">
+								<a href="pMem/bookmark.jsp" class="btn btn-link-default"> <i class="material-icons">favorite</i>
+								</a>
+							</div>
+							<div class="col-auto">
+								<a href="pMem/profile.jsp" class="btn btn-link-default active"> <i class="material-icons">account_circle</i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- // 하단에 아이콘 버튼 이동 부분 -->
 	</div>
 
+	<!-- swiper js -->
+	<script src="vendor/swiper/js/swiper.min.js"></script>
 
+	<!-- nouislider js -->
+	<script src="vendor/nouislider/nouislider.min.js"></script>
+
+	<!-- chosen multiselect js -->
+	<script src="vendor/chosen_v1.8.7/chosen.jquery.min.js"></script>
+
+	<!-- template custom js -->
+	<script src="js/main.js"></script>
 </body>
 </html>
