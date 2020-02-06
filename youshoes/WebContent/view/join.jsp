@@ -31,8 +31,8 @@
 <body>
     <div class="row no-gutters vh-100 loader-screen">
         <div class="col align-self-center text-white text-center">
-            <img src="img/logo.png" alt="logo">
-            <h1><span class="font-weight-light">Go</span>Fruit</h1>
+            <img src="view/img/logo.png" alt="logo">
+            <h1><span class="font-weight-light">You</span>Shoes</h1>
             <div class="laoderhorizontal"><div></div><div></div><div></div><div></div></div>
         </div>
     </div>
@@ -43,53 +43,53 @@
             <h2 class="text-white"><span class="font-weight-light">회원가입</span></h2>
             <form class="form-signin shadow">
                  <div class="form-group float-label active">
-                    <input type="text" id="inputId" class="form-control" required autofocus >
-                    <label for="inputId" class="form-control-label">아이디</label>
+                    <input type="text" id="pm_id" class="form-control" name="pm_id" required autofocus >
+                    <label for="pm_id" class="form-control-label">아이디</label>
                 </div>
                 
                 <div class="form-group float-label">
-                    <input type="password" id="inputPassword" class="form-control" required>
-                    <label for="inputPassword" class="form-control-label">비밀번호</label>
+                    <input type="password" id="pm_pw" class="form-control" name="pm_pw" required>
+                    <label for="pm_pw" class="form-control-label">비밀번호</label>
                 </div>
                 
                 <div class="form-group float-label">
-                    <input type="password" id="passwordChk" class="form-control" required>
-                    <label for="passwordChk" class="form-control-label">비밀번호 확인</label>
+                    <input type="password" id="pm_pwchk" class="form-control" name="pm_pwchk" required>
+                    <label for="pm_pwchk" class="form-control-label">비밀번호 확인</label>
                 </div>
                 
                 <div class="form-group float-label active">
-                    <input type="text" id="inputName" class="form-control" required >
-                    <label for="inputName" class="form-control-label">이름</label>
+                    <input type="text" id="pm_name" class="form-control" name="pm_name" required >
+                    <label for="pm_name" class="form-control-label">이름</label>
                 </div>
                 
                 <div class="form-group float-label active">
-                    <input type="date" id="inputBirth" class="form-control" required >
-                    <label for="inputBirth" class="form-control-label">생년월일</label>
+                    <input type="date" id="pm_birth" class="form-control" name="pm_birth" required >
+                    <label for="pm_birth" class="form-control-label">생년월일</label>
                 </div>
                 
                 <div class="form-group float-label active">
-                    <input type="email" id="inputEmail" class="form-control" required >
-                    <label for="inputEmail" class="form-control-label">이메일</label>
+                    <input type="email" id="pm_email" class="form-control" name="pm_email" required >
+                    <label for="pm_email" class="form-control-label">이메일</label>
                 </div>
                 
                 <div class="form-group float-label active">
-                    <input type="tel" id="inputTell" class="form-control" required maxlength="11">
-                    <label for="inputTell" class="form-control-label">전화번호(-는 생략)</label>
+                    <input type="tel" id="pm_tell" class="form-control" name="pm_tell" required maxlength="11">
+                    <label for="pm_tell" class="form-control-label">전화번호(-는 생략)</label>
                 </div>
                 
                 <div class="form-group float-label active">
-                    <input type="number" id="inputPost" class="form-control" placeholder="우편번호" required >
-                    <label for="inputPost" class="form-control-label">우편번호(api사용)</label>
+                    <input type="number" id="pm_post" class="form-control" name="pm_post" placeholder="우편번호" required >
+                    <label for="pm_post" class="form-control-label">우편번호(api사용)</label>
                 </div>
                 
                 <div class="form-group float-label active">
-                    <input type="text" id="inputAddr1" class="form-control" placeholder="주소" required >
-                    <label for="inputAddr1" class="form-control-label">주소1(api사용)</label>
+                    <input type="text" id="pm_adr1" class="form-control" name="pm_adr1" placeholder="주소" required >
+                    <label for="pm_adr1" class="form-control-label">주소1(api사용)</label>
                 </div>
                 
                 <div class="form-group float-label active">
-                    <input type="text" id="inputAddr2" class="form-control" placeholder="상세주소" required >
-                    <label for="inputAddr2" class="form-control-label">주소2(api사용)</label>
+                    <input type="text" id="pm_addr2" class="form-control" name="pm_addr2" placeholder="상세주소" required >
+                    <label for="pm_addr2" class="form-control-label">주소2(api사용)</label>
                 </div>
 
                 <div class="form-group my-4 text-left"><!-- 체크가 다됨... -->
