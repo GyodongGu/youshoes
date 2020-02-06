@@ -113,7 +113,7 @@
 								<img src="../img/shop1.jpg" alt="" class="">
 							</figure>
 
-							<a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">가게1</a>
+							<a href="../shop.jsp" class="text-dark mb-1 mt-2 h6 d-block">가게1</a>
 							<button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right">
 								<i class="material-icons md-18">shopping_cart</i>
 							</button>

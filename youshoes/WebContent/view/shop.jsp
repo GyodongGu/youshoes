@@ -148,7 +148,7 @@ tr, td {
 					<span>Menu</span>
 				</h5>
 				<div class="list-group main-menu">
-					<a href="searchShop.jsp" class="list-group-item list-group-item-action active">스토어</a> <a href="pMemEvent.jsp" class="list-group-item list-group-item-action">공지사항</a> <a href="product.jsp" class="list-group-item list-group-item-action">모든 제품</a> <a href="orderHistory.jsp" class="list-group-item list-group-item-action">주문내역</a> <a href="profile.jsp" class="list-group-item list-group-item-action">프로필</a> <a href="../login.jsp" class="list-group-item list-group-item-action mt-4">로그아웃</a>
+					<a href="pMem/searchShop.jsp" class="list-group-item list-group-item-action active">스토어</a> <a href="pMemEvent.jsp" class="list-group-item list-group-item-action">공지사항</a> <a href="product.jsp" class="list-group-item list-group-item-action">모든 제품</a> <a href="orderHistory.jsp" class="list-group-item list-group-item-action">주문내역</a> <a href="profile.jsp" class="list-group-item list-group-item-action">프로필</a> <a href="../login.jsp" class="list-group-item list-group-item-action mt-4">로그아웃</a>
 				</div>
 			</div>
 		</div>
