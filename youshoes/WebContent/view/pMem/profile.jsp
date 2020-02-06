@@ -41,45 +41,6 @@
 
 <body>
 	<div class="wrapper">
-		<!-- 사이드바 -->
-		<div class="sidebar">
-			<div class="text-center">
-				<div class="figure-menu shadow">
-					<figure>
-						<img src="img/user1.png" alt="">
-					</figure>
-				</div>
-				<h5 class="mb-1 ">사용자 1</h5>
-				<p class="text-mute small">서울, 대한민국</p>
-			</div>
-			<br>
-			<div class="row mx-0">
-				<div class="col">
-					<div class="card mb-3 border-0 shadow-sm bg-template-light">
-						<div class="card-body">
-							<div class="row">
-								<div class="col">
-									<p class="text-secondary small mb-0">현재 포인트</p>
-									<h6 class="text-dark my-0">$2585.00</h6>
-								</div>
-								<div class="col-auto">
-									<button class="btn btn-default button-rounded-36 shadow">
-										<i class="material-icons">add</i>
-									</button>
-								</div>
-							</div>
-						</div>
-					</div>
-					<h5 class="subtitle text-uppercase">
-						<span>Menu</span>
-					</h5>
-					<div class="list-group main-menu">
-						<a href="pMem.jsp" class="list-group-item list-group-item-action active">스토어</a> <a href="notification.html" class="list-group-item list-group-item-action">공지사항<span class="badge badge-dark text-white">2</span></a> <a href="all-products.html" class="list-group-item list-group-item-action">모든 제품</a> <a href="orderHistory.jsp" class="list-group-item list-group-item-action">주문내역</a> <a href="profile.jsp" class="list-group-item list-group-item-action">프로필</a> <a href="#" class="list-group-item list-group-item-action mt-4">로그아웃</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- // 사이드바 -->
 		<!-- 상단에 따라다니는 줄 -->
 		<div class="header">
 			<div class="row no-gutters">

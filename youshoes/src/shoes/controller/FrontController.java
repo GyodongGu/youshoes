@@ -35,6 +35,16 @@ public class FrontController extends HttpServlet {
 		// TODO Auto-generated method stub
 		list=new HashMap<String, Command>();
 //		list.put("", value);
+		// 유승우가 만든 Command
+		list.put("", );
+		// 구교동가 만든 Command
+		
+		// 권우성가 만든 Command
+		
+		// 배광준가 만든 Command
+		
+		// 최인호가 만든 Command
+		
 	}
 
 	/**

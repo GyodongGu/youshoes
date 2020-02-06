@@ -45,7 +45,7 @@
         <div class="swiper-wrapper">
             <div class="swiper-slide overflow-hidden bg-success text-white">
                 <div class="row no-gutters h-100">
-                    <img src="view/img/shoes9.jpg" alt="" class="pinapple right-image align-self-center">
+                    <img src="view/img/" alt="" class="pinapple right-image align-self-center">
                     <div class="col align-self-center px-3">
                         <div class="row">
                             <div class="container">
@@ -80,7 +80,7 @@
             </div>
             <div class="swiper-slide overflow-hidden bg-warning text-white">
                 <div class="row no-gutters h-100">
-                    <img src="view/img/shoes7.jpg" alt="" class="banana right-image align-self-center">
+                    <img src="view/img/" alt="" class="banana right-image align-self-center">
                     <div class="col align-self-center px-3">
                         <div class="row">
                             <div class="container">
