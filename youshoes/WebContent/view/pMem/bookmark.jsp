@@ -147,9 +147,6 @@
 		<!-- // 위에 따라 다니는 거 -->
 		
 		<div class="container">
-			<!-- 검색창 -->
-			<input type="text" class="form-control form-control-lg search my-3" placeholder="검색">
-			<!-- // 검색창 -->
 			<!-- 내부 내용 -->
 			<div class="subtitle h6">
 				<div class="d-inline-block">
@@ -170,7 +167,7 @@
 							</button>
 
 							<figure class="product-image">
-								<img src="../img/image-4.png" alt="" class="">
+								<img src="../img/shoes1.png" alt="" class="">
 							</figure>
 							
 							
@@ -194,7 +191,7 @@
 							</button>
 
 							<figure class="product-image">
-								<img src="../img/image-5.png" alt="" class="">
+								<img src="../img/shoes2.png" alt="" class="">
 							</figure>
 
 							<a href="#" class="text-dark mb-1 mt-2 h6 d-block">여성 수제</a>
@@ -217,7 +214,7 @@
 							</button>
 
 							<figure class="product-image">
-								<img src="../img/image-6.png" alt="" class="">
+								<img src="../img/shoes3.png" alt="" class="">
 							</figure>
 
 							<a href="#" class="text-dark mb-1 mt-2 h6 d-block">남성 수제 1</a>
@@ -240,7 +237,7 @@
 							</button>
 
 							<figure class="product-image">
-								<img src="../img/image-7.png" alt="" class="">
+								<img src="../img/shoes4.png" alt="" class="">
 							</figure>
 
 							<a href="#" class="text-dark mb-1 mt-2 h6 d-block">여성 수제 1</a>

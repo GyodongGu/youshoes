@@ -7,11 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<ul>
-		<li><h3><a href="profileUpdate.jsp">프로필 수정</a></h3></li>
-		<li><h3><a href="pMemEvent.jsp">이벤트</a></h3></li>
-		<li><h3><a href="bookmark.jsp">즐겨찾기</a></h3></li>
-		<li><h3><a href="#">로그아웃</a></h3></li>
-	</ul>
+	<button type="button" onclick="location.href='profileUpdate.jsp'" class="btn btn-primary btn-lg btn-block">프로필 수정</button>
+	<button type="button" onclick="location.href='pMemEvent.jsp'" class="btn btn-primary btn-lg btn-block">이벤트</button>
+	<button type="button" onclick="location.href='bookmark.jsp'" class="btn btn-primary btn-lg btn-block">즐겨찾기</button>
+	<button type="button" onclick="location.href='../login.jsp'" class="btn btn-primary btn-lg btn-block">로그아웃</button>
 </body>
 </html>

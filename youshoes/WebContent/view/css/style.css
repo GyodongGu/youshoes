@@ -20,7 +20,10 @@ body {
     user-select: none;
 }
 
-
+/* profile.jsp의 pagination */
+nav ul {
+	justify-content: center;
+}
 
 /* primary colors */
 .bg-primary,
@@ -423,6 +426,8 @@ body.sidemenu-open .sidebar {
     z-index: 99;
     background-color: #FF0068;
 }
+
+
 
 /* introduction swiper slider css */
 .demo-swiper,
