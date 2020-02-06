@@ -66,8 +66,8 @@
 			<div id="tabs">
 				<h3>개인정보 처리방침</h3>
 				<br/>
-				<table border="1">
-					<thead>
+				<table border="1" class="table">
+					<thead class="thead-dark">
 						<tr>
 						<th scope="col">목적</th>
 						<th scope="col">항목</th>

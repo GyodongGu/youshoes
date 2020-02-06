@@ -60,7 +60,10 @@
 
                 <div class="row">
                     <div class="col-auto">
-                        <a href="pMem/pMem.jsp" class="btn btn-lg btn-default btn-rounded shadow"><span>로그인</span><i class="material-icons">arrow_forward</i></a>
+                        <a href="pMem/pMem.jsp" class="btn btn-lg btn-default btn-rounded shadow">
+                        	<span>로그인</span>
+                        	<i class="material-icons">arrow_forward</i>
+                        </a>
                     </div>
 	                    <div class="social">
 	                    <!-- api사용하여 로그인방식 만들기! -->

@@ -50,15 +50,15 @@
 		</div>
 		<!-- // 상단에 따라다니는 줄 -->
 		<div class="container">
-			<h1 class="display-4">현재 진행중인 이벤트</h1>
+			<p class="h3" align="center">현재 진행중인 이벤트</p>
 			<br>
 			<table class="table">
 				<thead>
 					<tr>
-						<th scope="col">#</th>
-						<th scope="col">First</th>
-						<th scope="col">Last</th>
-						<th scope="col">Handle</th>
+						<th scope="col">이벤트 번호</th>
+						<th scope="col">제목</th>
+						<th scope="col">작성자</th>
+						<th scope="col">작성일자</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -82,17 +82,18 @@
 					</tr>
 				</tbody>
 			</table>
-			<nav aria-label="Page navigation example">
+			<!-- paginatnion -->
+			<nav aria-label="Page navigation example" class="text-center">
 				<ul class="pagination">
-					<li class="page-item"><a class="page-link" href="#" aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
-					</a></li>
+					<li class="page-item"><a class="page-link" href="#" aria-label="Previous"> <span aria-hidden="true">&laquo;</span></a></li>
 					<li class="page-item"><a class="page-link" href="#">1</a></li>
 					<li class="page-item"><a class="page-link" href="#">2</a></li>
 					<li class="page-item"><a class="page-link" href="#">3</a></li>
-					<li class="page-item"><a class="page-link" href="#" aria-label="Next"> <span aria-hidden="true">&raquo;</span>
-					</a></li>
+					<li class="page-item"><a class="page-link" href="#">4</a></li>
+					<li class="page-item"><a class="page-link" href="#" aria-label="Next"> <span aria-hidden="true">&raquo;</span></a></li>
 				</ul>
 			</nav>
+			<!-- // paginatnion -->
 
 
 			<!-- 하단에 아이콘 버튼 이동 부분 -->
