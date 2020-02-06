@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="Maxartkiller">
 
-    <title>login</title>
+    <title>로그인</title>
 
     <!-- Material design icons CSS -->
     <link rel="stylesheet" href="vendor/materializeicon/material-icons.css">
@@ -31,12 +31,17 @@
     <div class="row no-gutters vh-100 loader-screen">
         <div class="col align-self-center text-white text-center">
             <img src="img/logo.png" alt="logo">
-            <h1><span class="font-weight-light">Go</span>Fruit</h1>
-            <div class="laoderhorizontal"><div></div><div></div><div></div><div></div></div>
+            <h1><span class="font-weight-light">You</span>Shoes</h1>
+            <div class="laoderhorizontal">
+	            <div></div>
+	            <div></div>
+	            <div></div>
+	            <div></div>
+            </div>
         </div>
     </div>
     <div class="row no-gutters vh-100 proh bg-template">
-        <img src="img/apple.png" alt="logo" class="apple right-image align-self-center">
+        <img src="img/shoes20.png" alt="logo" class="apple right-image align-self-center">
         <div class="col align-self-center px-3 text-center">
             <img src="img/logo.png" alt="logo" class="logo-small">
             <h2 class="text-white "><span class="font-weight-light">You</span>Shoes</h2>

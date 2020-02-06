@@ -135,7 +135,7 @@
 					</button>
 				</div>
 				<div class="col text-center">
-					<img src="../img/logo.png" alt="" class="header-logo"> YouSheos
+					<img src="../img/logo.png" alt="" class="header-logo"> YouShoes
 				</div>
 				<div class="col-auto">
 					<a href="profile.jsp" class="btn  btn-link text-dark"> <i class="material-icons">account_circle</i>
@@ -427,7 +427,7 @@
 							</p>
 						</div>
 						<div class="col-5 col-md-3 col-lg-2 col-xl-2">
-							<img src="../img/image-10.png" alt="" class="mw-100 mt-3">
+							<img src="../img/shoes18.png" alt="" class="mw-100 mt-3">
 						</div>
 						<div class="w-100"></div>
 						<div class="col">
