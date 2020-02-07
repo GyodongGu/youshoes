@@ -1,57 +1,49 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="en" class="blue-theme">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover, user-scalable=no">
-    <meta name="description" content="">
-    <meta name="author" content="Maxartkiller">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover, user-scalable=no">
+<meta name="description" content="">
+<meta name="author" content="Maxartkiller">
 
-    <title>Profile · GoFurniture</title>
+<title>프로필 수정</title>
 
-    <!-- Material design icons CSS -->
-    <link rel="stylesheet" href="../vendor/materializeicon/material-icons.css">
+<!-- Material design icons CSS -->
+<link rel="stylesheet" href="../vendor/materializeicon/material-icons.css">
 
-    <!-- Roboto fonts CSS -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+<!-- Roboto fonts CSS -->
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
 
-    <!-- Bootstrap core CSS -->
-    <link href="../vendor/bootstrap-4.4.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap core CSS -->
+<link href="../vendor/bootstrap-4.4.1/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Swiper CSS -->
-    <link href="../vendor/swiper/css/swiper.min.css" rel="stylesheet">
+<!-- Swiper CSS -->
+<link href="../vendor/swiper/css/swiper.min.css" rel="stylesheet">
 
-    <!-- Chosen multiselect CSS -->
-    <link href="../vendor/chosen_v1.8.7/chosen.min.css" rel="stylesheet">
+<!-- Chosen multiselect CSS -->
+<link href="../vendor/chosen_v1.8.7/chosen.min.css" rel="stylesheet">
 
-    <!-- nouislider CSS -->
-    <link href="../vendor/nouislider/nouislider.min.css" rel="stylesheet">
+<!-- nouislider CSS -->
+<link href="../vendor/nouislider/nouislider.min.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="../css/style.css" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="../css/style.css" rel="stylesheet">
 </head>
 
 <body>
-    <div class="wrapper">
-        <!-- 상단에 따라다니는 줄 -->
+	<div class="wrapper">
+		<!-- 상단에 뒤로가기 버튼 있는 따라다니는 줄 -->
 		<div class="header">
-			<div class="row no-gutters">
-				<div class="col-auto">
-					<a href="javascript:void(0)" onclick="location.href='pMem.jsp'" class="btn  btn-link text-dark"> <i class="material-icons">navigate_before</i></a>
-				</div>
-				<div class="col text-center">
-					<img src="../img/logo.png" alt="" class="header-logo"> YouSheos
-				</div>
-				<div class="col-auto">
-					<a href="profile.jsp" class="btn  btn-link text-dark"><i class="material-icons">account_circle</i></a>
-				</div>
-			</div>
+			<diV><jsp:include page="topMenuBack.jsp"></jsp:include></div>
 		</div>
-		<!-- // 상단에 따라다니는 줄 -->
-        <div class="container">
-            <!-- 프로필 이미지 사진  -->
+		<!-- // 상단에 뒤로가기 버튼 있는 따라다니는 줄 -->
+
+
+		<!-- 내부 내용 전체 감싸는 부분 -->
+		<div class="container">
+			<!-- 프로필 이미지 사진  -->
 			<div class="text-center">
 				<div class="figure-profile shadow my-4">
 					<figure>
@@ -63,129 +55,90 @@
 				</div>
 			</div>
 			<!-- // 프로필 이미지 사진  -->
-			
+
 			<!-- 안쪽에 프로필 수정하려는 입력 값 받는 곳 -->
-            <h6 class="subtitle">기본 정보</h6>
-            <div class="row">
-                <div class="col-12 col-md-6">
-                    <div class="form-group float-label active">
-                        <input type="text" class="form-control" required="" value="wow">
-                        <label class="form-control-label">이름</label>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="form-group float-label active">
-                        <input type="email" class="form-control" required="" value="wow@gmail.com">
-                        <label class="form-control-label">이메일</label>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 col-md-6">
-                    <div class="form-group float-label active">
-                        <input type="tel" class="form-control" required="" value="010-1234-5678">
-                        <label class="form-control-label">전화번호</label>
-                    </div>
-                </div>
-            </div>
+			<h6 class="subtitle">기본 정보</h6>
+			<div class="row">
+				<div class="col-12 col-md-6">
+					<div class="form-group float-label active">
+						<input type="text" class="form-control" required="" value="wow"> <label class="form-control-label">이름</label>
+					</div>
+				</div>
+				<div class="col-12 col-md-6">
+					<div class="form-group float-label active">
+						<input type="email" class="form-control" required="" value="wow@gmail.com"> <label class="form-control-label">이메일</label>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12 col-md-6">
+					<div class="form-group float-label active">
+						<input type="tel" class="form-control" required="" value="010-1234-5678"> <label class="form-control-label">전화번호</label>
+					</div>
+				</div>
+			</div>
 
-            <h6 class="subtitle">주소</h6>
+			<h6 class="subtitle">주소</h6>
 
-            <div class="row">
-                <div class="col-12 col-md-6">
-                    <div class="form-group float-label active">
-                        <input type="text" class="form-control" required="" value="58, 어딘가">
-                        <label class="form-control-label">주소 1</label>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="form-group float-label active">
-                        <input type="text" class="form-control" value="중구 어딘가">
-                        <label class="form-control-label">주소 2</label>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-6">
-                    <div class="form-group float-label active">
-                        <input type="tel" class="form-control" required="" value="25468">
-                        <label class="form-control-label">우편 번호</label>
-                    </div>
-                </div>
-            </div>
+			<div class="row">
+				<div class="col-12 col-md-6">
+					<div class="form-group float-label active">
+						<input type="text" class="form-control" required="" value="58, 어딘가"> <label class="form-control-label">주소 1</label>
+					</div>
+				</div>
+				<div class="col-12 col-md-6">
+					<div class="form-group float-label active">
+						<input type="text" class="form-control" value="중구 어딘가"> <label class="form-control-label">주소 2</label>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-6">
+					<div class="form-group float-label active">
+						<input type="tel" class="form-control" required="" value="25468"> <label class="form-control-label">우편 번호</label>
+					</div>
+				</div>
+			</div>
 
-            <a href="profile.jsp" class="btn btn-lg btn-default text-white btn-block btn-rounded shadow">
-            	<span>수정 완료</span>
-            	<i class="material-icons">arrow_forward</i>
-            </a>
-            <br>
-        </div>
-        <!-- // 안쪽에 프로필 수정하려는 입력 값 받는 곳 -->
+			<a href="profile.jsp" class="btn btn-lg btn-default text-white btn-block btn-rounded shadow"> <span>수정 완료</span> <i class="material-icons">arrow_forward</i>
+			</a> <br>
+		</div>
+		<!-- // 안쪽에 프로필 수정하려는 입력 값 받는 곳 -->
 
-        <!-- 하단에 아이콘 버튼 이동 부분 -->
-        <div class="footer">
-            <div class="no-gutters">
-                <div class="col-auto mx-auto">
-                    <div class="row no-gutters justify-content-center">
-                        <div class="col-auto">
-                            <a href="pMem.jsp" class="btn btn-link-default active">
-                                <i class="material-icons">store_mall_directory</i>
-                            </a>
-                        </div>
-                        <div class="col-auto">
-                            <a href="orderHistory.jsp" class="btn btn-link-default">
-                                <i class="material-icons">insert_chart_outline</i>
-                            </a>
-                        </div>
-                        <div class="col-auto">
-                            <a href="cart.html" class="btn btn-default shadow centerbutton">
-                                <i class="material-icons">local_mall</i>
-                            </a>
-                        </div>
-                        <div class="col-auto">
-                            <a href="bookmark.jsp" class="btn btn-link-default">
-                                <i class="material-icons">favorite</i>
-                            </a>
-                        </div>
-                        <div class="col-auto">
-                            <a href="profile.jsp" class="btn btn-link-default">
-                                <i class="material-icons">account_circle</i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- // 하단에 아이콘 버튼 이동 부분 -->
-    </div>
+		<!-- 하단에 아이콘 버튼 이동 부분 -->
+		<div class="footer">
+			<diV><jsp:include page="bottomMenu.jsp"></jsp:include></div>
+		</div>
+		<!-- // 하단에 아이콘 버튼 이동 부분 -->
+	</div>
 
 
-    <!-- jquery, popper and bootstrap js -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="vendor/bootstrap-4.4.1/js/bootstrap.min.js"></script>
+	<!-- jquery, popper and bootstrap js -->
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="vendor/bootstrap-4.4.1/js/bootstrap.min.js"></script>
 
-    <!-- swiper js -->
-    <script src="vendor/swiper/js/swiper.min.js"></script>
+	<!-- swiper js -->
+	<script src="vendor/swiper/js/swiper.min.js"></script>
 
-    <!-- nouislider js -->
-    <script src="vendor/nouislider/nouislider.min.js"></script>
+	<!-- nouislider js -->
+	<script src="vendor/nouislider/nouislider.min.js"></script>
 
-    <!-- chart js -->
-    <script src="vendor/chartjs/Chart.min.js"></script>
-    <script src="vendor/chartjs/utils.js"></script>
+	<!-- chart js -->
+	<script src="vendor/chartjs/Chart.min.js"></script>
+	<script src="vendor/chartjs/utils.js"></script>
 
-    <!-- chosen multiselect js -->
-    <script src="vendor/chosen_v1.8.7/chosen.jquery.min.js"></script>
+	<!-- chosen multiselect js -->
+	<script src="vendor/chosen_v1.8.7/chosen.jquery.min.js"></script>
 
-    <!-- template custom js -->
-    <script src="js/main.js"></script>
+	<!-- template custom js -->
+	<script src="js/main.js"></script>
 
-    <!-- page level script -->
-    <script>
-        $(window).on('load', function() {});
-
-    </script>
+	<!-- page level script -->
+	<script>
+		$(window).on('load', function() {
+		});
+	</script>
 
 </body>
 

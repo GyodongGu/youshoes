@@ -28,7 +28,7 @@
 <!-- Custom styles for this template -->
 <link href="css/style.css" rel="stylesheet">
 
-<!-- Tab키 스크립트 및 CSS -->
+<!-- 탭 메뉴 스크립트 및 CSS -->
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="/resources/demos/style.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -36,17 +36,23 @@
 <!-- // Tab키 스크립트 및 CSS -->
 
 <!-- 탭 메뉴를 위한 스크립트 -->
-	<script>
-		$(function() {
-			$("#tabs").tabs({beforeLoad : function(event, ui) {
-				ui.jqXHR.fail(function() {
-					ui.panel.html("Couldn't load this tab. We'll try to fix this as soon as possible. "
-								+ "If this wouldn't be a demo.");
-					});
-				}
-			});
-		});
-	</script>
+<script>
+	$(function() {
+		$("#tabs")
+				.tabs(
+						{
+							beforeLoad : function(event, ui) {
+								ui.jqXHR
+										.fail(function() {
+											ui.panel
+													.html("Couldn't load this tab. We'll try to fix this as soon as possible. "
+															+ "If this wouldn't be a demo.");
+										});
+							}
+						});
+	});
+</script>
+<!-- // 탭 메뉴를 위한 스크립트 -->
 <script>
 	$(function() {
 		$("#accordion").accordion({
@@ -154,8 +160,9 @@ tr, td {
 		</div>
 	</div>
 	<!-- // 사이드바 -->
-	<!-- 상단에 따라다니는 줄 -->
+	
 	<div class="wrapper">
+		<!-- 상단에 따라다니는 줄 -->
 		<div class="header">
 			<div class="row no-gutters">
 				<div class="col-auto">
@@ -192,7 +199,7 @@ tr, td {
 			<div class="swiper-pagination"></div>
 		</div>
 		<!-- // 가게 사진 이미지 -->
-		
+
 		<!-- 가게별 페이지 -->
 		<div class="container">
 			<!-- 가게 문구  -->
@@ -201,11 +208,7 @@ tr, td {
 			<!-- // 가게 문구  -->
 			<!-- 가게 사진 이미지 -->
 			<p class="text-center">
-				<i class="material-icons h3 text-warning vm">star</i> 
-				<i class="material-icons h3 text-warning vm">star</i> 
-				<i class="material-icons h3 text-warning vm">star</i> 
-				<i class="material-icons h3 text-secondary vm">star</i> 
-				<i class="material-icons h3 text-secondary vm">star</i>
+				<i class="material-icons h3 text-warning vm">star</i> <i class="material-icons h3 text-warning vm">star</i> <i class="material-icons h3 text-warning vm">star</i> <i class="material-icons h3 text-secondary vm">star</i> <i class="material-icons h3 text-secondary vm">star</i>
 			</p>
 			<!-- // 가게 사진 이미지 -->
 			<!-- 가게별 페이지 탭 부분 -->
@@ -376,37 +379,38 @@ tr, td {
 
 			</div>
 		</div>
-		<!-- 가게별 페이지 탭 부분 -->
+		<!-- // 가게별 페이지 탭 부분 -->
+		
 		<!-- 하단에 아이콘 버튼 이동 부분 -->
-			<div class="footer">
-				<div class="no-gutters">
-					<div class="col-auto mx-auto">
-						<div class="row no-gutters justify-content-center">
-							<div class="col-auto">
-								<a href="pMem/pMem.jsp" class="btn btn-link-default "> <i class="material-icons">store_mall_directory</i>
-								</a>
-							</div>
-							<div class="col-auto">
-								<a href="pMem/orderHistory.jsp" class="btn btn-link-default"> <i class="material-icons">insert_chart_outline</i>
-								</a>
-							</div>
-							<div class="col-auto">
-								<a href="cart.html" class="btn btn-default shadow centerbutton"> <i class="material-icons">local_mall</i>
-								</a>
-							</div>
-							<div class="col-auto">
-								<a href="pMem/bookmark.jsp" class="btn btn-link-default"> <i class="material-icons">favorite</i>
-								</a>
-							</div>
-							<div class="col-auto">
-								<a href="pMem/profile.jsp" class="btn btn-link-default active"> <i class="material-icons">account_circle</i>
-								</a>
-							</div>
+		<div class="footer">
+			<div class="no-gutters">
+				<div class="col-auto mx-auto">
+					<div class="row no-gutters justify-content-center">
+						<div class="col-auto">
+							<a href="pMem/pMem.jsp" class="btn btn-link-default "> <i class="material-icons">store_mall_directory</i>
+							</a>
+						</div>
+						<div class="col-auto">
+							<a href="pMem/orderHistory.jsp" class="btn btn-link-default"> <i class="material-icons">insert_chart_outline</i>
+							</a>
+						</div>
+						<div class="col-auto">
+							<a href="cart.html" class="btn btn-default shadow centerbutton"> <i class="material-icons">local_mall</i>
+							</a>
+						</div>
+						<div class="col-auto">
+							<a href="pMem/bookmark.jsp" class="btn btn-link-default"> <i class="material-icons">favorite</i>
+							</a>
+						</div>
+						<div class="col-auto">
+							<a href="pMem/profile.jsp" class="btn btn-link-default active"> <i class="material-icons">account_circle</i>
+							</a>
 						</div>
 					</div>
 				</div>
 			</div>
-			<!-- // 하단에 아이콘 버튼 이동 부분 -->
+		</div>
+		<!-- // 하단에 아이콘 버튼 이동 부분 -->
 	</div>
 
 	<!-- swiper js -->

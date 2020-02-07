@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!doctype html>
-<html lang="en" class="blue-theme">
-
+<html lang="ko" class="blue-theme">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover, user-scalable=no">
@@ -37,27 +37,34 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <!-- // Tab키 스크립트 및 CSS -->
-
+<!-- 탭 메뉴를 위한 스크립트 -->
+<script>
+	$(function() {
+		$("#tabs")
+				.tabs(
+						{
+							beforeLoad : function(event, ui) {
+								ui.jqXHR
+										.fail(function() {
+											ui.panel
+													.html("Couldn't load this tab. We'll try to fix this as soon as possible. "
+															+ "If this wouldn't be a demo.");
+										});
+							}
+						});
+	});
+</script>
 </head>
 
 <body>
 	<div class="wrapper">
-		<!-- 상단에 따라다니는 줄 -->
+		<!-- 상단에 뒤로가기 버튼 있는 따라다니는 줄 -->
 		<div class="header">
-			<div class="row no-gutters">
-				<div class="col-auto">
-					<a href="javascript:void(0)" onclick="location.href='pMem.jsp'" class="btn  btn-link text-dark"> <i class="material-icons">navigate_before</i>
-					</a>
-				</div>
-				<div class="col text-center">
-					<img src="../img/logo.png" alt="logo" class="header-logo"> YouShoes
-				</div>
-				<div class="col-auto">
-					<a href="profile.jsp" class="btn  btn-link text-dark"><i class="material-icons">account_circle</i></a>
-				</div>
-			</div>
+			<diV><jsp:include page="topMenuBack.jsp"></jsp:include></div>
 		</div>
-		<!-- // 상단에 따라다니는 줄 -->
+		<!-- // 상단에 뒤로가기 버튼 있는 따라다니는 줄 -->
+
+
 		<!-- 내부 내용 전체 감싸는 부분 -->
 		<div class="container">
 			<!-- 프로필 이미지 사진  -->
@@ -84,79 +91,13 @@
 			</div>
 			<!-- // 프로필 탭 메뉴 -->
 
+
 			<!-- 하단에 아이콘 버튼 이동 부분 -->
 			<div class="footer">
-				<div class="no-gutters">
-					<div class="col-auto mx-auto">
-						<div class="row no-gutters justify-content-center">
-							<div class="col-auto">
-								<a href="pMem.jsp" class="btn btn-link-default "> <i class="material-icons">store_mall_directory</i>
-								</a>
-							</div>
-							<div class="col-auto">
-								<a href="orderHistory.jsp" class="btn btn-link-default"> <i class="material-icons">insert_chart_outline</i>
-								</a>
-							</div>
-							<div class="col-auto">
-								<a href="cart.html" class="btn btn-default shadow centerbutton"> <i class="material-icons">local_mall</i>
-								</a>
-							</div>
-							<div class="col-auto">
-								<a href="bookmark.jsp" class="btn btn-link-default"> <i class="material-icons">favorite</i>
-								</a>
-							</div>
-							<div class="col-auto">
-								<a href="profile.jsp" class="btn btn-link-default active"> <i class="material-icons">account_circle</i>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
+				<diV><jsp:include page="bottomMenu.jsp"></jsp:include></div>
 			</div>
 			<!-- // 하단에 아이콘 버튼 이동 부분 -->
 		</div>
 	</div>
-
-
-	<!-- jquery, popper and bootstrap js -->
-	<script src="js/jquery-3.3.1.min.js"></script>
-	<script src="js/popper.min.js"></script>
-	<script src="vendor/bootstrap-4.4.1/js/bootstrap.min.js"></script>
-
-	<!-- swiper js -->
-	<script src="vendor/swiper/js/swiper.min.js"></script>
-
-	<!-- nouislider js -->
-	<script src="vendor/nouislider/nouislider.min.js"></script>
-
-	<!-- chart js -->
-	<script src="vendor/chartjs/Chart.min.js"></script>
-	<script src="vendor/chartjs/utils.js"></script>
-
-	<!-- chosen multiselect js -->
-	<script src="vendor/chosen_v1.8.7/chosen.jquery.min.js"></script>
-
-	<!-- template custom js -->
-	<script src="js/main.js"></script>
-
-	<!-- page level script -->
-	<script>
-		$(window).on('load', function() {
-		});
-	</script>
-
-	<!-- 탭 메뉴를 위한 스크립트 -->
-	<script>
-		$(function() {
-			$("#tabs").tabs({beforeLoad : function(event, ui) {
-				ui.jqXHR.fail(function() {
-					ui.panel.html("Couldn't load this tab. We'll try to fix this as soon as possible. "
-								+ "If this wouldn't be a demo.");
-					});
-				}
-			});
-		});
-	</script>
 </body>
-
 </html>

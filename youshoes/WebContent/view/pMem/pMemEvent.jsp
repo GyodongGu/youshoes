@@ -8,7 +8,7 @@
 <meta name="description" content="">
 <meta name="author" content="Maxartkiller">
 
-<title>프로필</title>
+<title>구매 회원이 보는 이벤트</title>
 
 <!-- Material design icons CSS -->
 <link rel="stylesheet" href="../vendor/materializeicon/material-icons.css">
@@ -34,21 +34,13 @@
 
 <body>
 	<div class="wrapper">
-		<!-- 상단에 따라다니는 줄 -->
+		<!-- 상단에 뒤로가기 버튼 있는 따라다니는 줄 -->
 		<div class="header">
-			<div class="row no-gutters">
-				<div class="col-auto">
-					<a href="javascript:void(0)" onclick="location.href='pMem.jsp'" class="btn  btn-link text-dark"> <i class="material-icons">navigate_before</i></a>
-				</div>
-				<div class="col text-center">
-					<img src="../img/logo.png" alt="" class="header-logo"> YouSheos
-				</div>
-				<div class="col-auto">
-					<a href="profile.jsp" class="btn  btn-link text-dark"><i class="material-icons">account_circle</i></a>
-				</div>
-			</div>
+			<diV><jsp:include page="topMenuBack.jsp"></jsp:include></div>
 		</div>
-		<!-- // 상단에 따라다니는 줄 -->
+		<!-- // 상단에 뒤로가기 버튼 있는 따라다니는 줄 -->
+		
+		
 		<div class="container">
 			<p class="h3" align="center">현재 진행중인 이벤트</p>
 			<br>
@@ -98,32 +90,7 @@
 
 			<!-- 하단에 아이콘 버튼 이동 부분 -->
 			<div class="footer">
-				<div class="no-gutters">
-					<div class="col-auto mx-auto">
-						<div class="row no-gutters justify-content-center">
-							<div class="col-auto">
-								<a href="pMem.jsp" class="btn btn-link-default "> <i class="material-icons">store_mall_directory</i>
-								</a>
-							</div>
-							<div class="col-auto">
-								<a href="orderHistory.jsp" class="btn btn-link-default"> <i class="material-icons">insert_chart_outline</i>
-								</a>
-							</div>
-							<div class="col-auto">
-								<a href="cart.html" class="btn btn-default shadow centerbutton"> <i class="material-icons">local_mall</i>
-								</a>
-							</div>
-							<div class="col-auto">
-								<a href="bookmark.jsp" class="btn btn-link-default"> <i class="material-icons">favorite</i>
-								</a>
-							</div>
-							<div class="col-auto">
-								<a href="profile.jsp" class="btn btn-link-default active"> <i class="material-icons">account_circle</i>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
+				<diV><jsp:include page="bottomMenu.jsp"></jsp:include></div>
 			</div>
 			<!-- // 하단에 아이콘 버튼 이동 부분 -->
 		</div>

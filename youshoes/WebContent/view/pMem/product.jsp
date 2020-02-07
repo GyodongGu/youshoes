@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="Maxartkiller">
 
-    <title>Profile · GoFurniture</title>
+    <title>상품 페이지</title>
 
     <!-- Material design icons CSS -->
     <link rel="stylesheet" href="../vendor/materializeicon/material-icons.css">

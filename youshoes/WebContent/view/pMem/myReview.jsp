@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>내가 작성한 후기</title>
 <link href="../css/style.css" rel="stylesheet">
 </head>
 <body>

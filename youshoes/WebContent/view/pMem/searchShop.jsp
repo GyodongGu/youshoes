@@ -33,75 +33,27 @@
 </head>
 
 <body>
-	<!-- 사이드바 -->
-	<div class="sidebar">
-		<div class="text-center">
-			<div class="figure-menu shadow">
-				<figure>
-					<img src="../img/user1.png" alt="">
-				</figure>
-			</div>
-			<h5 class="mb-1 ">사용자 1</h5>
-			<p class="text-mute small">서울, 대한민국</p>
-		</div>
-		<br>
-		<div class="row mx-0">
-			<div class="col">
-				<div class="card mb-3 border-0 shadow-sm bg-template-light">
-					<div class="card-body">
-						<div class="row">
-							<div class="col">
-								<p class="text-secondary small mb-0">현재 포인트</p>
-								<h6 class="text-dark my-0">$2585.00</h6>
-							</div>
-							<div class="col-auto">
-								<button class="btn btn-default button-rounded-36 shadow">
-									<i class="material-icons">add</i>
-								</button>
-							</div>
-						</div>
-					</div>
-				</div>
-				<h5 class="subtitle text-uppercase">
-					<span>Menu</span>
-				</h5>
-				<div class="list-group main-menu">
-					<a href="searchShop.jsp" class="list-group-item list-group-item-action active">스토어</a> <a href="pMemEvent.jsp" class="list-group-item list-group-item-action">공지사항</a> <a href="product.jsp" class="list-group-item list-group-item-action">모든 제품</a> <a href="orderHistory.jsp" class="list-group-item list-group-item-action">주문내역</a> <a href="profile.jsp" class="list-group-item list-group-item-action">프로필</a> <a href="../login.jsp" class="list-group-item list-group-item-action mt-4">로그아웃</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- // 사이드바 -->
-	<!-- 상단에 따라다니는 줄 -->
 	<div class="wrapper">
+		<!-- 상단에 뒤로가기 버튼 있는 따라다니는 줄 -->
 		<div class="header">
-			<div class="row no-gutters">
-				<div class="col-auto">
-					<button class="btn  btn-link text-dark menu-btn">
-						<img src="../img/menu.png" alt=""> <span class="new-notification"></span>
-					</button>
-				</div>
-				<div class="col text-center">
-					<img src="../img/logo.png" alt="" class="header-logo"> YouSheos
-				</div>
-				<div class="col-auto">
-					<a href="profile.jsp" class="btn  btn-link text-dark"> <i class="material-icons">account_circle</i>
-					</a>
-				</div>
-			</div>
+			<diV><jsp:include page="topMenuBack.jsp"></jsp:include></div>
 		</div>
-		<!-- // 상단에 따라다니는 줄 -->
+		<!-- // 상단에 뒤로가기 버튼 있는 따라다니는 줄 -->
+
 		<!-- 내부 내용 전체 감싸는 부분 -->
 		<div class="container">
 			<!-- 검색창 부분 -->
 			<input type="text" class="form-control form-control-lg search my-3" placeholder="검색">
-			<!-- 구매 회원 상품검색페이지의 카테고리 -->
+			<!-- 구매 회원 가게검색페이지의 카테고리 -->
 			<div class="subtitle h6">
 				<div class="d-inline-block">
 					모든 가게<br>
 				</div>
 			</div>
+			<!-- // 구매 회원 가게검색페이지의 카테고리 -->
+			<!-- 구매 회원 가게검색페이지의 카테고리 내부 내용 -->
 			<div class="row">
+				<!-- 구매 회원 가게 검색 페이지의 하얀 작은 네모 1 -->
 				<div class="col-6 col-md-4 col-lg-3 col-xl-2">
 					<div class="card shadow-sm border-0 mb-4">
 						<div class="card-body">
@@ -120,6 +72,8 @@
 						</div>
 					</div>
 				</div>
+				<!-- // 구매 회원 가게 검색 페이지의 하얀 작은 네모 1 -->
+				<!-- 구매 회원 가게 검색 페이지의 하얀 작은 네모 2 -->
 				<div class="col-6 col-md-4 col-lg-3 col-xl-2">
 					<div class="card shadow-sm border-0 mb-4">
 						<div class="card-body">
@@ -131,13 +85,15 @@
 								<img src="../img/shop2.JPG" alt="" class="">
 							</figure>
 
-							<a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">가게2</a>
+							<a href="../shop.jsp" class="text-dark mb-1 mt-2 h6 d-block">가게2</a>
 							<button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right">
 								<i class="material-icons md-18">shopping_cart</i>
 							</button>
 						</div>
 					</div>
 				</div>
+				<!-- //  구매 회원 가게 검색 페이지의 하얀 작은 네모 2 -->
+				<!-- 구매 회원 가게 검색 페이지의 하얀 작은 네모 3 -->
 				<div class="col-6 col-md-4 col-lg-3 col-xl-2">
 					<div class="card shadow-sm border-0 mb-4">
 						<div class="card-body">
@@ -149,13 +105,15 @@
 								<img src="../img/shop3.JPG" alt="" class="">
 							</figure>
 
-							<a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">가게3</a>
+							<a href="../shop.jsp" class="text-dark mb-1 mt-2 h6 d-block">가게3</a>
 							<button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right">
 								<i class="material-icons md-18">shopping_cart</i>
 							</button>
 						</div>
 					</div>
 				</div>
+				<!-- // 구매 회원 가게 검색 페이지의 하얀 작은 네모 3 -->
+				<!-- 구매 회원 가게 검색 페이지의 하얀 작은 네모 4 -->
 				<div class="col-6 col-md-4 col-lg-3 col-xl-2">
 					<div class="card shadow-sm border-0 mb-4">
 						<div class="card-body">
@@ -167,13 +125,15 @@
 								<img src="../img/shop4.JPG" alt="" class="">
 							</figure>
 
-							<a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">가게4</a>
+							<a href="../shop.jsp" class="text-dark mb-1 mt-2 h6 d-block">가게4</a>
 							<button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right">
 								<i class="material-icons md-18">shopping_cart</i>
 							</button>
 						</div>
 					</div>
 				</div>
+				<!-- // 구매 회원 가게 검색 페이지의 하얀 작은 네모 4 -->
+				<!-- 구매 회원 가게 검색 페이지의 하얀 작은 네모 5 -->
 				<div class="col-6 col-md-4 col-lg-3 col-xl-2">
 					<div class="card shadow-sm border-0 mb-4">
 						<div class="card-body">
@@ -185,13 +145,15 @@
 								<img src="../img/shop5.JPG" alt="" class="">
 							</figure>
 
-							<a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">가게5</a>
+							<a href="../shop.jsp" class="text-dark mb-1 mt-2 h6 d-block">가게5</a>
 							<button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right">
 								<i class="material-icons md-18">shopping_cart</i>
 							</button>
 						</div>
 					</div>
 				</div>
+				<!-- // 구매 회원 가게 검색 페이지의 하얀 작은 네모 5 -->
+				<!-- 구매 회원 가게 검색 페이지의 하얀 작은 네모 6 -->
 				<div class="col-6 col-md-4 col-lg-3 col-xl-2">
 					<div class="card shadow-sm border-0 mb-4">
 						<div class="card-body">
@@ -203,13 +165,15 @@
 								<img src="../img/shop6.PNG" alt="" class="">
 							</figure>
 
-							<a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">가게6</a>
+							<a href="../shop.jsp" class="text-dark mb-1 mt-2 h6 d-block">가게6</a>
 							<button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right">
 								<i class="material-icons md-18">shopping_cart</i>
 							</button>
 						</div>
 					</div>
 				</div>
+				<!-- // 구매 회원 가게 검색 페이지의 하얀 작은 네모 6 -->
+				<!-- 구매 회원 가게 검색 페이지의 하얀 작은 네모 7 -->
 				<div class="col-6 col-md-4 col-lg-3 col-xl-2">
 					<div class="card shadow-sm border-0 mb-4">
 						<div class="card-body">
@@ -221,13 +185,15 @@
 								<img src="../img/shop7.PNG" alt="" class="">
 							</figure>
 
-							<a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">가게7</a>
+							<a href="../shop.jsp" class="text-dark mb-1 mt-2 h6 d-block">가게7</a>
 							<button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right">
 								<i class="material-icons md-18">shopping_cart</i>
 							</button>
 						</div>
 					</div>
 				</div>
+				<!-- // 구매 회원 가게 검색 페이지의 하얀 작은 네모 7 -->
+				<!-- 구매 회원 가게 검색 페이지의 하얀 작은 네모 8 -->
 				<div class="col-6 col-md-4 col-lg-3 col-xl-2">
 					<div class="card shadow-sm border-0 mb-4">
 						<div class="card-body">
@@ -239,13 +205,15 @@
 								<img src="../img/shop8.PNG" alt="" class="">
 							</figure>
 
-							<a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">가게8</a>
+							<a href="../shop.jsp" class="text-dark mb-1 mt-2 h6 d-block">가게8</a>
 							<button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right">
 								<i class="material-icons md-18">shopping_cart</i>
 							</button>
 						</div>
 					</div>
 				</div>
+				<!-- // 구매 회원 가게 검색 페이지의 하얀 작은 네모 8 -->
+				<!-- 구매 회원 가게 검색 페이지의 하얀 작은 네모 9 -->
 				<div class="col-6 col-md-4 col-lg-3 col-xl-2">
 					<div class="card shadow-sm border-0 mb-4">
 						<div class="card-body">
@@ -257,13 +225,15 @@
 								<img src="../img/shop9.PNG" alt="" class="">
 							</figure>
 
-							<a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">가게9</a>
+							<a href="../shop.jsp" class="text-dark mb-1 mt-2 h6 d-block">가게9</a>
 							<button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right">
 								<i class="material-icons md-18">shopping_cart</i>
 							</button>
 						</div>
 					</div>
 				</div>
+				<!-- // 구매 회원 가게 검색 페이지의 하얀 작은 네모 9 -->
+				<!-- 구매 회원 가게 검색 페이지의 하얀 작은 네모 10 -->
 				<div class="col-6 col-md-4 col-lg-3 col-xl-2">
 					<div class="card shadow-sm border-0 mb-4">
 						<div class="card-body">
@@ -275,13 +245,15 @@
 								<img src="../img/shop1.jpg" alt="" class="">
 							</figure>
 
-							<a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">가게10</a>
+							<a href="../shop.jsp" class="text-dark mb-1 mt-2 h6 d-block">가게10</a>
 							<button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right">
 								<i class="material-icons md-18">shopping_cart</i>
 							</button>
 						</div>
 					</div>
 				</div>
+				<!-- // 구매 회원 가게 검색 페이지의 하얀 작은 네모 10 -->
+				<!-- 구매 회원 가게 검색 페이지의 하얀 작은 네모 11 -->
 				<div class="col-6 col-md-4 col-lg-3 col-xl-2">
 					<div class="card shadow-sm border-0 mb-4">
 						<div class="card-body">
@@ -293,13 +265,15 @@
 								<img src="../img/shop2.JPG" alt="" class="">
 							</figure>
 
-							<a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">가게11</a>
+							<a href="../shop.jsp" class="text-dark mb-1 mt-2 h6 d-block">가게11</a>
 							<button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right">
 								<i class="material-icons md-18">shopping_cart</i>
 							</button>
 						</div>
 					</div>
 				</div>
+				<!-- // 구매 회원 가게 검색 페이지의 하얀 작은 네모 11 -->
+				<!-- 구매 회원 가게 검색 페이지의 하얀 작은 네모 12 -->
 				<div class="col-6 col-md-4 col-lg-3 col-xl-2">
 					<div class="card shadow-sm border-0 mb-4">
 						<div class="card-body">
@@ -311,49 +285,27 @@
 								<img src="../img/shop3.JPG" alt="" class="">
 							</figure>
 
-							<a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">가게12</a>
+							<a href="../shop.jsp" class="text-dark mb-1 mt-2 h6 d-block">가게12</a>
 							<button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right">
 								<i class="material-icons md-18">shopping_cart</i>
 							</button>
 						</div>
 					</div>
 				</div>
+				<!-- // 구매 회원 가게 검색 페이지의 하얀 작은 네모 12 -->
 			</div>
+			<!-- // 구매 회원 가게검색페이지의 카테고리 내부 내용 -->
 		</div>
-		
+		<!-- // 내부 내용 전체 감싸는 부분 -->
+
 		<!-- 하단에 아이콘 버튼 이동 부분 -->
 		<div class="footer">
-			<div class="no-gutters">
-				<div class="col-auto mx-auto">
-					<div class="row no-gutters justify-content-center">
-						<div class="col-auto">
-							<a href="pMem.jsp" class="btn btn-link-default active"> <i class="material-icons">store_mall_directory</i>
-							</a>
-						</div>
-						<div class="col-auto">
-							<a href="orderHistory.jsp" class="btn btn-link-default"> <i class="material-icons">insert_chart_outline</i>
-							</a>
-						</div>
-						<div class="col-auto">
-							<a href="cart.html" class="btn btn-default shadow centerbutton"> <i class="material-icons">local_mall</i>
-							</a>
-						</div>
-						<div class="col-auto">
-							<a href="bookmark.jsp" class="btn btn-link-default"> <i class="material-icons">favorite</i>
-							</a>
-						</div>
-						<div class="col-auto">
-							<a href="profile.jsp" class="btn btn-link-default"> <i class="material-icons">account_circle</i>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
+			<diV><jsp:include page="bottomMenu.jsp"></jsp:include></div>
 		</div>
 		<!-- // 하단에 아이콘 버튼 이동 부분 -->
 	</div>
-	
-	
+
+
 	<!-- jquery, popper and bootstrap js -->
 	<script src="../js/jquery-3.3.1.min.js"></script>
 	<script src="../js/popper.min.js"></script>

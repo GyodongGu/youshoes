@@ -127,24 +127,11 @@
 	
 	
 	<div class="wrapper">
-		<!-- 위에 따라 다니는 거 -->
+		<!-- 프로필 볼 수 있는 상단 메뉴바 -->
 		<div class="header">
-			<div class="row no-gutters">
-				<div class="col-auto">
-					<button class="btn  btn-link text-dark menu-btn">
-						<img src="../img/menu.png" alt="">
-						<span class="new-notification"></span>
-					</button>
-				</div>
-				<div class="col text-center">
-					<img src="../img/logo.png" alt="" class="header-logo"> YouShoes
-				</div>
-				<div class="col-auto">
-					<a href="profile.jsp" class="btn  btn-link text-dark"><i class="material-icons">account_circle</i></a>
-				</div>
-			</div>
+			<diV><jsp:include page="topMenu.jsp"></jsp:include></div>
 		</div>
-		<!-- // 위에 따라 다니는 거 -->
+		<!-- // 프로필 볼 수 있는 상단 메뉴바 -->
 		
 		<div class="container">
 			<!-- 내부 내용 -->
@@ -253,35 +240,11 @@
 				<!-- // 내부 내용 흰색 네모 4 -->
 			</div>
 		</div>
-		<!-- 하단에 따라다니는 메뉴바 -->
-		<div class="footer">
-			<div class="no-gutters">
-				<div class="col-auto mx-auto">
-					<div class="row no-gutters justify-content-center">
-						<div class="col-auto">
-							<a href="pMem.jsp" class="btn btn-link-default"> <i class="material-icons">store_mall_directory</i>
-							</a>
-						</div>
-						<div class="col-auto">
-							<a href="orderHistory.jsp" class="btn btn-link-default"> <i class="material-icons">insert_chart_outline</i>
-							</a>
-						</div>
-						<div class="col-auto">
-							<a href="#" class="btn btn-default shadow centerbutton"> <i class="material-icons">local_mall</i>
-							</a>
-						</div>
-						<div class="col-auto">
-							<a href="bookmark.jsp" class="btn btn-link-default active"> <i class="material-icons">favorite</i>
-							</a>
-						</div>
-						<div class="col-auto">
-							<a href="profile.jsp" class="btn btn-link-default"> <i class="material-icons">account_circle</i>
-							</a>
-						</div>
-					</div>
-				</div>
+		<!-- 하단에 아이콘 버튼 이동 부분 -->
+			<div class="footer">
+				<diV><jsp:include page="bottomMenu.jsp"></jsp:include></div>
 			</div>
-		</div>
+		<!-- // 하단에 아이콘 버튼 이동 부분 -->
 	</div>
 	<!-- jquery, popper and bootstrap js -->
 	<script src="js/jquery-3.3.1.min.js"></script>
