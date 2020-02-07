@@ -399,7 +399,7 @@ tr, td {
 								</a>
 							</div>
 							<div class="col-auto">
-								<a href="pMem/profile.jsp" class="btn btn-link-default active"> <i class="material-icons">account_circle</i>
+								<a href="pMem/profile.jsp" class="btn btn-link-default"> <i class="material-icons">account_circle</i>
 								</a>
 							</div>
 						</div>
@@ -420,5 +420,6 @@ tr, td {
 
 	<!-- template custom js -->
 	<script src="js/main.js"></script>
+
 </body>
 </html>
