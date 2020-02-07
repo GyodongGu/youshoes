@@ -10,12 +10,6 @@
 
 <title>환영합니다.</title>
 
-<!-- Material design icons CSS -->
-<link rel="stylesheet" href="view/vendor/materializeicon/material-icons.css">
-
-<!-- Roboto fonts CSS -->
-<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
-
 <!-- Bootstrap core CSS -->
 <link href="view/vendor/bootstrap-4.4.1/css/bootstrap.min.css" rel="stylesheet">
 
@@ -35,7 +29,7 @@
 		<div class="swiper-wrapper">
 			<div class="swiper-slide overflow-hidden bg-success text-white">
 				<div class="row no-gutters h-100">
-					<img src="view/img/shoes19.png" alt="" class="pinapple right-image align-self-center">
+					<img src="view/img/shoes19-1.png" alt="" class="pinapple right-image align-self-center">
 					<div class="col align-self-center px-3">
 						<div class="row">
 							<div class="container">
@@ -56,17 +50,6 @@
 
 
 
-
-	<!-- jquery, popper and bootstrap js -->
-	<script src="view/js/jquery-3.3.1.min.js"></script>
-	<script src="view/js/popper.min.js"></script>
-	<script src="view/vendor/bootstrap-4.4.1/js/bootstrap.min.js"></script>
-
-	<!-- swiper js -->
-	<script src="view/vendor/swiper/js/swiper.min.js"></script>
-
-	<!-- template custom js -->
-	<script src="view/js/main.js"></script>
 
 	<!-- page level script -->
 	<script>

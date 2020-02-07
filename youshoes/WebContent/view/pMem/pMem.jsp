@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!doctype html>
 <html lang="en" class="blue-theme">
 
@@ -10,32 +11,30 @@
 
 <title>구매 회원 메인</title>
 
-<!-- Material design icons CSS -->
+<!-- Material 디자인 아이콘 CSS -->
 <link rel="stylesheet" href="../vendor/materializeicon/material-icons.css">
 
-<!-- Roboto fonts CSS -->
-<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
 
-<!-- Bootstrap core CSS -->
+<!-- 부트스트랩 core CSS -->
 <link href="../vendor/bootstrap-4.4.1/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Swiper CSS -->
+<!-- 카테고리 넘기는 swiper CSS 및 js -->
 <link href="../vendor/swiper/css/swiper.min.css" rel="stylesheet">
+<script src="../vendor/swiper/js/swiper.min.js"></script>
+<!--//  카테고리 넘기는 swiper CSS 및 js -->
 
-<!-- Custom styles for this template -->
-<link href="../css/style.css" rel="stylesheet">
-<!-- jquery, popper and bootstrap js -->
+<!-- 상단 메뉴바의 왼쪽 사이드 열기 위해 필요한 CSS 및 js -->
 <script src="../js/jquery-3.3.1.min.js"></script>
 <script src="../js/popper.min.js"></script>
 <script src="../vendor/bootstrap-4.4.1/js/bootstrap.min.js"></script>
+<link href="../css/style.css" rel="stylesheet">
+<!-- // 상단 메뉴바의 왼쪽 사이드 열기 위해 필요한 CSS -->
 
-<!-- swiper js -->
-<script src="../vendor/swiper/js/swiper.min.js"></script>
 
-<!-- template custom js -->
+<!-- 이미지가 들어가지 않은 img태그의  공간 표시 js -->
 <script src="../js/main.js"></script>
 
-<!-- page level script -->
+<!-- 카테고리 넘기는 swiper 스크립트 -->
 <script>
 	$(window).on('load', function() {
 		/* swiper slider carousel */
@@ -82,6 +81,7 @@
 		});
 	});
 </script>
+<!-- //  카테고리 넘기는 swiper 스크립트 -->
 
 </head>
 
@@ -125,7 +125,7 @@
 		</div>
 	</div>
 	<!-- // 사이드바 -->
-	
+
 	<div class="wrapper">
 		<!-- 프로필 볼 수 있는 상단 메뉴바 -->
 		<div class="header">
@@ -139,7 +139,7 @@
 			<input type="text" class="form-control form-control-lg search my-3" placeholder="검색">
 
 			<!-- 구매 회원 메인페이지의 카테고리 -->
-			<h6 class="subtitle">카테고리</h6>
+			<h6 class="subtitle">인기상품</h6>
 			<div class="row">
 				<div class="swiper-container small-slide">
 					<!-- Swiper, 카테고리 내부에 하얀 네모 1 -->
@@ -151,9 +151,9 @@
 										<img src="../img/shoes08.png" alt="" class="small-slide-right">
 										<div class="col-8">
 											<button class="btn btn-sm btn-link p-0">
-												<i class="material-icons md-18">favorite_outline</i>
+												<i class="material-icons md-18">star_border</i>
 											</button>
-											<a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">남성기성</a>
+											<a href="../shop.jsp" class="text-dark mb-1 mt-2 h6 d-block">남성기성</a>
 										</div>
 									</div>
 								</div>
@@ -165,12 +165,12 @@
 							<div class="card shadow-sm border-0">
 								<div class="card-body">
 									<div class="row no-gutters h-100">
-										<img src="../img/shoes9.png" alt="" class="small-slide-right">
+										<img src="../img/shoes09.png" alt="" class="small-slide-right">
 										<div class="col-8">
 											<button class="btn btn-sm btn-link p-0">
-												<i class="material-icons md-18">favorite</i>
+												<i class="material-icons md-18">star_border</i>
 											</button>
-											<a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">여성기성</a>
+											<a href="../shop.jsp" class="text-dark mb-1 mt-2 h6 d-block">여성기성</a>
 										</div>
 									</div>
 								</div>
@@ -182,12 +182,12 @@
 							<div class="card shadow-sm border-0">
 								<div class="card-body">
 									<div class="row no-gutters h-100">
-										<img src="../img/shoes3.png" alt="" class="small-slide-right">
+										<img src="../img/shoes10.png" alt="" class="small-slide-right">
 										<div class="col-9">
 											<button class="btn btn-sm btn-link p-0">
-												<i class="material-icons md-18">favorite_outline</i>
+												<i class="material-icons md-18">star_border</i>
 											</button>
-											<a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">남성수제</a>
+											<a href="../shop.jsp" class="text-dark mb-1 mt-2 h6 d-block">남성수제</a>
 										</div>
 									</div>
 								</div>
@@ -202,9 +202,9 @@
 										<img src="../img/shoes7.png" alt="" class="small-slide-right">
 										<div class="col-8">
 											<button class="btn btn-sm btn-link p-0">
-												<i class="material-icons md-18">favorite_outline</i>
+												<i class="material-icons md-18">star_border</i>
 											</button>
-											<a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">여성수제</a>
+											<a href="../shop.jsp" class="text-dark mb-1 mt-2 h6 d-block">여성수제</a>
 										</div>
 									</div>
 								</div>
@@ -216,12 +216,12 @@
 							<div class="card shadow-sm border-0">
 								<div class="card-body">
 									<div class="row no-gutters h-100">
-										<img src="../img/shoes5.png" alt="" class="small-slide-right">
+										<img src="../img/shoes12.png" alt="" class="small-slide-right">
 										<div class="col-8">
 											<button class="btn btn-sm btn-link p-0">
-												<i class="material-icons md-18">favorite</i>
+												<i class="material-icons md-18">star_border</i>
 											</button>
-											<a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">남성 구두</a>
+											<a href="../shop.jsp" class="text-dark mb-1 mt-2 h6 d-block">남성 구두</a>
 										</div>
 									</div>
 								</div>
@@ -233,12 +233,12 @@
 							<div class="card shadow-sm border-0">
 								<div class="card-body">
 									<div class="row no-gutters h-100">
-										<img src="../img/shoes6.png" alt="" class="small-slide-right">
+										<img src="../img/shoes13.png" alt="" class="small-slide-right">
 										<div class="col-9">
 											<button class="btn btn-sm btn-link p-0">
-												<i class="material-icons md-18">favorite_outline</i>
+												<i class="material-icons md-18">star_border</i>
 											</button>
-											<a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">여자 구두</a>
+											<a href="../shop.jsp" class="text-dark mb-1 mt-2 h6 d-block">여자 구두</a>
 										</div>
 									</div>
 								</div>
@@ -250,12 +250,12 @@
 							<div class="card shadow-sm border-0">
 								<div class="card-body">
 									<div class="row no-gutters h-100">
-										<img src="../img/shoes1.png" alt="" class="small-slide-right">
+										<img src="../img/shoes14.jpg" alt="" class="small-slide-right">
 										<div class="col-8">
 											<button class="btn btn-sm btn-link p-0">
-												<i class="material-icons md-18">favorite_outline</i>
+												<i class="material-icons md-18">star_border</i>
 											</button>
-											<a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">남성신발</a>
+											<a href="../shop.jsp" class="text-dark mb-1 mt-2 h6 d-block">남성신발</a>
 										</div>
 									</div>
 								</div>
@@ -267,12 +267,12 @@
 							<div class="card shadow-sm border-0">
 								<div class="card-body">
 									<div class="row no-gutters h-100">
-										<img src="../img/shoes5.png" alt="" class="small-slide-right">
+										<img src="../img/shoes15.jpg" alt="" class="small-slide-right">
 										<div class="col-8">
 											<button class="btn btn-sm btn-link p-0">
-												<i class="material-icons md-18">favorite</i>
+												<i class="material-icons md-18">star_border</i>
 											</button>
-											<a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">여성 신발</a>
+											<a href="../shop.jsp" class="text-dark mb-1 mt-2 h6 d-block">여성 신발</a>
 										</div>
 									</div>
 								</div>
@@ -284,12 +284,12 @@
 							<div class="card shadow-sm border-0">
 								<div class="card-body">
 									<div class="row no-gutters h-100">
-										<img src="../img/shoes2.png" alt="" class="small-slide-right">
+										<img src="../img/shoes16.png" alt="" class="small-slide-right">
 										<div class="col-9">
 											<button class="btn btn-sm btn-link p-0">
-												<i class="material-icons md-18">favorite_outline</i>
+												<i class="material-icons md-18">star_border</i>
 											</button>
-											<a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">누구신발</a>
+											<a href="../shop.jsp" class="text-dark mb-1 mt-2 h6 d-block">누구신발</a>
 										</div>
 									</div>
 								</div>
@@ -307,13 +307,10 @@
 				<div class="col-6 col-md-4 col-lg-3 col-xl-2">
 					<div class="card shadow-sm border-0 mb-4">
 						<div class="card-body">
-							<button class="btn btn-sm btn-link p-0">
-								<i class="material-icons md-18">favorite_outline</i>
-							</button>
 							<figure class="product-image">
 								<img src="../img/shop1.jpg" alt="" class="">
 							</figure>
-							<a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">가게1</a>
+							<a href="../shop.jsp" class="text-dark mb-1 mt-2 h6 d-block">가게1</a>
 							<button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right">
 								<i class="material-icons md-18">shopping_cart</i>
 							</button>
@@ -323,13 +320,10 @@
 				<div class="col-6 col-md-4 col-lg-3 col-xl-2">
 					<div class="card shadow-sm border-0 mb-4">
 						<div class="card-body">
-							<button class="btn btn-sm btn-link p-0">
-								<i class="material-icons md-18">favorite_outline</i>
-							</button>
 							<figure class="product-image">
 								<img src="../img/shop2.JPG" alt="" class="">
 							</figure>
-							<a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">가게2</a>
+							<a href="../shop.jsp" class="text-dark mb-1 mt-2 h6 d-block">가게2</a>
 							<button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right">
 								<i class="material-icons md-18">shopping_cart</i>
 							</button>
@@ -339,13 +333,10 @@
 				<div class="col-6 col-md-4 col-lg-3 col-xl-2">
 					<div class="card shadow-sm border-0 mb-4">
 						<div class="card-body">
-							<button class="btn btn-sm btn-link p-0">
-								<i class="material-icons md-18">favorite_outline</i>
-							</button>
 							<figure class="product-image">
 								<img src="../img/shop3.JPG" alt="" class="">
 							</figure>
-							<a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">가게3</a>
+							<a href="../shop.jsp" class="text-dark mb-1 mt-2 h6 d-block">가게3</a>
 							<button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right">
 								<i class="material-icons md-18">shopping_cart</i>
 							</button>
@@ -355,13 +346,10 @@
 				<div class="col-6 col-md-4 col-lg-3 col-xl-2">
 					<div class="card shadow-sm border-0 mb-4">
 						<div class="card-body">
-							<button class="btn btn-sm btn-link p-0">
-								<i class="material-icons md-18">favorite_outline</i>
-							</button>
 							<figure class="product-image">
 								<img src="../img/shop4.JPG" alt="" class="">
 							</figure>
-							<a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">가게4</a>
+							<a href="../shop.jsp" class="text-dark mb-1 mt-2 h6 d-block">가게4</a>
 							<button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right">
 								<i class="material-icons md-18">shopping_cart</i>
 							</button>
@@ -371,13 +359,10 @@
 				<div class="col-6 col-md-4 col-lg-3 col-xl-2">
 					<div class="card shadow-sm border-0 mb-4">
 						<div class="card-body">
-							<button class="btn btn-sm btn-link p-0">
-								<i class="material-icons md-18">favorite_outline</i>
-							</button>
 							<figure class="product-image">
 								<img src="../img/shop5.JPG" alt="" class="">
 							</figure>
-							<a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">가게5</a>
+							<a href="../shop.jsp" class="text-dark mb-1 mt-2 h6 d-block">가게5</a>
 							<button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right">
 								<i class="material-icons md-18">shopping_cart</i>
 							</button>
@@ -387,13 +372,10 @@
 				<div class="col-6 col-md-4 col-lg-3 col-xl-2">
 					<div class="card shadow-sm border-0 mb-4">
 						<div class="card-body">
-							<button class="btn btn-sm btn-link p-0">
-								<i class="material-icons md-18">favorite_outline</i>
-							</button>
 							<figure class="product-image">
 								<img src="../img/shop6.PNG" alt="" class="">
 							</figure>
-							<a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">가게6</a>
+							<a href="../shop.jsp" class="text-dark mb-1 mt-2 h6 d-block">가게6</a>
 							<button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right">
 								<i class="material-icons md-18">shopping_cart</i>
 							</button>
@@ -442,9 +424,9 @@
 		</div>
 		<!-- // 이용약관 등 4개 페이지  -->
 		<!-- 하단에 아이콘 버튼 이동 부분 -->
-			<div class="footer">
-				<diV><jsp:include page="bottomMenu.jsp"></jsp:include></div>
-			</div>
+		<div class="footer">
+			<diV><jsp:include page="bottomMenu.jsp"></jsp:include></div>
+		</div>
 		<!-- // 하단에 아이콘 버튼 이동 부분 -->
 	</div>
 </body>

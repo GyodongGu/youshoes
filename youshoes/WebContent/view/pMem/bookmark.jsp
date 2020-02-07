@@ -10,129 +10,70 @@
 
 <title>즐겨찾기</title>
 
-<!-- Material design icons CSS -->
-    <link rel="stylesheet" href="../vendor/materializeicon/material-icons.css">
-
-    <!-- Roboto fonts CSS -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
-
-    <!-- Bootstrap core CSS -->
-    <link href="../vendor/bootstrap-4.4.1/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Swiper CSS -->
-    <link href="../vendor/swiper/css/swiper.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="../css/style.css" rel="stylesheet">
-    <!-- jquery, popper and bootstrap js -->
-    <script src="../js/jquery-3.3.1.min.js"></script>
-    <script src="../js/popper.min.js"></script>
-    <script src="../vendor/bootstrap-4.4.1/js/bootstrap.min.js"></script>
-
-    <!-- swiper js -->
-    <script src="../vendor/swiper/js/swiper.min.js"></script>
-
-    <!-- template custom js -->
-    <script src="../js/main.js"></script>
-
-    <!-- page level script -->
-    <script>
-        $(window).on('load', function() {
-            /* swiper slider carousel */
-            var swiper = new Swiper('.small-slide', {
-                slidesPerView: 'auto',
-                spaceBetween: 0,
-            });
-
-            var swiper = new Swiper('.news-slide', {
-                slidesPerView: 5,
-                spaceBetween: 0,
-                pagination: {
-                    el: '.swiper-pagination',
-                },
-                breakpoints: {
-                    1024: {
-                        slidesPerView: 4,
-                        spaceBetween: 0,
-                    },
-                    768: {
-                        slidesPerView: 3,
-                        spaceBetween: 0,
-                    },
-                    640: {
-                        slidesPerView: 2,
-                        spaceBetween: 0,
-                    },
-                    320: {
-                        slidesPerView: 2,
-                        spaceBetween: 0,
-                    }
-                }
-            });
-
-            /* notification view and hide */
-            setTimeout(function() {
-                $('.notification').addClass('active');
-                setTimeout(function() {
-                    $('.notification').removeClass('active');
-                }, 3500);
-            }, 500);
-            $('.closenotification').on('click', function() {
-                $(this).closest('.notification').removeClass('active')
-            });
-        });
-
-    </script>
+<!-- 상단 메뉴바의 왼쪽 사이드 열기 위해 필요한 CSS -->
+<link href="../css/style.css" rel="stylesheet">
+<!-- 우리쪽에 있는 템플릿 css -->
+<script src="../js/jquery-3.3.1.min.js"></script>
+<!-- jquery js -->
+<script src="../js/popper.min.js"></script>
+<!-- popper js -->
+<script src="../vendor/bootstrap-4.4.1/js/bootstrap.min.js"></script>
+<!-- bootstrap js -->
+<script src="../js/main.js"></script>
+<!-- template custom js -->
+<!-- // 상단 메뉴바의 왼쪽 사이드 열기 위해 필요한 CSS -->
 </head>
+
 
 <body>
 	<!-- 사이드바 -->
-    <div class="sidebar">
-        <div class="text-center">
-            <div class="figure-menu shadow">
-                <figure><img src="img/user1.png" alt=""></figure>
-            </div>
-            <h5 class="mb-1 ">사용자 1</h5>
-            <p class="text-mute small">서울, 대한민국</p>
-        </div>
-        <br>
-        <div class="row mx-0">
-            <div class="col">
-                <div class="card mb-3 border-0 shadow-sm bg-template-light">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col">
-                                <p class="text-secondary small mb-0">현재 포인트</p>
-                                <h6 class="text-dark my-0">$2585.00</h6>
-                            </div>
-                            <div class="col-auto">
-                                <button class="btn btn-default button-rounded-36 shadow"><i class="material-icons">add</i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <h5 class="subtitle text-uppercase"><span>Menu</span></h5>
-                <div class="list-group main-menu">
-                    <a href="pMem.jsp" class="list-group-item list-group-item-action active">스토어</a>
-                    <a href="notification.html" class="list-group-item list-group-item-action">공지사항<span class="badge badge-dark text-white">2</span></a>
-                    <a href="all-products.html" class="list-group-item list-group-item-action">모든 제품</a>
-                    <a href="orderHistory.jsp" class="list-group-item list-group-item-action">주문내역</a>
-                    <a href="profile.jsp" class="list-group-item list-group-item-action">프로필</a>
-                    <a href="#" class="list-group-item list-group-item-action mt-4">로그아웃</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- // 사이드바 -->
-	
-	
+	<div class="sidebar">
+		<div class="text-center">
+			<div class="figure-menu shadow">
+				<figure>
+					<img src="img/user1.png" alt="">
+				</figure>
+			</div>
+			<h5 class="mb-1 ">사용자 1</h5>
+			<p class="text-mute small">서울, 대한민국</p>
+		</div>
+		<br>
+		<div class="row mx-0">
+			<div class="col">
+				<div class="card mb-3 border-0 shadow-sm bg-template-light">
+					<div class="card-body">
+						<div class="row">
+							<div class="col">
+								<p class="text-secondary small mb-0">현재 포인트</p>
+								<h6 class="text-dark my-0">$2585.00</h6>
+							</div>
+							<div class="col-auto">
+								<button class="btn btn-default button-rounded-36 shadow">
+									<i class="material-icons">add</i>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<h5 class="subtitle text-uppercase">
+					<span>Menu</span>
+				</h5>
+				<div class="list-group main-menu">
+					<a href="pMem.jsp" class="list-group-item list-group-item-action active">스토어</a> <a href="notification.html" class="list-group-item list-group-item-action">공지사항<span class="badge badge-dark text-white">2</span></a> <a href="all-products.html" class="list-group-item list-group-item-action">모든 제품</a> <a href="orderHistory.jsp" class="list-group-item list-group-item-action">주문내역</a> <a href="profile.jsp" class="list-group-item list-group-item-action">프로필</a> <a href="#" class="list-group-item list-group-item-action mt-4">로그아웃</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- // 사이드바 -->
+
+
 	<div class="wrapper">
 		<!-- 프로필 볼 수 있는 상단 메뉴바 -->
 		<div class="header">
 			<diV><jsp:include page="topMenu.jsp"></jsp:include></div>
 		</div>
 		<!-- // 프로필 볼 수 있는 상단 메뉴바 -->
-		
+
 		<div class="container">
 			<!-- 내부 내용 -->
 			<div class="subtitle h6">
@@ -150,14 +91,19 @@
 					<div class="card shadow-sm border-0 mb-4">
 						<div class="card-body">
 							<button class="btn btn-sm btn-link p-0">
-								<i class="material-icons md-18">favorite_outline</i>
+								<i id="starIcon" class="material-icons md-18">star_border</i>
 							</button>
+							<!-- <script>
+								function chageStar() {
+									document.getElementById("starIcon") = "star";
+								}
+							</script> -->
 
 							<figure class="product-image">
 								<img src="../img/shoes1.png" alt="" class="">
 							</figure>
-							
-							
+
+
 							<a href="#" class="text-dark mb-1 mt-2 h6 d-block">남성 수제</a>
 							<h5 class="text-success font-weight-normal mb-0">
 								$ 120<sup>.00</sup>
@@ -174,7 +120,7 @@
 					<div class="card shadow-sm border-0 mb-4">
 						<div class="card-body">
 							<button class="btn btn-sm btn-link p-0">
-								<i class="material-icons md-18">favorite_outline</i>
+								<i class="material-icons md-18">star_border</i>
 							</button>
 
 							<figure class="product-image">
@@ -196,8 +142,8 @@
 				<div class="col-6 col-md-4 col-lg-3 col-xl-2">
 					<div class="card shadow-sm border-0 mb-4">
 						<div class="card-body">
-							<button class="btn btn-sm btn-link p-0">
-								<i class="material-icons md-18">favorite_outline</i>
+							<button type="button" class="btn btn-sm btn-link p-0">
+								<i id="starImg" class="material-icons md-18">star</i>
 							</button>
 
 							<figure class="product-image">
@@ -220,7 +166,7 @@
 					<div class="card shadow-sm border-0 mb-4">
 						<div class="card-body">
 							<button class="btn btn-sm btn-link p-0">
-								<i class="material-icons md-18">favorite_outline</i>
+								<i class="material-icons md-18">star_border</i>
 							</button>
 
 							<figure class="product-image">
@@ -241,35 +187,11 @@
 			</div>
 		</div>
 		<!-- 하단에 아이콘 버튼 이동 부분 -->
-			<div class="footer">
-				<diV><jsp:include page="bottomMenu.jsp"></jsp:include></div>
-			</div>
+		<div class="footer">
+			<diV><jsp:include page="bottomMenu.jsp"></jsp:include></div>
+		</div>
 		<!-- // 하단에 아이콘 버튼 이동 부분 -->
 	</div>
-	<!-- jquery, popper and bootstrap js -->
-	<script src="js/jquery-3.3.1.min.js"></script>
-	<script src="js/popper.min.js"></script>
-	<script src="vendor/bootstrap-4.4.1/js/bootstrap.min.js"></script>
-
-	<!-- swiper js -->
-	<script src="vendor/swiper/js/swiper.min.js"></script>
-
-	<!-- nouislider js -->
-	<script src="vendor/nouislider/nouislider.min.js"></script>
-
-	<!-- chosen multiselect js -->
-	<script src="vendor/chosen_v1.8.7/chosen.jquery.min.js"></script>
-
-	<!-- template custom js -->
-	<script src="js/main.js"></script>
-
-	<!-- page level script -->
-	<script>
-		$(window).on('load', function() {
-
-		});
-	</script>
-
 </body>
 
 </html>

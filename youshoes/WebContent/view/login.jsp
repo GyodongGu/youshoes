@@ -73,6 +73,7 @@
 	                    <div class="social">
 	                    <!-- api사용하여 로그인방식 만들기! -->
 	            	        <span>[네이버 로그인(api)]</span>
+	            	        <span>[카카오 로그인(api)]</span>
 	                	    <span>[구글 로그인(api)]</span>
 	                    </div>
                 </div>
