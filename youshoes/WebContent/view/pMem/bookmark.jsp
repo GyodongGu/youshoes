@@ -11,11 +11,16 @@
 <title>즐겨찾기</title>
 
 <!-- 상단 메뉴바의 왼쪽 사이드 열기 위해 필요한 CSS -->
-<link href="../css/style.css" rel="stylesheet">               <!-- 우리쪽에 있는 템플릿 css -->
-<script src="../js/jquery-3.3.1.min.js"></script>             <!-- jquery js -->
-<script src="../js/popper.min.js"></script>                   <!-- popper js -->
-<script src="../vendor/bootstrap-4.4.1/js/bootstrap.min.js"></script> <!-- bootstrap js -->
-<script src="../js/main.js"></script>                         <!-- template custom js -->
+<link href="../css/style.css" rel="stylesheet">
+<!-- 우리쪽에 있는 템플릿 css -->
+<script src="../js/jquery-3.3.1.min.js"></script>
+<!-- jquery js -->
+<script src="../js/popper.min.js"></script>
+<!-- popper js -->
+<script src="../vendor/bootstrap-4.4.1/js/bootstrap.min.js"></script>
+<!-- bootstrap js -->
+<script src="../js/main.js"></script>
+<!-- template custom js -->
 <!-- // 상단 메뉴바의 왼쪽 사이드 열기 위해 필요한 CSS -->
 </head>
 
@@ -86,8 +91,13 @@
 					<div class="card shadow-sm border-0 mb-4">
 						<div class="card-body">
 							<button class="btn btn-sm btn-link p-0">
-								<i class="material-icons md-18">star_border</i>
+								<i id="starIcon" class="material-icons md-18">star_border</i>
 							</button>
+							<!-- <script>
+								function chageStar() {
+									document.getElementById("starIcon") = "star";
+								}
+							</script> -->
 
 							<figure class="product-image">
 								<img src="../img/shoes1.png" alt="" class="">
@@ -132,8 +142,8 @@
 				<div class="col-6 col-md-4 col-lg-3 col-xl-2">
 					<div class="card shadow-sm border-0 mb-4">
 						<div class="card-body">
-							<button class="btn btn-sm btn-link p-0">
-								<i class="material-icons md-18">star_border</i>
+							<button type="button" class="btn btn-sm btn-link p-0">
+								<i id="starImg" class="material-icons md-18">star</i>
 							</button>
 
 							<figure class="product-image">

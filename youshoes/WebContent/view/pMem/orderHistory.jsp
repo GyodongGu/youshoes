@@ -9,7 +9,8 @@
 <meta name="author" content="Maxartkiller">
 
 <title>결제 내역</title>
-<link href="../vendor/bootstrap-4.4.1/css/bootstrap.min.css" rel="stylesheet">  <!-- 부트스트랩 CSS -->
+<link href="../vendor/bootstrap-4.4.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- 부트스트랩 CSS -->
 <link href="../css/style.css" rel="stylesheet">
 </head>
 
@@ -20,8 +21,8 @@
 			<diV><jsp:include page="topMenuBack.jsp"></jsp:include></div>
 		</div>
 		<!-- // 상단에 뒤로가기 버튼 있는 따라다니는 줄 -->
-		
-		
+
+
 		<div class="container">
 			<p class="h3" align="center">나의 결제내역</p>
 			<br>
@@ -32,31 +33,70 @@
 						<th scope="col">주문일자</th>
 						<th scope="col">주문금액</th>
 						<th scope="col">주문수량</th>
-						<th scope="col">배송상태</th>
+						<th scope="col">주문 및 배송상태</th>
 					</tr>
 				</thead>
 				<tbody>
+					<%-- <%
+						// 1. JDBC 드라이버 로딩
+						Class.forName("oracle.jdbc.driver.OracleDriver");
+
+						Connection conn = null; // DBMS와 Java연결객체
+						Statement stmt = null; // SQL구문을 실행
+						ResultSet rs = null; // SQL구문의 실행결과를 저장
+
+						try {
+							String jdbcDriver = "jdbc:oracle:thin:@데이터베이스 주소:1521:ORCL";
+							String dbUser = "데이터베이스 ID";
+							String dbPass = "데이터베이스 Password";
+
+							String query = "select * from member order by memberid";
+
+							// 2. 데이터베이스 커넥션 생성
+							conn = DriverManager.getConnection(jdbcDriver, dbUser, dbPass);
+
+							// 3. Statement 생성
+							stmt = conn.createStatement();
+
+							// 4. 쿼리 실행
+							rs = stmt.executeQuery(query);
+
+							// 5. 쿼리 실행 결과 출력
+							while (rs.next()) {
+					%>
 					<tr>
-						<th scope="row">1</th>
-						<td>Mark</td>
-						<td>Otto</td>
-						<td>@mdo</td>
-						<td>@mdo</td>
+						<td><%=rs.getString("ord_no")%></td>
+						<td><%=rs.getString("ord_date")%></td>
+						<td><%=rs.getString("ord_point")%></td>
+						<td><%=rs.getString("order_cnt")%></td>
+						<td><%=rs.getString("ord_stat_cd")%></td>
 					</tr>
-					<tr>
-						<th scope="row">2</th>
-						<td>Jacob</td>
-						<td>Thornton</td>
-						<td>@fat</td>
-						<td>@fat</td>
-					</tr>
-					<tr>
-						<th scope="row">3</th>
-						<td>Larry</td>
-						<td>the Bird</td>
-						<td>@twitter</td>
-						<td>@twitter</td>
-					</tr>
+					<%
+						}
+						} catch (SQLException ex) {
+							out.println(ex.getMessage());
+							ex.printStackTrace();
+						} finally {
+							// 6. 사용한 Statement 종료
+							if (rs != null)
+								try {
+									rs.close();
+								} catch (SQLException ex) {
+								}
+							if (stmt != null)
+								try {
+									stmt.close();
+								} catch (SQLException ex) {
+								}
+
+							// 7. 커넥션 종료
+							if (conn != null)
+								try {
+									conn.close();
+								} catch (SQLException ex) {
+								}
+						}
+					%> --%>
 				</tbody>
 			</table>
 			<!-- paginatnion -->
