@@ -1,35 +1,41 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="en" class="blue-theme">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover, user-scalable=no">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover, user-scalable=no">
 <meta name="description" content="">
 <meta name="author" content="Maxartkiller">
 <title>jQuery UI Tabs - Collapse content</title>
 <!-- Material design icons CSS -->
-<link rel="stylesheet" href="vendor/materializeicon/material-icons.css">
+<link rel="stylesheet" href="${requestScope.request.contextPath}/youshoes/view/vendor/materializeicon/material-icons.css">
 
 <!-- Roboto fonts CSS -->
-<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+	rel="stylesheet">
 
 <!-- Bootstrap core CSS -->
-<link href="vendor/bootstrap-4.4.1/css/bootstrap.min.css" rel="stylesheet">
+<link href="${requestScope.request.contextPath}/youshoes/view/vendor/bootstrap-4.4.1/css/bootstrap.min.css"
+	rel="stylesheet">
 
 <!-- Swiper CSS -->
-<link href="vendor/swiper/css/swiper.min.css" rel="stylesheet">
+<link href="${requestScope.request.contextPath}/youshoes/view/vendor/swiper/css/swiper.min.css" rel="stylesheet">
 
 <!-- Chosen multiselect CSS -->
-<link href="vendor/chosen_v1.8.7/chosen.min.css" rel="stylesheet">
+<link href="${requestScope.request.contextPath}/youshoes/view/vendor/chosen_v1.8.7/chosen.min.css" rel="stylesheet">
 
 <!-- nouislider CSS -->
-<link href="vendor/nouislider/nouislider.min.css" rel="stylesheet">
+<link href="${requestScope.request.contextPath}/youshoes/view/vendor/nouislider/nouislider.min.css" rel="stylesheet">
 
 <!-- Custom styles for this template -->
-<link href="css/style.css" rel="stylesheet">
+<link href="${requestScope.request.contextPath}/youshoes/view/css/style.css" rel="stylesheet">
 
 <!-- 탭 메뉴 스크립트 및 CSS -->
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="/resources/demos/style.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -154,27 +160,38 @@ tr, td {
 					<span>Menu</span>
 				</h5>
 				<div class="list-group main-menu">
-					<a href="pMem/searchShop.jsp" class="list-group-item list-group-item-action active">스토어</a> <a href="pMemEvent.jsp" class="list-group-item list-group-item-action">공지사항</a> <a href="product.jsp" class="list-group-item list-group-item-action">모든 제품</a> <a href="orderHistory.jsp" class="list-group-item list-group-item-action">주문내역</a> <a href="profile.jsp" class="list-group-item list-group-item-action">프로필</a> <a href="../login.jsp" class="list-group-item list-group-item-action mt-4">로그아웃</a>
+					<a href="${requestScope.request.contextPath}/youshoes/view/pMem/searchShop.jsp"
+						class="list-group-item list-group-item-action active">스토어</a> <a
+						href="pMemEvent.jsp"
+						class="list-group-item list-group-item-action">공지사항</a> <a
+						href="product.jsp" class="list-group-item list-group-item-action">모든
+						제품</a> <a href="orderHistory.jsp"
+						class="list-group-item list-group-item-action">주문내역</a> <a
+						href="profile.jsp" class="list-group-item list-group-item-action">프로필</a>
+					<a href="../login.jsp"
+						class="list-group-item list-group-item-action mt-4">로그아웃</a>
 				</div>
 			</div>
 		</div>
 	</div>
 	<!-- // 사이드바 -->
-	
+
 	<div class="wrapper">
 		<!-- 상단에 따라다니는 줄 -->
 		<div class="header">
 			<div class="row no-gutters">
 				<div class="col-auto">
 					<button class="btn  btn-link text-dark menu-btn">
-						<img src="img/menu.png" alt=""> <span class="new-notification"></span>
+						<img src="${requestScope.request.contextPath}/youshoes/view/img/menu.png" alt=""> <span
+							class="new-notification"></span>
 					</button>
 				</div>
 				<div class="col text-center">
-					<img src="img/logo.png" alt="" class="header-logo"> YouSheos
+					<img src="${requestScope.request.contextPath}/youshoes/view/img/logo.png" alt="" class="header-logo"> YouSheos
 				</div>
 				<div class="col-auto">
-					<a href="profile.jsp" class="btn  btn-link text-dark"> <i class="material-icons">account_circle</i>
+					<a href="profile.jsp" class="btn  btn-link text-dark"> <i
+						class="material-icons">account_circle</i>
 					</a>
 				</div>
 			</div>
@@ -186,13 +203,13 @@ tr, td {
 		<div class="swiper-container product-details">
 			<div class="swiper-wrapper">
 				<div class="swiper-slide" style="padding: 0px">
-					<img src="img/handmade.jpg" alt="">
+					<img src="${requestScope.request.contextPath}/youshoes/view/img/handmade.jpg" alt="">
 				</div>
 				<div class="swiper-slide">
-					<img src="img/handmade.jpg" alt="">
+					<img src="${requestScope.request.contextPath}/youshoes/view/img/handmade.jpg" alt="">
 				</div>
 				<div class="swiper-slide">
-					<img src="img/handmade.jpg" alt="">
+					<img src="${requestScope.request.contextPath}/youshoes/view/img/handmade.jpg" alt="">
 				</div>
 			</div>
 			<!-- 가게 사진 이미지의 pagination -->
@@ -204,18 +221,23 @@ tr, td {
 		<div class="container">
 			<!-- 가게 문구  -->
 			<a href="#" class="text-dark mb-1 mt-2 h3 d-block">맨즈 슈즈</a>
-			<p class="text-secondary">저희 맨즈슈즈는 20년 전통을 자랑하는 전통 수제화 상점입니다. 편안하고 디자인이 다양합니다.</p>
+			<p class="text-secondary">저희 맨즈슈즈는 20년 전통을 자랑하는 전통 수제화 상점입니다.
+				편안하고 디자인이 다양합니다.</p>
 			<!-- // 가게 문구  -->
 			<!-- 가게 사진 이미지 -->
 			<p class="text-center">
-				<i class="material-icons h3 text-warning vm">star</i> <i class="material-icons h3 text-warning vm">star</i> <i class="material-icons h3 text-warning vm">star</i> <i class="material-icons h3 text-secondary vm">star</i> <i class="material-icons h3 text-secondary vm">star</i>
+				<i class="material-icons h3 text-warning vm">star</i> <i
+					class="material-icons h3 text-warning vm">star</i> <i
+					class="material-icons h3 text-warning vm">star</i> <i
+					class="material-icons h3 text-secondary vm">star</i> <i
+					class="material-icons h3 text-secondary vm">star</i>
 			</p>
 			<!-- // 가게 사진 이미지 -->
 			<!-- 가게별 페이지 탭 부분 -->
 			<div id="tabs">
 				<ul>
 					<li><a href="#tabs-1">가게 정보</a></li>
-					<li><a href="pMem/review.jsp">스토리</a></li>
+					<li><a href="${requestScope.request.contextPath}/youshoes/Review.do">스토리</a></li>
 					<!-- <li><a href="#tabs-3">Aenean lacinia</a></li> -->
 				</ul>
 				<div id="tabs-1">
@@ -253,11 +275,13 @@ tr, td {
 									<table>
 										<tr>
 											<td>브라운슈즈</td>
-											<td><img src="img/brownshoes.png" alt="" height="50" width="50"></td>
+											<td><img src="${requestScope.request.contextPath}/youshoes/view/img/handmade.jpg" alt="" height="50"
+												width="50"></td>
 										</tr>
 										<tr>
 											<td>블랙슈즈</td>
-											<td><img src="img/blackshoes.jpg" alt="" height="50" width="50"></td>
+											<td><img src="${requestScope.request.contextPath}/youshoes/view/img/shoes03.png" alt="" height="50"
+												width="50"></td>
 										</tr>
 									</table>
 								</div>
@@ -266,11 +290,13 @@ tr, td {
 									<table>
 										<tr>
 											<td>운동화(white)</td>
-											<td><img src="img/shoes2.png" alt="" height="50" width="50"></td>
+											<td><img src="img/shoes2.png" alt="" height="50"
+												width="50"></td>
 										</tr>
 										<tr>
 											<td>운동화(black)</td>
-											<td><img src="img/blacksports.jpg" alt="" height="50" width="50"></td>
+											<td><img src="img/blacksports.jpg" alt="" height="50"
+												width="50"></td>
 										</tr>
 									</table>
 								</div>
@@ -285,11 +311,13 @@ tr, td {
 									<table>
 										<tr>
 											<td>브라운슈즈</td>
-											<td><img src="img/brownshoes.png" alt="" height="50" width="50"></td>
+											<td><img src="img/brownshoes.png" alt="" height="50"
+												width="50"></td>
 										</tr>
 										<tr>
 											<td>블랙슈즈</td>
-											<td><img src="img/blackshoes.jpg" alt="" height="50" width="50"></td>
+											<td><img src="img/blackshoes.jpg" alt="" height="50"
+												width="50"></td>
 										</tr>
 									</table>
 								</div>
@@ -298,11 +326,13 @@ tr, td {
 									<table>
 										<tr>
 											<td>운동화(white)</td>
-											<td><img src="img/shoes2.png" alt="" height="50" width="50"></td>
+											<td><img src="img/shoes2.png" alt="" height="50"
+												width="50"></td>
 										</tr>
 										<tr>
 											<td>운동화(black)</td>
-											<td><img src="img/blacksports.jpg" alt="" height="50" width="50"></td>
+											<td><img src="img/blacksports.jpg" alt="" height="50"
+												width="50"></td>
 										</tr>
 									</table>
 								</div>
@@ -319,11 +349,13 @@ tr, td {
 									<table>
 										<tr>
 											<td>브라운슈즈</td>
-											<td><img src="img/brownshoes.png" alt="" height="50" width="50"></td>
+											<td><img src="img/brownshoes.png" alt="" height="50"
+												width="50"></td>
 										</tr>
 										<tr>
 											<td>블랙슈즈</td>
-											<td><img src="img/blackshoes.jpg" alt="" height="50" width="50"></td>
+											<td><img src="img/blackshoes.jpg" alt="" height="50"
+												width="50"></td>
 										</tr>
 									</table>
 								</div>
@@ -332,11 +364,13 @@ tr, td {
 									<table>
 										<tr>
 											<td>운동화(white)</td>
-											<td><img src="img/shoes2.png" alt="" height="50" width="50"></td>
+											<td><img src="img/shoes2.png" alt="" height="50"
+												width="50"></td>
 										</tr>
 										<tr>
 											<td>운동화(black)</td>
-											<td><img src="img/blacksports.jpg" alt="" height="50" width="50"></td>
+											<td><img src="img/blacksports.jpg" alt="" height="50"
+												width="50"></td>
 										</tr>
 									</table>
 								</div>
@@ -349,11 +383,13 @@ tr, td {
 									<table>
 										<tr>
 											<td>브라운슈즈</td>
-											<td><img src="img/brownshoes.png" alt="" height="50" width="50"></td>
+											<td><img src="img/shoes02.jpg" alt="" height="50"
+												width="50"></td>
 										</tr>
 										<tr>
 											<td>블랙슈즈</td>
-											<td><img src="img/blackshoes.jpg" alt="" height="50" width="50"></td>
+											<td><img src="img/blackshoes.jpg" alt="" height="50"
+												width="50"></td>
 										</tr>
 									</table>
 								</div>
@@ -362,11 +398,13 @@ tr, td {
 									<table>
 										<tr>
 											<td>운동화(white)</td>
-											<td><img src="img/shoes2.png" alt="" height="50" width="50"></td>
+											<td><img src="img/shoes2.png" alt="" height="50"
+												width="50"></td>
 										</tr>
 										<tr>
 											<td>운동화(black)</td>
-											<td><img src="img/blacksports.jpg" alt="" height="50" width="50"></td>
+											<td><img src="img/blacksports.jpg" alt="" height="50"
+												width="50"></td>
 										</tr>
 									</table>
 								</div>
@@ -380,77 +418,44 @@ tr, td {
 			</div>
 		</div>
 		<!-- // 가게별 페이지 탭 부분 -->
-		
-		<!-- 하단에 아이콘 버튼 이동 부분 -->
 
-			<div class="footer">
-				<div class="no-gutters">
-					<div class="col-auto mx-auto">
-						<div class="row no-gutters justify-content-center">
-							<div class="col-auto">
-								<a href="pMem/pMem.jsp" class="btn btn-link-default "> <i class="material-icons">store_mall_directory</i>
-								</a>
-							</div>
-							<div class="col-auto">
-								<a href="pMem/orderHistory.jsp" class="btn btn-link-default"> <i class="material-icons">insert_chart_outline</i>
-								</a>
-							</div>
-							<div class="col-auto">
-								<a href="cart.html" class="btn btn-default shadow centerbutton"> <i class="material-icons">local_mall</i>
-								</a>
-							</div>
-							<div class="col-auto">
-								<a href="pMem/bookmark.jsp" class="btn btn-link-default"> <i class="material-icons">favorite</i>
-								</a>
-							</div>
-							<div class="col-auto">
-								<a href="pMem/profile.jsp" class="btn btn-link-default"> <i class="material-icons">account_circle</i>
-								</a>
-							</div>
+		<!-- 하단에 아이콘 버튼 이동 부분 -->
 
 		<div class="footer">
 			<div class="no-gutters">
 				<div class="col-auto mx-auto">
 					<div class="row no-gutters justify-content-center">
 						<div class="col-auto">
-							<a href="pMem/pMem.jsp" class="btn btn-link-default "> <i class="material-icons">store_mall_directory</i>
+							<a href="pMem/pMem.jsp" class="btn btn-link-default "> <i
+								class="material-icons">store_mall_directory</i>
 							</a>
 						</div>
 						<div class="col-auto">
-							<a href="pMem/orderHistory.jsp" class="btn btn-link-default"> <i class="material-icons">insert_chart_outline</i>
+							<a href="pMem/orderHistory.jsp" class="btn btn-link-default">
+								<i class="material-icons">insert_chart_outline</i>
 							</a>
 						</div>
 						<div class="col-auto">
-							<a href="cart.html" class="btn btn-default shadow centerbutton"> <i class="material-icons">local_mall</i>
+							<a href="cart.html" class="btn btn-default shadow centerbutton">
+								<i class="material-icons">local_mall</i>
 							</a>
 						</div>
 						<div class="col-auto">
-							<a href="pMem/bookmark.jsp" class="btn btn-link-default"> <i class="material-icons">favorite</i>
+							<a href="pMem/bookmark.jsp" class="btn btn-link-default"> <i
+								class="material-icons">favorite</i>
 							</a>
 						</div>
 						<div class="col-auto">
-							<a href="pMem/profile.jsp" class="btn btn-link-default active"> <i class="material-icons">account_circle</i>
+							<a href="pMem/profile.jsp" class="btn btn-link-default"> <i
+								class="material-icons">account_circle</i>
 							</a>
+						</div>
 
-						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<!-- // 하단에 아이콘 버튼 이동 부분 -->
+
 	</div>
-
-	<!-- swiper js -->
-	<script src="vendor/swiper/js/swiper.min.js"></script>
-
-	<!-- nouislider js -->
-	<script src="vendor/nouislider/nouislider.min.js"></script>
-
-	<!-- chosen multiselect js -->
-	<script src="vendor/chosen_v1.8.7/chosen.jquery.min.js"></script>
-
-	<!-- template custom js -->
-	<script src="js/main.js"></script>
-
 </body>
 </html>

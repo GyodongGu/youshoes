@@ -3,7 +3,6 @@ package shoes.controller;
 import java.io.IOException;
 import java.util.HashMap;
 
-import javax.servlet.Servlet;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,10 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import shoes.command.bookmarkCommand;
-import shoes.command.myReviewCommand;
-import shoes.command.pMemEventCommand;
-import shoes.command.profileUpdateCommand;
+import shoes.command.ReviewCommand;
 import shoes.common.Command;
 
 
@@ -24,7 +20,7 @@ import shoes.common.Command;
  * 2. service()메소드로 클라이언트가 요청할 때 마다 해당 path의 controller로 이동시켜주는 길잡이 역할
  * 
  */
-@WebServlet("/FrontController")
+@WebServlet("*.do")
 public class FrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
@@ -48,7 +44,7 @@ public class FrontController extends HttpServlet {
 		
 		
 		// 구교동가  만들어야할 Command
-		
+		cont.put("/Review.do",new ReviewCommand());
 		
 		// 권우성가  만들어야할 Command
 		
