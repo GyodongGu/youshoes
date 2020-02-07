@@ -9,28 +9,6 @@
 <meta name="author" content="Maxartkiller">
 
 <title>프로필</title>
-
-<!-- Material design icons CSS -->
-<link rel="stylesheet" href="../vendor/materializeicon/material-icons.css">
-
-<!-- Roboto fonts CSS -->
-<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
-
-<!-- Bootstrap core CSS -->
-<link href="../vendor/bootstrap-4.4.1/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Swiper CSS -->
-<link href="../vendor/swiper/css/swiper.min.css" rel="stylesheet">
-
-<!-- Chosen multiselect CSS -->
-<link href="../vendor/chosen_v1.8.7/chosen.min.css" rel="stylesheet">
-
-<!-- nouislider CSS -->
-<link href="../vendor/nouislider/nouislider.min.css" rel="stylesheet">
-
-<!-- Custom styles for this template -->
-<link href="../css/style.css" rel="stylesheet">
-
 <!-- Tab키 스크립트 및 CSS -->
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="/resources/demos/style.css">
