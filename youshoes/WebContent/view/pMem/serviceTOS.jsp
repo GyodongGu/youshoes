@@ -42,61 +42,11 @@
 
 <body>
 	<div class="wrapper">
-		<!-- 사이드바 -->
-		<div class="sidebar">
-			<div class="text-center">
-				<div class="figure-menu shadow">
-					<figure>
-						<img src="img/user1.png" alt="">
-					</figure>
-				</div>
-				<h5 class="mb-1 ">사용자 1</h5>
-				<p class="text-mute small">서울, 대한민국</p>
-			</div>
-			<br>
-			<div class="row mx-0">
-				<div class="col">
-					<div class="card mb-3 border-0 shadow-sm bg-template-light">
-						<div class="card-body">
-							<div class="row">
-								<div class="col">
-									<p class="text-secondary small mb-0">현재 포인트</p>
-									<h6 class="text-dark my-0">$2585.00</h6>
-								</div>
-								<div class="col-auto">
-									<button class="btn btn-default button-rounded-36 shadow">
-										<i class="material-icons">add</i>
-									</button>
-								</div>
-							</div>
-						</div>
-					</div>
-					<h5 class="subtitle text-uppercase">
-						<span>Menu</span>
-					</h5>
-					<div class="list-group main-menu">
-						<a href="pMem.jsp" class="list-group-item list-group-item-action active">스토어</a> <a href="notification.html" class="list-group-item list-group-item-action">공지사항<span class="badge badge-dark text-white">2</span></a> <a href="all-products.html" class="list-group-item list-group-item-action">모든 제품</a> <a href="orderHistory.jsp" class="list-group-item list-group-item-action">주문내역</a> <a href="profile.jsp" class="list-group-item list-group-item-action">프로필</a> <a href="#" class="list-group-item list-group-item-action mt-4">로그아웃</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- // 사이드바 -->
-		<!-- 상단에 따라다니는 줄 -->
+		<!-- 상단에 뒤로가기 버튼 있는 따라다니는 줄 -->
 		<div class="header">
-			<div class="row no-gutters">
-				<div class="col-auto">
-					<a href="javascript:void(0)" onclick="location.href='pMem.jsp'" class="btn  btn-link text-dark"> <i class="material-icons">navigate_before</i>
-					</a>
-				</div>
-				<div class="col text-center">
-					<img src="../img/logo.png" alt="" class="header-logo"> YouSheos
-				</div>
-				<div class="col-auto">
-					<a href="profile.jsp" class="btn  btn-link text-dark"><i class="material-icons">account_circle</i></a>
-				</div>
-			</div>
+			<diV><jsp:include page="topMenuBack.jsp"></jsp:include></div>
 		</div>
-		<!-- // 상단에 따라다니는 줄 -->
+		<!-- // 상단에 뒤로가기 버튼 있는 따라다니는 줄 -->
 		
 		<!-- 내부 내용 전체 감싸는 부분 -->
 		<div class="container">
@@ -305,32 +255,7 @@
 
 			<!-- 하단에 아이콘 버튼 이동 부분 -->
 			<div class="footer">
-				<div class="no-gutters">
-					<div class="col-auto mx-auto">
-						<div class="row no-gutters justify-content-center">
-							<div class="col-auto">
-								<a href="pMem.jsp" class="btn btn-link-default "> <i class="material-icons">store_mall_directory</i>
-								</a>
-							</div>
-							<div class="col-auto">
-								<a href="orderHistory.jsp" class="btn btn-link-default"> <i class="material-icons">insert_chart_outline</i>
-								</a>
-							</div>
-							<div class="col-auto">
-								<a href="cart.html" class="btn btn-default shadow centerbutton"> <i class="material-icons">local_mall</i>
-								</a>
-							</div>
-							<div class="col-auto">
-								<a href="bookmark.jsp" class="btn btn-link-default"> <i class="material-icons">favorite</i>
-								</a>
-							</div>
-							<div class="col-auto">
-								<a href="profile.jsp" class="btn btn-link-default active"> <i class="material-icons">account_circle</i>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
+				<diV><jsp:include page="bottomMenu.jsp"></jsp:include></div>
 			</div>
 			<!-- // 하단에 아이콘 버튼 이동 부분 -->
 		</div>

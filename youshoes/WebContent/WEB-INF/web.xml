@@ -2,11 +2,33 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
   <display-name>youshoes</display-name>
   <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
     <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <!-- 
+  	작성자 : 유승우
+  	작성일자 : 2020.02.07
+  -->
+  <!-- <servlet>
+		co.ysw.controller.newFrontContrller 서블릿을 Controller 이름으로 웹서버에 등록
+		<servlet-name>Controller</servlet-name>
+		<servlet-class>co.ysw.controller.newFrontController</servlet-class>
+
+		co.ysw.controller.newFrontContrller 서블릿에 charset=UTF-8 변수를 저장
+		<init-param>
+			<param-name>charset</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</servlet>
+
+	Contrller 이름으로 등록된 서블릿은 URL 요청 정보가 .do로 끝나는 요청이 들어올 때마다 실행
+	<servlet-mapping>
+		<servlet-name>Controller</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+	
+	http://localhost:9090/dev/로 요청이 들어오면 index.jsp 페이지가실행되도록 설정
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list> -->
+  
 </web-app>

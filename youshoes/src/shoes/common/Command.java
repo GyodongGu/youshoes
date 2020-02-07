@@ -1,4 +1,4 @@
-package shoes.command;
+package shoes.common;
 
 import java.io.IOException;
 

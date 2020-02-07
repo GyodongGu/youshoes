@@ -8,7 +8,7 @@
 <meta name="description" content="">
 <meta name="author" content="Maxartkiller">
 
-<title>유저 메인</title>
+<title>구매 회원 메인</title>
 
 <!-- Material design icons CSS -->
 <link rel="stylesheet" href="../vendor/materializeicon/material-icons.css">
@@ -91,7 +91,7 @@
 		<div class="text-center">
 			<div class="figure-menu shadow">
 				<figure>
-					<img src="img/user1.png" alt="">
+					<img src="../img/user1.png" alt="">
 				</figure>
 			</div>
 			<h5 class="mb-1 ">사용자 1</h5>
@@ -125,24 +125,13 @@
 		</div>
 	</div>
 	<!-- // 사이드바 -->
-	<!-- 상단에 따라다니는 줄 -->
+	
 	<div class="wrapper">
+		<!-- 프로필 볼 수 있는 상단 메뉴바 -->
 		<div class="header">
-			<div class="row no-gutters">
-				<div class="col-auto">
-					<button class="btn  btn-link text-dark menu-btn">
-						<img src="../img/menu.png" alt=""> <span class="new-notification"></span>
-					</button>
-				</div>
-				<div class="col text-center">
-					<img src="../img/logo.png" alt="logo" class="header-logo"> YouShoes
-				</div>
-				<div class="col-auto">
-					<a href="profile.jsp" class="btn  btn-link text-dark"><i class="material-icons">account_circle</i></a>
-				</div>
-			</div>
+			<diV><jsp:include page="topMenu.jsp"></jsp:include></div>
 		</div>
-		<!-- // 상단에 따라다니는 줄 -->
+		<!-- // 프로필 볼 수 있는 상단 메뉴바 -->
 
 		<!-- 내부 내용 전체 감싸는 부분 -->
 		<div class="container">
@@ -159,7 +148,7 @@
 							<div class="card shadow-sm border-0">
 								<div class="card-body">
 									<div class="row no-gutters h-100">
-										<img src="../img/shoes1.png" alt="" class="small-slide-right">
+										<img src="../img/shoes08.png" alt="" class="small-slide-right">
 										<div class="col-8">
 											<button class="btn btn-sm btn-link p-0">
 												<i class="material-icons md-18">favorite_outline</i>
@@ -176,7 +165,7 @@
 							<div class="card shadow-sm border-0">
 								<div class="card-body">
 									<div class="row no-gutters h-100">
-										<img src="../img/shoes2.png" alt="" class="small-slide-right">
+										<img src="../img/shoes9.png" alt="" class="small-slide-right">
 										<div class="col-8">
 											<button class="btn btn-sm btn-link p-0">
 												<i class="material-icons md-18">favorite</i>
@@ -453,34 +442,9 @@
 		</div>
 		<!-- // 이용약관 등 4개 페이지  -->
 		<!-- 하단에 아이콘 버튼 이동 부분 -->
-		<div class="footer">
-			<div class="no-gutters">
-				<div class="col-auto mx-auto">
-					<div class="row no-gutters justify-content-center">
-						<div class="col-auto">
-							<a href="pMem.jsp" class="btn btn-link-default active"> <i class="material-icons">store_mall_directory</i>
-							</a>
-						</div>
-						<div class="col-auto">
-							<a href="orderHistory.jsp" class="btn btn-link-default"> <i class="material-icons">insert_chart_outline</i>
-							</a>
-						</div>
-						<div class="col-auto">
-							<a href="cart.html" class="btn btn-default shadow centerbutton"> <i class="material-icons">local_mall</i>
-							</a>
-						</div>
-						<div class="col-auto">
-							<a href="bookmark.jsp" class="btn btn-link-default"> <i class="material-icons">favorite</i>
-							</a>
-						</div>
-						<div class="col-auto">
-							<a href="profile.jsp" class="btn btn-link-default"> <i class="material-icons">account_circle</i>
-							</a>
-						</div>
-					</div>
-				</div>
+			<div class="footer">
+				<diV><jsp:include page="bottomMenu.jsp"></jsp:include></div>
 			</div>
-		</div>
 		<!-- // 하단에 아이콘 버튼 이동 부분 -->
 	</div>
 </body>
