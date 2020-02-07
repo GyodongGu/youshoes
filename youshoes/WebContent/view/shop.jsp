@@ -198,6 +198,7 @@ tr, td {
 			<!-- 가게 사진 이미지의 pagination -->
 			<div class="swiper-pagination"></div>
 		</div>
+		</div>
 		<!-- // 가게 사진 이미지 -->
 
 		<!-- 가게별 페이지 -->
@@ -407,7 +408,7 @@ tr, td {
 								<a href="pMem/profile.jsp" class="btn btn-link-default"> <i class="material-icons">account_circle</i>
 								</a>
 							</div>
-
+</div></div></div>
 		<div class="footer">
 			<div class="no-gutters">
 				<div class="col-auto mx-auto">

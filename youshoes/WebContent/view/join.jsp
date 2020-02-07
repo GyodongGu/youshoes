@@ -42,7 +42,7 @@
             <img src="img/logo.png" alt="logo" class="logo-small">
             <h2 class="text-white"><span class="font-weight-light">회원가입</span></h2>
             <form class="form-signin shadow">
-                 <div class="form-group float-label active">
+                 <div class="form-group float-label">
                     <input type="text" id="pm_id" class="form-control" name="pm_id" required autofocus >
                     <label for="pm_id" class="form-control-label"><font color="red">*</font>아이디</label>
                 </div>
@@ -57,7 +57,7 @@
                     <label for="pm_pwchk" class="form-control-label"><font color="red">*</font>비밀번호 확인</label>
                 </div>
                 
-                <div class="form-group float-label active">
+                <div class="form-group float-label">
                     <input type="text" id="pm_name" class="form-control" name="pm_name" required >
                     <label for="pm_name" class="form-control-label"><font color="red">*</font>이름</label>
                 </div>
@@ -67,26 +67,37 @@
                     <label for="pm_birth" class="form-control-label"><font color="red">*</font>생년월일</label>
                 </div>
                 
-                <div class="form-group float-label active">
+                <div class="form-group float-label">
                     <input type="email" id="pm_email" class="form-control" name="pm_email" required >
                     <label for="pm_email" class="form-control-label"><font color="red">*</font>이메일</label>
                 </div>
                 
-                <div class="form-group float-label active">
+                <div class="form-group float-label">
                     <input type="tel" id="pm_tell" class="form-control" name="pm_tell" required maxlength="11">
-                    <label for="pm_tell" class="form-control-label"><font color="red">*</font>전화번호(-는 생략)</label>
+                    <label for="pm_tell" class="form-control-label"><font color="red">* </font>전화번호(-는 생략)</label>
                 </div>
                 
                 <!-- 카카오 주소 API -->
                 <div class="form-group float-label active">
                 	
                 	<br />
-					<input type="text" id="pm_post" placeholder="우편번호" style="width:160px;" required>
-					<input type="button" onclick="sample3_execDaumPostcode()" value="우편번호 찾기"><br />
-					<input type="text" id="pm_addr1" placeholder="주소" style="width:280px;" required><br />
-					<input type="text" id="pm_addr2" placeholder="상세주소" style="width:280px;"><br />
-					<input type="text" id="pm_addr3" placeholder="참고항목" style="width:280px;">
-					<label for="pm_post" class="form-control-label"><font color="red">*</font>주소(API)</label>
+                	<input type="button" onclick="sample3_execDaumPostcode()" value="우편번호 찾기"><br />
+                	<div class="form-group float-label">
+                    <input type="text" id="pm_post" name="pm_post" class="form-control" placeholder="" required style="width:120px;">
+                    <label for="pm_post" class="form-control-label active">우편번호</label>
+                	</div>
+                	<div class="form-group float-label">
+                    <input type="text" id="pm_addr1" name="pm_addr1" class="form-control" placeholder="">
+                    <label for="pm_addr1" class="form-control-label active">주소</label>
+                	</div>
+                	<div class="form-group float-label">
+                    <input type="text" id="pm_addr2" name="pm_addr2" class="form-control" placeholder="">
+                    <label for="pm_addr2" class="form-control-label active">상세주소</label>
+                	</div>
+                	<div class="form-group float-label">
+                    <input type="text" id="pm_addr3" name="pm_addr3" class="form-control" placeholder="">
+                    <label for="pm_addr3" class="form-control-label active">참고항목</label>
+                	</div>
 					
 					<div id="wrap" style="display:none;border:1px solid;width:500px;height:300px;margin:5px 0;position:relative">
 					<img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="btnFoldWrap" style="cursor:pointer;position:absolute;right:0px;top:-1px;z-index:1" onclick="foldDaumPostcode()" alt="접기 버튼">
@@ -176,6 +187,9 @@
                     <div class="col-auto">
                         <a href="login.jsp" class="btn btn-lg btn-default btn-rounded shadow"><span>회원가입</span><i class="material-icons">arrow_forward</i></a>
                     </div>
+                    <span>[네이버 회원가입(api)]</span>
+                    <span>[카카오 회원가입(api)]</span>
+                    <span>[구글 회원가입(api)]</span>
                 </div>
             </form>
             <p class="text-center text-white">
