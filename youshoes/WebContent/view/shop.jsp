@@ -382,6 +382,32 @@ tr, td {
 		<!-- // 가게별 페이지 탭 부분 -->
 		
 		<!-- 하단에 아이콘 버튼 이동 부분 -->
+
+			<div class="footer">
+				<div class="no-gutters">
+					<div class="col-auto mx-auto">
+						<div class="row no-gutters justify-content-center">
+							<div class="col-auto">
+								<a href="pMem/pMem.jsp" class="btn btn-link-default "> <i class="material-icons">store_mall_directory</i>
+								</a>
+							</div>
+							<div class="col-auto">
+								<a href="pMem/orderHistory.jsp" class="btn btn-link-default"> <i class="material-icons">insert_chart_outline</i>
+								</a>
+							</div>
+							<div class="col-auto">
+								<a href="cart.html" class="btn btn-default shadow centerbutton"> <i class="material-icons">local_mall</i>
+								</a>
+							</div>
+							<div class="col-auto">
+								<a href="pMem/bookmark.jsp" class="btn btn-link-default"> <i class="material-icons">favorite</i>
+								</a>
+							</div>
+							<div class="col-auto">
+								<a href="pMem/profile.jsp" class="btn btn-link-default"> <i class="material-icons">account_circle</i>
+								</a>
+							</div>
+
 		<div class="footer">
 			<div class="no-gutters">
 				<div class="col-auto mx-auto">
@@ -405,6 +431,7 @@ tr, td {
 						<div class="col-auto">
 							<a href="pMem/profile.jsp" class="btn btn-link-default active"> <i class="material-icons">account_circle</i>
 							</a>
+
 						</div>
 					</div>
 				</div>
@@ -424,5 +451,6 @@ tr, td {
 
 	<!-- template custom js -->
 	<script src="js/main.js"></script>
+
 </body>
 </html>
