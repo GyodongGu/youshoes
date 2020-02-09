@@ -40,7 +40,7 @@ public class FrontController extends HttpServlet {
 //		cont.put("/profileUpdate.do", new profileUpdateCommand());       // 구매 회원 프로필 수정
 //		cont.put("/pMemEvent.do", new pMemEventCommand());       // 구매 회원 이벤트 목록 보기
 //		cont.put("/bookmark.do", new bookmarkCommand());       // 구매 회원 즐겨찾기 상품 보기
-//		cont.put("/myReview.do", new myReviewCommand());       // 구매 회원 즐겨찾기 상품 보기
+//		cont.put("/myReview.do", new myReviewCommand());       // 구매 회원이 자기가 작성한 리뷰보기
 		
 		
 		// 구교동가  만들어야할 Command
