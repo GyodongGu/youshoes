@@ -18,13 +18,7 @@ public class smDTO {
 	private String mgr_auth_cd;
 	private String sm_remark;
 
-	
-	public String getSm_addr3() {
-		return sm_addr3;
-	}
-	public void setSm_addr3(String sm_addr3) {
-		this.sm_addr3 = sm_addr3;
-	}
+
 	public String getSm_id() {
 		return sm_id;
 	}

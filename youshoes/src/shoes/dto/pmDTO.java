@@ -19,13 +19,6 @@ public class pmDTO {
 	private int point_now;
 	
 	
-	
-	public String getPm_addr3() {
-		return pm_addr3;
-	}
-	public void setPm_addr3(String pm_addr3) {
-		this.pm_addr3 = pm_addr3;
-	}
 	public int getPm_no() {
 		return pm_no;
 	}
@@ -111,18 +104,6 @@ public class pmDTO {
 		this.point_now = point_now;
 	}
 	
-	
-	@Override
-	public String toString() {
-		return "pmDTO [pm_no=" + pm_no + ", pm_id=" + pm_id + ", pm_pw=" + pm_pw + ", pm_name=" + pm_name
-				+ ", pm_stat_cd=" + pm_stat_cd + ", pm_birth=" + pm_birth + ", pm_email=" + pm_email + ", pm_date="
-				+ pm_date + ", pm_tell=" + pm_tell + ", pm_post=" + pm_post + ", pm_addr1=" + pm_addr1 + ", pm_addr2="
-
-				+ pm_addr2 + ", pm_addr3=" + pm_addr3 + ", point_now=" + point_now + "]";
-
-				+ pm_addr2 + ", pm_addr3="+ pm_addr3 + ", point_now=" + point_now + "]";
-
-	}
 
 	
 	
