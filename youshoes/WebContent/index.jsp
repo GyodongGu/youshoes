@@ -21,6 +21,7 @@
 </head>
 
 <body>
+<%-- 	<jsp:forward page="index.do"></jsp:forward> --%>
 	<a href="view/login.jsp" class="btn btn-default button-rounded-54 shadow text-white float-bottom-right"><span>로그인</span></a>
 
 

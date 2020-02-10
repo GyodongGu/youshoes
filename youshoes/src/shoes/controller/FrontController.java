@@ -10,7 +10,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import shoes.command.JoinOkCommand;
 import shoes.command.ReviewCommand;
+import shoes.command.bookmarkCommand;
+import shoes.command.idOverapOkCommand;
+import shoes.command.indexCommand;
+import shoes.command.joinCommand;
+import shoes.command.loginCommand;
+import shoes.command.loginOkCommand;
+import shoes.command.logoutCommand;
+import shoes.command.myReviewCommand;
+import shoes.command.pMemEventCommand;
+import shoes.command.profileUpdateCommand;
 import shoes.common.Command;
 
 
@@ -36,23 +47,43 @@ public class FrontController extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 		charset = config.getInitParameter("charset");
 		
-		// 유승우가 만들어야할 Command
-//		cont.put("/profileUpdate.do", new profileUpdateCommand());       // 구매 회원 프로필 수정
-//		cont.put("/pMemEvent.do", new pMemEventCommand());       // 구매 회원 이벤트 목록 보기
-//		cont.put("/bookmark.do", new bookmarkCommand());       // 구매 회원 즐겨찾기 상품 보기
-//		cont.put("/myReview.do", new myReviewCommand());       // 구매 회원이 자기가 작성한 리뷰보기
-		
+		/* 구매 유저  */
+		cont.put("/index.do", new indexCommand());             // 메인 홈페이지 호출
+		cont.put("/login.do", new loginCommand());             // 로그인
+		cont.put("/loginOk.do", new loginOkCommand());         // 로그인 체크
+		cont.put("/logout.do", new logoutCommand());           // 로그아웃
+		cont.put("/join.do", new joinCommand());               // 회원가입
+		cont.put("/JoinOk.do", new JoinOkCommand());           // 회원가입 체크
+		cont.put("/idOverapOk.do", new idOverapOkCommand());   // 구매회원 아이디 중복체크
+		cont.put("/profileUpdate.do", new profileUpdateCommand());  // 구매 회원 프로필 수정
+		cont.put("/pMemEvent.do", new pMemEventCommand());     // 구매 회원 이벤트 목록 보기
+		cont.put("/bookmark.do", new bookmarkCommand());       // 구매 회원 즐겨찾기 상품 보기
+		cont.put("/myReview.do", new myReviewCommand());       // 구매 회원이 자기가 작성한 리뷰보기
 		
 		// 구교동가  만들어야할 Command
 		cont.put("/Review.do",new ReviewCommand());
+
+		/* 관리자 */
+//		cont.put("/myReview.do", new myReviewCommand());       // 판매회원 목록
+//		cont.put("/myReview.do", new myReviewCommand());       // 판매회원 등록
+//		cont.put("/myReview.do", new myReviewCommand());       // 판매회원 삭제
+//		cont.put("/myReview.do", new myReviewCommand());       // 구매회원 목록
+//		cont.put("/myReview.do", new myReviewCommand());       // 구매회원 삭제
+//		cont.put("/myReview.do", new myReviewCommand());       // 코드ID 목록 확인
+//		cont.put("/myReview.do", new myReviewCommand());       // 매출
+//		cont.put("/myReview.do", new myReviewCommand());       // 공지사항 목록
+//		cont.put("/myReview.do", new myReviewCommand());       // 공지사항 등록
 		
-		// 권우성가  만들어야할 Command
+		
+		/* 판매자 */
+		
+
 		
 		
-		// 배광준가  만들어야할 Command
 		
 		
-		// 최인호가  만들어야할 Command
+		
+		
 		
 	}
 
