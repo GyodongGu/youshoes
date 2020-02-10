@@ -48,8 +48,8 @@ public class pmDAO extends DAO {
 				dto.setPm_birth(rs.getDate("pMemBirth"));
 				dto.setPm_email(rs.getString("pMemEmail"));
 				dto.setPm_date(rs.getDate("pMemDate"));
-				dto.setPm_tell(rs.getInt("pMemTell"));
-				dto.setPm_post(rs.getInt("pMemPost"));
+				dto.setPm_tell(rs.getString("pMemTell"));
+				dto.setPm_post(rs.getString("pMemPost"));
 				dto.setPm_addr1(rs.getString("pMemAddr1"));
 				dto.setPm_addr2(rs.getString("pMemAddr2"));
 				dto.setPoint_now(rs.getInt("pMemPoint"));
