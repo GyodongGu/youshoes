@@ -9,10 +9,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import co.ysw.dao.noticeDAO;
-import co.ysw.dto.noticeDTO;
 import shoes.common.Command;
+import shoes.dao.noticeDAO;
 import shoes.dao.reviewListDAO;
+import shoes.dto.noticeDTO;
 import shoes.dto.reviewDTO;
 
 public class pMemEventCommand implements Command {
@@ -24,13 +24,15 @@ public class pMemEventCommand implements Command {
 		ArrayList<noticeDTO> list = new ArrayList<noticeDTO>();
 
 		// 전체 리스트 갖고오기
-		list = dao.select();
+		list = dao.noticeSelect();
 
 		request.setAttribute("list", list);
 
-		String path = "view/noticeList.jsp";
+		String path = "view/pMem/pMemEvent.jsp";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
 		dispatcher.forward(request, response);
+		
+		return null;
 	}
 
 }

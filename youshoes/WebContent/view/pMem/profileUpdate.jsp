@@ -63,8 +63,8 @@
 
 			<!-- 카카오 주소 API -->
 			<div class="form-group float-label active">
-				<input type="button" onclick="sample3_execDaumPostcode()"
-					value="우편번호 찾기">
+				<input type="button" onclick="sample3_execDaumPostcode()" class="btn btn-primary" value="우편번호 찾기">
+				<br>
 				<div id="wrap"
 					style="display: none; border: 1px solid; width: 500px; height: 300px; margin: 5px 0; position: relative">
 					<img src="//t1.daumcdn.net/postcode/resource/images/close.png"

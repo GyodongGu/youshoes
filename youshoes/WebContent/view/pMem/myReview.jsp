@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="C"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,30 +15,20 @@
 		<thead>
 			<tr>
 				<th scope="col">글 번호</th>
-				<th scope="col">글 제목</th>
+				<th scope="col">후기글 내용</th>
 				<th scope="col">작성자</th>
 				<th scope="col">작성 일자</th>
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<th scope="row">1</th>
-				<td>Mark</td>
-				<td>@mdo</td>
-				<td>@mdo</td>
-			</tr>
-			<tr>
-				<th scope="row">2</th>
-				<td>Jacob</td>
-				<td>@fat</td>
-				<td>@fat</td>
-			</tr>
-			<tr>
-				<th scope="row">3</th>
-				<td>Larry</td>
-				<td>@twitter</td>
-				<td>@twitter</td>
-			</tr>
+			<C:forEach var="dto" items="${list}">
+				<tr>
+					<th align="center" width="50">${dto.rw_no}</th>
+					<td align="center" width="200">${dto.rw_content}</td>
+					<td align="center" width="70">${dto.pm_id}</td>
+					<td align="center" width="100">${dto.rw_date}</td>
+				</tr>
+			</C:forEach>
 		</tbody>
 	</table>
 	<!-- paginatnion -->

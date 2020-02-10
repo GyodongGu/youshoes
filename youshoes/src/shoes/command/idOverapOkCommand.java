@@ -15,7 +15,7 @@ public class idOverapOkCommand implements Command {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		pMemDAO dao = new pMemDAO();
+		pmDAO dao = new pmDAO();
 
 		boolean b = true;
 		String id = request.getParameter("id");

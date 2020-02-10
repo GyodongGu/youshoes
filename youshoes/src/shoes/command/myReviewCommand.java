@@ -23,5 +23,4 @@ public class myReviewCommand implements Command {
 		
 		return "view/pMem/myReview.jsp";
 	}
-
 }

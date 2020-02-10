@@ -57,6 +57,8 @@ public class pmDAO extends DAO {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			close();
 		}
 		return list;
 	}
@@ -80,13 +82,14 @@ public class pmDAO extends DAO {
 			pstmt.setInt(8, dto.getPm_post());
 			pstmt.setString(9, dto.getPm_addr1());
 			pstmt.setString(10, dto.getPm_addr2());
-			pstmt.setString(11, dto.get);
+			pstmt.setString(11, dto.getPm_addr3());
 			
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} 
-		close();
+		} finally {
+			close();
+		}
 		return n;
 	}
 
@@ -98,11 +101,9 @@ public class pmDAO extends DAO {
 			pstmt.set
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			close();
 		}
-		
-		
-		
-		close();
 		return n;
 	}
 
@@ -116,8 +117,9 @@ public class pmDAO extends DAO {
 			n = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			close();
 		}
-		close();
 		return n;
 	}
 
@@ -134,7 +136,10 @@ public class pmDAO extends DAO {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			close();
 		} 
+		
 		return bol;
 	}
 	
@@ -153,8 +158,9 @@ public class pmDAO extends DAO {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			close();
 		}
-		close();
 		return grant;  // 로그인 성공 시 권한을 넘겨줌
 	}
 }
