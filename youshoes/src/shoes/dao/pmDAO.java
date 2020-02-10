@@ -8,12 +8,11 @@ import shoes.dto.pmDTO;
 /**
  * @author 유승우 상위 DAO 클래스를 상속받아서 pmDAO를 생성 
  * 1. 회원목록 전체 조회            pmSelect()
- * 2. 상세 조회 조회의 경우        pmDetailSelect() 
- * 3. 회원 등록 등록                  pmInsert() 
- * 4. 회원 정보 수정                  pmUpdate()
- * 5. 회원 정보 삭제                  pmDelete()
- * 6. 회원가입창에서 아이디 중복체크  idOverlapCheck()
- * 7. 로그인 체크                      loginCheck()
+ * 2. 회원 등록 등록                  pmInsert() 
+ * 3. 회원 정보 수정                  pmUpdate()
+ * 4. 회원 정보 삭제                  pmDelete()
+ * 5. 회원가입창에서 아이디 중복체크  idOverlapCheck()
+ * 6. 로그인 체크                      loginCheck()
  * 
  */
 
@@ -62,21 +61,13 @@ public class pmDAO extends DAO {
 		return list;
 	}
 
-	public ArrayList<pmDTO> pmDetailSelect() { // 2. 상세 조회 조회의 경우        pmDetailSelect() 
-		list = new ArrayList<pmDTO>();
-		pmDTO dto = new pmDTO();
-		String sql = "select   from purchase_member";
-		
-		return list;
-	}
-
-	public int pmInsert(pmDTO dto)  { // 3. 회원 등록 (회원 가입)      pmInsert() 
+	public int pmInsert(pmDTO dto)  { // 2. 회원 등록 (회원 가입)      pmInsert() 
 		int n = 0;
 		/* 유승우 2020.02.10 뭘 넣어야 할지 아직 모르겠음 */
 		String sql = "insert into purchase_member(pm_id, pm_pw, pm_name, pm_birth, pm_email, pm_date, pm_tell, pm_post, pm_addr1, pm_addr2  )"
 					+ "value(?,?,?,?,?,?,?,?,?,?,?)";
 		
-		// 아이디, 비번, 비밀번호 확인, 이름, 생년월일, 이메일, 가입일, 전화번호, 우편번호, 주소1, 주소2, 비고
+		// 아이디, 비번, 비밀번호 확인, 이름, 생년월일, 이메일, 가입일, 전화번호, 우편번호, 주소1, 주소2, 주소3
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, dto.getPm_id());
@@ -99,7 +90,7 @@ public class pmDAO extends DAO {
 		return n;
 	}
 
-	public int pmUpdate(pmDTO dto) { // 4. 회원 정보 수정      pmUpdate()
+	public int pmUpdate(pmDTO dto) { // 3. 회원 정보 수정      pmUpdate()
 		int n = 0;
 		String sql = "update purchase_member set  = ''";
 		try {
@@ -115,7 +106,7 @@ public class pmDAO extends DAO {
 		return n;
 	}
 
-	public int pmDelete(pmDTO dto) { // 5. 회원 정보 삭제      pmDelete()
+	public int pmDelete(pmDTO dto) { // 4. 회원 정보 삭제      pmDelete()
 		int n = 0;
 		String sql = "delete from purchase_memeber where pm_id = ?";
 		
@@ -130,7 +121,7 @@ public class pmDAO extends DAO {
 		return n;
 	}
 
-	public boolean idOverlapCheck(String id) { // 6. 회원가입창에서 아이디 중복체크  idOverlapCheck()
+	public boolean idOverlapCheck(String id) { // 5. 회원가입창에서 아이디 중복체크  idOverlapCheck()
 		boolean bol = true;
 		String sql = "select * from purchase_memeber where pm_id = ?";
 		try {
@@ -147,7 +138,7 @@ public class pmDAO extends DAO {
 		return bol;
 	}
 	
-	public String loginCheck(String id, String password) { // 7. 로그인 체크       loginCheck()
+	public String loginCheck(String id, String password) { // 6. 로그인 체크       loginCheck()
 		String grant = null;
 		String sql = "select from purchase_member where pm_id = ? and pm_pw=?";
 		

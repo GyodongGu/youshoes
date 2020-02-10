@@ -66,9 +66,12 @@ public class FrontController extends HttpServlet {
 		cont.put("/bookmark.do", new bookmarkCommand());       // 구매 회원 즐겨찾기 상품 보기
 		cont.put("/logout.do", new logoutCommand());           // 로그아웃
 		
-		// 구교동가  만들어야할 Command
+		// 가게 및 상품 검색,리뷰,예약,댓글
 		cont.put("/Review.do",new ReviewCommand());
 
+			
+		/* 판매자 */
+		
 		/* 관리자 */
 //		cont.put("/myReview.do", new myReviewCommand());       // 판매회원 목록
 //		cont.put("/myReview.do", new myReviewCommand());       // 판매회원 등록
@@ -79,10 +82,6 @@ public class FrontController extends HttpServlet {
 //		cont.put("/myReview.do", new myReviewCommand());       // 매출
 //		cont.put("/myReview.do", new myReviewCommand());       // 공지사항 목록
 //		cont.put("/myReview.do", new myReviewCommand());       // 공지사항 등록
-		
-		
-		/* 판매자 */
-		
 
 		
 		
