@@ -27,7 +27,7 @@ public class logoutCommand implements Command {
 		request.setAttribute("id", id);
 
 		// ""안의 jsp파일로 이동
-		String path = "view/loginOut.jsp";
+		String path = "view/login.jsp";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
 		dispatcher.forward(request, response);
 		

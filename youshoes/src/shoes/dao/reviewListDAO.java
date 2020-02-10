@@ -11,7 +11,7 @@ public class reviewListDAO extends DAO{
 		
 		List<reviewDTO> list= new ArrayList<reviewDTO>();
 		
-		String sql="select r.* from product p join purchase_review r on p.pdt_no=r.pdt_no where sm_id='manshoes01'";
+		String sql="select * from product p join purchase_review r on p.pdt_no=r.pdt_no where sm_id='manshoes01'";
 		
 		try {
 			pstmt=conn.prepareStatement(sql);

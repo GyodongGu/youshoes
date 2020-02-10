@@ -21,6 +21,7 @@ import shoes.command.loginOkCommand;
 import shoes.command.logoutCommand;
 import shoes.command.myReviewCommand;
 import shoes.command.pMemEventCommand;
+import shoes.command.pointCommand;
 import shoes.command.profileUpdateCommand;
 import shoes.common.Command;
 
@@ -48,17 +49,22 @@ public class FrontController extends HttpServlet {
 		charset = config.getInitParameter("charset");
 		
 		/* 구매 유저  */
+		// 로그인 부분
 		cont.put("/index.do", new indexCommand());             // 메인 홈페이지 호출
 		cont.put("/login.do", new loginCommand());             // 로그인
 		cont.put("/loginOk.do", new loginOkCommand());         // 로그인 체크
-		cont.put("/logout.do", new logoutCommand());           // 로그아웃
 		cont.put("/join.do", new joinCommand());               // 회원가입
 		cont.put("/JoinOk.do", new JoinOkCommand());           // 회원가입 체크
 		cont.put("/idOverapOk.do", new idOverapOkCommand());   // 구매회원 아이디 중복체크
+		
+		
+		// 프로필 부분
+		cont.put("/myReview.do", new myReviewCommand());       // 구매 회원이 자기가 작성한 후기 보기
+		cont.put("/point.do", new pointCommand());             // 구매 회원 현재 포인트 확인 및 충전
 		cont.put("/profileUpdate.do", new profileUpdateCommand());  // 구매 회원 프로필 수정
 		cont.put("/pMemEvent.do", new pMemEventCommand());     // 구매 회원 이벤트 목록 보기
 		cont.put("/bookmark.do", new bookmarkCommand());       // 구매 회원 즐겨찾기 상품 보기
-		cont.put("/myReview.do", new myReviewCommand());       // 구매 회원이 자기가 작성한 리뷰보기
+		cont.put("/logout.do", new logoutCommand());           // 로그아웃
 		
 		// 구교동가  만들어야할 Command
 		cont.put("/Review.do",new ReviewCommand());
