@@ -41,7 +41,7 @@
         <div class="col align-self-center px-3  text-center">
             <img src="img/logo.png" alt="logo" class="logo-small">
             <h2 class="text-white"><span class="font-weight-light">회원가입</span></h2>
-            <form class="form-signin shadow">
+            <form class="form-signin shadow" id="frm" action="login.jsp">
                  <div class="form-group float-label">
                     <input type="text" id="pm_id" class="form-control" name="pm_id" required autofocus >
                     <label for="pm_id" class="form-control-label"><font color="red">*</font>아이디</label>
@@ -99,7 +99,7 @@
                     <label for="pm_addr3" class="form-control-label active">참고항목</label>
                 	</div>
 					
-					<div id="wrap" style="display:none;border:1px solid;width:500px;height:300px;margin:5px 0;position:relative">
+					<div id="wrap" style="display:none;border:1px solid;width:320px;height:300px;margin:5px 0;position:relative">
 					<img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="btnFoldWrap" style="cursor:pointer;position:absolute;right:0px;top:-1px;z-index:1" onclick="foldDaumPostcode()" alt="접기 버튼">
 					</div>
 					
@@ -185,7 +185,9 @@
 
                 <div class="row">
                     <div class="col-auto">
-                        <a href="login.jsp" class="btn btn-lg btn-default btn-rounded shadow"><span>회원가입</span><i class="material-icons">arrow_forward</i></a>
+                        <a href="#" class="btn btn-lg btn-default btn-rounded shadow"
+                        onclick="document.getElementById('frm').submit();">
+                        <span>회원가입</span><i class="material-icons">arrow_forward</i></a>
                     </div>
                     <span>[네이버 회원가입(api)]</span>
                     <span>[카카오 회원가입(api)]</span>
