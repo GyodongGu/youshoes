@@ -85,6 +85,12 @@ public class smDTO {
 	public void setSm_addr2(String sm_addr2) {
 		this.sm_addr2 = sm_addr2;
 	}
+	public String getSm_addr3() {
+		return sm_addr3;
+	}
+	public void setSm_addr3(String sm_addr3) {
+		this.sm_addr3 = sm_addr3;
+	}
 	public String getSm_stat_cd() {
 		return sm_stat_cd;
 	}

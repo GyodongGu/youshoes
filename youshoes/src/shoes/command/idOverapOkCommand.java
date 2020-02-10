@@ -1,37 +1,34 @@
 package shoes.command;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import co.ysw.dao.memberDAO;
 import shoes.common.Command;
-import shoes.dao.noticeDAO;
-import shoes.dao.reviewListDAO;
-import shoes.dto.noticeDTO;
-import shoes.dto.reviewDTO;
 
-public class pMemEventCommand implements Command {
+public class idOverapOkCommand implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		noticeDAO dao = new noticeDAO();
-		ArrayList<noticeDTO> list = new ArrayList<noticeDTO>();
+		pmDAO dao = new pmDAO();
 
-		// 전체 리스트 갖고오기
-		list = dao.noticeSelect();
+		boolean b = true;
+		String id = request.getParameter("id");
 
-		request.setAttribute("list", list);
+		b = dao.isIdCheck(id);
 
-		String path = "view/pMem/pMemEvent.jsp";
+		// request가 유지되는 동안에 세션에 데이터를 저장
+		request.setAttribute("b", b);
+		request.setAttribute("id", id);
+
+		String path = "view/idCheck.jsp";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
 		dispatcher.forward(request, response);
-		
 		return null;
 	}
 

@@ -8,19 +8,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import shoes.common.Command;
-import shoes.dao.reviewListDAO;
-import shoes.dto.reviewDTO;
+import shoes.dao.PMemDAO;
+import shoes.dto.pmDTO;
 
-public class myReviewCommand implements Command {
+public class PMemManageCommand implements Command{
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		reviewListDAO rdao= new reviewListDAO();
-		List<reviewDTO> list = rdao.reviewlist();
+
+		PMemDAO pdao = new PMemDAO();
+		List<pmDTO> list = pdao.pmList();
 		
 		request.setAttribute("list", list);
 		
-		return "view/pMem/myReview.jsp";
+		return "/view/admin/pMemManage.jsp";
 	}
+
 }
