@@ -12,25 +12,25 @@
     <title>Product · GoFurniture</title>
 
     <!-- Material design icons CSS -->
-    <link rel="stylesheet" href="${requestScope.request.contextPath}/youshoes/view/vendor/materializeicon/material-icons.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/view/vendor/materializeicon/material-icons.css">
 
     <!-- Roboto fonts CSS -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
 
     <!-- Bootstrap core CSS -->
-    <link href="${requestScope.request.contextPath}/youshoes/view/vendor/bootstrap-4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/view/vendor/bootstrap-4.4.1/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Swiper CSS -->
-    <link href="${requestScope.request.contextPath}/youshoes/view/vendor/swiper/css/swiper.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/view/vendor/swiper/css/swiper.min.css" rel="stylesheet">
 
     <!-- Chosen multiselect CSS -->
-    <link href="${requestScope.request.contextPath}/youshoes/view/vendor/chosen_v1.8.7/chosen.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/view/vendor/chosen_v1.8.7/chosen.min.css" rel="stylesheet">
 
     <!-- nouislider CSS -->
-    <link href="${requestScope.request.contextPath}/youshoes/view/vendor/nouislider/nouislider.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/view/vendor/nouislider/nouislider.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="${requestScope.request.contextPath}/youshoes/view/css/style.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/view/css/style.css" rel="stylesheet">
 </head>
 <body>
 	<div class="wrapper">
@@ -39,19 +39,28 @@
 			<div class="row bg-white py-3">
 				<div class="col-6 mb-3">
 					<p>
+					<c:forEach var="stars" begin="1" end="${dto.getRw_stars() }">
+						<i class="material-icons text-warning md-18 vm">star</i>
+					</c:forEach>
+					<c:forEach var="stars" begin="1" end="${5- dto.getRw_stars() }">
+						<i class="material-icons text-secondary md-18 vm">star</i>
+					</c:forEach>
+						
+					</p>
+<!-- 					<p>
 						<i class="material-icons text-warning md-18 vm">star</i> <i
 							class="material-icons text-warning md-18 vm">star</i> <i
 							class="material-icons text-warning md-18 vm">star</i> <i
 							class="material-icons text-secondary md-18 vm">star</i> <i
 							class="material-icons text-secondary md-18 vm">star</i>
-					</p>
+					</p> -->
 				</div>
 				<div class="col-6 mb-3 text-right">
 					<p class="text-muted small">${dto.getRw_date()}</p>
 				</div>
 				<div class="col-auto align-self-start">
 					<figure class="avatar avatar-50">
-						<img src="${requestScope.request.contextPath}/youshoes/view/img/user1.png" alt="">
+						<img src="${pageContext.request.contextPath}/view/img/user1.png" alt="">
 					</figure>
 				</div>
 				<div class="col">
@@ -61,7 +70,7 @@
 				<div class="col-12">
 					<p class="text-secondary small">${dto.getRw_content()}
 						</p>
-					<img src="img/handmade.jpg" height="50%" width="90%">
+					<img src="${pageContext.request.contextPath}/view/img/${dto.img_name[0].img_name}" height="50%" width="90%">
 					<br><br>
 					<p style="text-align:center">
 					<button class="btn btn-sm btn-link p-0"><font size="5"><strong><i class="material-icons md-18">favorite_outline</i>좋아요</strong></font></button>

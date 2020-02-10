@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import shoes.command.ReviewCommand;
+import shoes.command.ShopCommand;
 import shoes.common.Command;
 
 
@@ -45,7 +46,7 @@ public class FrontController extends HttpServlet {
 		
 		// 구교동가  만들어야할 Command
 		cont.put("/Review.do",new ReviewCommand());
-		
+		cont.put("/Shop.do", new ShopCommand());
 		// 권우성가  만들어야할 Command
 		
 		
@@ -73,7 +74,7 @@ public class FrontController extends HttpServlet {
 		
 		if(commandImpl!=null) {
 			page = commandImpl.execute(request, response);
-			
+			System.out.println(page);
 			if(page!=null && !page.isEmpty()) {
 				if(page.startsWith("redirect:")) {
 					String view = page.substring(9);
@@ -85,10 +86,9 @@ public class FrontController extends HttpServlet {
 				}else {
 					request.getRequestDispatcher(page).forward(request, response);
 				}
-			}else {
-				response.getWriter().append("잘못된 요청입니다.");
 			}
-
+		}else {
+			response.getWriter().append("잘못된 요청입니다.");
 		}
 	}
 
