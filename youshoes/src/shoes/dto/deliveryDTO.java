@@ -1,7 +1,7 @@
 package shoes.dto;
 
 import java.sql.Date;
-
+sddddddddddddddd
 public class deliveryDTO {
 	private int order_d_no;
 	private int invoice_no;

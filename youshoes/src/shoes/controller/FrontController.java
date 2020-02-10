@@ -35,7 +35,7 @@ import shoes.common.Command;
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
+	dddddddddddd
 	
 	String charset = null;
 	HashMap<String, Command> cont = new HashMap<String, Command>();

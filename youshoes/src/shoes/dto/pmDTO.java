@@ -1,7 +1,7 @@
 package shoes.dto;
 
 import java.sql.Date;
-
+dddddddddddddddddddd
 public class pmDTO {
 	private int pm_no;
 	private String pm_id;
