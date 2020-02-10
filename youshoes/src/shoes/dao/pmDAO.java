@@ -29,7 +29,7 @@ public class pmDAO extends DAO {
 	public pmDAO() {
 		super();
 	}
-
+ddddddddddddddddddddddddddddddddddddddddd
 	public ArrayList<pmDTO> pmSelect() { // 1. 회원목록 전체 조회    pmSelect()
 		list = new ArrayList<pmDTO>();
 		pmDTO dto = new pmDTO();
