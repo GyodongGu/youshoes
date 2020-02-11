@@ -32,7 +32,6 @@ public class pmDAO extends DAO {
 
 	public ArrayList<pmDTO> pmSelect() { // 1. 회원목록 전체 조회    pmSelect()
 		list = new ArrayList<pmDTO>();
-		pmDTO dto = new pmDTO();
 		String sql = "select * from purchase_member";
 		
 		try {
@@ -40,6 +39,7 @@ public class pmDAO extends DAO {
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
+				dto = new pmDTO();
 				dto.setPm_no(rs.getInt("pm_no"));
 				dto.setPm_id(rs.getString("pm_id"));
 				dto.setPm_pw(rs.getString("pm_pw"));
@@ -144,19 +144,16 @@ public class pmDAO extends DAO {
 		return bol;
 	}
 	
-	public String loginCheck(String id, String password) { // 6. 로그인 체크       loginCheck()
+	public String loginCheck(String id, String pw) { // 6. 로그인 체크       loginCheck()
 		String grant = null;
-		String sql = "select from purchase_member where pm_id = ? and pm_pw=?";
-		
+		String sql = "select pm_stat_cd from purchase_member where pm_id = ? and pm_pw=?";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, id);
-			pstmt.setString(2, password);
+			pstmt.setString(2, pw);
 			rs = pstmt.executeQuery();
 			
-			if(rs.next()) {
-				grant = rs.getString("");
-			}
+			if(rs.next()) grant = rs.getString("pm_stat_cd");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
