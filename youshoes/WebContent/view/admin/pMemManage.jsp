@@ -24,11 +24,14 @@
 			</tr>
 			<c:forEach var="dto" items="${list}">
 			<tr>
+				<td>${dto.pm_no }</td>
 				<td>${dto.pm_id }</td>
 				<td>${dto.pm_name }</td>
 				<td>${dto.pm_date }</td>
+				<td>${dto.pm_email }</td>
 				<td>${dto.pm_addr1 }</td>
 				<td>${dto.pm_tell }</td>
+				<td>${dto.point_now }</td>
 			</tr>				
 			</c:forEach>
 		</table>

@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import shoes.common.Command;
-import shoes.dao.PMemDAO;
+import shoes.dao.pMemDAO;
 import shoes.dto.pmDTO;
 
 public class PMemManageCommand implements Command{
@@ -17,8 +17,8 @@ public class PMemManageCommand implements Command{
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		PMemDAO pdao = new PMemDAO();
-		List<pmDTO> list = pdao.pmList();
+		pMemDAO pdao = new pMemDAO();
+		List<pmDTO> list = pdao.pmSelect();
 		
 		request.setAttribute("list", list);
 		

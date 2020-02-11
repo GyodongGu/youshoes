@@ -22,11 +22,11 @@ import shoes.dto.pmDTO;
  *
  */
 
-public class pmDAO extends DAO {
+public class pMemDAO extends DAO {
 	private pmDTO dto;
 	private ArrayList<pmDTO> list;
 
-	public pmDAO() {
+	public pMemDAO() {
 		super();
 	}
 
@@ -40,19 +40,20 @@ public class pmDAO extends DAO {
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
-				dto.setPm_no(rs.getInt("pMemNo"));
-				dto.setPm_id(rs.getString("pMemID"));
-				dto.setPm_pw(rs.getString("pMemPW"));
-				dto.setPm_name(rs.getString("pMemName"));
-				dto.setPm_stat_cd(rs.getString("pMemStatCode"));
-				dto.setPm_birth(rs.getDate("pMemBirth"));
-				dto.setPm_email(rs.getString("pMemEmail"));
-				dto.setPm_date(rs.getDate("pMemDate"));
-				dto.setPm_tell(rs.getString("pMemTell"));
-				dto.setPm_post(rs.getString("pMemPost"));
-				dto.setPm_addr1(rs.getString("pMemAddr1"));
-				dto.setPm_addr2(rs.getString("pMemAddr2"));
-				dto.setPoint_now(rs.getInt("pMemPoint"));
+				dto.setPm_no(rs.getInt("pm_no"));
+				dto.setPm_id(rs.getString("pm_id"));
+				dto.setPm_pw(rs.getString("pm_pw"));
+				dto.setPm_name(rs.getString("pm_name"));
+				dto.setPm_stat_cd(rs.getString("pm_stat_cd"));
+				dto.setPm_birth(rs.getDate("pm_birth"));
+				dto.setPm_email(rs.getString("pm_email"));
+				dto.setPm_date(rs.getDate("pm_date"));
+				dto.setPm_tell(rs.getString("pm_tell"));
+				dto.setPm_post(rs.getString("pm_post"));
+				dto.setPm_addr1(rs.getString("pm_addr1"));
+				dto.setPm_addr2(rs.getString("pm_addr2"));
+				dto.setPm_addr3(rs.getString("pm_addr3"));
+				dto.setPoint_now(rs.getInt("point_now"));
 				list.add(dto);
 			}
 		} catch (SQLException e) {
