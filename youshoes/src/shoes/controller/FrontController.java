@@ -92,13 +92,6 @@ public class FrontController extends HttpServlet {
 //		cont.put("/myReview.do", new myReviewCommand());       // 공지사항 목록
 //		cont.put("/myReview.do", new myReviewCommand());       // 공지사항 등록
 
-
-		
-		
-		
-		
-		
-		
 		
 	}
 
