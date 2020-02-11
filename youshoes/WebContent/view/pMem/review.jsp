@@ -77,8 +77,9 @@
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					|
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<a href="pMem/insertReply.jsp"><font size="5" color="gray"><strong>댓글</strong></font></a>
+					<a href="${pageContext.request.contextPath}/ReplyList.do"><font size="5" color="gray"><strong>댓글</strong></font></a>
 					</p>
+					<p class="text-secondary small"></p>
 				</div>
 			</div>
 			</c:forEach>

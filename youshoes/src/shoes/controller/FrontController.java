@@ -11,10 +11,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import shoes.command.JoinOkCommand;
+import shoes.command.ReplyInsertCommand;
+import shoes.command.ReplyListCommand;
 import shoes.command.ReviewCommand;
-
 import shoes.command.ShopCommand;
-
 import shoes.command.bookmarkCommand;
 import shoes.command.idOverapOkCommand;
 import shoes.command.indexCommand;
@@ -26,7 +26,6 @@ import shoes.command.myReviewCommand;
 import shoes.command.pMemEventCommand;
 import shoes.command.pointCommand;
 import shoes.command.profileUpdateCommand;
-
 import shoes.common.Command;
 
 
@@ -71,9 +70,10 @@ public class FrontController extends HttpServlet {
 		cont.put("/logout.do", new logoutCommand());           // 로그아웃
 		
 		// 가게 및 상품 검색,리뷰,예약,댓글
-		cont.put("/Review.do",new ReviewCommand());
-
-		cont.put("/Shop.do", new ShopCommand());
+		cont.put("/Review.do",new ReviewCommand());				//리뷰페이지 호출
+		cont.put("/Shop.do", new ShopCommand());				//상점페이지 호출
+		cont.put("/ReplyList.do", new ReplyListCommand());		//댓글리스트 호출
+		cont.put("/ReplyInsert.do",new ReplyInsertCommand());	//댓글 입력
 		// 권우성가  만들어야할 Command
 
 

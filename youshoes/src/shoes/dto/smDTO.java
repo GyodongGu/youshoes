@@ -1,6 +1,7 @@
 package shoes.dto;
 
 import java.sql.Date;
+import java.util.List;
 
 public class smDTO {
 	private String sm_id;
@@ -17,8 +18,29 @@ public class smDTO {
 	private String sm_stat_cd;
 	private String mgr_auth_cd;
 	private String sm_remark;
-
-
+	private String sm_time;
+	private String sm_rest;
+	private List<imageDetailDTO> img_name;
+	
+	
+	public List<imageDetailDTO> getImg_name() {
+		return img_name;
+	}
+	public void setImg_name(List<imageDetailDTO> img_name) {
+		this.img_name = img_name;
+	}
+	public String getSm_time() {
+		return sm_time;
+	}
+	public void setSm_time(String sm_time) {
+		this.sm_time = sm_time;
+	}
+	public String getSm_rest() {
+		return sm_rest;
+	}
+	public void setSm_rest(String sm_rest) {
+		this.sm_rest = sm_rest;
+	}
 	public String getSm_id() {
 		return sm_id;
 	}
@@ -103,12 +125,14 @@ public class smDTO {
 	public void setSm_remark(String sm_remark) {
 		this.sm_remark = sm_remark;
 	}
+	
 	@Override
 	public String toString() {
 		return "smDTO [sm_id=" + sm_id + ", shop_name=" + shop_name + ", sm_pw=" + sm_pw + ", sm_name=" + sm_name
 				+ ", sm_tell=" + sm_tell + ", business_no=" + business_no + ", sm_date=" + sm_date + ", sm_post="
 				+ sm_post + ", sm_addr1=" + sm_addr1 + ", sm_addr2=" + sm_addr2 + ", sm_addr3=" + sm_addr3
-				+ ", sm_stat_cd=" + sm_stat_cd + ", mgr_auth_cd=" + mgr_auth_cd + ", sm_remark=" + sm_remark + "]";
+				+ ", sm_stat_cd=" + sm_stat_cd + ", mgr_auth_cd=" + mgr_auth_cd + ", sm_remark=" + sm_remark
+				+ ", sm_time=" + sm_time + ", sm_rest=" + sm_rest + "]";
 	}
 
 	

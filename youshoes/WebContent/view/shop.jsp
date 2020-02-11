@@ -211,7 +211,7 @@ tr, td {
 		<div class="swiper-container product-details">
 			<div class="swiper-wrapper">
 				<div class="swiper-slide" style="padding: 0px">
-					<img src="${pageContext.request.contextPath}/view/img/handmade.jpg" alt="">
+					<img src="${pageContext.request.contextPath}/view/img/${smem.img_name[0].img_name}" alt="">
 				</div>
 				<div class="swiper-slide">
 					<img src="${pageContext.request.contextPath}/view/img/handmade.jpg" alt="">
@@ -251,12 +251,12 @@ tr, td {
 					<p>
 						<strong>영업시간</strong>
 					</p>
-					<p>10:00~21:00</p>
+					<p>${smem.sm_time }</p>
 					<br> <br>
 					<p>
 						<strong>휴무일</strong>
 					</p>
-					<p>매주 일요일</p>
+					<p>${smem.sm_rest }</p>
 					<br> <br>
 					<p>
 						<strong>전화번호</strong>
