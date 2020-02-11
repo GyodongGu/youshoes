@@ -11,8 +11,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import shoes.command.JoinOkCommand;
+
 import shoes.command.ReplyInsertCommand;
 import shoes.command.ReplyListCommand;
+
+import shoes.command.pMemManageCommand;
+
 import shoes.command.ReviewCommand;
 import shoes.command.ShopCommand;
 import shoes.command.bookmarkCommand;
@@ -23,6 +27,7 @@ import shoes.command.loginCommand;
 import shoes.command.loginOkCommand;
 import shoes.command.logoutCommand;
 import shoes.command.myReviewCommand;
+import shoes.command.pMemCommand;
 import shoes.command.pMemEventCommand;
 import shoes.command.pointCommand;
 import shoes.command.profileUpdateCommand;
@@ -59,6 +64,7 @@ public class FrontController extends HttpServlet {
 		cont.put("/join.do", new joinCommand());               // 회원가입
 		cont.put("/JoinOk.do", new JoinOkCommand());           // 회원가입 체크
 		cont.put("/idOverapOk.do", new idOverapOkCommand());   // 구매회원 아이디 중복체크
+		cont.put("/pMem.do", new pMemCommand());			   // 로그인후 화면(잘안됨)
 		
 		
 		// 프로필 부분
@@ -84,20 +90,13 @@ public class FrontController extends HttpServlet {
 //		cont.put("/myReview.do", new myReviewCommand());       // 판매회원 목록
 //		cont.put("/myReview.do", new myReviewCommand());       // 판매회원 등록
 //		cont.put("/myReview.do", new myReviewCommand());       // 판매회원 삭제
-//		cont.put("/myReview.do", new myReviewCommand());       // 구매회원 목록
+		cont.put("/pMemManage.do", new pMemManageCommand());       // 구매회원 목록
 //		cont.put("/myReview.do", new myReviewCommand());       // 구매회원 삭제
 //		cont.put("/myReview.do", new myReviewCommand());       // 코드ID 목록 확인
 //		cont.put("/myReview.do", new myReviewCommand());       // 매출
 //		cont.put("/myReview.do", new myReviewCommand());       // 공지사항 목록
 //		cont.put("/myReview.do", new myReviewCommand());       // 공지사항 등록
 
-
-		
-		
-		
-		
-		
-		
 		
 	}
 
