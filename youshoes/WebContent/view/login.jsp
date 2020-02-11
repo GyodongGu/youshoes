@@ -83,6 +83,7 @@ function getCookie(cookieName) {
 </head>
 
 <body>
+	<!-- 화면바뀔때 로그 크게 -->
     <div class="row no-gutters vh-100 loader-screen">
         <div class="col align-self-center text-white text-center">
             <img src="img/logo.png" alt="logo">
@@ -95,6 +96,7 @@ function getCookie(cookieName) {
             </div>
         </div>
     </div>
+    
     <div class="row no-gutters vh-100 proh bg-template">
         <img src="img/shoes20.png" alt="logo" class="apple right-image align-self-center">
         <div class="col align-self-center px-3 text-center">

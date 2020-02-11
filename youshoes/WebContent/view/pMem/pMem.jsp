@@ -86,6 +86,20 @@
 </head>
 
 <body>
+	<!-- 화면바뀔때 로고 크게 -->
+	<div class="row no-gutters vh-100 loader-screen">
+        <div class="col align-self-center text-white text-center">
+            <img src="../img/logo.png" alt="logo">
+            <h1><span class="font-weight-light">You</span>Shoes</h1>
+            <div class="laoderhorizontal">
+	            <div></div>
+	            <div></div>
+	            <div></div>
+	            <div></div>
+            </div>
+        </div>
+    </div>
+    
 	<!-- 사이드바 -->
 	<div class="sidebar">
 		<div class="text-center">

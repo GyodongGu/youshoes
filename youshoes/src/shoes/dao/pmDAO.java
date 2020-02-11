@@ -68,12 +68,10 @@ public class pmDAO extends DAO {
 	public int pmInsert(pmDTO dto)  { // 2. 회원 등록 (회원 가입)      pmInsert() 
 		int n = 0;
 		/* 유승우 2020.02.10 뭘 넣어야 할지 아직 모르겠음 */
-		String sql = "insert into purchase_member(pm_id, pm_pw, pm_name, pm_birth, pm_email, pm_date, pm_tell, pm_post, pm_addr1, pm_addr2) "
-					+ "value(?,?,?,?,?,?,?,?,?,?,?)";
-		Timestamp get_joinDate = new Timestamp(System.currentTimeMillis());
+		String sql = "insert into purchase_member(pm_no, pm_id, pm_pw, pm_name, pm_stat_cd, pm_birth, pm_email, pm_date, pm_tell, pm_post, pm_addr1, pm_addr2, pm_addr3, point_now )"
+					+ "value(pm_no.nextval, ?, ?, ?, 'act04', ?, ?, 'sysdate', ?, ?, ?, ?, ?, '500')";
 		
-		
-		// 아이디, 비번, 비밀번호 확인, 이름, 생년월일, 이메일, 가입일, 전화번호, 우편번호, 주소1, 주소2, 주소3
+		// 회원번호, 아이디, 비번, 이름, 상태, 생년월일, 이메일, 가입일, 전화번호, 우편번호, 주소1, 주소2, 주소3, 포인트
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, dto.getPm_id());
@@ -81,12 +79,11 @@ public class pmDAO extends DAO {
 			pstmt.setString(3, dto.getPm_name());
 			pstmt.setDate(4, dto.getPm_birth());
 			pstmt.setString(5, dto.getPm_email());
-			pstmt.setDate(6, get_joinDate);                  // 가입일자
-			pstmt.setString(7, dto.getPm_tell());
-			pstmt.setString(8, dto.getPm_post());
-			pstmt.setString(9, dto.getPm_addr1());
-			pstmt.setString(10, dto.getPm_addr2());
-			pstmt.setString(11, dto.getPm_addr3());
+			pstmt.setString(6, dto.getPm_tell());
+			pstmt.setString(7, dto.getPm_post());
+			pstmt.setString(8, dto.getPm_addr1());
+			pstmt.setString(9, dto.getPm_addr2());
+			pstmt.setString(10, dto.getPm_addr3());
 			list.add(dto);
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -97,19 +94,22 @@ public class pmDAO extends DAO {
 	}
 
 	public int pmUpdate(pmDTO dto) { // 3. 회원 정보 수정      pmUpdate()
-		// 이름, 이메일, 전화번호, 주소1, 주소2, 주소3
 		int n = 0;
-		String sql = "update purchase_member set pm_name=?, pm_email=?, pm_tell=?, pm_addr1=?, pm_addr2=?, pm_addr3=? where pm_id=?";
+		String sql = "update purchase_member set pm_name = ?, pm_email = ?, pm_tell = ?,"
+				+ "pm_post=?, pm_addr1=?, pm_addr2=?, pm_addr3=?"
+				+ "where pm_id=? ";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, dto.getPm_name());
 			pstmt.setString(2, dto.getPm_email());
 			pstmt.setString(3, dto.getPm_tell());
-			pstmt.setString(4, dto.getPm_addr1());
-			pstmt.setString(5, dto.getPm_addr2());
-			pstmt.setString(6, dto.getPm_addr3());
-			pstmt.setString(7, dto.getPm_id());
+			pstmt.setString(4, dto.getPm_post());
+			pstmt.setString(5, dto.getPm_addr1());
+			pstmt.setString(6, dto.getPm_addr2());
+			pstmt.setString(7, dto.getPm_addr3());
+			pstmt.setString(8, dto.getPm_id());
 			list.add(dto);
+			/* n = pstmt.executeUpdate(); */
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -117,7 +117,7 @@ public class pmDAO extends DAO {
 		}
 		return n;
 	}
-
+	
 	public int pmDelete(pmDTO dto) { // 4. 회원 정보 삭제      pmDelete()
 		int n = 0;
 		String sql = "delete from purchase_memeber where pm_id = ?";
