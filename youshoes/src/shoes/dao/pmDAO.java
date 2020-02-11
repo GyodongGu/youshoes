@@ -22,11 +22,11 @@ import shoes.dto.pmDTO;
  *
  */
 
-public class pMemDAO extends DAO {
+public class pmDAO extends DAO {
 	private pmDTO dto;
 	private ArrayList<pmDTO> list;
 
-	public pMemDAO() {
+	public pmDAO() {
 		super();
 	}
 

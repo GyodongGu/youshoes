@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import shoes.command.JoinOkCommand;
-import shoes.command.PMemManageCommand;
+import shoes.command.pMemManageCommand;
 import shoes.command.ReviewCommand;
 
 import shoes.command.ShopCommand;
@@ -85,7 +85,7 @@ public class FrontController extends HttpServlet {
 //		cont.put("/myReview.do", new myReviewCommand());       // 판매회원 목록
 //		cont.put("/myReview.do", new myReviewCommand());       // 판매회원 등록
 //		cont.put("/myReview.do", new myReviewCommand());       // 판매회원 삭제
-		cont.put("/pMemManage.do", new PMemManageCommand());       // 구매회원 목록
+		cont.put("/pMemManage.do", new pMemManageCommand());       // 구매회원 목록
 //		cont.put("/myReview.do", new myReviewCommand());       // 구매회원 삭제
 //		cont.put("/myReview.do", new myReviewCommand());       // 코드ID 목록 확인
 //		cont.put("/myReview.do", new myReviewCommand());       // 매출
