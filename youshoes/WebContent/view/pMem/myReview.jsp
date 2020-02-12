@@ -21,14 +21,14 @@
 			</tr>
 		</thead>
 		<tbody>
-			<C:forEach var="dto" items="${list}">
+				<C:forEach items="${userReviews}" var="pmReview" >
 				<tr>
-					<th align="center" width="50">${dto.rw_no}</th>
-					<td align="center" width="200">${dto.rw_content}</td>
-					<td align="center" width="70">${dto.pm_id}</td>
-					<td align="center" width="100">${dto.rw_date}</td>
+					<th align="center" width="50">${pmReview.rw_no}</th>
+					<td align="center" width="200">${pmReview.rw_content}</td>
+					<td align="center" width="70">${pmReview.pm_id}</td>
+					<td align="center" width="100">${pmReview.rw_date}</td>
 				</tr>
-			</C:forEach>
+				</C:forEach>
 		</tbody>
 	</table>
 	<!-- paginatnion -->

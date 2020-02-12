@@ -7,8 +7,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import co.ysw.dao.memberDAO;
 import shoes.common.Command;
+import shoes.dao.pmDAO;
 
 public class idOverapOkCommand implements Command {
 
@@ -20,7 +20,7 @@ public class idOverapOkCommand implements Command {
 		boolean b = true;
 		String id = request.getParameter("id");
 
-		b = dao.isIdCheck(id);
+		b = dao.idOverlapCheck(id);
 
 		// request가 유지되는 동안에 세션에 데이터를 저장
 		request.setAttribute("b", b);
