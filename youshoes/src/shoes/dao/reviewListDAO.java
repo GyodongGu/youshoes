@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import shoes.dto.imageDetailDTO;
+import shoes.dto.likeDTO;
 import shoes.dto.reviewDTO;
 
 public class reviewListDAO extends DAO{
@@ -18,8 +19,13 @@ public class reviewListDAO extends DAO{
 		
 		String sql1="select img_name from image i join image_detail d on i.img_no=d.img_no where section='I03' and section_no=?";
 		
+		String sql2="select * from push_like where rw_no=? and pm_id=? ";
+		
 		PreparedStatement pstmt1;
 		ResultSet rs1;
+		
+		PreparedStatement pstmt2;
+		ResultSet rs2;
 		
 		try {
 			pstmt=conn.prepareStatement(sql);
@@ -48,6 +54,18 @@ public class reviewListDAO extends DAO{
 					imgList.add(imgDTO);
 				}
 				rdto.setImg_name(imgList);
+				
+				likeDTO ldto= new likeDTO();
+				pstmt2=conn.prepareStatement(sql2);
+				pstmt2.setInt(1, rs.getInt("rw_no"));
+				pstmt2.setString(2, rs.getString("pm_id"));
+				rs2=pstmt2.executeQuery();
+				while(rs2.next()) {
+					ldto.setRw_no(rs2.getInt("rw_no"));
+					ldto.setPm_id(rs2.getString("pm_id"));
+				}
+				rdto.setLikeview(ldto);
+				
 				list.add(rdto);
 			}
 			
@@ -81,12 +99,5 @@ public class reviewListDAO extends DAO{
 		
 		return name;
 	}
-	
-	
-	
-	
-	
-	
-	
 	
 }
