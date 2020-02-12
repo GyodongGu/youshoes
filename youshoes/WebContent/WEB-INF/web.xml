@@ -4,35 +4,17 @@
 
 	<!-- 작성자 : 유승우 작성일자 : 2020.02.07 -->
 
-	<!-- <servlet>
-		<servlet-name>Controller</servlet-name> co.ysw.controller.newFrontContrller 서블릿을 Controller 이름으로 웹서버에 등록
-		<servlet-class>co.ysw.controller.newFrontController</servlet-class>
-
-		<init-param>  		co.ysw.controller.newFrontContrller 서블릿에 charset=UTF-8 변수를 저장
-			<param-name>charset</param-name>
-			<param-value>UTF-8</param-value>
-		</init-param>
-	</servlet>
-	
-	
-	
-	<servlet-mapping>      Controller 이름으로 등록된 서블릿은 URL 요청 정보가 .do로 끝나는 요청이 들어올 때마다 실행
-		<servlet-name>Controller</servlet-name>
-		<url-pattern>*.do</url-pattern>
-	</servlet-mapping>
-
-	
-	<welcome-file-list>    http://localhost:9090/dev/로 요청이 들어오면 index.jsp 페이지가실행되도록 설정
+	<welcome-file-list>   
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
 
 	
-	<error-page>           error 페이지
+	<error-page>          
 		<error-code>404</error-code>
 		<location>/view/error/404error.jsp</location>
 	</error-page>
 	<error-page>
 		<error-code>500</error-code>
 		<location>/view/error/500error.jsp</location>
-	</error-page> -->
+	</error-page> 
 </web-app>

@@ -49,7 +49,7 @@
 			<div class="text-center">
 				<div class="figure-profile shadow my-4">
 					<figure>
-						<img src="../img/user1.png" alt="">
+						<img src="${pageContext.request.contextPath}/view/img/user1.png" alt="">
 					</figure>
 					<div class="btn btn-dark text-white floating-btn">
 						<i class="material-icons">camera_alt</i> <input type="file" class="float-file">
@@ -61,9 +61,9 @@
 			<!-- 프로필 탭 메뉴 -->
 			<div id="tabs">
 				<ul>
-					<li><a href="myReview.jsp">내 스토리</a></li>
-					<li><a href="point.jsp">내 포인트</a></li>
-					<li><a href="profileSet.jsp">설정</a></li>
+					<li><a href="${pageContext.request.contextPath}/myReview.do">내 스토리</a></li>
+					<li><a href="${pageContext.request.contextPath}/point.do">내 포인트</a></li>
+					<li><a href="${pageContext.request.contextPath}/profileSet.jsp">설정</a></li>
 				</ul>
 
 			</div>

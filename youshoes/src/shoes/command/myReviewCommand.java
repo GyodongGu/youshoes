@@ -17,10 +17,10 @@ public class myReviewCommand implements Command {
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		reviewListDAO rdao= new reviewListDAO();
-		List<reviewDTO> list = rdao.reviewlist();
+
+		List<reviewDTO> userReviews = rdao.myReview("pur01");
+		request.setAttribute("userReviews", userReviews);
 		
-		request.setAttribute("list", list);
-		
-		return "view/pMem/myReview.jsp";
+		return "/view/pMem/myReview.jsp";
 	}
 }

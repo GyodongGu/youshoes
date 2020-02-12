@@ -26,6 +26,19 @@
 
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
+    <script>
+    	function isSame(){
+    		if(document.getElementById('pm_pw').value !='' && document.getElementById('pm_pwChk').value !=''){
+    			if(document.getElementById('pm_pw').value == document.getElementById('pm_pwChk').value){
+    				document.getElementById('same').innerHTML = '비밀번호가 같습니다.';
+    				document.getElementById('same').style.color = 'blue';
+    			}else{
+    				document.getElementById('same').innerHTML = '비밀번호가 다릅니다.';
+    				document.getElementById('same').style.color = 'red';
+    			}
+    		}
+    	}
+    </script>
 </head>
 
 <body>
@@ -41,39 +54,42 @@
         <div class="col align-self-center px-3  text-center">
             <img src="img/logo.png" alt="logo" class="logo-small">
             <h2 class="text-white"><span class="font-weight-light">회원가입</span></h2>
-            <form class="form-signin shadow" id="frm" action="login.jsp">
+            <form class="form-signin shadow" id="frm" name="frm" action="../joinOk.do" method="post">
                  <div class="form-group float-label">
-                    <input type="text" id="pm_id" class="form-control" name="pm_id" required autofocus >
-                    <label for="pm_id" class="form-control-label"><font color="red">*</font>아이디</label>
+                    <input type="text" id="pm_id" name="pm_id" class="form-control" required autofocus >
+                    <label for="pm_id" class="form-control-label"><font color="red">*</font>아이디
+                    <input type="button" id="idChk" name="idChk" value="중복체크" onclick="idOverlapCheck()">
+                    </label>
+                    
                 </div>
                 
                 <div class="form-group float-label">
-                    <input type="password" id="pm_pw" class="form-control" name="pm_pw" required>
+                    <input type="password" id="pm_pw" name="pm_pw" class="form-control" onchange="isSame()" required />
                     <label for="pm_pw" class="form-control-label"><font color="red">*</font>비밀번호</label>
                 </div>
                 
                 <div class="form-group float-label">
-                    <input type="password" id="pm_pwchk" class="form-control" name="pm_pwchk" required>
-                    <label for="pm_pwchk" class="form-control-label"><font color="red">*</font>비밀번호 확인</label>
+                    <input type="password" id="pm_pwChk" name="pm_pwChk" class="form-control" onchange="isSame()" required />
+                    <label for="pm_pwChk" class="form-control-label"><font color="red">*</font>비밀번호 확인&nbsp;<span id="same"></span></label>
                 </div>
                 
                 <div class="form-group float-label">
-                    <input type="text" id="pm_name" class="form-control" name="pm_name" required >
+                    <input type="text" id="pm_name" name="pm_name" class="form-control" required >
                     <label for="pm_name" class="form-control-label"><font color="red">*</font>이름</label>
                 </div>
                 
                 <div class="form-group float-label active">
-                    <input type="date" id="pm_birth" class="form-control" name="pm_birth" required >
+                    <input type="date" id="pm_birth" name="pm_birth" class="form-control" required >
                     <label for="pm_birth" class="form-control-label"><font color="red">*</font>생년월일</label>
                 </div>
                 
                 <div class="form-group float-label">
-                    <input type="email" id="pm_email" class="form-control" name="pm_email" required >
+                    <input type="email" id="pm_email" name="pm_email" class="form-control" required >
                     <label for="pm_email" class="form-control-label"><font color="red">*</font>이메일</label>
                 </div>
                 
                 <div class="form-group float-label">
-                    <input type="tel" id="pm_tell" class="form-control" name="pm_tell" required maxlength="11">
+                    <input type="tel" id="pm_tell" name="pm_tell" class="form-control" required maxlength="11">
                     <label for="pm_tell" class="form-control-label"><font color="red">* </font>전화번호(-는 생략)</label>
                 </div>
                 
@@ -81,10 +97,9 @@
                 <div class="form-group float-label active">
                 	
                 	<br />
-                	<input type="button" onclick="sample3_execDaumPostcode()" value="우편번호 찾기"><br />
                 	<div class="form-group float-label">
                     <input type="text" id="pm_post" name="pm_post" class="form-control" placeholder="" required style="width:120px;">
-                    <label for="pm_post" class="form-control-label active">우편번호</label>
+                    <label for="pm_post" class="form-control-label active">우편번호&nbsp;&nbsp;<input type="button" onclick="sample3_execDaumPostcode()" value="우편번호 찾기" /></label>
                 	</div>
                 	<div class="form-group float-label">
                     <input type="text" id="pm_addr1" name="pm_addr1" class="form-control" placeholder="">
@@ -185,8 +200,8 @@
 
                 <div class="row">
                     <div class="col-auto">
-                        <a href="#" class="btn btn-lg btn-default btn-rounded shadow"
-                        onclick="document.getElementById('frm').submit();">
+                    	<input type=submit  value="" style="background-color:transparent;  border:0px transparent solid;">
+                        <a href="javascript:document.frm.submit();" class="btn btn-lg btn-default btn-rounded shadow">
                         <span>회원가입</span><i class="material-icons">arrow_forward</i></a>
                     </div>
                     <span>[네이버 회원가입(api)]</span>

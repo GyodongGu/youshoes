@@ -3,6 +3,7 @@
 <!doctype html>
 <html lang="en" class="brown-theme">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!-- 아이디 기억하기 script -->
 <script>
 $(document).ready(function(){
     // 저장된 쿠키값을 가져와서 ID 칸에 넣어준다. 없으면 공백으로 들어감.
