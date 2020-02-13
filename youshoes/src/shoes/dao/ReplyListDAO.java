@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import shoes.dto.likeDTO;
 import shoes.dto.replyDTO;
 
 public class ReplyListDAO extends DAO{
@@ -56,6 +57,6 @@ public class ReplyListDAO extends DAO{
 		
 		return result;
 	}
-	
+
 	
 }

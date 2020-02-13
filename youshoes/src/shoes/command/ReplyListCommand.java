@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import shoes.common.Command;
 import shoes.dao.ReplyListDAO;
+
 import shoes.dto.replyDTO;
 
 public class ReplyListCommand implements Command {
@@ -21,7 +22,10 @@ public class ReplyListCommand implements Command {
 		ReplyListDAO repDAO= new ReplyListDAO();
 		List<replyDTO> reply = repDAO.ReplyList(1);
 		
+	
+		
 		request.setAttribute("reply", reply);
+		
 		
 		return "/view/pMem/insertReply.jsp";
 	}

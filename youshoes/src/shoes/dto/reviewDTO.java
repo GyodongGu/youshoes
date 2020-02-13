@@ -12,7 +12,16 @@ public class reviewDTO {
 	private Date rw_date;
 	private String rw_content;
 	private List<imageDetailDTO> img_name;
+	private likeDTO likeview;
 	
+	
+	
+	public likeDTO getLikeview() {
+		return likeview;
+	}
+	public void setLikeview(likeDTO likeview) {
+		this.likeview = likeview;
+	}
 	public List<imageDetailDTO> getImg_name() {
 		return img_name;
 	}

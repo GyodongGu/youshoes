@@ -17,9 +17,9 @@ import shoes.dto.pmDTO;
  * 7. 구매회원 현재 포인트 확인  selectPoint()
  */
 
-/** purchase_member 테이블
- *  pm_no, pm_id, pm_pw, pm_name, pm_stat_cd, pm_birth, 
- *  pm_email, pm_date, pm_tell, pm_post, pm_addr1, pm_addr2, point_now
+/**
+ * purchase_member 테이블 pm_no, pm_id, pm_pw, pm_name, pm_stat_cd, pm_birth,
+ * pm_email, pm_date, pm_tell, pm_post, pm_addr1, pm_addr2, point_now
  *
  */
 
@@ -31,15 +31,15 @@ public class pmDAO extends DAO {
 		super();
 	}
 
-	public ArrayList<pmDTO> pmSelect() { // 1. 회원목록 전체 조회    pmSelect()
+	public ArrayList<pmDTO> pmSelect() { // 1. 회원목록 전체 조회 pmSelect()
 		list = new ArrayList<pmDTO>();
 		String sql = "select * from purchase_member";
-		
+
 		try {
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
-			
-			while(rs.next()) {
+
+			while (rs.next()) {
 				dto = new pmDTO();
 				dto.setPm_no(rs.getInt("pm_no"));
 				dto.setPm_id(rs.getString("pm_id"));
@@ -65,12 +65,12 @@ public class pmDAO extends DAO {
 		return list;
 	}
 
-	public int pmInsert(pmDTO dto)  { // 2. 회원 등록 (회원 가입)      pmInsert() 
+	public int pmInsert(pmDTO dto) { // 2. 회원 등록 (회원 가입) pmInsert()
 		int n = 0;
 		/* 유승우 2020.02.10 뭘 넣어야 할지 아직 모르겠음 */
 		String sql = "insert into purchase_member(pm_no, pm_id, pm_pw, pm_name, pm_stat_cd, pm_birth, pm_email, pm_date, pm_tell, pm_post, pm_addr1, pm_addr2, pm_addr3, point_now )"
-					+ "value(pm_no.nextval, ?, ?, ?, 'act04', ?, ?, 'sysdate', ?, ?, ?, ?, ?, '500')";
-		
+				+ "value(pm_no.nextval, ?, ?, ?, 'act04', ?, ?, 'sysdate', ?, ?, ?, ?, ?, '500')";
+
 		// 회원번호, 아이디, 비번, 이름, 상태, 생년월일, 이메일, 가입일, 전화번호, 우편번호, 주소1, 주소2, 주소3, 포인트
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -93,11 +93,10 @@ public class pmDAO extends DAO {
 		return n;
 	}
 
-	public int pmUpdate(pmDTO dto) { // 3. 회원 정보 수정      pmUpdate()
+	public int pmUpdate(pmDTO dto) { // 3. 회원 정보 수정 pmUpdate()
 		int n = 0;
 		String sql = "update purchase_member set pm_name = ?, pm_email = ?, pm_tell = ?,"
-				+ "pm_post=?, pm_addr1=?, pm_addr2=?, pm_addr3=?"
-				+ "where pm_id=? ";
+				+ "pm_post=?, pm_addr1=?, pm_addr2=?, pm_addr3=?" + "where pm_id=? ";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, dto.getPm_name());
@@ -117,11 +116,11 @@ public class pmDAO extends DAO {
 		}
 		return n;
 	}
-	
-	public int pmDelete(pmDTO dto) { // 4. 회원 정보 삭제      pmDelete()
+
+	public int pmDelete(pmDTO dto) { // 4. 회원 정보 삭제 pmDelete()
 		int n = 0;
 		String sql = "delete from purchase_memeber where pm_id = ?";
-		
+
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, dto.getPm_id());
@@ -134,27 +133,27 @@ public class pmDAO extends DAO {
 		return n;
 	}
 
-	public boolean idOverlapCheck(String id) { // 5. 회원가입창에서 아이디 중복체크  idOverlapCheck()
+	public boolean idOverlapCheck(String id) { // 5. 회원가입창에서 아이디 중복체크 idOverlapCheck()
 		boolean bol = true;
 		String sql = "select * from purchase_memeber where pm_id = ?";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
-			
-			if(rs.next()) {
+
+			if (rs.next()) {
 				bol = false;
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			close();
-		} 
-		
+		}
+
 		return bol;
 	}
-	
-	public String loginCheck(String id, String pw) { // 6. 로그인 체크       loginCheck()
+
+	public String loginCheck(String id, String pw) { // 6. 로그인 체크 loginCheck()
 		String grant = null;
 		String sql = "select pm_stat_cd from purchase_member where pm_id = ? and pm_pw=?";
 		try {
@@ -162,28 +161,28 @@ public class pmDAO extends DAO {
 			pstmt.setString(1, id);
 			pstmt.setString(2, pw);
 			rs = pstmt.executeQuery();
-			
-			if(rs.next()) grant = rs.getString("pm_stat_cd");
+
+			if (rs.next())
+				grant = rs.getString("pm_stat_cd");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			close();
 		}
-		return grant;  // 로그인 성공 시 권한을 넘겨줌
+		return grant; // 로그인 성공 시 권한을 넘겨줌
 	}
-	
-	public int selectPoint(String id) {  // 7. 구매회원 현재 포인트 확인  selectPoint()
+
+	public int selectPoint(int id) { // 7. 구매회원 현재 포인트 확인 selectPoint()
 		int n = 0;
-		String sql = "select point_now from purchase_member where pm_id = ?";
-		
-		
+		String sql = "select sum(point_charge) as idpoint from point where pm_no=?";
+
 		try {
 			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, id);
 			rs = pstmt.executeQuery();
 			
-			while(rs.next()) {
-				pstmt.setString(1, id);
-				
+			if(rs.next()) {
+				n = rs.getInt("idpoint");
 			}
 			
 		} catch (SQLException e) {
@@ -191,10 +190,6 @@ public class pmDAO extends DAO {
 		} finally {
 			close();
 		}
-		
-		
 		return n;
-		
 	}
-	
 }
