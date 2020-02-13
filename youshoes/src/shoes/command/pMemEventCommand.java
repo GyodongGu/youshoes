@@ -20,19 +20,11 @@ public class pMemEventCommand implements Command {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		noticeDAO dao = new noticeDAO();
-		ArrayList<noticeDTO> list = new ArrayList<noticeDTO>();
+		noticeDAO ndao = new noticeDAO();
+		List<noticeDTO> pmemEvent = ndao.noticeSelect();
+		request.setAttribute("pmemEvent", pmemEvent);
 
-		// 전체 리스트 갖고오기
-		list = dao.noticeSelect();
-
-		request.setAttribute("list", list);
-
-		String path = "view/pMem/pMemEvent.jsp";
-		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
-		dispatcher.forward(request, response);
-		
-		return null;
+		return "/view/pMem/pMemEvent.jsp";
 	}
 
 }

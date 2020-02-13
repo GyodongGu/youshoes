@@ -28,6 +28,7 @@ import shoes.command.pMemCommand;
 import shoes.command.pMemEventCommand;
 import shoes.command.pMemManageCommand;
 import shoes.command.pointCommand;
+import shoes.command.profileSetCommand;
 import shoes.command.profileUpdateCommand;
 import shoes.common.Command;
 
@@ -68,6 +69,7 @@ public class FrontController extends HttpServlet {
 		// 프로필 부분
 		cont.put("/myReview.do", new myReviewCommand());       // 구매 회원이 자기가 작성한 후기 보기
 		cont.put("/point.do", new pointCommand());             // 구매 회원 현재 포인트 확인 및 충전
+		cont.put("/profileSet.do", new profileSetCommand());  // 구매 회원 프로필 메인
 		cont.put("/profileUpdate.do", new profileUpdateCommand());  // 구매 회원 프로필 수정
 		cont.put("/pMemEvent.do", new pMemEventCommand());     // 구매 회원 이벤트 목록 보기
 		cont.put("/bookmark.do", new bookmarkCommand());       // 구매 회원 즐겨찾기 상품 보기

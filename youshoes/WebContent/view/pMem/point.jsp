@@ -17,11 +17,11 @@
 			pay_method : 'card',
 			merchant_uid : 'merchant_' + new Date().getTime(),
 			name : '주문명:결제테스트',
-			amount : 14000,
+			amount : 1,
 			buyer_email : 'iamport@siot.do',
 			buyer_name : '구매자이름',
 			buyer_tel : '010-1234-5678',
-			buyer_addr : '대구 강남구 삼성동',
+			buyer_addr : '대구 중구',
 			buyer_postcode : '123-456',
 			m_redirect_url : 'https://www.yourdomain.com/payments/complete'
 		}, function(rsp) {
@@ -48,12 +48,7 @@
 			<div class="row">
 				<div class="col">
 					<p class="text-secondary small mb-0">현재 포인트</p>
-					<h6 class="text-dark my-0">${point}</h6>
-				</div>
-				<div class="col-auto">
-					<button class="btn btn-default button-rounded-36 shadow" onclick="location.href='chargePoint.jsp'">
-						<i class="material-icons">add</i>
-					</button>
+					<h3 class="text-dark my-0">${point}</h3>
 				</div>
 			</div>
 		</div>

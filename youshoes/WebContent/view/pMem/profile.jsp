@@ -63,7 +63,7 @@
 				<ul>
 					<li><a href="${pageContext.request.contextPath}/myReview.do">내 스토리</a></li>
 					<li><a href="${pageContext.request.contextPath}/point.do">내 포인트</a></li>
-					<li><a href="${pageContext.request.contextPath}/profileSet.jsp">설정</a></li>
+					<li><a href="${pageContext.request.contextPath}/profileSet.do">설정</a></li>
 				</ul>
 
 			</div>

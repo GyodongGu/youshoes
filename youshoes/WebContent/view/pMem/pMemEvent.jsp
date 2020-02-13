@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!doctype html>
 <html lang="en" class="blue-theme">
 
@@ -9,7 +11,8 @@
 <meta name="author" content="Maxartkiller">
 
 <title>구매 회원이 보는 이벤트</title>
-<link href="../vendor/bootstrap-4.4.1/css/bootstrap.min.css" rel="stylesheet">  <!-- 부트스트랩 CSS -->
+<link href="../vendor/bootstrap-4.4.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- 부트스트랩 CSS -->
 <link href="../css/style.css" rel="stylesheet">
 </head>
 
@@ -20,8 +23,8 @@
 			<diV><jsp:include page="topMenuBack.jsp"></jsp:include></div>
 		</div>
 		<!-- // 상단에 뒤로가기 버튼 있는 따라다니는 줄 -->
-		
-		
+
+
 		<div class="container">
 			<p class="h3" align="center">현재 진행중인 이벤트</p>
 			<br>
@@ -36,10 +39,12 @@
 				</thead>
 				<tbody>
 					<tr>
-<%-- 						<td><%=pm_no%></td> --%>
-<%-- 						<td><%=pm_no%></td> --%>
-<%-- 						<td><%=pm_no%></td> --%>
-<%-- 						<td><%=pm_no%></td> --%>
+						<c:forEach items="${pmemEvent }" var="pMemEvent">
+							<td>${pMemEvent.notice_no}</td>
+							<td>${pMemEvent.notice_title}</td>
+							<td>${pMemEvent.notice_date}</td>
+							<td>${pMemEvent.notice_content}</td>
+						</c:forEach>
 					</tr>
 				</tbody>
 			</table>
