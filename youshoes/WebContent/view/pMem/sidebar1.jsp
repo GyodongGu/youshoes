@@ -10,7 +10,7 @@
 <meta name="description" content="">
 <meta name="author" content="Maxartkiller">
 
-<title>예약 달력</title>
+<title>you shoes</title>
 
 <!-- Material 디자인 아이콘 CSS -->
 <link rel="stylesheet" href="${pageContext.request.contextPath}/view/vendor/materializeicon/material-icons.css">
@@ -85,7 +85,7 @@
 <decorator:head />
 </head>
 <body>
-	<!-- 화면바뀔때 로고 크게 -->
+<%-- 	<!-- 화면바뀔때 로고 크게 -->
 	<div class="row no-gutters vh-100 loader-screen">
         <div class="col align-self-center text-white text-center">
             <img src="${pageContext.request.contextPath}/view/img/logo.png" alt="logo">
@@ -97,7 +97,7 @@
 	            <div></div>
             </div>
         </div>
-    </div>
+    </div> --%>
     
 	<!-- 사이드바 -->
 	<div class="sidebar">

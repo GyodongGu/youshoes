@@ -8,6 +8,8 @@
 	</decorator>
 	<excludes>
 	<pattern>sidebar1.jsp</pattern>
+	<pattern>Review.do</pattern>
+	<pattern>/view/pMem/review.jsp</pattern>
 	<pattern>/ajax/*</pattern>
 	</excludes>
 </decorators> 

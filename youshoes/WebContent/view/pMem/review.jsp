@@ -4,14 +4,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
+<!--     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover, user-scalable=no">
     <meta name="description" content="">
     <meta name="author" content="Maxartkiller">
-
+ -->
     <title>Product · GoFurniture</title>
 
-    <!-- Material design icons CSS -->
+ <%--    <!-- Material design icons CSS -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/view/vendor/materializeicon/material-icons.css">
 
     <!-- Roboto fonts CSS -->
@@ -30,7 +30,7 @@
     <link href="${pageContext.request.contextPath}/view/vendor/nouislider/nouislider.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="${pageContext.request.contextPath}/view/css/style.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/view/css/style.css" rel="stylesheet"> --%>
 </head>
 <body>
 	<div class="wrapper">
