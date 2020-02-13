@@ -1,14 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator"
+	prefix="decorator"%>
 <!doctype html>
 <html lang="ko" class="blue-theme">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover, user-scalable=no">
-<meta name="description" content="">
-<meta name="author" content="Maxartkiller">
-
-<title>프로필</title>
 <!-- Tab키 스크립트 및 CSS -->
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="/resources/demos/style.css">
@@ -33,18 +29,7 @@
 	});
 </script>
 </head>
-
 <body>
-	<div class="wrapper">
-		<!-- 상단에 뒤로가기 버튼 있는 따라다니는 줄 -->
-		<div class="header">
-			<diV><jsp:include page="topMenuBack.jsp"></jsp:include></div>
-		</div>
-		<!-- // 상단에 뒤로가기 버튼 있는 따라다니는 줄 -->
-
-
-		<!-- 내부 내용 전체 감싸는 부분 -->
-		<div class="container">
 			<!-- 프로필 이미지 사진  -->
 			<div class="text-center">
 				<div class="figure-profile shadow my-4">
@@ -68,14 +53,5 @@
 
 			</div>
 			<!-- // 프로필 탭 메뉴 -->
-
-
-			<!-- 하단에 아이콘 버튼 이동 부분 -->
-			<div class="footer">
-				<diV><jsp:include page="bottomMenu.jsp"></jsp:include></div>
-			</div>
-			<!-- // 하단에 아이콘 버튼 이동 부분 -->
-		</div>
-	</div>
 </body>
 </html>

@@ -9,7 +9,15 @@ public class ordDTO {
 	private int ord_point;
 	private String ord_stat_cd;
 	private String group_dlvy_cd;
+	private ordDetailDTO ordCnt;
 	
+	
+	public ordDetailDTO getOrdCnt() {
+		return ordCnt;
+	}
+	public void setOrdCnt(ordDetailDTO ordCnt) {
+		this.ordCnt = ordCnt;
+	}
 	public int getOrd_no() {
 		return ord_no;
 	}
@@ -49,8 +57,9 @@ public class ordDTO {
 	@Override
 	public String toString() {
 		return "ordDTO [ord_no=" + ord_no + ", pm_no=" + pm_no + ", ord_date=" + ord_date + ", ord_point=" + ord_point
-				+ ", ord_stat_cd=" + ord_stat_cd + ", group_dlvy_cd=" + group_dlvy_cd + "]";
+				+ ", ord_stat_cd=" + ord_stat_cd + ", group_dlvy_cd=" + group_dlvy_cd + ", ordCnt=" + ordCnt + "]";
 	}
+	
 	
 	
 }

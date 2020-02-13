@@ -1,7 +1,6 @@
 package shoes.command;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -22,5 +21,4 @@ public class pointCommand implements Command {
 		
 		return "/view/pMem/point.jsp";
 	}
-
 }

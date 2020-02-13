@@ -9,11 +9,10 @@
 목적 : 하단 메뉴바 통합
  -->
 <title>하단에 이동버튼 메뉴바</title>
-<link rel="stylesheet" href="../vendor/materializeicon/material-icons.css">  <!-- Meterial 디자인 아이콘 CSS (상단 메뉴바 필수) -->
-<link href="../vendor/bootstrap-4.4.1/css/bootstrap.min.css" rel="stylesheet">  <!-- 부트스트랩 core CSS (상단 메뉴바 필수) -->
-<link href="../css/style.css" rel="stylesheet">    <!-- 구매 회원 템플릿에 CSS -->
-
-</head>
+<%-- <link rel="stylesheet" href="${pageContext.request.contextPath}/view/vendor/materializeicon/material-icons.css">  <!-- Meterial 디자인 아이콘 CSS (상단 메뉴바 필수) -->
+<link href="${pageContext.request.contextPath}/view/vendor/bootstrap-4.4.1/css/bootstrap.min.css" rel="stylesheet">  <!-- 부트스트랩 core CSS (상단 메뉴바 필수) -->
+<link href="${pageContext.request.contextPath}/view/css/style.css" rel="stylesheet">    <!-- 구매 회원 템플릿에 CSS -->
+</head> --%>
 <body>
 	<div class="no-gutters">
 		<div class="col-auto mx-auto">
@@ -23,7 +22,7 @@
 					</a>
 				</div>
 				<div class="col-auto">
-					<a href="${pageContext.request.contextPath}/view/pMem/orderHistory.jsp" class="btn btn-link-default"> <i class="material-icons">insert_chart_outline</i>
+					<a href="${pageContext.request.contextPath}/orderHistory.do" class="btn btn-link-default"> <i class="material-icons">insert_chart_outline</i>
 					</a>
 				</div>
 				<div class="col-auto">
@@ -35,7 +34,7 @@
 					</a>
 				</div>
 				<div class="col-auto">
-					<a href="${pageContext.request.contextPath}/view/pMem/profile.jsp" class="btn btn-link-default active"> <i class="material-icons">account_circle</i>
+					<a href="${pageContext.request.contextPath}/view/pMem/profile.jsp" class="btn btn-link-default default"> <i class="material-icons">account_circle</i>
 					</a>
 				</div>
 			</div>

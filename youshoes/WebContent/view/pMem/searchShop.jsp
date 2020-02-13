@@ -1,47 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="en" class="blue-theme">
-
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover, user-scalable=no">
-<meta name="description" content="">
-<meta name="author" content="Maxartkiller">
-
-<title>Products · GoFurniture</title>
-
-<!-- Material design icons CSS -->
-<link rel="stylesheet" href="../vendor/materializeicon/material-icons.css">
-
-<!-- Roboto fonts CSS -->
-<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
-
-<!-- Bootstrap core CSS -->
-<link href="../vendor/bootstrap-4.4.1/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Swiper CSS -->
-<link href="../vendor/swiper/css/swiper.min.css" rel="stylesheet">
-
-<!-- Chosen multiselect CSS -->
-<link href="../vendor/chosen_v1.8.7/chosen.min.css" rel="stylesheet">
-
-<!-- nouislider CSS -->
-<link href="../vendor/nouislider/nouislider.min.css" rel="stylesheet">
-
-<!-- Custom styles for this template -->
-<link href="../css/style.css" rel="stylesheet">
 </head>
-
 <body>
-	<div class="wrapper">
-		<!-- 상단에 뒤로가기 버튼 있는 따라다니는 줄 -->
-		<div class="header">
-			<diV><jsp:include page="topMenuBack.jsp"></jsp:include></div>
-		</div>
-		<!-- // 상단에 뒤로가기 버튼 있는 따라다니는 줄 -->
-
-		<!-- 내부 내용 전체 감싸는 부분 -->
-		<div class="container">
 			<!-- 검색창 부분 -->
 			<input type="text" class="form-control form-control-lg search my-3" placeholder="검색">
 			<!-- 구매 회원 가게검색페이지의 카테고리 -->
@@ -295,34 +257,6 @@
 				<!-- // 구매 회원 가게 검색 페이지의 하얀 작은 네모 12 -->
 			</div>
 			<!-- // 구매 회원 가게검색페이지의 카테고리 내부 내용 -->
-		</div>
-		<!-- // 내부 내용 전체 감싸는 부분 -->
-
-		<!-- 하단에 아이콘 버튼 이동 부분 -->
-		<div class="footer">
-			<diV><jsp:include page="bottomMenu.jsp"></jsp:include></div>
-		</div>
-		<!-- // 하단에 아이콘 버튼 이동 부분 -->
-	</div>
-
-
-	<!-- jquery, popper and bootstrap js -->
-	<script src="../js/jquery-3.3.1.min.js"></script>
-	<script src="../js/popper.min.js"></script>
-	<script src="../vendor/bootstrap-4.4.1/js/bootstrap.min.js"></script>
-
-	<!-- swiper js -->
-	<script src="../vendor/swiper/js/swiper.min.js"></script>
-
-	<!-- nouislider js -->
-	<script src="../vendor/nouislider/nouislider.min.js"></script>
-
-	<!-- chosen multiselect js -->
-	<script src="../vendor/chosen_v1.8.7/chosen.jquery.min.js"></script>
-
-	<!-- template custom js -->
-	<script src="../js/main.js"></script>
-
 	<!-- page level script -->
 	<script>
 		$(window).on('load', function() {

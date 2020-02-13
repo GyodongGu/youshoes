@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="en" class="blue-theme">
-
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover, user-scalable=no">
@@ -9,19 +8,13 @@
 <meta name="author" content="Maxartkiller">
 
 <title>프로필 수정</title>
-<link href="../vendor/bootstrap-4.4.1/css/bootstrap.min.css" rel="stylesheet"> <!-- 부트스트랩 core CSS -->
+<link href="../vendor/bootstrap-4.4.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- 부트스트랩 core CSS -->
 <link href="../css/style.css" rel="stylesheet">
 </head>
 
 <body>
 	<div class="wrapper">
-		<!-- 상단에 뒤로가기 버튼 있는 따라다니는 줄 -->
-		<div class="header">
-			<diV><jsp:include page="topMenuBack.jsp"></jsp:include></div>
-		</div>
-		<!-- // 상단에 뒤로가기 버튼 있는 따라다니는 줄 -->
-
-
 		<!-- 내부 내용 전체 감싸는 부분 -->
 		<div class="container">
 			<!-- 프로필 이미지 사진  -->
@@ -63,52 +56,41 @@
 
 			<!-- 카카오 주소 API -->
 			<div class="form-group float-label active">
-				<input type="button" onclick="sample3_execDaumPostcode()" class="btn btn-primary" value="우편번호 찾기">
-				<br>
-				<div id="wrap"
-					style="display: none; border: 1px solid; width: 500px; height: 300px; margin: 5px 0; position: relative">
-					<img src="//t1.daumcdn.net/postcode/resource/images/close.png"
-						id="btnFoldWrap"
-						style="cursor: pointer; position: absolute; right: 0px; top: -1px; z-index: 1"
-						onclick="foldDaumPostcode()" alt="접기 버튼">
+				<input type="button" onclick="sample3_execDaumPostcode()" class="btn btn-primary" value="우편번호 찾기"> <br>
+				<div id="wrap" style="display: none; border: 1px solid; width: 500px; height: 300px; margin: 5px 0; position: relative">
+					<img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="btnFoldWrap" style="cursor: pointer; position: absolute; right: 0px; top: -1px; z-index: 1" onclick="foldDaumPostcode()" alt="접기 버튼">
 				</div>
 				<br />
 				<div class="row">
 					<div class="col-6">
 						<div class="form-group float-label active">
-							<input type="text" class="form-control" id="pm_post" required=""
-								value="25468" style="width: 100px;"> <label
-								class="form-control-label">우편 번호</label>
+							<input type="text" class="form-control" id="pm_post" required="" value="25468" style="width: 100px;"> <label class="form-control-label">우편 번호</label>
 						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-12 col-6">
 						<div class="form-group float-label active">
-							<input type="text" class="form-control" id="pm_addr1" required=""
-								value="시군구"> <label class="form-control-label">주소</label>
+							<input type="text" class="form-control" id="pm_addr1" required="" value="시군구"> <label class="form-control-label">주소</label>
 						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-12 col-6">
 						<div class="form-group float-label active">
-							<input type="text" class="form-control" id="pm_addr2" required=""
-								value="동,호수"> <label class="form-control-label">상세주소</label>
+							<input type="text" class="form-control" id="pm_addr2" required="" value="동,호수"> <label class="form-control-label">상세주소</label>
 						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-12 col-6">
 						<div class="form-group float-label active">
-							<input type="text" class="form-control" id="pm_addr3" required=""
-								value="건물명"> <label class="form-control-label">참고항목</label>
+							<input type="text" class="form-control" id="pm_addr3" required="" value="건물명"> <label class="form-control-label">참고항목</label>
 						</div>
 					</div>
 				</div>
 
-				<script
-					src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+				<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 				<script>
 					// 우편번호 찾기 찾기 화면을 넣을 element
 					var element_wrap = document.getElementById('wrap');
@@ -197,20 +179,10 @@
 
 			</div>
 			<!--//카카오 주소 API  -->
-
 			<a href="profile.jsp" class="btn btn-lg btn-default text-white btn-block btn-rounded shadow"> <span>수정 완료</span> <i class="material-icons">arrow_forward</i>
 			</a> <br>
 		</div>
 		<!-- // 안쪽에 프로필 수정하려는 입력 값 받는 곳 -->
-
-		<!-- 하단에 아이콘 버튼 이동 부분 -->
-		<div class="footer">
-			<diV><jsp:include page="bottomMenu.jsp"></jsp:include></div>
-		</div>
-		<!-- // 하단에 아이콘 버튼 이동 부분 -->
 	</div>
-
-
 </body>
-
 </html>

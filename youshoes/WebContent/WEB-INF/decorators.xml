@@ -4,6 +4,10 @@
 		<pattern>/view/pMem/bookmark.jsp</pattern>
 		<pattern>/view/pMem/pMem.jsp</pattern>
 		<pattern>/view/pMem/reservation.jsp</pattern>
+		<pattern>/view/pMem/pMemEvent.jsp</pattern>
+		<pattern>/view/pMem/searchShop.jsp</pattern>
+		<pattern>/view/pMem/orderHistory.jsp</pattern>
+		<pattern>/view/pMem/profile.jsp</pattern>
 		<pattern>*.do</pattern>
 	</decorator>
 	<excludes>

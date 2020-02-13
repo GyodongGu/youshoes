@@ -17,16 +17,10 @@ public class ReplyListCommand implements Command {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		
-		ReplyListDAO repDAO= new ReplyListDAO();
+		ReplyListDAO repDAO = new ReplyListDAO();
 		List<replyDTO> reply = repDAO.ReplyList(1);
-		
-	
-		
 		request.setAttribute("reply", reply);
-		
-		
+
 		return "/view/pMem/insertReply.jsp";
 	}
 
