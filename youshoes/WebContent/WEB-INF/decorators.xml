@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<decorators defaultdir="/view/pMem/">
+	<decorator name="basic-theme" page="sidebar1.jsp">
+		<pattern>/view/pMem/bookmark.jsp</pattern>
+		<pattern>/view/pMem/pMem.jsp</pattern>
+		<pattern>/view/pMem/reservation.jsp</pattern>
+		<pattern>*.do</pattern>
+	</decorator>
+	<excludes>
+	<pattern>sidebar1.jsp</pattern>
+	<pattern>/ajax/*</pattern>
+	</excludes>
+</decorators> 
