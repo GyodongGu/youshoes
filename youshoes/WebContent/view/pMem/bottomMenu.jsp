@@ -19,23 +19,23 @@
 		<div class="col-auto mx-auto">
 			<div class="row no-gutters justify-content-center">
 				<div class="col-auto">
-					<a href="pMem.jsp" class="btn btn-link-default "> <i class="material-icons">home</i>
+					<a href="${pageContext.request.contextPath}/view/pMem/pMem.jsp" class="btn btn-link-default "> <i class="material-icons">home</i>
 					</a>
 				</div>
 				<div class="col-auto">
-					<a href="orderHistory.jsp" class="btn btn-link-default"> <i class="material-icons">insert_chart_outline</i>
+					<a href="${pageContext.request.contextPath}/view/pMem/orderHistory.jsp" class="btn btn-link-default"> <i class="material-icons">insert_chart_outline</i>
 					</a>
 				</div>
 				<div class="col-auto">
-					<a href="searchShop.jsp" class="btn btn-default shadow centerbutton"> <i class="material-icons">local_mall</i>
+					<a href="${pageContext.request.contextPath}/view/pMem/searchShop.jsp" class="btn btn-default shadow centerbutton"> <i class="material-icons">local_mall</i>
 					</a>
 				</div>
 				<div class="col-auto">
-					<a href="bookmark.jsp" class="btn btn-link-default"> <i class="material-icons">star</i>
+					<a href="${pageContext.request.contextPath}/view/pMem/bookmark.jsp" class="btn btn-link-default"> <i class="material-icons">star</i>
 					</a>
 				</div>
 				<div class="col-auto">
-					<a href="profile.jsp" class="btn btn-link-default active"> <i class="material-icons">account_circle</i>
+					<a href="${pageContext.request.contextPath}/view/pMem/profile.jsp" class="btn btn-link-default active"> <i class="material-icons">account_circle</i>
 					</a>
 				</div>
 			</div>
