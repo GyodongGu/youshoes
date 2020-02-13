@@ -138,13 +138,12 @@ $(document).ready(function () {
 });
 
 
-$(window).on('load', function () {
+$(window).on('load', function () {  
     $('.loader-screen').fadeOut('slow');
-
     /* header active on scroll more than 50 px*/
     if ($(this).scrollTop() >= 30) {
-        $('.header').addClass('active')
-    } else {
+        $('.header').addClass('active') 
+    } else {  
         $('.header').removeClass('active')
     }
 
@@ -156,6 +155,8 @@ $(window).on('load', function () {
             $('.header').removeClass('active')
         }
     });
+});
 
-
+$(window).on('load', function () {
+	$("[href='"+location.pathname+"']").addClass("active");
 });

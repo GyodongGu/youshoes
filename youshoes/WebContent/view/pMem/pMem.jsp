@@ -71,7 +71,7 @@
 							<div class="card shadow-sm border-0">
 								<div class="card-body">
 									<div class="row no-gutters h-100">
-										<img src="${pageContext.request.contextPath}/view/img/shoes7.png" alt="" class="small-slide-right">
+										<img src="${pageContext.request.contextPath}/view/img/shoes07.png" alt="" class="small-slide-right">
 										<div class="col-8">
 											<button class="btn btn-sm btn-link p-0">
 												<i class="material-icons md-18">star_border</i>
