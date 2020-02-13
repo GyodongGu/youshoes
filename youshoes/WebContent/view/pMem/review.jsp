@@ -31,6 +31,8 @@
 
     <!-- Custom styles for this template -->
     <link href="${pageContext.request.contextPath}/view/css/style.css" rel="stylesheet"> --%>
+
+    
 </head>
 <body>
 	<div class="wrapper">
@@ -64,7 +66,7 @@
 					</figure>
 				</div>
 				<div class="col">
-					<h6>${dto.getPm_id()}${dto.likeview.pm_id }</h6>
+					<h6>${dto.getPm_id()}${dto.getLikeview() }</h6>
 					
 				</div>
 				<div class="col-12">
@@ -72,15 +74,15 @@
 						</p>
 					<img src="${pageContext.request.contextPath}/view/img/${dto.img_name[0].img_name}" height="50%" width="90%">
 					<br><br>
-					<p style="text-align:center">
+					<p style="text-align:center" data-like="${dto.getRw_no() }">
 					
 					
 					<c:choose>
-						<c:when test="${dto.likeview.pm_id==null }">
-							<button class="btn btn-sm btn-link p-0"><font size="5"><strong><i class="material-icons md-18">favorite_outline</i>좋아요</strong></font></button>	
+						<c:when test="${empty dto.likeview.pm_id }">
+							<button class="btn btn-sm btn-link p-0 btnlike"><font size="5"><strong><i class="material-icons md-18">favorite_outline</i>좋아요</strong></font></button>	
 						</c:when>
 						<c:otherwise>
-							<button class="btn btn-sm btn-link p-0"><font size="5"><strong><i class="material-icons md-18">favorite</i>좋아요</strong></font></button>
+							<button class="btn btn-sm btn-link p-0 btnlike"><font size="5"><strong><i class="material-icons md-18">favorite</i>좋아요</strong></font></button>
 						</c:otherwise>
 					
 					</c:choose>
@@ -100,7 +102,23 @@
 			
 		</div>
 	</div>
-
+    
+    <script>
+    	$(".btnlike").bind("click",funclike);
+    
+    	
+    	function funclike(){
+    		var i = this.parentNode.dataset.like;
+    		console.log(i);
+    		$.ajax({
+    			type:"POST",
+    			url:"/youshoes/Like.do",
+    			data: {rw_no: i}
+    		})
+    		
+    	}
+    	
+    </script>
 	
 </body>
 </html>
