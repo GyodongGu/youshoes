@@ -62,10 +62,10 @@
 							</button>
 
 							<figure class="product-image">
-								<img src="../img/shop1.jpg" alt="" class="">
+								<img src="${pageContext.request.contextPath}/view/img/shop1.jpg" alt="" class="">
 							</figure>
 
-							<a href="../shop.jsp" class="text-dark mb-1 mt-2 h6 d-block">가게1</a>
+							<a href="${pageContext.request.contextPath}/Shop.do" class="text-dark mb-1 mt-2 h6 d-block">가게1</a>
 							<button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right">
 								<i class="material-icons md-18">shopping_cart</i>
 							</button>
@@ -82,10 +82,10 @@
 							</button>
 
 							<figure class="product-image">
-								<img src="../img/shop2.JPG" alt="" class="">
+								<img src="${pageContext.request.contextPath}/view/img/shop2.JPG" alt="" class="">
 							</figure>
 
-							<a href="../shop.jsp" class="text-dark mb-1 mt-2 h6 d-block">가게2</a>
+							<a href="${pageContext.request.contextPath}/shop.jsp" class="text-dark mb-1 mt-2 h6 d-block">가게2</a>
 							<button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right">
 								<i class="material-icons md-18">shopping_cart</i>
 							</button>
