@@ -53,7 +53,7 @@
 
 
 	<!-- page level script -->
-	<script>
+	<!-- <script>
 		$(window).on('load', function() {
 			var swiper = new Swiper('.introduction', {
 				pagination : {
@@ -61,7 +61,7 @@
 				},
 			});
 		});
-	</script>
+	</script> -->
 </body>
 
 </html>

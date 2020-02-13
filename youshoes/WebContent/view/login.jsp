@@ -127,12 +127,14 @@ function getCookie(cookieName) {
                         <a href="javascript:document.frm.submit();" class="btn btn-lg btn-default btn-rounded shadow">
                         	<span>로그인</span><i class="material-icons">arrow_forward</i></a>
                     </div>
+	                    <!--
 	                    <div class="social">
-	                    <!-- api사용하여 로그인방식 만들기! -->
+	                    api사용하여 로그인방식 만들기!
 	            	        <span>[네이버 로그인(api)]</span>
 	            	        <span>[카카오 로그인(api)]</span>
 	                	    <span>[구글 로그인(api)]</span>
 	                    </div>
+	                    -->
                 </div>
             </form>
             <p class="text-center text-white">

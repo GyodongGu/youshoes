@@ -54,7 +54,7 @@
         <div class="col align-self-center px-3  text-center">
             <img src="img/logo.png" alt="logo" class="logo-small">
             <h2 class="text-white"><span class="font-weight-light">회원가입</span></h2>
-            <form class="form-signin shadow" id="frm" name="frm" action="../joinOk.do" method="post">
+            <form class="form-signin shadow" id="frm" name="frm" action="../JoinOk.do" method="post">
                  <div class="form-group float-label">
                     <input type="text" id="pm_id" name="pm_id" class="form-control" required autofocus >
                     <label for="pm_id" class="form-control-label"><font color="red">*</font>아이디
@@ -89,8 +89,8 @@
                 </div>
                 
                 <div class="form-group float-label">
-                    <input type="tel" id="pm_tell" name="pm_tell" class="form-control" required maxlength="11">
-                    <label for="pm_tell" class="form-control-label"><font color="red">* </font>전화번호(-는 생략)</label>
+                    <input type="tel" id="pm_tell" name="pm_tell" class="form-control" required maxlength="15">
+                    <label for="pm_tell" class="form-control-label"><font color="red">* </font>전화번호</label>
                 </div>
                 
                 <!-- 카카오 주소 API -->
@@ -204,9 +204,11 @@
                         <a href="javascript:document.frm.submit();" class="btn btn-lg btn-default btn-rounded shadow">
                         <span>회원가입</span><i class="material-icons">arrow_forward</i></a>
                     </div>
+                    <!-- 
                     <span>[네이버 회원가입(api)]</span>
                     <span>[카카오 회원가입(api)]</span>
                     <span>[구글 회원가입(api)]</span>
+                     -->
                 </div>
             </form>
             <p class="text-center text-white">
