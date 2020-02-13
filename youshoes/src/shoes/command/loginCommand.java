@@ -15,11 +15,7 @@ public class loginCommand implements Command {
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		String path = "view/login.jsp";  // 로그인 폼 호출
-		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
-		dispatcher.forward(request, response);
-		
-		return null;
+		return "view/login.jsp";
 	}
 
 }
