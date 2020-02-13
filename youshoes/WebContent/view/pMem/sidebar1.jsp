@@ -9,32 +9,32 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover, user-scalable=no">
 <meta name="description" content="">
 <meta name="author" content="Maxartkiller">
-
 <title>you shoes</title>
-
 <!-- Material 디자인 아이콘 CSS -->
 <link rel="stylesheet" href="${pageContext.request.contextPath}/view/vendor/materializeicon/material-icons.css">
-
+<!-- Roboto fonts CSS -->
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
 <!-- 부트스트랩 core CSS -->
 <link href="${pageContext.request.contextPath}/view/vendor/bootstrap-4.4.1/css/bootstrap.min.css" rel="stylesheet">
-
+<!-- Chosen multiselect CSS -->
+<link href="${pageContext.request.contextPath}/view/vendor/chosen_v1.8.7/chosen.min.css" rel="stylesheet">
+<!-- nouislider CSS -->
+<link href="${pageContext.request.contextPath}/view/vendor/nouislider/nouislider.min.css" rel="stylesheet">
 <!-- 카테고리 넘기는 swiper CSS 및 js -->
 <link href="${pageContext.request.contextPath}/view/vendor/swiper/css/swiper.min.css" rel="stylesheet">
 <script src="${pageContext.request.contextPath}/view/vendor/swiper/js/swiper.min.js"></script>
-<!--//  카테고리 넘기는 swiper CSS 및 js -->
-
+<!-- jquery, popper and bootstrap js -->
+<script src="../js/popper.min.js"></script>
+<!-- nouislider js -->
+<script src="../vendor/nouislider/nouislider.min.js"></script>
 <!-- 상단 메뉴바의 왼쪽 사이드 열기 위해 필요한 CSS 및 js -->
 <script src="${pageContext.request.contextPath}/view/js/jquery-3.3.1.min.js"></script>
 <script src="${pageContext.request.contextPath}/view/js/popper.min.js"></script>
 <script src="${pageContext.request.contextPath}/view/vendor/bootstrap-4.4.1/js/bootstrap.min.js"></script>
 <link href="${pageContext.request.contextPath}/view/css/style.css" rel="stylesheet">
 <!-- // 상단 메뉴바의 왼쪽 사이드 열기 위해 필요한 CSS -->
-
-
 <!-- 이미지가 들어가지 않은 img태그의  공간 표시 js -->
 <script src="${pageContext.request.contextPath}/view/js/main.js"></script>
-
-<!-- 카테고리 넘기는 swiper 스크립트 -->
 <script>
 	$(window).on('load', function() {
 		/* swiper slider carousel */
@@ -85,20 +85,6 @@
 <decorator:head />
 </head>
 <body>
-<%-- 	<!-- 화면바뀔때 로고 크게 -->
-	<div class="row no-gutters vh-100 loader-screen">
-        <div class="col align-self-center text-white text-center">
-            <img src="${pageContext.request.contextPath}/view/img/logo.png" alt="logo">
-            <h1><span class="font-weight-light">You</span>Shoes</h1>
-            <div class="laoderhorizontal">
-	            <div></div>
-	            <div></div>
-	            <div></div>
-	            <div></div>
-            </div>
-        </div>
-    </div> --%>
-    
 	<!-- 사이드바 -->
 	<div class="sidebar">
 		<div class="text-center">

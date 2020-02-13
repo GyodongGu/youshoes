@@ -1,29 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator"
+	prefix="decorator"%>
 <!doctype html>
-<html lang="en" class="blue-theme">
-
+<html lang="ko" class="blue-theme">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover, user-scalable=no">
-<meta name="description" content="">
-<meta name="author" content="Maxartkiller">
-
-<title>결제 내역</title>
-<link href="../vendor/bootstrap-4.4.1/css/bootstrap.min.css" rel="stylesheet">
-<!-- 부트스트랩 CSS -->
-<link href="../css/style.css" rel="stylesheet">
 </head>
-
 <body>
-	<div class="wrapper">
-		<!-- 상단에 뒤로가기 버튼 있는 따라다니는 줄 -->
-		<div class="header">
-			<diV><jsp:include page="topMenuBack.jsp"></jsp:include></div>
-		</div>
-		<!-- // 상단에 뒤로가기 버튼 있는 따라다니는 줄 -->
-
-
-		<div class="container">
 			<p class="h3" align="center">나의 결제내역</p>
 			<br>
 			<table class="table">
@@ -110,14 +92,5 @@
 					<li class="page-item"><a class="page-link" href="#" aria-label="Next"> <span aria-hidden="true">&raquo;</span></a></li>
 				</ul>
 			</nav>
-			<!-- // paginatnion -->
-
-			<!-- 하단에 아이콘 버튼 이동 부분 -->
-			<div class="footer">
-				<diV><jsp:include page="bottomMenu.jsp"></jsp:include></div>
-			</div>
-			<!-- // 하단에 아이콘 버튼 이동 부분 -->
-		</div>
-	</div>
-</body>
+			</body>
 </html>
