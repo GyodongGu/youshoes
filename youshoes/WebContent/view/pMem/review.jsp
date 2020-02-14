@@ -108,12 +108,20 @@
     
     	
     	function funclike(){
-    		var i = this.parentNode.dataset.like;
+    		var i = this.parentNode.dataset.like;		//부모노드의 data-like속성을 가져온다
     		console.log(i);
+    		var thisbtn = $(this)
     		$.ajax({
     			type:"POST",
-    			url:"/youshoes/Like.do",
+    			url:"/youshoes/ajax/Like.do",
     			data: {rw_no: i}
+    		}).done(function(result){
+    			console.log(result);
+    			if(result=="true"){
+    				thisbtn.find("i").text('favorite_outline');
+    			}else{
+    				thisbtn.find("i").text('favorite');
+    			}
     		})
     		
     	}

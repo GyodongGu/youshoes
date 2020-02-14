@@ -31,7 +31,7 @@ public class LikeCommand implements Command {
 		}else {
 			ldao.InsertLike(ldto);
 		}	
-		return "/Review.do";
+		return "ajax:"+x;
 	}
 
 }

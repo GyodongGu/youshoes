@@ -20,11 +20,11 @@ import shoes.dto.reviewDTO;
  *
  */
 public class reviewListDAO extends DAO{
-	public List<reviewDTO> reviewlist(){
+	public List<reviewDTO> reviewlist(String smid, String pmid){
 		
 		List<reviewDTO> list= new ArrayList<reviewDTO>();
 		
-		String sql="select * from product p join purchase_review r on p.pdt_no=r.pdt_no where sm_id='manshoes01'";
+		String sql="select * from product p join purchase_review r on p.pdt_no=r.pdt_no where sm_id=?";
 		
 		String sql1="select img_name from image i join image_detail d on i.img_no=d.img_no where section='I03' and section_no=?";
 		
@@ -43,6 +43,7 @@ public class reviewListDAO extends DAO{
 
 		try {
 			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, smid);
 			rs = pstmt.executeQuery();
 
 			while (rs.next()) {
@@ -70,7 +71,7 @@ public class reviewListDAO extends DAO{
 				likeDTO ldto= new likeDTO();
 				pstmt2=conn.prepareStatement(sql2);
 				pstmt2.setInt(1, rs.getInt("rw_no"));
-				pstmt2.setString(2, rs.getString("pm_id"));
+				pstmt2.setString(2, pmid); //문제부분
 				rs2=pstmt2.executeQuery();
 				while(rs2.next()) {
 					ldto.setRw_no(rs2.getInt("rw_no"));
