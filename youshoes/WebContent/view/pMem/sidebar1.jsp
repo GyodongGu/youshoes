@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover, user-scalable=no">
 <meta name="description" content="">
 <meta name="author" content="Maxartkiller">
-<title>you shoes</title>
+<title>YouShoes</title>
 <!-- Material 디자인 아이콘 CSS -->
 <link rel="stylesheet" href="${pageContext.request.contextPath}/view/vendor/materializeicon/material-icons.css">
 <!-- Roboto fonts CSS -->

@@ -14,9 +14,9 @@ import shoes.dto.reviewDTO;
 
 /**
  * @author User
- *
- *
- *         3. 구매회원이 자기가 쓴 리뷰페이지 보기 myReview()
+ * 1.
+ * 2. 
+ * 3. 구매회원이 자기가 쓴 리뷰페이지 보기 myReview() - 승우
  *
  */
 public class reviewListDAO extends DAO{
