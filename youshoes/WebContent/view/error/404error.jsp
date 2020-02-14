@@ -19,9 +19,9 @@
 					<div class="row justify-content-center">
 						<div class="col-lg-6">
 							<div class="text-center mt-4">
-								<img class="mb-4 img-error" src="../img/error-404-monochrome.svg" />
+								<img class="mb-4 img-error" style="width: 500px; height: 500px;" src="${pageContext.request.contextPath}/view/assets/img/error-404-monochrome.svg" />
 								<p class="lead">404에러, 서버에서 URL을 찾을 수 가 없습니다.</p>
-								<a href="../../index.jsp"><i class="fas fa-arrow-left mr-1"></i>메인화면으로</a>
+								<a href="${pageContext.request.contextPath}/index.jsp"><i class="fas fa-arrow-left mr-1"></i>메인화면으로(index.jsp)</a>
 							</div>
 						</div>
 					</div>
