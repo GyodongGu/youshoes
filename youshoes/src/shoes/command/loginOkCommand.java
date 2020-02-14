@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 
 import shoes.common.Command;
 import shoes.dao.pmDAO;
+import shoes.dto.pmDTO;
 
 public class loginOkCommand implements Command {
 
@@ -34,7 +35,7 @@ public class loginOkCommand implements Command {
 		} else {   	// 로그인 성공하면 (id와 pw가 일치) ""안의 페이지로 이동
 			HttpSession httpsession = request.getSession(); // 자바객체를 이용해서 session객체를 이용할 떄
 			httpsession.setAttribute("pm_id", id);
-			httpsession.setAttribute("grant", grant);
+			httpsession.setAttribute("pm_stat_cd", grant);
 
 			response.sendRedirect("view/pMem/pMem.jsp");
 		}
