@@ -39,7 +39,7 @@ public class ReplyListDAO extends DAO{
 	
 	public int insertReply(replyDTO rdto) {
 		
-		String sql="insert into reply values(reply_no.nextval, ?, sysdate, ?, ?)";//리뷰글번호, 댓글내용, 댓글작성자
+		String sql="insert into reply values((select max(reply_no)+1 from reply), ?, sysdate, ?, ?)";//리뷰글번호, 댓글내용, 댓글작성자
 		int result=0;
 		try {
 			pstmt=conn.prepareStatement(sql);

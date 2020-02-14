@@ -2,6 +2,8 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator"
 prefix="decorator"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!doctype html>
 <html lang="en" class="blue-theme">
 <head>
@@ -34,7 +36,7 @@ prefix="decorator"%>
 </script>
 <!-- // 탭 메뉴를 위한 스크립트 -->
 <script>
-	$(function() {
+	$(function() {						//accordion1,2 기성화맞춤화  accordion3,5 남   4,6여
 		$("#accordion").accordion({
 			collapsible : true,
 			active : false,
@@ -167,24 +169,22 @@ tr, td {
 					<p>
 						<strong>메뉴</strong>
 					</p>
-					<div>
-						<h3>남성화</h3>
+ 					<div>
+						<h3>기성화</h3>
 						<div id="accordion1">
-							<h3>&nbsp;&nbsp;기성화</h3>
+							<h3>&nbsp;&nbsp;남성화</h3>
 							<div id="accordion3">
 								<h3>&nbsp;&nbsp;&nbsp;&nbsp;구두</h3>
 								<div>
 									<table>
-										<tr>
-											<td>브라운슈즈</td>
-											<td><img src="${pageContext.request.contextPath}/view/img/handmade.jpg" alt="" height="50"
+										<c:forEach items="${plist }" var="plist">
+											<tr>
+												<td>${plist.pdt_name }</td>
+												<td><img src="${pageContext.request.contextPath}/view/img/handmade.jpg" alt="" height="50"
 												width="50"></td>
-										</tr>
-										<tr>
-											<td>블랙슈즈</td>
-											<td><img src="${pageContext.request.contextPath}/view/img/shoes03.png" alt="" height="50"
-												width="50"></td>
-										</tr>
+											</tr>
+										
+										</c:forEach>
 									</table>
 								</div>
 								<h3>&nbsp;&nbsp;&nbsp;&nbsp;운동화</h3>
@@ -206,7 +206,7 @@ tr, td {
 
 
 
-							<h3>맞춤화</h3>
+							<h3>여성화</h3>
 							<div id="accordion4">
 								<h3>&nbsp;&nbsp;&nbsp;&nbsp;구두</h3>
 								<div>
@@ -242,9 +242,9 @@ tr, td {
 
 						</div>
 
-						<h3>여성화</h3>
+						<h3>맞춤화</h3>
 						<div id="accordion2">
-							<h3>기성화</h3>
+							<h3>남성화</h3>
 							<div id="accordion5">
 								<h3>&nbsp;&nbsp;&nbsp;&nbsp;구두</h3>
 								<div>
@@ -278,7 +278,7 @@ tr, td {
 								</div>
 							</div>
 
-							<h3>맞춤화</h3>
+							<h3>여성화</h3>
 							<div id="accordion6">
 								<h3>&nbsp;&nbsp;&nbsp;&nbsp;구두</h3>
 								<div>
@@ -313,7 +313,10 @@ tr, td {
 							</div>
 
 						</div>
-					</div>
+					</div> 
+					
+					<!--  ===============================================================================       -->
+
 
 				</div>
 
@@ -361,5 +364,8 @@ tr, td {
 	    } 
 	});     
 	</script>
+	
+	<!-- 제품상세페이지 -->
+	
 </body>
 </html>
