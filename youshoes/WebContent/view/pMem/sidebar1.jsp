@@ -115,7 +115,7 @@
 					<span>Menu</span>
 				</h5>
 				<div class="list-group main-menu">
-					<a href="${pageContext.request.contextPath}/view/pMem/searchShop.jsp" class="list-group-item list-group-item-action active">스토어</a> 
+					<a href="${pageContext.request.contextPath}/view/pMem/searchShop.jsp" class="list-group-item list-group-item-action">스토어</a> 
 					<a href="${pageContext.request.contextPath}/pMemEvent.do" class="list-group-item list-group-item-action">공지사항</a> 
 					<a href="${pageContext.request.contextPath}/view/pMem/product.jsp" class="list-group-item list-group-item-action">모든 제품</a> 
 					<a href="${pageContext.request.contextPath}/orderHistory.do" class="list-group-item list-group-item-action">주문내역</a> 

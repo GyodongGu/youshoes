@@ -23,7 +23,7 @@
 				<div class="card-body">
 					<button class="btn btn-sm btn-link p-0">
 						<a href="${pageContext.request.contextPath}/view/pMem/bookmark.jsp" class="btn btn-link-default"> <i class="material-icons">star</i>
-						</a> <i id="starIcon" class="material-icons md-18">star_border</i>
+						</a>
 					</button>
 					<!-- <script>
 								function chageStar() {
