@@ -3,6 +3,7 @@ package shoes.dao;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.List;
 
 import shoes.dto.pmDTO;
 
@@ -93,11 +94,11 @@ public class pmDAO extends DAO {
 		return n;
 	}
 
-	public int pmUpdate(pmDTO dto) { // 3. 회원 정보 수정 pmUpdate()
-		int n = 0;
-		String sql = "update purchase_member set pm_name = ?, pm_email = ?, pm_tell = ?,"
-				+ "pm_post=?, pm_addr1=?, pm_addr2=?, pm_addr3=?" + "where pm_id=? ";
+	public int pmUpdate(pmDTO dto, String pmId) { // 3. 회원 정보 수정 pmUpdate()
+		int p = 0;
 		try {
+			String sql = "update purchase_member set pm_name = ?, pm_email = ?, pm_tell = ?,"
+					   + "pm_post=?, pm_addr1=?, pm_addr2=?, pm_addr3=?" + "where pm_id=? ";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, dto.getPm_name());
 			pstmt.setString(2, dto.getPm_email());
@@ -106,31 +107,28 @@ public class pmDAO extends DAO {
 			pstmt.setString(5, dto.getPm_addr1());
 			pstmt.setString(6, dto.getPm_addr2());
 			pstmt.setString(7, dto.getPm_addr3());
-			pstmt.setString(8, dto.getPm_id());
-			list.add(dto);
-			/* n = pstmt.executeUpdate(); */
+			pstmt.setString(8, pmId);
+			
+			p = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			close();
 		}
-		return n;
+		return p;
 	}
 
-	public int pmDelete(pmDTO dto) { // 4. 회원 정보 삭제 pmDelete()
-		int n = 0;
-		String sql = "delete from purchase_memeber where pm_id = ?";
-
+	public void pmDelete(String id) { // 4. 회원 정보 삭제 pmDelete()
 		try {
+			String sql = "delete from purchase_memeber where pm_id = ?";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, dto.getPm_id());
-			n = pstmt.executeUpdate();
+			pstmt.setString(1, id);
+			pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			close();
 		}
-		return n;
 	}
 
 	public boolean idOverlapCheck(String id) { // 5. 회원가입창에서 아이디 중복체크 idOverlapCheck()
@@ -180,11 +178,11 @@ public class pmDAO extends DAO {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, id);
 			rs = pstmt.executeQuery();
-			
-			if(rs.next()) {
+
+			if (rs.next()) {
 				n = rs.getInt("idpoint");
 			}
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {

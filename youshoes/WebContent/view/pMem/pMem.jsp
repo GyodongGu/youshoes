@@ -279,6 +279,16 @@
 		</div>
 	</div>
 	<!-- // 구매 회원 메인 페이지의 이벤트  -->
+	<div>
+			<c:if test="${empty pm_id }">
+				<br />
+				<span>로그인하시기 바랍니다.(배광준:세션테스트)</span>
+			</c:if>
+			<c:if test="${pm_id !=null }">
+				<br />
+				<span>${pm_stat_cd } &nbsp; ${pm_id }님, 환영합니다.${pm_name } ${name } (배광준:세션테스트)</span>
+			</c:if>
+		</div>
 	<!-- 이용약관 등 4개 페이지  -->
 	<div class="container mb-3">
 		<div class="row">
