@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import shoes.command.JoinOkCommand;
 import shoes.command.LikeCommand;
-
+import shoes.command.ProductDetailCommand;
 import shoes.command.ReplyInsertCommand;
 import shoes.command.ReplyListCommand;
 import shoes.command.ReviewCommand;
@@ -86,6 +86,7 @@ public class FrontController extends HttpServlet {
 		cont.put("/ReplyList.do", new ReplyListCommand());		//댓글리스트 호출
 		cont.put("/ReplyInsert.do",new ReplyInsertCommand());	//댓글 입력
 		cont.put("/ajax/Like.do", new LikeCommand());				//좋아요
+		cont.put("/ProductDetail.do", new ProductDetailCommand());	//제품상세정보
 
 
 

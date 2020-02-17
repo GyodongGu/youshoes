@@ -1,6 +1,7 @@
 package shoes.dto;
 
 import java.sql.Date;
+import java.util.List;
 
 public class pdtDTO {
 	private int pdt_no;
@@ -12,9 +13,17 @@ public class pdtDTO {
 	private int pdt_price;
 	private String pdt_stat_cd;
 	private Date pdt_date;
+	private List<imageDetailDTO> img_name;
 	
 	
 	
+	
+	public List<imageDetailDTO> getImg_name() {
+		return img_name;
+	}
+	public void setImg_name(List<imageDetailDTO> img_name) {
+		this.img_name = img_name;
+	}
 	public String getPdt_name() {
 		return pdt_name;
 	}
