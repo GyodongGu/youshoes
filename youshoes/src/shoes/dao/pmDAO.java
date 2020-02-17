@@ -133,12 +133,11 @@ public class pmDAO extends DAO {
 
 	public boolean idOverlapCheck(String id) { // 5. 회원가입창에서 아이디 중복체크 idOverlapCheck()
 		boolean bol = true;
-		String sql = "select * from purchase_memeber where pm_id = ?";
+		String sql = "select pm_id from purchase_member where pm_id = ?";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
-
 			if (rs.next()) {
 				bol = false;
 			}
@@ -147,7 +146,6 @@ public class pmDAO extends DAO {
 		} finally {
 			close();
 		}
-
 		return bol;
 	}
 
@@ -189,5 +187,34 @@ public class pmDAO extends DAO {
 			close();
 		}
 		return n;
+	}
+	
+	public pmDTO selectOne(String id) { // 8. 단건조회 selectOne()
+		pmDTO dto = new pmDTO();
+		String sql = "select * from purchase_member where pm_id = ? ";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+
+			if (rs.next()) {
+				dto.setPm_no(rs.getInt("pm_no"));
+				dto.setPm_id(rs.getString("pm_id"));
+				dto.setPm_name(rs.getString("pm_name"));
+				dto.setPm_stat_cd(rs.getString("pm_stat_cd"));
+				dto.setPm_birth(rs.getDate("pm_birth"));
+				dto.setPm_email(rs.getString("pm_email"));
+				dto.setPm_date(rs.getDate("pm_date"));
+				dto.setPm_tell(rs.getString("pm_tell"));
+				dto.setPm_post(rs.getString("pm_post"));
+				dto.setPm_addr1(rs.getString("pm_addr1"));
+				dto.setPm_addr2(rs.getString("pm_addr2"));
+				dto.setPm_addr3(rs.getString("pm_addr3"));
+				dto.setPoint_now(rs.getInt("point_now"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} 
+		return dto; // 한 회원의 정보를 넘김
 	}
 }

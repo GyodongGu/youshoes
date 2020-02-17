@@ -14,11 +14,11 @@
 			<c:choose>
 				<c:when test="${pass == 0 }">
 					<h1>회원가입 실패</h1>
-					<button type="button" onclick="location.href='join.jsp'">확 인</button>
+					<button type="button" onclick="location.href='view/join.jsp'">확 인</button>
 				</c:when>
 				<c:otherwise>
 					<h1>회원가입 성공</h1>
-					<button type="button" onclick="location.href='login.jsp'">확 인</button>
+					<button type="button" onclick="location.href='view/login.jsp'">확 인</button>
 				</c:otherwise>
 			</c:choose>
 		</div>

@@ -27,6 +27,8 @@
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
     <script>
+    
+    /* 비밀번호 일치여부 체크 */
     	function isSame(){
     		if(document.getElementById('pm_pw').value !='' && document.getElementById('pm_pwChk').value !=''){
     			if(document.getElementById('pm_pw').value == document.getElementById('pm_pwChk').value){
@@ -38,6 +40,18 @@
     			}
     		}
     	}
+    /*/비밀번호 일치여부 체크 */
+	
+    /* 아이디 중복체크 */
+    function idCheck() {
+	var id = frm.pm_id.value;
+	if (id == "") {
+		alert("아이디값을 입력후 확인하세요.");
+		frm.pm_id.focus();
+	} else {
+		window.open("../idOverlapOk.do?pm_id=" + id, "ID 중복체크", "width=300, heigh=200, top=50, left=50");
+	}
+}
     </script>
 </head>
 
@@ -54,11 +68,11 @@
         <div class="col align-self-center px-3  text-center">
             <img src="img/logo.png" alt="logo" class="logo-small">
             <h2 class="text-white"><span class="font-weight-light">회원가입</span></h2>
-            <form class="form-signin shadow" id="frm" name="frm" action="../JoinOk.do" method="post">
+            <form class="form-signin shadow" id="frm" name="frm" action="../joinOk.do" method="post">
                  <div class="form-group float-label">
                     <input type="text" id="pm_id" name="pm_id" class="form-control" required autofocus >
                     <label for="pm_id" class="form-control-label"><font color="red">*</font>아이디
-                    <input type="button" id="idChk" name="idChk" value="중복체크" onclick="idOverlapCheck()">
+                    <button type="button" id="idChk" name="idChk" value="unCheck" onclick="idCheck()">중복확인</button>
                     </label>
                     
                 </div>
