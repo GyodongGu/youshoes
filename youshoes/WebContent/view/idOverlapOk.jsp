@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>아이디 중복확인</title>
 <script type="text/javascript">
-	function openFormClose(n) {
+function openFormClose(n) {
 	if(n==1){
 		opener.document.frm.idChk.value = 'Checked';
 	}else{
@@ -22,7 +22,7 @@
 	<div align="center">
 		<div>
 			<c:choose>
-				<c:when test="${idOverlapCheck == true }">
+				<c:when test="${idCheck == true }">
 					<h1>${pm_id }는 사용할 수 있는 아이디입니다.</h1>
 					<div>
 						<br />

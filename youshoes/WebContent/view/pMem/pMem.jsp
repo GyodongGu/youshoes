@@ -284,9 +284,9 @@
 				<br />
 				<span>로그인하시기 바랍니다.(배광준:세션테스트)</span>
 			</c:if>
-			<c:if test="${pm_id !=null }">
+			<c:if test="${pm_id != null }">
 				<br />
-				<span>${pm_stat_cd } &nbsp; ${pm_id }님, 환영합니다.${pm_name } ${name } (배광준:세션테스트)</span>
+				<span>${pm_stat_cd } &nbsp; ${pm_id }님, 환영합니다. ${pmDTO.pm_name } (배광준:세션테스트)</span>
 			</c:if>
 		</div>
 	<!-- 이용약관 등 4개 페이지  -->
