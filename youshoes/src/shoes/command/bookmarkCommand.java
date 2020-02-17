@@ -8,16 +8,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import shoes.common.Command;
+import shoes.dao.bookmarkDAO;
+import shoes.dto.bookmarkDTO;
 
 public class bookmarkCommand implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		pmDAO rdao= new pmDAO();
-		List<pmDTO> list = rdao.reviewlist();
+		// 테스트 용 
+		String id = "1";
 		
-		request.setAttribute("list", list);
+		bookmarkDAO bookmarkDAO= new bookmarkDAO();
+		List<bookmarkDTO> bookmark = bookmarkDAO.bookmarkGet(id);
+		
+		request.setAttribute("bookmark", bookmark);
 		
 		return "view/pMem/bookmark.jsp";
 	}

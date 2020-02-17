@@ -19,6 +19,7 @@
 	</div>
 	<div class="row">
 		<!-- 내부 내용 흰색 네모 1 -->
+		<c:forEach items="${bookmark}" var="bookMarks">
 		<div class="col-6 col-md-4 col-lg-3 col-xl-2">
 			<div class="card shadow-sm border-0 mb-4">
 				<div class="card-body">
@@ -35,13 +36,14 @@
 						</c:otherwise>
 					</c:choose>
 					<figure class="product-image">
-						<img src="${pageContext.request.contextPath}/view/img/shoes01.png" alt="" class="">
+						<img src="${pageContext.request.contextPath}/view/img/${bookMarks.img_name.img_name}" alt="" class="">
 					</figure>
-					<a href="#" class="text-dark mb-1 mt-2 h6 d-block">남성 수제</a>
+					<a href="#" class="text-dark mb-1 mt-2 h6 d-block">${bookMarks.pdt_name.pdt_name}</a>
 				</div>
 			</div>
 		</div>
 		<!-- // 내부 내용 흰색 네모 1 -->
+		</c:forEach>
 	</div>
 </body>
 </html>

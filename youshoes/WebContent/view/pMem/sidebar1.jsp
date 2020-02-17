@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator"
-	prefix="decorator"%>
+<%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator" prefix="decorator"%>
 <!doctype html>
 <html lang="en" class="blue-theme">
 <head>
@@ -93,7 +92,7 @@
 					<img src="${pageContext.request.contextPath}/view/img/user1.png" alt="">
 				</figure>
 			</div>
-			<h5 class="mb-1 ">${pm_id }</h5>
+			<h5 class="mb-1 ">${pm_id}</h5>
 		</div>
 		<br>
 		<div class="row mx-0">
@@ -104,7 +103,7 @@
 						<div class="row">
 							<div class="col">
 								<p class="text-secondary small mb-0">현재 포인트</p>
-								<h3 class="text-dark my-0">${point_now }</h3>
+								<h3 class="text-dark my-0">${point_now}</h3>
 							</div>
 						</div>
 					</div>
@@ -138,12 +137,12 @@
 		<!-- 내부 내용 전체 감싸는 부분 -->
 		<div class="container">
 			<decorator:body />
-		<!-- 하단에 아이콘 버튼 이동 부분 -->
-		<div class="footer">
-			<div><jsp:include page="/view/pMem/bottomMenu.jsp"></jsp:include></div>
+			<!-- 하단에 아이콘 버튼 이동 부분 -->
+			<div class="footer">
+				<div><jsp:include page="/view/pMem/bottomMenu.jsp"></jsp:include></div>
+			</div>
+			<!-- // 하단에 아이콘 버튼 이동 부분 -->
 		</div>
-		<!-- // 하단에 아이콘 버튼 이동 부분 -->
-	</div>
 	</div>
 </body>
 </html>

@@ -21,6 +21,7 @@ public class profileUpdateCommand implements Command {
 		pudto.setPm_email(request.getParameter("upEmail"));
 		pudto.setPm_tell(request.getParameter("upTell"));
 		
+		
 		int pmUpdate = pudao.pmUpdate(pudto, "pur01");
 		request.setAttribute("pmUpdate", pmUpdate);
 		

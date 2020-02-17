@@ -15,7 +15,7 @@ public class logoutCommand implements Command {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		return "view/login.jsp";
+		return "view/pMem/logout.jsp";
 	}
 
 }

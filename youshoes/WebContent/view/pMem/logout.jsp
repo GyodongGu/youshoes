@@ -13,7 +13,7 @@
 	%>
 	<script>
 		alert('로그아웃되었습니다.');
-		location.href = '../login.jsp';
+		location.href = 'view/login.jsp';
 	</script>
 </body>
 </html>
