@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import shoes.command.JoinOkCommand;
+import shoes.command.joinOkCommand;
 import shoes.command.LikeCommand;
 
 import shoes.command.ReplyInsertCommand;
@@ -18,7 +18,7 @@ import shoes.command.ReplyListCommand;
 import shoes.command.ReviewCommand;
 import shoes.command.ShopCommand;
 import shoes.command.bookmarkCommand;
-import shoes.command.idOverapOkCommand;
+import shoes.command.idOverlapOkCommand;
 import shoes.command.indexCommand;
 import shoes.command.joinCommand;
 import shoes.command.loginCommand;
@@ -64,8 +64,8 @@ public class FrontController extends HttpServlet {
 		cont.put("/login.do", new loginCommand());             // 로그인
 		cont.put("/loginOk.do", new loginOkCommand());         // 로그인 체크
 		cont.put("/join.do", new joinCommand());               // 회원가입
-		cont.put("/JoinOk.do", new JoinOkCommand());           // 회원가입 체크
-		cont.put("/idOverapOk.do", new idOverapOkCommand());   // 구매회원 아이디 중복체크
+		cont.put("/joinOk.do", new joinOkCommand());           // 회원가입 체크
+		cont.put("/idOverlapOk.do", new idOverlapOkCommand());   // 구매회원 아이디 중복체크
 		cont.put("/pMem.do", new pMemCommand());			   // 로그인후 화면(잘안됨)
 		
 		
