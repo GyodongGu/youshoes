@@ -280,13 +280,13 @@
 	</div>
 	<!-- // 구매 회원 메인 페이지의 이벤트  -->
 	<div>
-			<c:if test="${empty pm_id }">
+			<c:if test="${empty id }">
 				<br />
 				<span>로그인하시기 바랍니다.(배광준:세션테스트)</span>
 			</c:if>
-			<c:if test="${pm_id != null }">
+			<c:if test="${id != null }">
 				<br />
-				<span>${pm_stat_cd } &nbsp; ${pm_id }님, 환영합니다. ${pmDTO.pm_name } (배광준:세션테스트)</span>
+				<span>${grant } &nbsp; ${id }님, 환영합니다. ${dto.pm_name } (배광준:세션테스트)</span>
 			</c:if>
 		</div>
 	<!-- 이용약관 등 4개 페이지  -->
