@@ -10,23 +10,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-import shoes.command.SetReservCommand;
 import shoes.command.DelReservCommand;
 import shoes.command.GetReservCommand;
-
-import shoes.command.joinOkCommand;
-
 import shoes.command.LikeCommand;
 import shoes.command.ProductDetailCommand;
 import shoes.command.ReplyInsertCommand;
 import shoes.command.ReplyListCommand;
 import shoes.command.ReviewCommand;
+import shoes.command.SetReservCommand;
 import shoes.command.ShopCommand;
 import shoes.command.bookmarkCommand;
 import shoes.command.idOverlapOkCommand;
 import shoes.command.indexCommand;
 import shoes.command.joinCommand;
+import shoes.command.joinOkCommand;
 import shoes.command.loginCommand;
 import shoes.command.loginOkCommand;
 import shoes.command.logoutCommand;
@@ -40,7 +37,6 @@ import shoes.command.profileSetCommand;
 import shoes.command.profileUpdateCommand;
 import shoes.command.sidebar1Command;
 import shoes.common.Command;
-
 
 /**
  * FrontController에서 하는 중요한 역할 2개

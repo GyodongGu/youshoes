@@ -18,6 +18,7 @@ public class logoutCommand implements Command {
 
 		return "/login.do";
 
+//		return "view/pMem/logout.jsp";
 	}
 
 }
