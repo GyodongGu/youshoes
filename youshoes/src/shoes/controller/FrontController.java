@@ -10,17 +10,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import shoes.command.joinOkCommand;
+import shoes.command.DelReservCommand;
+import shoes.command.GetReservCommand;
 import shoes.command.LikeCommand;
 import shoes.command.ProductDetailCommand;
 import shoes.command.ReplyInsertCommand;
 import shoes.command.ReplyListCommand;
 import shoes.command.ReviewCommand;
+import shoes.command.SetReservCommand;
 import shoes.command.ShopCommand;
 import shoes.command.bookmarkCommand;
 import shoes.command.idOverlapOkCommand;
 import shoes.command.indexCommand;
 import shoes.command.joinCommand;
+import shoes.command.joinOkCommand;
 import shoes.command.loginCommand;
 import shoes.command.loginOkCommand;
 import shoes.command.logoutCommand;
@@ -34,7 +37,6 @@ import shoes.command.profileSetCommand;
 import shoes.command.profileUpdateCommand;
 import shoes.command.sidebar1Command;
 import shoes.common.Command;
-
 
 /**
  * FrontController에서 하는 중요한 역할 2개
@@ -85,9 +87,15 @@ public class FrontController extends HttpServlet {
 		cont.put("/Shop.do", new ShopCommand());				//상점페이지 호출
 		cont.put("/ReplyList.do", new ReplyListCommand());		//댓글리스트 호출
 		cont.put("/ReplyInsert.do",new ReplyInsertCommand());	//댓글 입력
+
+		cont.put("/Like.do", new LikeCommand());				//좋아요
+		cont.put("/ajax/SetReserv.do", new SetReservCommand()); // 구매 예약 입력
+		cont.put("/ajax/GetReserv.do", new GetReservCommand()); //구매 예약 출력
+		cont.put("/ajax/DelReserv.do", new DelReservCommand());  //구매 예약 삭제
+
 		cont.put("/ajax/Like.do", new LikeCommand());				//좋아요
 		cont.put("/ProductDetail.do", new ProductDetailCommand());	//제품상세정보
-		
+
 
 
 			

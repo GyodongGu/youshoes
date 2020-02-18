@@ -31,6 +31,8 @@
 <script src="${pageContext.request.contextPath}/view/js/popper.min.js"></script>
 <script src="${pageContext.request.contextPath}/view/vendor/bootstrap-4.4.1/js/bootstrap.min.js"></script>
 <link href="${pageContext.request.contextPath}/view/css/style.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <!-- // 상단 메뉴바의 왼쪽 사이드 열기 위해 필요한 CSS -->
 <!-- 이미지가 들어가지 않은 img태그의  공간 표시 js -->
 <script src="${pageContext.request.contextPath}/view/js/main.js"></script>

@@ -17,12 +17,12 @@
 			pay_method : 'card',
 			merchant_uid : 'merchant_' + new Date().getTime(),
 			name : '주문명:결제테스트',
-			amount : 1,
-			buyer_email : 'iamport@siot.do',
-			buyer_name : '구매자이름',
-			buyer_tel : '010-1234-5678',
-			buyer_addr : '대구 중구',
-			buyer_postcode : '123-456',
+			amount : 1000,
+			buyer_email : 'iamport@siot.do',   // 구매자의 이메일 받아와야함
+			buyer_name : '구매자이름',            // 구매자의 이름 받아와야함
+			buyer_tel : '010-1234-5678',       // 구매자의 전화번호 
+			buyer_addr : '대구 중구',             // 구매자의 주소
+			buyer_postcode : '123-456',        
 			m_redirect_url : 'https://www.yourdomain.com/payments/complete'
 		}, function(rsp) {
 			if (rsp.success) {
