@@ -16,6 +16,7 @@ public class pointCommand implements Command {
 			throws ServletException, IOException {
 		pmDAO pdao = new pmDAO();
 		
+		
 		int ppoint = pdao.selectPoint(1);
 		request.setAttribute("point", ppoint);
 		

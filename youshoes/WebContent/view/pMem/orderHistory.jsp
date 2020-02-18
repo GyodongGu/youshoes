@@ -30,7 +30,19 @@
 			</c:forEach>
 		</tbody>
 	</table>
-	<!-- paginatnion -->
+	
+	<!-- 페이징 -->
+	<my:paging jsfunc="doList" paging="${paging}"/>
+	<script>
+	function doList(p) {
+		document.searchFrm.p.value = p;
+		document.searchFrm.submit();
+	}
+	</script>
+	
+	
+	
+	
 	<nav aria-label="Page navigation example" class="text-center">
 		<ul class="pagination">
 			<li class="page-item"><a class="page-link" href="#" aria-label="Previous"> <span aria-hidden="true">&laquo;</span></a></li>

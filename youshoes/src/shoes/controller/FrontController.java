@@ -74,7 +74,10 @@ public class FrontController extends HttpServlet {
 		// 프로필 부분
 		cont.put("/myReview.do", new myReviewCommand());       	   // 구매 회원이 자기가 작성한 후기 보기
 		cont.put("/orderHistory.do", new orderHistoryCommand());   // 구매 회원이 자기의 결제내역 확인
-		cont.put("/point.do", new pointCommand());                 // 구매 회원 현재 포인트 확인 및 충전
+		
+		cont.put("/point.do", new pointCommand());                 // 구매 회원 현재 포인트 확인
+		cont.put("/point.do", new pointCommand());                 // 구매 회원 결제한 포인트 테이블에 추가
+		
 		cont.put("/sidebar1.do", new sidebar1Command());           // 구매 회원의 사이드바 현재 포인트 확인
 		cont.put("/profileSet.do", new profileSetCommand());  	   // 구매 회원 프로필 메인
 		cont.put("/profileUpdate.do", new profileUpdateCommand()); // 구매 회원 프로필 수정
