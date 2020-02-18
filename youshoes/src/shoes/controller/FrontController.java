@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import shoes.command.SetReservCommand;
+import shoes.command.DelReservCommand;
+import shoes.command.GetReservCommand;
 import shoes.command.JoinOkCommand;
 import shoes.command.LikeCommand;
 import shoes.command.ReplyInsertCommand;
@@ -85,7 +88,9 @@ public class FrontController extends HttpServlet {
 		cont.put("/ReplyList.do", new ReplyListCommand());		//댓글리스트 호출
 		cont.put("/ReplyInsert.do",new ReplyInsertCommand());	//댓글 입력
 		cont.put("/Like.do", new LikeCommand());				//좋아요
-	
+		cont.put("/ajax/SetReserv.do", new SetReservCommand()); // 구매 예약 입력
+		cont.put("/ajax/GetReserv.do", new GetReservCommand()); //구매 예약 출력
+		cont.put("/ajax/DelReserv.do", new DelReservCommand());  //구매 예약 삭제
 
 
 			
