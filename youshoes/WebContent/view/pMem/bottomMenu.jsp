@@ -26,7 +26,7 @@
 					</a>
 				</div>
 				<div class="col-auto">
-					<a href="${pageContext.request.contextPath}/view/pMem/bookmark.jsp" class="btn btn-link-default"> <i class="material-icons">star</i>
+					<a href="${pageContext.request.contextPath}/bookmark.do" class="btn btn-link-default"> <i class="material-icons">star</i>
 					</a>
 				</div>
 				<div class="col-auto">
