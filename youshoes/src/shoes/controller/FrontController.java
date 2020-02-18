@@ -133,7 +133,7 @@ public class FrontController extends HttpServlet {
 		
 		if(commandImpl!=null) {
 			page = commandImpl.execute(request, response);
-			System.out.println(page);
+			//System.out.println(page);
 			if(page!=null && !page.isEmpty()) {
 				if(page.startsWith("redirect:")) {
 					String view = page.substring(9);

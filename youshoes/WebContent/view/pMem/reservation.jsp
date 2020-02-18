@@ -14,12 +14,13 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script>
 function Tdate(start) {
-	var year = start.getFullYear();
-	var month = (1 + start.getMonth());
-	month = month >= 10 ? month : '0' + month;
-	var day = start.getDate();
-	day = day >= 10 ? day : '0' + day;
-	return year + '-' + month + '-' + day;
+	  year = "" + start.getFullYear();
+	  month = "" + (start.getMonth() + 1); if (month.length == 1) { month = "0" + month; }
+	  day = "" + start.getDate(); if (day.length == 1) { day = "0" + day; }
+	  hour = "" + start.getHours(); if (hour.length == 1) { hour = "0" + hour; }
+	  minute = "" + start.getMinutes(); if (minute.length == 1) { minute = "0" + minute; }
+	  return year + "-" + month + "-" + day + " " + hour + ":" + minute;
+	  
 }
 var daytime;
 var calendar ;
@@ -43,7 +44,7 @@ var calendar ;
 		calendar = new FullCalendar.Calendar(calendarEl, {
 			plugins : ['interaction', 'dayGrid' ], 
 			views: { dayGridMonth: { titleFormat: {year: 'numeric', month: 'short' } } }, 
-			eventSources: ['${pageContext.request.contextPath}/ajax/GetReserv.do'],
+			eventSources: ['${pageContext.request.contextPath}/ajax/GetReserv.do?sm_id=${smid}''],
 			eventColor: '#964B00',
 			eventTextColor: 'white',
 			displayEventTime : true,
@@ -66,7 +67,7 @@ var calendar ;
 			eventClick : function (info) {
 				var del = confirm("예약 일정을 삭제 할까요 ? ")
 				var Hnum = {"date" : Tdate(info.event.start)};
-				console.log(info);
+				console.log(info.event.start);
 				if(del == true) {
 					$.ajax({
 						url: "${pageContext.request.contextPath}/ajax/DelReserv.do",
@@ -121,7 +122,7 @@ var calendar ;
   	<h3><div id="daytime"></div> </h3>
   	<br>
   <fieldset> 
-    <legend>시간 선택</legend>
+    <legend>시간 선택</legend><br>
     <input type="radio" name="radio" id="radio" value="09:00">09:00-10:00<br><br>
     <input type="radio" name="radio" id="radio" value="10:00">10:00-11:00<br><br>
     <input type="radio" name="radio" id="radio" value="11:00">11:00-12:00<br><br>
