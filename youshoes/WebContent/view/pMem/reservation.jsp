@@ -20,7 +20,6 @@ function Tdate(start) {
 	  hour = "" + start.getHours(); if (hour.length == 1) { hour = "0" + hour; }
 	  minute = "" + start.getMinutes(); if (minute.length == 1) { minute = "0" + minute; }
 	  return year + "-" + month + "-" + day + " " + hour + ":" + minute;
-	  
 }
 var daytime;
 var calendar ;
@@ -44,7 +43,7 @@ var calendar ;
 		calendar = new FullCalendar.Calendar(calendarEl, {
 			plugins : ['interaction', 'dayGrid' ], 
 			views: { dayGridMonth: { titleFormat: {year: 'numeric', month: 'short' } } }, 
-			eventSources: ['${pageContext.request.contextPath}/ajax/GetReserv.do?sm_id=${smid}''],
+			eventSources: ['${pageContext.request.contextPath}/ajax/GetReserv.do?sm_id=${smid}'],
 			eventColor: '#964B00',
 			eventTextColor: 'white',
 			displayEventTime : true,

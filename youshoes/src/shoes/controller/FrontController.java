@@ -67,7 +67,7 @@ public class FrontController extends HttpServlet {
 		cont.put("/login.do", new loginCommand());             // 로그인
 		cont.put("/loginOk.do", new loginOkCommand());         // 로그인 체크
 		cont.put("/join.do", new joinCommand());               // 회원가입
-		cont.put("/joinOk.do", new joinOkCommand());           // 회원가입 체크
+	//	cont.put("/joinOk.do", new joinOkCommand());           // 회원가입 체크
 		cont.put("/idOverlapOk.do", new idOverlapOkCommand());   // 구매회원 아이디 중복체크
 		cont.put("/pMem.do", new pMemCommand());			   // 로그인후 화면(잘안됨)
 		

@@ -15,7 +15,7 @@ public class CallenderDAO extends DAO{
 	public int insertform(Date date) {
 		int result = 0;
 		try {
-			String sql = "insert into reservation(res_no, pm_no, sm_id, res_date) values (res_no_nextval.nextval, 1, 'manshoes01', ?)";
+			String sql = "insert into reservation(res_no, pm_no, sm_id, res_date) values (res_no.nextval, 1, 'manshoes01', ?)";
 			pstmt = conn.prepareStatement(sql);
 			//psmt.setString(1, dto.getSm_id());
 			pstmt.setDate(1,  date);
