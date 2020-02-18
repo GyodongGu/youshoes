@@ -8,18 +8,21 @@ import javax.servlet.http.HttpServletResponse;
 
 import shoes.common.Command;
 import shoes.dao.pmDAO;
+import shoes.dto.pmDTO;
 
-public class pointCommand implements Command {
+public class ChargePointCommand implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		pmDAO pdao = new pmDAO();
+		pmDAO chpDao = new pmDAO();
 		
+		int pmNo = ((pmDTO)request.getSession().getAttribute("pmDTO")).getPm_no();
+		int selValue = Integer.parseInt(request.getParameter("charge_point"));
 		
-		int ppoint = pdao.selectPoint(1);
-		request.setAttribute("point", ppoint);
+		int chp = chpDao.pointUpdate(pmNo, selValue);
 		
-		return "/view/pMem/point.jsp";
+		return "ajax:"+chp;
 	}
+
 }

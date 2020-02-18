@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator" prefix="decorator"%>
 <!doctype html>
 <html lang="en" class="blue-theme">
@@ -94,7 +93,7 @@
 					<img src="${pageContext.request.contextPath}/view/img/user1.png" alt="">
 				</figure>
 			</div>
-			<h5 class="mb-1 ">${pmDTO.pm_id}</h5>
+			<h5 class="mb-1 ">${pmDTO.pm_name } 님( ${pmDTO.pm_id} )</h5>
 		</div>
 		<br>
 		<div class="row mx-0">
