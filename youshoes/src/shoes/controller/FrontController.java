@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import shoes.command.ChargePointCommand;
 import shoes.command.DelReservCommand;
 import shoes.command.GetReservCommand;
 import shoes.command.LikeCommand;
@@ -77,7 +78,7 @@ public class FrontController extends HttpServlet {
 		cont.put("/orderHistory.do", new orderHistoryCommand());   // 구매 회원이 자기의 결제내역 확인
 		
 		cont.put("/point.do", new pointCommand());                 // 구매 회원 현재 포인트 확인
-		cont.put("/point.do", new pointCommand());                 // 구매 회원 결제한 포인트 테이블에 추가
+		cont.put("/ChargePoint.do", new ChargePointCommand());     // 구매 회원 결제한 포인트를 에 추가
 		
 		cont.put("/sidebar1.do", new sidebar1Command());           // 구매 회원의 사이드바 현재 포인트 확인
 		cont.put("/profileSet.do", new profileSetCommand());  	   // 구매 회원 프로필 메인
