@@ -16,6 +16,7 @@ import shoes.command.LikeCommand;
 import shoes.command.ProductDetailCommand;
 import shoes.command.ReplyInsertCommand;
 import shoes.command.ReplyListCommand;
+import shoes.command.ReservationCommand;
 import shoes.command.ReviewCommand;
 import shoes.command.SetReservCommand;
 import shoes.command.ShopCommand;
@@ -89,6 +90,7 @@ public class FrontController extends HttpServlet {
 		cont.put("/ReplyInsert.do",new ReplyInsertCommand());	//댓글 입력
 
 		cont.put("/Like.do", new LikeCommand());				//좋아요
+		cont.put("/Reserv.do", new ReservationCommand());		//예약페이지 호출
 		cont.put("/ajax/SetReserv.do", new SetReservCommand()); // 구매 예약 입력
 		cont.put("/ajax/GetReserv.do", new GetReservCommand()); //구매 예약 출력
 		cont.put("/ajax/DelReserv.do", new DelReservCommand());  //구매 예약 삭제

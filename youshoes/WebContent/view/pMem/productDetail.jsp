@@ -47,7 +47,7 @@
             </c:if>
 			<br><br><br>
 			
-           	<a class="btn btn-lg btn-default shadow btn-rounded" href="${pageContext.request.contextPath}/Reservation.do?pdt_no=${pdto.pdt_no}&sm_id=${pdto.sm_id}">예약 <i class="material-icons md-18">shopping_cart</i></a>
+           	<a class="btn btn-lg btn-default shadow btn-rounded" href="${pageContext.request.contextPath}/Reserv.do?sm_id=${pdto.sm_id}">예약 <i class="material-icons md-18">shopping_cart</i></a>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <a class="btn btn-lg btn-default shadow btn-rounded float-right" href="#">주문 <i class="material-icons md-18">shopping_cart</i></a>
             
