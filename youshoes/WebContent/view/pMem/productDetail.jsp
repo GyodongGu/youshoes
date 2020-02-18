@@ -46,11 +46,13 @@
             	<h4 class="subtitle">매진</h4>
             </c:if>
 			<br><br><br>
-			
+			<c:if test="${pdto.pdt_type_cd eq 'C' }">
            	<a class="btn btn-lg btn-default shadow btn-rounded" href="${pageContext.request.contextPath}/Reserv.do?sm_id=${pdto.sm_id}">예약 <i class="material-icons md-18">shopping_cart</i></a>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a class="btn btn-lg btn-default shadow btn-rounded float-right" href="#">주문 <i class="material-icons md-18">shopping_cart</i></a>
-            
+            </c:if>
+            <c:if test="${pdto.pdt_type_cd eq 'P' }">
+            <a class="btn btn-lg btn-default shadow btn-rounded float-right" href="${pageContext.request.contextPath}/ProductOrder.do">주문 <i class="material-icons md-18">shopping_cart</i></a>
+            </c:if>
             <br>
             <br>
 

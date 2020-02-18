@@ -14,6 +14,7 @@ import shoes.command.DelReservCommand;
 import shoes.command.GetReservCommand;
 import shoes.command.LikeCommand;
 import shoes.command.ProductDetailCommand;
+import shoes.command.ProductOrderCommand;
 import shoes.command.ReplyInsertCommand;
 import shoes.command.ReplyListCommand;
 import shoes.command.ReservationCommand;
@@ -24,7 +25,6 @@ import shoes.command.bookmarkCommand;
 import shoes.command.idOverlapOkCommand;
 import shoes.command.indexCommand;
 import shoes.command.joinCommand;
-import shoes.command.joinOkCommand;
 import shoes.command.loginCommand;
 import shoes.command.loginOkCommand;
 import shoes.command.logoutCommand;
@@ -97,7 +97,7 @@ public class FrontController extends HttpServlet {
 
 		cont.put("/ajax/Like.do", new LikeCommand());				//좋아요
 		cont.put("/ProductDetail.do", new ProductDetailCommand());	//제품상세정보
-
+		cont.put("/ProductOrder.do", new ProductOrderCommand());	//제품주문호출
 
 
 			

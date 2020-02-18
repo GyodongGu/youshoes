@@ -8,11 +8,13 @@ import java.util.Map;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import shoes.common.Command;
 import shoes.dao.ProductDAO;
 import shoes.dao.sMemDAO;
 import shoes.dto.pdtDTO;
+import shoes.dto.pmDTO;
 import shoes.dto.smDTO;
 
 public class ShopCommand implements Command {
@@ -24,6 +26,7 @@ public class ShopCommand implements Command {
 		
 		sMemDAO sMDAO = new sMemDAO();
 		smDTO smem = sMDAO.sMemSelectOne("manshoes01");
+
 		
 		//smid
 		List<pdtDTO> plist = new ArrayList<pdtDTO>();

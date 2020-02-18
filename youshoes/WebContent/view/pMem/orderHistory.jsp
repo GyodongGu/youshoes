@@ -24,7 +24,7 @@
 					<td>${pMemOrdHistory.ord_no}</td>
 					<td>${pMemOrdHistory.ord_date}</td>
 					<td>${pMemOrdHistory.ord_point}</td>
-					<td>${pMemOrdHistory.ordCnt.order_cnt}</td>
+					<td>${pMemOrdHistory.ord_cnt}</td>
 					<td>${pMemOrdHistory.ord_stat_cd}</td>
 				</tr>
 			</c:forEach>
