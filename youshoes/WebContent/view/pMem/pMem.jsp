@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator" prefix="decorator"%>
 <!doctype html>
 <html lang="en" class="blue-theme">
@@ -8,7 +7,9 @@
 </head>
 <body>
 	<!-- 검색창 부분 -->
+	<form name=searchFrm">
 	<input type="text" class="form-control form-control-lg search my-3" placeholder="검색">
+	</form>
 	<!-- 구매 회원 메인페이지의 카테고리 -->
 	<h6 class="subtitle">인기상품</h6>
 	<div class="row">
@@ -279,16 +280,7 @@
 		</div>
 	</div>
 	<!-- // 구매 회원 메인 페이지의 이벤트  -->
-	<div>
-			<c:if test="${empty id }">
-				<br />
-				<span>로그인하시기 바랍니다.(배광준:세션테스트)</span>
-			</c:if>
-			<c:if test="${id != null }">
-				<br />
-				<span>${grant } &nbsp; ${id }님, 환영합니다. ${dto.pm_name } (배광준:세션테스트)</span>
-			</c:if>
-		</div>
+	
 	<!-- 이용약관 등 4개 페이지  -->
 	<div class="container mb-3">
 		<div class="row">

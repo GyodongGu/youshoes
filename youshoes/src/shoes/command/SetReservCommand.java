@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import shoes.common.Command;
 import shoes.dao.CallenderDAO;
+import shoes.dto.reservationDTO;
 
 public class SetReservCommand implements Command {
 
@@ -17,15 +18,17 @@ public class SetReservCommand implements Command {
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 			CallenderDAO dao = new CallenderDAO();
+			reservationDTO dto = new reservationDTO();
 			String reserv1 = request.getParameter("res_date");
-			Date reserv2 = null;
+			String smid = request.getParameter("sm_id");
 			try {
-				reserv2 = new java.sql.Date(new SimpleDateFormat("yyyy-MM-dd hh:mm").parse(reserv1).getTime());
+				dto.setRes_date(new java.sql.Date(new SimpleDateFormat("yyyy-MM-dd hh:mm").parse(reserv1).getTime()));
+				dto.setSm_id(smid);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 			int r;
-			r=dao.insertform(reserv2);
+			r=dao.insertform(dto);
 		return "ajax:" + reserv1;
 	}
 
