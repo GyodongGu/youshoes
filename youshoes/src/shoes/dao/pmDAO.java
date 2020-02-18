@@ -70,7 +70,7 @@ public class pmDAO extends DAO {
 		int n = 0;
 		/* 유승우 2020.02.10 뭘 넣어야 할지 아직 모르겠음 */
 		String sql = "insert into purchase_member(pm_no, pm_id, pm_pw, pm_name, pm_stat_cd, pm_birth, pm_email, pm_date, pm_tell, pm_post, pm_addr1, pm_addr2, pm_addr3, point_now )"
-				+ "values(pm_no.nextval, ?, ?, ?, 'act04', ?, ?, sysdate, ?, ?, ?, ?, ?, 500)";
+				+ "values((select max(pm_no)+1 from purchase_member), ?, ?, ?, 'ACT04', ?, ?, sysdate, ?, ?, ?, ?, ?, 500)";
 
 		// 회원번호, 아이디, 비번, 이름, 상태, 생년월일, 이메일, 가입일, 전화번호, 우편번호, 주소1, 주소2, 주소3, 포인트
 		try {
@@ -98,7 +98,7 @@ public class pmDAO extends DAO {
 		int p = 0;
 		try {
 			String sql = "update purchase_member set pm_name = ?, pm_email = ?, pm_tell = ?,"
-					   + "pm_post=?, pm_addr1=?, pm_addr2=?, pm_addr3=?" + "where pm_id=? ";
+					   + "pm_post=?, pm_addr1=?, pm_addr2=?, pm_addr3=? where pm_id=? ";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, dto.getPm_name());
 			pstmt.setString(2, dto.getPm_email());
@@ -112,9 +112,7 @@ public class pmDAO extends DAO {
 			p = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} finally {
-			close();
-		}
+		} 
 		return p;
 	}
 

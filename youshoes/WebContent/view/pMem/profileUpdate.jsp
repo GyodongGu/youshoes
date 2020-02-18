@@ -22,7 +22,7 @@
 			<div class="text-center">
 				<div class="figure-profile shadow my-4">
 					<figure>
-						<img src="../img/user1.png" alt="">
+						<img src="view/img/user1.png" alt="프로필사진">
 					</figure>
 					<div class="btn btn-dark text-white floating-btn">
 						<i class="material-icons">camera_alt</i> <input type="file" class="float-file">
@@ -32,19 +32,19 @@
 			<!-- // 프로필 이미지 사진  -->
 
 			<!-- 안쪽에 프로필 수정하려는 입력 값 받는 곳 -->
-			<form action="/profileUpdate.do" method="post" id="profileUpdate" name="profileUpdate">
+			<form action="profileUpdate.do" method="post" id="profileUpdate" name="profileUpdate">
 				<h6 class="subtitle">기본 정보</h6>
 				<div class="row">
 					<div class="col-12 col-md-6">
 						<div class="form-group float-label active">
-							<input type="text" class="form-control" id="upId" name="upId" value="${pmDTO.pm_name }"> 
+							<input type="text" class="form-control" id="pm_name" name="pm_name" value="${pmDTO.pm_name }"> 
 							<label class="form-control-label">이름</label>
 							
 						</div>
 					</div>
 					<div class="col-12 col-md-6">
 						<div class="form-group float-label active">
-							<input type="email" class="form-control" id="upEmail" name="upEmail"  value="${pmDTO.pm_email }"> 
+							<input type="email" class="form-control" id="pm_email" name="pm_email"  value="${pmDTO.pm_email }"> 
 							<label class="form-control-label">이메일</label>
 						</div>
 					</div>
@@ -52,7 +52,7 @@
 				<div class="row">
 					<div class="col-12 col-md-6">
 						<div class="form-group float-label active">
-							<input type="tel" class="form-control" id="upTell" name="upTell" value="${pmDTO.pm_tell }"> 
+							<input type="tel" class="form-control" id="pm_tell" name="pm_tell" value="${pmDTO.pm_tell }"> 
 							<label class="form-control-label">전화번호</label>
 						</div>
 					</div>
