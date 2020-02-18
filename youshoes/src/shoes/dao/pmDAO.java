@@ -3,6 +3,7 @@ package shoes.dao;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.List;
 
 import shoes.dto.pmDTO;
 
@@ -93,11 +94,11 @@ public class pmDAO extends DAO {
 		return n;
 	}
 
-	public int pmUpdate(pmDTO dto) { // 3. 회원 정보 수정 pmUpdate()
-		int n = 0;
-		String sql = "update purchase_member set pm_name = ?, pm_email = ?, pm_tell = ?,"
-				+ "pm_post=?, pm_addr1=?, pm_addr2=?, pm_addr3=?" + "where pm_id=? ";
+	public int pmUpdate(pmDTO dto, String pmId) { // 3. 회원 정보 수정 pmUpdate()
+		int p = 0;
 		try {
+			String sql = "update purchase_member set pm_name = ?, pm_email = ?, pm_tell = ?,"
+					   + "pm_post=?, pm_addr1=?, pm_addr2=?, pm_addr3=?" + "where pm_id=? ";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, dto.getPm_name());
 			pstmt.setString(2, dto.getPm_email());
@@ -106,41 +107,37 @@ public class pmDAO extends DAO {
 			pstmt.setString(5, dto.getPm_addr1());
 			pstmt.setString(6, dto.getPm_addr2());
 			pstmt.setString(7, dto.getPm_addr3());
-			pstmt.setString(8, dto.getPm_id());
-			list.add(dto);
-			/* n = pstmt.executeUpdate(); */
+			pstmt.setString(8, pmId);
+			
+			p = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			close();
 		}
-		return n;
+		return p;
 	}
 
-	public int pmDelete(pmDTO dto) { // 4. 회원 정보 삭제 pmDelete()
-		int n = 0;
-		String sql = "delete from purchase_memeber where pm_id = ?";
-
+	public void pmDelete(String id) { // 4. 회원 정보 삭제 pmDelete()
 		try {
+			String sql = "delete from purchase_memeber where pm_id = ?";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, dto.getPm_id());
-			n = pstmt.executeUpdate();
+			pstmt.setString(1, id);
+			pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			close();
 		}
-		return n;
 	}
 
 	public boolean idOverlapCheck(String id) { // 5. 회원가입창에서 아이디 중복체크 idOverlapCheck()
 		boolean bol = true;
-		String sql = "select * from purchase_memeber where pm_id = ?";
+		String sql = "select pm_id from purchase_member where pm_id = ?";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
-
 			if (rs.next()) {
 				bol = false;
 			}
@@ -149,7 +146,6 @@ public class pmDAO extends DAO {
 		} finally {
 			close();
 		}
-
 		return bol;
 	}
 
@@ -180,16 +176,45 @@ public class pmDAO extends DAO {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, id);
 			rs = pstmt.executeQuery();
-			
-			if(rs.next()) {
+
+			if (rs.next()) {
 				n = rs.getInt("idpoint");
 			}
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			close();
 		}
 		return n;
+	}
+	
+	public pmDTO selectOne(String id) { // 8. 단건조회 selectOne()
+		pmDTO dto = new pmDTO();
+		String sql = "select * from purchase_member where pm_id = ? ";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+
+			if (rs.next()) {
+				dto.setPm_no(rs.getInt("pm_no"));
+				dto.setPm_id(rs.getString("pm_id"));
+				dto.setPm_name(rs.getString("pm_name"));
+				dto.setPm_stat_cd(rs.getString("pm_stat_cd"));
+				dto.setPm_birth(rs.getDate("pm_birth"));
+				dto.setPm_email(rs.getString("pm_email"));
+				dto.setPm_date(rs.getDate("pm_date"));
+				dto.setPm_tell(rs.getString("pm_tell"));
+				dto.setPm_post(rs.getString("pm_post"));
+				dto.setPm_addr1(rs.getString("pm_addr1"));
+				dto.setPm_addr2(rs.getString("pm_addr2"));
+				dto.setPm_addr3(rs.getString("pm_addr3"));
+				dto.setPoint_now(rs.getInt("point_now"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} 
+		return dto; // 한 회원의 정보를 넘김
 	}
 }

@@ -8,18 +8,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import shoes.common.Command;
-import shoes.dao.reviewListDAO;
-import shoes.dto.reviewDTO;
+import shoes.dao.bookmarkDAO;
+import shoes.dto.bookmarkDTO;
 
 public class bookmarkCommand implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		reviewListDAO rdao= new reviewListDAO();
-		List<reviewDTO> list = rdao.reviewlist();
+		// 테스트 용 
+		String id = "1";
 		
-		request.setAttribute("list", list);
+		bookmarkDAO bookmarkDAO= new bookmarkDAO();
+		List<bookmarkDTO> bookmark = bookmarkDAO.bookmarkGet(id);
+		
+		request.setAttribute("bookmark", bookmark);
 		
 		return "view/pMem/bookmark.jsp";
 	}

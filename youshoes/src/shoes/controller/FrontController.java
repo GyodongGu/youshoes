@@ -10,17 +10,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+<<<<<<< HEAD
 import shoes.command.SetReservCommand;
 import shoes.command.DelReservCommand;
 import shoes.command.GetReservCommand;
 import shoes.command.JoinOkCommand;
+=======
+import shoes.command.joinOkCommand;
+>>>>>>> branch 'master' of https://github.com/GyodongGu/youshoes.git
 import shoes.command.LikeCommand;
+import shoes.command.ProductDetailCommand;
 import shoes.command.ReplyInsertCommand;
 import shoes.command.ReplyListCommand;
 import shoes.command.ReviewCommand;
 import shoes.command.ShopCommand;
 import shoes.command.bookmarkCommand;
-import shoes.command.idOverapOkCommand;
+import shoes.command.idOverlapOkCommand;
 import shoes.command.indexCommand;
 import shoes.command.joinCommand;
 import shoes.command.loginCommand;
@@ -66,31 +71,37 @@ public class FrontController extends HttpServlet {
 		cont.put("/login.do", new loginCommand());             // 로그인
 		cont.put("/loginOk.do", new loginOkCommand());         // 로그인 체크
 		cont.put("/join.do", new joinCommand());               // 회원가입
-		cont.put("/JoinOk.do", new JoinOkCommand());           // 회원가입 체크
-		cont.put("/idOverapOk.do", new idOverapOkCommand());   // 구매회원 아이디 중복체크
+		cont.put("/joinOk.do", new joinOkCommand());           // 회원가입 체크
+		cont.put("/idOverlapOk.do", new idOverlapOkCommand());   // 구매회원 아이디 중복체크
 		cont.put("/pMem.do", new pMemCommand());			   // 로그인후 화면(잘안됨)
 		
 		
 		// 프로필 부분
-		cont.put("/myReview.do", new myReviewCommand());       // 구매 회원이 자기가 작성한 후기 보기
+		cont.put("/myReview.do", new myReviewCommand());       	   // 구매 회원이 자기가 작성한 후기 보기
 		cont.put("/orderHistory.do", new orderHistoryCommand());   // 구매 회원이 자기의 결제내역 확인
-		cont.put("/point.do", new pointCommand());             // 구매 회원 현재 포인트 확인 및 충전
-		cont.put("/sidebar1.do", new sidebar1Command());             // 구매 회원의 사이드바 현재 포인트 확인
-		cont.put("/profileSet.do", new profileSetCommand());  // 구매 회원 프로필 메인
-		cont.put("/profileUpdate.do", new profileUpdateCommand());  // 구매 회원 프로필 수정
-		cont.put("/pMemEvent.do", new pMemEventCommand());     // 구매 회원 이벤트 목록 보기
-		cont.put("/bookmark.do", new bookmarkCommand());       // 구매 회원 즐겨찾기 상품 보기
-		cont.put("/logout.do", new logoutCommand());           // 로그아웃
+		cont.put("/point.do", new pointCommand());                 // 구매 회원 현재 포인트 확인 및 충전
+		cont.put("/sidebar1.do", new sidebar1Command());           // 구매 회원의 사이드바 현재 포인트 확인
+		cont.put("/profileSet.do", new profileSetCommand());  	   // 구매 회원 프로필 메인
+		cont.put("/profileUpdate.do", new profileUpdateCommand()); // 구매 회원 프로필 수정
+		cont.put("/pMemEvent.do", new pMemEventCommand());     	   // 구매 회원 이벤트 목록 보기
+		cont.put("/bookmark.do", new bookmarkCommand());       	   // 구매 회원 즐겨찾기 상품 보기
+		cont.put("/logout.do", new logoutCommand());           	   // 로그아웃
 		
 		// 가게 및 상품 검색,리뷰,예약,댓글
 		cont.put("/Review.do",new ReviewCommand());				//리뷰페이지 호출
 		cont.put("/Shop.do", new ShopCommand());				//상점페이지 호출
 		cont.put("/ReplyList.do", new ReplyListCommand());		//댓글리스트 호출
 		cont.put("/ReplyInsert.do",new ReplyInsertCommand());	//댓글 입력
+<<<<<<< HEAD
 		cont.put("/Like.do", new LikeCommand());				//좋아요
 		cont.put("/ajax/SetReserv.do", new SetReservCommand()); // 구매 예약 입력
 		cont.put("/ajax/GetReserv.do", new GetReservCommand()); //구매 예약 출력
 		cont.put("/ajax/DelReserv.do", new DelReservCommand());  //구매 예약 삭제
+=======
+		cont.put("/ajax/Like.do", new LikeCommand());				//좋아요
+		cont.put("/ProductDetail.do", new ProductDetailCommand());	//제품상세정보
+
+>>>>>>> branch 'master' of https://github.com/GyodongGu/youshoes.git
 
 
 			

@@ -17,10 +17,11 @@ public class ReviewCommand implements Command {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		
+		String smid="manshoes01";
+		String pmid="pur01";
 		reviewListDAO rdao= new reviewListDAO();
-		List<reviewDTO> list = rdao.reviewlist();
+		List<reviewDTO> list = rdao.reviewlist(smid,pmid);
 		
 		request.setAttribute("list", list);
 		

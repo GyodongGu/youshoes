@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,15 +12,16 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<div id="layoutError">
+	<div id="layoutError">
 		<div id="layoutError_content">
 			<main>
 				<div class="container">
 					<div class="row justify-content-center">
 						<div class="col-lg-6">
 							<div class="text-center mt-4">
+								<img class="mb-4 img-error" style="width: 500px; height: 300px;" src="${pageContext.request.contextPath}/view/img/500error.jpg" />
 								<p class="lead">500에러, 문법 오류가 났습니다.</p>
-								<a href="../../index.jsp"><i class="fas fa-arrow-left mr-1"></i>메인화면으로</a>
+								<a href="${pageContext.request.contextPath}/index.jsp"><i class="fas fa-arrow-left mr-1"></i>메인화면으로(index.jsp)</a>
 							</div>
 						</div>
 					</div>

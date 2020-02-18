@@ -16,7 +16,7 @@
   <style>
   #inbtn{
   	position:fixed;
-  	bottom:0;
+  	bottom:100px;
   	left:0;
   }	
   
