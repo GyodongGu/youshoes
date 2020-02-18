@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import shoes.dto.imageDetailDTO;
+import shoes.dto.optDTO;
 import shoes.dto.pdtDTO;
 
 public class ProductDAO extends DAO{
@@ -157,9 +158,12 @@ public class ProductDAO extends DAO{
 		pdtDTO pdto = new pdtDTO();
 		String sql = "select * from product where pdt_no=?";
 		String sql1="select img_name from image i join image_detail d on i.img_no=d.img_no where section='I02' and section_no=?";
-		
+		String sql2="select * from opt where pdt_no=?";
 		PreparedStatement pstmt1;
 		ResultSet rs1;
+
+		PreparedStatement pstmt2;
+		ResultSet rs2;
 		
 		try {
 			pstmt=conn.prepareStatement(sql);
@@ -188,6 +192,20 @@ public class ProductDAO extends DAO{
 					imgList.add(imgDTO);
 				}
 				pdto.setImg_name(imgList);
+				
+				pstmt2= conn.prepareStatement(sql2);
+				pstmt2.setInt(1, rs.getInt("pdt_no"));
+				rs2=pstmt2.executeQuery();
+				List<optDTO> optlist = new ArrayList<optDTO>();
+				while(rs2.next()) {
+					optDTO oDTO = new optDTO();
+					oDTO.setPdt_no(rs2.getInt("pdt_no"));
+					oDTO.setPdt_size_cd(rs2.getInt("pdt_size_cd"));
+					oDTO.setPdt_color_cd(rs2.getString("pdt_color_cd"));
+					optlist.add(oDTO);
+				}
+				pdto.setOptlist(optlist);
+				
 			}
 			
 			

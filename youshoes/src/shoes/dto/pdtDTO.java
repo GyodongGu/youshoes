@@ -14,10 +14,16 @@ public class pdtDTO {
 	private String pdt_stat_cd;
 	private Date pdt_date;
 	private List<imageDetailDTO> img_name;
+	private List<optDTO> optlist;
 	
 	
 	
-	
+	public List<optDTO> getOptlist() {
+		return optlist;
+	}
+	public void setOptlist(List<optDTO> optlist) {
+		this.optlist = optlist;
+	}
 	public List<imageDetailDTO> getImg_name() {
 		return img_name;
 	}
