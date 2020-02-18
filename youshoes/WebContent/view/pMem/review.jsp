@@ -93,7 +93,7 @@
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					|
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<a href="${pageContext.request.contextPath}/ReplyList.do"><font size="5" color="gray"><strong>댓글</strong></font></a>
+					<a href="${pageContext.request.contextPath}/ReplyList.do?rw_no=${dto.getRw_no()}"><font size="5" color="gray"><strong>댓글</strong></font></a>
 					</p>
 					<p class="text-secondary small"></p>
 				</div>

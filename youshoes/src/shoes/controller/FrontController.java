@@ -14,8 +14,10 @@ import shoes.command.DelReservCommand;
 import shoes.command.GetReservCommand;
 import shoes.command.LikeCommand;
 import shoes.command.ProductDetailCommand;
+import shoes.command.ProductOrderCommand;
 import shoes.command.ReplyInsertCommand;
 import shoes.command.ReplyListCommand;
+import shoes.command.ReservationCommand;
 import shoes.command.ReviewCommand;
 import shoes.command.SetReservCommand;
 import shoes.command.ShopCommand;
@@ -23,7 +25,6 @@ import shoes.command.bookmarkCommand;
 import shoes.command.idOverlapOkCommand;
 import shoes.command.indexCommand;
 import shoes.command.joinCommand;
-import shoes.command.joinOkCommand;
 import shoes.command.loginCommand;
 import shoes.command.loginOkCommand;
 import shoes.command.logoutCommand;
@@ -66,7 +67,7 @@ public class FrontController extends HttpServlet {
 		cont.put("/login.do", new loginCommand());             // 로그인
 		cont.put("/loginOk.do", new loginOkCommand());         // 로그인 체크
 		cont.put("/join.do", new joinCommand());               // 회원가입
-		cont.put("/joinOk.do", new joinOkCommand());           // 회원가입 체크
+	//	cont.put("/joinOk.do", new joinOkCommand());           // 회원가입 체크
 		cont.put("/idOverlapOk.do", new idOverlapOkCommand());   // 구매회원 아이디 중복체크
 		cont.put("/pMem.do", new pMemCommand());			   // 로그인후 화면(잘안됨)
 		
@@ -92,14 +93,14 @@ public class FrontController extends HttpServlet {
 		cont.put("/ReplyInsert.do",new ReplyInsertCommand());	//댓글 입력
 
 		cont.put("/Like.do", new LikeCommand());				//좋아요
+		cont.put("/Reserv.do", new ReservationCommand());		//예약페이지 호출
 		cont.put("/ajax/SetReserv.do", new SetReservCommand()); // 구매 예약 입력
 		cont.put("/ajax/GetReserv.do", new GetReservCommand()); //구매 예약 출력
 		cont.put("/ajax/DelReserv.do", new DelReservCommand());  //구매 예약 삭제
 
 		cont.put("/ajax/Like.do", new LikeCommand());				//좋아요
 		cont.put("/ProductDetail.do", new ProductDetailCommand());	//제품상세정보
-
-
+		cont.put("/ProductOrder.do", new ProductOrderCommand());	//제품주문호출
 
 
 			
@@ -136,7 +137,7 @@ public class FrontController extends HttpServlet {
 		
 		if(commandImpl!=null) {
 			page = commandImpl.execute(request, response);
-			System.out.println(page);
+			//System.out.println(page);
 			if(page!=null && !page.isEmpty()) {
 				if(page.startsWith("redirect:")) {
 					String view = page.substring(9);

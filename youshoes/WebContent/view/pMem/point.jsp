@@ -48,6 +48,7 @@
 <!-- // 아임포트 결제 API -->
 </head>
 <body>
+
 	<form>
 		<!-- 구매 회원이 현재 가지고 있는 포인트를 표시해주는 박스 -->
 		<div class="card mb-3 border-0 shadow-sm bg-template-light">
@@ -55,7 +56,7 @@
 				<div class="row">
 					<div class="col">
 						<p class="text-secondary small mb-0">현재 포인트</p>
-						<h3 class="text-dark my-0">${point}</h3>
+						<h3 class="text-dark my-0">${pmDTO.point_now}</h3>
 					</div>
 				</div>
 			</div>
@@ -75,9 +76,9 @@
 		<br>
 		<button type="button" class="btn btn-primary btn-lg btn-block" onclick="payBtn_click();">포인트 충전</button>
 	</form>
-	
+
 	<script>
-		$("select option[value='notPick']").prop('disabled',true); // select의 value가 notPick인 것의 선택을 막음
+		$("select option[value='notPick']").prop('disabled', true); // select의 value가 notPick인 것의 선택을 막음
 	</script>
 </body>
 </html>

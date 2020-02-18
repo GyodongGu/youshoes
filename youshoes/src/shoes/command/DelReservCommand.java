@@ -22,11 +22,12 @@ public class DelReservCommand implements Command {
 			String reserv1 = request.getParameter("date");
 			Date reserv2 = null;
 			try {
-				reserv2 = new java.sql.Date(new SimpleDateFormat("yyyy-MM-dd").parse(reserv1).getTime());
+				reserv2 = new java.sql.Date(new SimpleDateFormat("yyyy-MM-dd hh:mm").parse(reserv1).getTime());
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 			dto.setRes_date(reserv2);
+			System.out.println(reserv2);
 			dto.setRes_no(3);
 			dao.deleteform(dto);
 		return "ajax:" + reserv1;

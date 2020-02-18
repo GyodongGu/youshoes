@@ -334,11 +334,12 @@ tr, td {
 													<h3>&nbsp;&nbsp;&nbsp;&nbsp;구두</h3>
 													<div>
 														<table>
-															<c:forEach items="${pmolist }" var="pmolist">
+															<c:forEach items="${pmolist }" var="pmo">
 																<tr>
-																	<td>${pmolist.pdt_name }</td>
+																	<td><a
+																		href="${pageContext.request.contextPath}/ProductDetail.do?pdt_no=${pmo.pdt_no}">${pmo.pdt_name }</a></td>
 																	<td><img
-																		src="${pageContext.request.contextPath}/view/img/handmade.jpg"
+																		src="${pageContext.request.contextPath}/view/img/${pmo.img_name[0].img_name}"
 																		alt="" height="50" width="50"></td>
 																</tr>
 
@@ -352,10 +353,12 @@ tr, td {
 														<table>
 															<c:forEach items="${pmtlist }" var="pmt">
 																<tr>
-																	<td><a href="${pageContext.request.contextPath}/ProductDetail.do?pdt_no=${pmt.pdt_no}">${pmt.pdt_name }</a></td>
+																	<td><a
+																		href="${pageContext.request.contextPath}/ProductDetail.do?pdt_no=${pmt.pdt_no}">${pmt.pdt_name }</a></td>
 																	<td><img
 																		src="${pageContext.request.contextPath}/view/img/${pmt.img_name[0].img_name}"
 																		alt="" height="50" width="50"></td>
+																	
 																</tr>
 
 															</c:forEach>
@@ -366,11 +369,12 @@ tr, td {
 													<h3>&nbsp;&nbsp;&nbsp;&nbsp;샌들</h3>
 													<div>
 														<table>
-															<c:forEach items="${pmthlist }" var="pmthlist">
+															<c:forEach items="${pmthlist }" var="pmth">
 																<tr>
-																	<td>${pmthlist.pdt_name }</td>
+																	<td><a
+																		href="${pageContext.request.contextPath}/ProductDetail.do?pdt_no=${pmth.pdt_no}">${pmth.pdt_name }</a></td>
 																	<td><img
-																		src="${pageContext.request.contextPath}/view/img/handmade.jpg"
+																		src="${pageContext.request.contextPath}/view/img/${pmth.img_name[0].img_name}"
 																		alt="" height="50" width="50"></td>
 																</tr>
 
@@ -382,11 +386,12 @@ tr, td {
 													<h3>&nbsp;&nbsp;&nbsp;&nbsp;워커</h3>
 													<div>
 														<table>
-															<c:forEach items="${pmflist }" var="pmflist">
+															<c:forEach items="${pmflist }" var="pmf">
 																<tr>
-																	<td>${pmflist.pdt_name }</td>
+																	<td><a
+																		href="${pageContext.request.contextPath}/ProductDetail.do?pdt_no=${pmf.pdt_no}">${pmf.pdt_name }</a></td>
 																	<td><img
-																		src="${pageContext.request.contextPath}/view/img/handmade.jpg"
+																		src="${pageContext.request.contextPath}/view/img/${pmf.img_name[0].img_name}"
 																		alt="" height="50" width="50"></td>
 																</tr>
 
@@ -405,11 +410,12 @@ tr, td {
 													<h3>&nbsp;&nbsp;&nbsp;&nbsp;구두</h3>
 													<div>
 														<table>
-															<c:forEach items="${pwolist }" var="pwolist">
+															<c:forEach items="${pwolist }" var="pwo">
 																<tr>
-																	<td>${pwolist.pdt_name }</td>
+																	<td><a
+																		href="${pageContext.request.contextPath}/ProductDetail.do?pdt_no=${pwo.pdt_no}">${pwo.pdt_name }</a></td>
 																	<td><img
-																		src="${pageContext.request.contextPath}/view/img/handmade.jpg"
+																		src="${pageContext.request.contextPath}/view/img/${pwo.img_name[0].img_name}"
 																		alt="" height="50" width="50"></td>
 																</tr>
 
@@ -421,11 +427,12 @@ tr, td {
 													<h3>&nbsp;&nbsp;&nbsp;&nbsp;운동화</h3>
 													<div>
 														<table>
-															<c:forEach items="${pwtlist }" var="pwtlist">
+															<c:forEach items="${pwtlist }" var="pwt">
 																<tr>
-																	<td>${pwtlist.pdt_name }</td>
+																	<td><a
+																		href="${pageContext.request.contextPath}/ProductDetail.do?pdt_no=${pwt.pdt_no}">${pwt.pdt_name }</a></td>
 																	<td><img
-																		src="${pageContext.request.contextPath}/view/img/handmade.jpg"
+																		src="${pageContext.request.contextPath}/view/img/${pwt.img_name[0].img_name}"
 																		alt="" height="50" width="50"></td>
 																</tr>
 
@@ -437,11 +444,12 @@ tr, td {
 													<h3>&nbsp;&nbsp;&nbsp;&nbsp;샌들</h3>
 													<div>
 														<table>
-															<c:forEach items="${pwthlist }" var="pwthlist">
+															<c:forEach items="${pwthlist }" var="pwth">
 																<tr>
-																	<td>${pwthlist.pdt_name }</td>
+																	<td><a
+																		href="${pageContext.request.contextPath}/ProductDetail.do?pdt_no=${pwth.pdt_no}">${pwth.pdt_name }</a></td>
 																	<td><img
-																		src="${pageContext.request.contextPath}/view/img/handmade.jpg"
+																		src="${pageContext.request.contextPath}/view/img/${pwth.img_name[0].img_name}"
 																		alt="" height="50" width="50"></td>
 																</tr>
 
@@ -453,11 +461,12 @@ tr, td {
 													<h3>&nbsp;&nbsp;&nbsp;&nbsp;워커</h3>
 													<div>
 														<table>
-															<c:forEach items="${pwflist }" var="pwflist">
+															<c:forEach items="${pwflist }" var="pwf">
 																<tr>
-																	<td>${pwflist.pdt_name }</td>
+																	<td><a
+																		href="${pageContext.request.contextPath}/ProductDetail.do?pdt_no=${pwf.pdt_no}">${pwf.pdt_name }</a></td>
 																	<td><img
-																		src="${pageContext.request.contextPath}/view/img/handmade.jpg"
+																		src="${pageContext.request.contextPath}/view/img/${pwf.img_name[0].img_name}"
 																		alt="" height="50" width="50"></td>
 																</tr>
 
@@ -484,11 +493,12 @@ tr, td {
 													<h3>&nbsp;&nbsp;&nbsp;&nbsp;구두</h3>
 													<div>
 														<table>
-															<c:forEach items="${cmolist }" var="cmolist">
+															<c:forEach items="${cmolist }" var="cmo">
 																<tr>
-																	<td>${cmolist.pdt_name }</td>
+																	<td><a
+																		href="${pageContext.request.contextPath}/ProductDetail.do?pdt_no=${cmo.pdt_no}">${cmo.pdt_name }</a></td>
 																	<td><img
-																		src="${pageContext.request.contextPath}/view/img/handmade.jpg"
+																		src="${pageContext.request.contextPath}/view/img/${cmo.img_name[0].img_name}"
 																		alt="" height="50" width="50"></td>
 																</tr>
 
@@ -500,11 +510,12 @@ tr, td {
 													<h3>&nbsp;&nbsp;&nbsp;&nbsp;운동화</h3>
 													<div>
 														<table>
-															<c:forEach items="${cmtlist }" var="cmtlist">
+															<c:forEach items="${cmtlist }" var="cmt">
 																<tr>
-																	<td>${cmtlist.pdt_name }</td>
+																	<td><a
+																		href="${pageContext.request.contextPath}/ProductDetail.do?pdt_no=${cmt.pdt_no}">${cmt.pdt_name }</a></td>
 																	<td><img
-																		src="${pageContext.request.contextPath}/view/img/handmade.jpg"
+																		src="${pageContext.request.contextPath}/view/img/${cmt.img_name[0].img_name}"
 																		alt="" height="50" width="50"></td>
 																</tr>
 
@@ -516,11 +527,12 @@ tr, td {
 													<h3>&nbsp;&nbsp;&nbsp;&nbsp;샌들</h3>
 													<div>
 														<table>
-															<c:forEach items="${cmthlist }" var="cmthlist">
+															<c:forEach items="${cmthlist }" var="cmth">
 																<tr>
-																	<td>${cmthlist.pdt_name }</td>
+																	<td><a
+																		href="${pageContext.request.contextPath}/ProductDetail.do?pdt_no=${cmth.pdt_no}">${cmth.pdt_name }</a></td>
 																	<td><img
-																		src="${pageContext.request.contextPath}/view/img/handmade.jpg"
+																		src="${pageContext.request.contextPath}/view/img/${cmth.img_name[0].img_name}"
 																		alt="" height="50" width="50"></td>
 																</tr>
 
@@ -532,11 +544,12 @@ tr, td {
 													<h3>&nbsp;&nbsp;&nbsp;&nbsp;워커</h3>
 													<div>
 														<table>
-															<c:forEach items="${cmflist }" var="cmflist">
+															<c:forEach items="${cmflist }" var="cmf">
 																<tr>
-																	<td>${cmflist.pdt_name }</td>
+																	<td><a
+																		href="${pageContext.request.contextPath}/ProductDetail.do?pdt_no=${cmf.pdt_no}">${cmf.pdt_name }</a></td>
 																	<td><img
-																		src="${pageContext.request.contextPath}/view/img/handmade.jpg"
+																		src="${pageContext.request.contextPath}/view/img/${cmf.img_name[0].img_name}"
 																		alt="" height="50" width="50"></td>
 																</tr>
 
@@ -555,11 +568,12 @@ tr, td {
 													<h3>&nbsp;&nbsp;&nbsp;&nbsp;구두</h3>
 													<div>
 														<table>
-															<c:forEach items="${cwolist }" var="cwolist">
+															<c:forEach items="${cwolist }" var="cwo">
 																<tr>
-																	<td>${cwolist.pdt_name }</td>
+																	<td><a
+																		href="${pageContext.request.contextPath}/ProductDetail.do?pdt_no=${cwo.pdt_no}">${cwo.pdt_name }</a></td>
 																	<td><img
-																		src="${pageContext.request.contextPath}/view/img/handmade.jpg"
+																		src="${pageContext.request.contextPath}/view/img/${cwo.img_name[0].img_name}"
 																		alt="" height="50" width="50"></td>
 																</tr>
 
@@ -571,11 +585,12 @@ tr, td {
 													<h3>&nbsp;&nbsp;&nbsp;&nbsp;운동화</h3>
 													<div>
 														<table>
-															<c:forEach items="${cwtlist }" var="cwtlist">
+															<c:forEach items="${cwtlist }" var="cwt">
 																<tr>
-																	<td>${cwtlist.pdt_name }</td>
+																	<td><a
+																		href="${pageContext.request.contextPath}/ProductDetail.do?pdt_no=${cwt.pdt_no}">${cwt.pdt_name }</a></td>
 																	<td><img
-																		src="${pageContext.request.contextPath}/view/img/handmade.jpg"
+																		src="${pageContext.request.contextPath}/view/img/${cwt.img_name[0].img_name}"
 																		alt="" height="50" width="50"></td>
 																</tr>
 
@@ -587,11 +602,12 @@ tr, td {
 													<h3>&nbsp;&nbsp;&nbsp;&nbsp;샌들</h3>
 													<div>
 														<table>
-															<c:forEach items="${cwthlist }" var="cwthlist">
+															<c:forEach items="${cwthlist }" var="cwth">
 																<tr>
-																	<td>${cwthlist.pdt_name }</td>
+																	<td><a
+																		href="${pageContext.request.contextPath}/ProductDetail.do?pdt_no=${cwth.pdt_no}">${cwth.pdt_name }</a></td>
 																	<td><img
-																		src="${pageContext.request.contextPath}/view/img/handmade.jpg"
+																		src="${pageContext.request.contextPath}/view/img/${cwth.img_name[0].img_name}"
 																		alt="" height="50" width="50"></td>
 																</tr>
 
@@ -603,11 +619,12 @@ tr, td {
 													<h3>&nbsp;&nbsp;&nbsp;&nbsp;워커</h3>
 													<div>
 														<table>
-															<c:forEach items="${cwflist }" var="cwflist">
+															<c:forEach items="${cwflist }" var="cwf">
 																<tr>
-																	<td>${cwflist.pdt_name }</td>
+																	<td><a
+																		href="${pageContext.request.contextPath}/ProductDetail.do?pdt_no=${cwf.pdt_no}">${cwf.pdt_name }</a></td>
 																	<td><img
-																		src="${pageContext.request.contextPath}/view/img/handmade.jpg"
+																		src="${pageContext.request.contextPath}/view/img/${cwf.img_name[0].img_name}"
 																		alt="" height="50" width="50"></td>
 																</tr>
 

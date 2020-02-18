@@ -18,9 +18,11 @@ public class ReplyListCommand implements Command {
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		ReplyListDAO repDAO = new ReplyListDAO();
-		List<replyDTO> reply = repDAO.ReplyList(1);
+		int rwno = Integer.parseInt(request.getParameter("rw_no"));
+		List<replyDTO> reply = repDAO.ReplyList(rwno);
 		request.setAttribute("reply", reply);
-
+		request.setAttribute("rwno", rwno);
+		
 		return "/view/pMem/insertReply.jsp";
 	}
 

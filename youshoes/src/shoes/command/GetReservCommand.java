@@ -18,7 +18,8 @@ public class GetReservCommand implements Command {
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 			CallenderDAO dao = new CallenderDAO();
-			List<Map<String, Object>> list = dao.selectform();
+			String smid = request.getParameter("sm_id");
+			List<Map<String, Object>> list = dao.selectform(smid);
 			String result = JSONArray.fromObject(list).toString();
 		return "ajax:" + result;
 	}

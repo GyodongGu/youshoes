@@ -26,8 +26,6 @@ public class SetReservCommand implements Command {
 			}
 			int r;
 			r=dao.insertform(reserv2);
-			System.out.println(reserv2);
-
 		return "ajax:" + reserv1;
 	}
 
