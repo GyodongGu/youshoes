@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!doctype html>
 <html lang="en" class="blue-theme">
 <head>
@@ -36,14 +37,14 @@
 				<div class="row">
 					<div class="col-12 col-md-6">
 						<div class="form-group float-label active">
-							<input type="text" class="form-control" id="upId" name="upId"> 
+							<input type="text" class="form-control" id="upId" name="upId" value="${pmDTO.pm_name }"> 
 							<label class="form-control-label">이름</label>
 							
 						</div>
 					</div>
 					<div class="col-12 col-md-6">
 						<div class="form-group float-label active">
-							<input type="email" class="form-control" id="upEmail" name="upEmail"> 
+							<input type="email" class="form-control" id="upEmail" name="upEmail"  value="${pmDTO.pm_email }"> 
 							<label class="form-control-label">이메일</label>
 						</div>
 					</div>
@@ -51,7 +52,7 @@
 				<div class="row">
 					<div class="col-12 col-md-6">
 						<div class="form-group float-label active">
-							<input type="tel" class="form-control" id="upTell" name="upTell"> 
+							<input type="tel" class="form-control" id="upTell" name="upTell" value="${pmDTO.pm_tell }"> 
 							<label class="form-control-label">전화번호</label>
 						</div>
 					</div>
@@ -69,7 +70,7 @@
 					<div class="row">
 						<div class="col-6">
 							<div class="form-group float-label active">
-								<input type="text" class="form-control" id="pm_post" placeholder="25468" style="width: 100px;"> 
+								<input type="text" class="form-control" id="pm_post" style="width: 100px;"  value="${pmDTO.pm_post }"> 
 								<label class="form-control-label">우편 번호</label>
 							</div>
 						</div>
@@ -77,7 +78,7 @@
 					<div class="row">
 						<div class="col-12 col-6">
 							<div class="form-group float-label active">
-								<input type="text" class="form-control" id="pm_addr1" placeholder="시군구"> 
+								<input type="text" class="form-control" id="pm_addr1" value="${pmDTO.pm_addr1 }"> 
 								<label class="form-control-label">주소</label>
 							</div>
 						</div>
@@ -85,7 +86,7 @@
 					<div class="row">
 						<div class="col-12 col-6">
 							<div class="form-group float-label active">
-								<input type="text" class="form-control" id="pm_addr2" placeholder="동,호수"> 
+								<input type="text" class="form-control" id="pm_addr2" value="${pmDTO.pm_addr2 }"> 
 								<label class="form-control-label">상세주소</label>
 							</div>
 						</div>
@@ -93,7 +94,7 @@
 					<div class="row">
 						<div class="col-12 col-6">
 							<div class="form-group float-label active">
-								<input type="text" class="form-control" id="pm_addr3" placeholder="건물명">
+								<input type="text" class="form-control" id="pm_addr3" value="${pmDTO.pm_addr3 }">
 								<label class="form-control-label">참고항목</label>
 							</div>
 						</div>

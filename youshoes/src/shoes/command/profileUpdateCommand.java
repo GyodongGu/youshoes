@@ -20,9 +20,12 @@ public class profileUpdateCommand implements Command {
 		pudto.setPm_name(request.getParameter("upId"));
 		pudto.setPm_email(request.getParameter("upEmail"));
 		pudto.setPm_tell(request.getParameter("upTell"));
+		pudto.setPm_post(request.getParameter("pm_post"));
+		pudto.setPm_addr1(request.getParameter("pm_addr1"));
+		pudto.setPm_addr2(request.getParameter("pm_addr2"));
+		pudto.setPm_addr3(request.getParameter("pm_addr3"));
 		
-		
-		int pmUpdate = pudao.pmUpdate(pudto, "pur01");
+		int pmUpdate = pudao.pmUpdate(pudto, "pm_id");
 		request.setAttribute("pmUpdate", pmUpdate);
 		
 		return "view/pMem/profileUpdate.jsp";

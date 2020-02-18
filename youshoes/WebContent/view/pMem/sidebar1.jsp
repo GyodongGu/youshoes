@@ -94,7 +94,7 @@
 					<img src="${pageContext.request.contextPath}/view/img/user1.png" alt="">
 				</figure>
 			</div>
-			<h5 class="mb-1 ">${pm_id}</h5>
+			<h5 class="mb-1 ">${pmDTO.pm_id}</h5>
 		</div>
 		<br>
 		<div class="row mx-0">
@@ -105,7 +105,7 @@
 						<div class="row">
 							<div class="col">
 								<p class="text-secondary small mb-0">현재 포인트</p>
-								<h3 class="text-dark my-0">${point_now}</h3>
+								<h3 class="text-dark my-0">${pmDTO.point_now}</h3>
 							</div>
 						</div>
 					</div>
