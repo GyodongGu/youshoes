@@ -19,16 +19,14 @@ public class DelReservCommand implements Command {
 			throws ServletException, IOException {
 			CallenderDAO dao = new CallenderDAO();
 			reservationDTO dto = new reservationDTO();
-			String reserv1 = request.getParameter("date");
-			Date reserv2 = null;
+			String reserv1 = request.getParameter("res_no");
+			int reserv2 = 0;
 			try {
-				reserv2 = new java.sql.Date(new SimpleDateFormat("yyyy-MM-dd hh:mm").parse(reserv1).getTime());
+				reserv2 = Integer.parseInt(reserv1);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			dto.setRes_date(reserv2);
-			System.out.println(reserv2);
-			dto.setRes_no(3);
+			dto.setRes_no(reserv2);
 			dao.deleteform(dto);
 		return "ajax:" + reserv1;
 	}

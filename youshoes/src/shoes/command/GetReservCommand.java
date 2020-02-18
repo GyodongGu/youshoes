@@ -20,7 +20,7 @@ public class GetReservCommand implements Command {
 			CallenderDAO dao = new CallenderDAO();
 			String smid = request.getParameter("sm_id");
 			List<Map<String, Object>> list = dao.selectform(smid);
-			String result = JSONArray.fromObject(list).toString();
+			String result = JSONArray.fromObject(list).toString(); 
 		return "ajax:" + result;
 	}
 
