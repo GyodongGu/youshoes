@@ -87,7 +87,7 @@ public class FrontController extends HttpServlet {
 		cont.put("/ReplyInsert.do",new ReplyInsertCommand());	//댓글 입력
 		cont.put("/ajax/Like.do", new LikeCommand());				//좋아요
 		cont.put("/ProductDetail.do", new ProductDetailCommand());	//제품상세정보
-
+		
 
 
 			

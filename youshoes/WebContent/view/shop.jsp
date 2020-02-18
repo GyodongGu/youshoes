@@ -352,10 +352,12 @@ tr, td {
 														<table>
 															<c:forEach items="${pmtlist }" var="pmt">
 																<tr>
-																	<td><a href="${pageContext.request.contextPath}/ProductDetail.do?pdt_no=${pmt.pdt_no}">${pmt.pdt_name }</a></td>
+																	<td><a
+																		href="${pageContext.request.contextPath}/ProductDetail.do?pdt_no=${pmt.pdt_no}">${pmt.pdt_name }</a></td>
 																	<td><img
 																		src="${pageContext.request.contextPath}/view/img/${pmt.img_name[0].img_name}"
 																		alt="" height="50" width="50"></td>
+																	
 																</tr>
 
 															</c:forEach>
