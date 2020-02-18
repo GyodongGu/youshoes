@@ -15,11 +15,9 @@ public class logoutCommand implements Command {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-<<<<<<< HEAD
+
 		return "/login.do";
-=======
-		return "view/pMem/logout.jsp";
->>>>>>> branch 'master' of https://github.com/GyodongGu/youshoes.git
+
 	}
 
 }
