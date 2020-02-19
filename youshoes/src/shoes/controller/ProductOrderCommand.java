@@ -31,10 +31,8 @@ public class ProductOrderCommand implements Command {
 		ProductOrderDAO dao2 = new ProductOrderDAO();
 		dto2 = dao2.datingSelect(no);
 		Date date2 = dto2.getRes_date();
-		System.out.println(date2);
 		SimpleDateFormat chan = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 		String format = chan.format(date2);
-		System.out.println(format);
 		request.setAttribute("dto", dto2);
 		request.setAttribute("res_date", format);
 		return "/view/pMem/productOrder.jsp";
