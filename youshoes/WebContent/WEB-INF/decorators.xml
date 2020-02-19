@@ -8,15 +8,20 @@
 		<pattern>/view/pMem/searchShop.jsp</pattern>
 		<pattern>/view/pMem/orderHistory.jsp</pattern>
 		<pattern>/view/pMem/profile.jsp</pattern>
+		<pattern>/view/pMem/productOrder.jsp</pattern>
 		<pattern>*.do</pattern>
 	</decorator>
 	<excludes>
+	
 	<pattern>sidebar1.jsp</pattern>
 	<pattern>/Review.do</pattern>
 	<pattern></pattern>
 <!--<pattern>/logout.do</pattern> -->
 	<pattern>/myReview.do</pattern>
 	<pattern>/point.do</pattern>
+
+
+
 	
 	<pattern>/profileSet.do</pattern>
 	<pattern>/view/pMem/review.jsp</pattern>

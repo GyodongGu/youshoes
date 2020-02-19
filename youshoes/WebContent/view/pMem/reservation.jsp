@@ -82,7 +82,7 @@ var event;
 				custom1 :{
 					text :'주문 계속 진행',
 					click: function() {
-						location.href="";
+						location.href="${pageContext.request.contextPath}/ProductOrder.do";
 					}
 				}
 			},
@@ -95,7 +95,7 @@ var event;
 						type:'GET',
 						data:Hnum,
 						success: function (result) { 
-								alert(Tdate(info.event.start) + ', 예약 일정이 삭제 되었습니다.');	
+								alert(Tdate1(info.event.start) + ', 예약 일정이 삭제 되었습니다.');	
 								info.event.remove()
 							}  
 					}) 
