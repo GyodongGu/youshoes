@@ -16,8 +16,7 @@ public class profileUpdateCommand implements Command {
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		pmDTO pudto = new pmDTO();
-		pmDAO pudao = new pmDAO();
+		pmDTO pudto = new pmDTO(); pmDAO pudao = new pmDAO();
 		
 		pudto.setPm_name(request.getParameter("pm_name"));
 		pudto.setPm_email(request.getParameter("pm_email"));
@@ -27,8 +26,9 @@ public class profileUpdateCommand implements Command {
 		pudto.setPm_addr2(request.getParameter("pm_addr2"));
 		pudto.setPm_addr3(request.getParameter("pm_addr3"));
 		int pmUpdate = pudao.pmUpdate(pudto, "pm_id");
-		
+		 
 		request.setAttribute("pmUpdate", pmUpdate);
+		
 		
 		return "view/pMem/profileUpdate.jsp";
 	}

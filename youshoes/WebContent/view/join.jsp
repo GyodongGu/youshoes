@@ -49,14 +49,17 @@
 		alert("아이디값을 입력후 확인하세요.");
 		frm.pm_id.focus();
 	} else {
-		window.open("../idOverlapOk.do?pm_id=" + id, "ID 중복체크", "width=300, heigh=200, top=50, left=50");
+		window.open("../idOverlapOk.do?pm_id=" + id, "idChkAlert", "width=500, height=200, top=50, left=50, scrollbars=no, status=no, toolbar=no, menubar=no, resizeable=no, location=no");
 	}
 }
     </script>
 </head>
 
 <body>
-    <div class="row no-gutters vh-100 loader-screen">
+	<!-- id중복체크 창 안뜨고 알림창만 뜨게 -->
+	<iframe width=0 height=0 name="idChkAlert" style="display: none;"></iframe>
+
+	<div class="row no-gutters vh-100 loader-screen">
         <div class="col align-self-center text-white text-center">
             <img src="img/logo.png" alt="logo">
             <h1><span class="font-weight-light">You</span>Shoes</h1>
@@ -93,7 +96,7 @@
                 </div>
                 
                 <div class="form-group float-label active">
-                    <input type="date" id="pm_birth" name="pm_birth" class="form-control" required >
+                    <input type="date" id="pm_birth" name="pm_birth" class="form-control" required>
                     <label for="pm_birth" class="form-control-label"><font color="red">*</font>생년월일</label>
                 </div>
                 
@@ -218,11 +221,6 @@
                         <a href="javascript:document.frm.submit();" class="btn btn-lg btn-default btn-rounded shadow">
                         <span>회원가입</span><i class="material-icons">arrow_forward</i></a>
                     </div>
-                    <!-- 
-                    <span>[네이버 회원가입(api)]</span>
-                    <span>[카카오 회원가입(api)]</span>
-                    <span>[구글 회원가입(api)]</span>
-                     -->
                 </div>
             </form>
             <p class="text-center text-white">

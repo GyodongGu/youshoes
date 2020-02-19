@@ -48,7 +48,7 @@ public class joinOkCommand implements Command {
 		// request가 유지되는 동안 request에 데이터를 저장
 
 		request.setAttribute("pass", n);
-		return "view/joinOk.jsp";
+		return "/view/joinOk.jsp";
 	}
 
 }
