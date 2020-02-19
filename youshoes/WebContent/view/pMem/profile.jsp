@@ -5,29 +5,30 @@
 <html lang="ko" class="blue-theme">
 
 <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
 <!-- Tab키 스크립트 및 CSS -->
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="/resources/demos/style.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <!-- // Tab키 스크립트 및 CSS -->
+
+
 <!-- 탭 메뉴  로드 실패시 보여줄 스크립트 -->
 <script>
-$( function() {
-    $( "#tabs" ).tabs({
-      beforeLoad: function( event, ui ) {
-        ui.jqXHR.fail(function() {
-          ui.panel.html(
-            "Couldn't load this tab. We'll try to fix this as soon as possible. " +
-            "If this wouldn't be a demo." );
-        });
-      }
-    });
-  });
+	$(function() {
+		$("#tabs").tabs({
+			beforeLoad : function(event, ui) {
+				ui.jqXHR.fail(function() {
+					ui.panel.html("값을 올바로 불러오지 못했습니다.");
+				});
+			}
+		});
+	});
 </script>
 <!-- // 탭 메뉴  로드 실패시 보여줄 스크립트 -->
-
-
 
 </head>
 
@@ -55,5 +56,6 @@ $( function() {
 
 	</div>
 	<!-- // 프로필 탭 메뉴 -->
+
 </body>
 </html>

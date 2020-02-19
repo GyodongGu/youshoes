@@ -103,6 +103,12 @@ public class FrontController extends HttpServlet {
 		cont.put("/ProductDetail.do", new ProductDetailCommand());	//제품상세정보
 		cont.put("/ProductOrder.do", new ProductOrderCommand());	//제품주문호출
 
+		
+		
+		
+		
+		
+
 
 			
 		/* 판매자 */

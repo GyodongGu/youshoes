@@ -30,6 +30,8 @@
 		</div>
 	</div>
 	<!-- // 구매 회원 메인 페이지의 가게 -->
+	
+	
 	<!-- 구매 회원 메인 페이지의 이벤트  -->
 	<div class="container-fluid bg-warning text-white my-3" onclick="location.href='${pageContext.request.contextPath}/pMemEvent.do'">
 		<div class="row">
@@ -53,6 +55,7 @@
 		</div>
 	</div>
 	<!-- // 구매 회원 메인 페이지의 이벤트  -->
+	
 	
 	<!-- 이용약관 등 4개 페이지  -->
 	<div class="container mb-3">
