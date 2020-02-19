@@ -215,4 +215,19 @@ public class pmDAO extends DAO {
 		} 
 		return dto; // 한 회원의 정보를 넘김
 	}
+	public int pointUpdate(int pmNo, int chargePoint) {   // 9. 구매 회원이 포인트를 충전하고 현재 포인트에 추가
+		int upPoint = 1;
+		try {
+			pstmt = conn.prepareCall("{call POINTUPDATE(?, ?)}");
+			pstmt.setInt(1, pmNo);
+			pstmt.setInt(2, chargePoint);
+			pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return upPoint;
+	}
 }

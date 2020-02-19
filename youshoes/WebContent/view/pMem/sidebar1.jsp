@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator" prefix="decorator"%>
 <!doctype html>
-<html lang="en" class="blue-theme">
+<html lang="en" class="brown-theme">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover, user-scalable=no">
@@ -93,7 +93,7 @@
 					<img src="${pageContext.request.contextPath}/view/img/user1.png" alt="">
 				</figure>
 			</div>
-			<h5 class="mb-1 ">${pmDTO.pm_name } 님( ${pmDTO.pm_id} )</h5>
+			<h5 class="mb-1 ">${pmDTO.pm_name} 님( ${pmDTO.pm_id} )</h5>
 		</div>
 		<br>
 		<div class="row mx-0">
@@ -116,7 +116,7 @@
 				</h5>
 				<div class="list-group main-menu">
 					<a href="${pageContext.request.contextPath}/view/pMem/searchShop.jsp" class="list-group-item list-group-item-action">스토어</a> 
-					<a href="${pageContext.request.contextPath}/pMemEvent.do" class="list-group-item list-group-item-action">공지사항</a> 
+					<a href="${pageContext.request.contextPath}/pMemEvent.do" class="list-group-item list-group-item-action">이벤트</a> 
 					<a href="${pageContext.request.contextPath}/view/pMem/product.jsp" class="list-group-item list-group-item-action">모든 제품</a> 
 					<a href="${pageContext.request.contextPath}/orderHistory.do" class="list-group-item list-group-item-action">주문내역</a> 
 					<a href="${pageContext.request.contextPath}/view/pMem/profile.jsp" class="list-group-item list-group-item-action">프로필</a> 
