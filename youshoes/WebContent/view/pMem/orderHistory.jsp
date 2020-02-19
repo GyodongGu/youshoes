@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator" prefix="decorator"%>
 <!doctype html>
-<html lang="ko" class="blue-theme">
+<html lang="ko" class="brown-theme">
 <head>
 </head>
 <body>
@@ -16,6 +16,7 @@
 				<th scope="col">주문금액</th>
 				<th scope="col">주문수량</th>
 				<th scope="col">주문 및 배송상태</th>
+				<th scope="col">후기 작성</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -26,6 +27,7 @@
 					<td>${pMemOrdHistory.ord_point}</td>
 					<td>${pMemOrdHistory.ord_cnt}</td>
 					<td>${pMemOrdHistory.ord_stat_cd}</td>
+					<td><button class="mb-2 btn btn-default" onclick="location.href='${pageContext.request.contextPath}/review.do'">작성</button></td>
 				</tr>
 			</c:forEach>
 		</tbody>

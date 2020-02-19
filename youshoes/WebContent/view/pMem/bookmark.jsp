@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator" prefix="decorator"%>
 <!doctype html>
-<html lang="en" class="blue-theme">
+<html lang="en" class="brown-theme">
 <head>
 <title>즐겨찾기</title>
 </head>

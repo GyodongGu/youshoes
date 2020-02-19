@@ -8,6 +8,12 @@
 		<pattern>/view/pMem/searchShop.jsp</pattern>
 		<pattern>/view/pMem/orderHistory.jsp</pattern>
 		<pattern>/view/pMem/profile.jsp</pattern>
+		<pattern>/view/pMem/productOrder.jsp</pattern>
+		<pattern>/view/pMem/insertReview.jsp</pattern>
+		<pattern>/view/pMem/privacy.jsp</pattern>
+		<pattern>/view/pMem/sMemInform.jsp</pattern>
+		<pattern>/view/pMem/privacyInformOther.jsp</pattern>
+		
 		<pattern>*.do</pattern>
 	</decorator>
 	<excludes>

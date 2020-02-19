@@ -3,7 +3,7 @@
 <%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator"
 	prefix="decorator"%>
 <!doctype html>
-<html lang="en" class="blue-theme">
+<html lang="en" class="brown-theme">
 <head>
 <link href='${pageContext.request.contextPath}/view/callendar/packages/core/main.css' rel='stylesheet' />
 <link href='${pageContext.request.contextPath}/view/callendar/packages/daygrid/main.css' rel='stylesheet' />
@@ -82,7 +82,7 @@ var event;
 				custom1 :{
 					text :'주문 계속 진행',
 					click: function() {
-						location.href="";
+						location.href="${pageContext.request.contextPath}/ProductOrder.do";
 					}
 				}
 			},
@@ -95,7 +95,7 @@ var event;
 						type:'GET',
 						data:Hnum,
 						success: function (result) { 
-								alert(Tdate(info.event.start) + ', 예약 일정이 삭제 되었습니다.');	
+								alert(Tdate1(info.event.start) + ', 예약 일정이 삭제 되었습니다.');	
 								info.event.remove()
 							}  
 					}) 

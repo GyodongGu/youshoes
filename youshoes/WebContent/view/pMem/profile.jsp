@@ -47,9 +47,9 @@
 	<!-- // 프로필 이미지 사진  -->
 
 	<!-- 프로필 탭 메뉴 -->
-	<div id="tabs">
-		<ul>
-			<li><a href="${pageContext.request.contextPath}/myReview.do">내 스토리</a></li>
+	<div id="tabs" class="ui-tabs ui-corner-all ui-widget ui-widget-content">
+		<ul class="ui-tabs-nav ui-corner-all ui-helper-reset ui-helper-clearfix ui-widget-header">
+			<li class="ui-tabs-tab ui-corner-top ui-state-default ui-tab ui-tabs-active ui-state-active"><a href="${pageContext.request.contextPath}/myReview.do">내 스토리</a></li>
 			<li><a href="${pageContext.request.contextPath}/point.do">내 포인트</a></li>
 			<li><a href="${pageContext.request.contextPath}/profileSet.do">설정</a></li>
 		</ul>

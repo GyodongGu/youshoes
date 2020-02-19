@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!doctype html>
-<html lang="en" class="blue-theme">
+<html lang="en" class="brown-theme">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover, user-scalable=no">
@@ -59,7 +59,7 @@
 
 				<!-- 카카오 주소 API -->
 				<div class="form-group float-label active">
-					<input type="button" onclick="sample3_execDaumPostcode()" class="btn btn-primary" value="우편번호 찾기"> <br>
+					<input type="button" onclick="sample3_execDaumPostcode()" class="mb-2 btn btn-sm btn-default" value="우편번호 찾기"> <br>
 					<div id="wrap" style="display: none; border: 1px solid; width: 500px; height: 300px; margin: 5px 0; position: relative">
 						<img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="btnFoldWrap" style="cursor: pointer; position: absolute; right: 0px; top: -1px; z-index: 1" onclick="foldDaumPostcode()" alt="접기 버튼">
 					</div>

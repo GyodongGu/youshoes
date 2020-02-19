@@ -86,6 +86,7 @@ public class FrontController extends HttpServlet {
 		cont.put("/pMemEvent.do", new pMemEventCommand());     	   // 구매 회원 이벤트 목록 보기
 		cont.put("/bookmark.do", new bookmarkCommand());       	   // 구매 회원 즐겨찾기 상품 보기
 		cont.put("/logout.do", new logoutCommand());           	   // 로그아웃
+//		cont.put("/review.do", new reviewCommand());           	   // 로그아웃
 		
 		// 가게 및 상품 검색,리뷰,예약,댓글
 		cont.put("/Review.do",new ReviewCommand());				//리뷰페이지 호출
@@ -101,13 +102,8 @@ public class FrontController extends HttpServlet {
 
 		cont.put("/ajax/Like.do", new LikeCommand());				//좋아요
 		cont.put("/ProductDetail.do", new ProductDetailCommand());	//제품상세정보
-		cont.put("/ProductOrder.do", new ProductOrderCommand());	//제품주문호출
 
-		
-		
-		
-		
-		
+		cont.put("/ProductOrder.do", new ProductOrderCommand()); //결제페이지 예약날짜 출력
 
 
 			
