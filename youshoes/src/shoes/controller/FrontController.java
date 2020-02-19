@@ -14,7 +14,6 @@ import shoes.command.DelReservCommand;
 import shoes.command.GetReservCommand;
 import shoes.command.LikeCommand;
 import shoes.command.ProductDetailCommand;
-import shoes.command.ProductOrderCommand;
 import shoes.command.ReplyInsertCommand;
 import shoes.command.ReplyListCommand;
 import shoes.command.ReservationCommand;
@@ -97,7 +96,7 @@ public class FrontController extends HttpServlet {
 
 		cont.put("/ajax/Like.do", new LikeCommand());				//좋아요
 		cont.put("/ProductDetail.do", new ProductDetailCommand());	//제품상세정보
-		cont.put("/ProductOrder.do", new ProductOrderCommand());	//제품주문호출
+		cont.put("/ProductOrder.do", new ProductOrderCommand()); //결제페이지 예약날짜 출력
 
 
 			

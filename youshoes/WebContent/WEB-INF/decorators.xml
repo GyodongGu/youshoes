@@ -8,6 +8,7 @@
 		<pattern>/view/pMem/searchShop.jsp</pattern>
 		<pattern>/view/pMem/orderHistory.jsp</pattern>
 		<pattern>/view/pMem/profile.jsp</pattern>
+		<pattern>/view/pMem/productOrder.jsp</pattern>
 		<pattern>*.do</pattern>
 	</decorator>
 	<excludes>
