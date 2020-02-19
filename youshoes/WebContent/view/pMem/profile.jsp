@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator"
-	prefix="decorator"%>
+<%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator" prefix="decorator"%>
 <!doctype html>
 <html lang="ko" class="blue-theme">
 <head>
@@ -30,28 +29,28 @@
 </script>
 </head>
 <body>
-			<!-- 프로필 이미지 사진  -->
-			<div class="text-center">
-				<div class="figure-profile shadow my-4">
-					<figure>
-						<img src="${pageContext.request.contextPath}/view/img/user1.png" alt="">
-					</figure>
-					<div class="btn btn-dark text-white floating-btn">
-						<i class="material-icons">camera_alt</i> <input type="file" class="float-file">
-					</div>
-				</div>
+	<!-- 프로필 이미지 사진  -->
+	<div class="text-center">
+		<div class="figure-profile shadow my-4">
+			<figure>
+				<img src="${pageContext.request.contextPath}/view/img/user1.png" alt="">
+			</figure>
+			<div class="btn btn-dark text-white floating-btn">
+				<i class="material-icons">camera_alt</i> <input type="file" class="float-file">
 			</div>
-			<!-- // 프로필 이미지 사진  -->
+		</div>
+	</div>
+	<!-- // 프로필 이미지 사진  -->
 
-			<!-- 프로필 탭 메뉴 -->
-			<div id="tabs">
-				<ul>
-					<li><a href="${pageContext.request.contextPath}/myReview.do">내 스토리</a></li>
-					<li><a href="${pageContext.request.contextPath}/point.do">내 포인트</a></li>
-				<li><a href="${pageContext.request.contextPath}/profileSet.do">설정</a></li> 
-				</ul>
+	<!-- 프로필 탭 메뉴 -->
+	<div id="tabs">
+		<ul>
+			<li><a href="${pageContext.request.contextPath}/myReview.do">내 스토리</a></li>
+			<li><a href="${pageContext.request.contextPath}/point.do">내 포인트</a></li>
+			<li><a href="${pageContext.request.contextPath}/profileSet.do">설정</a></li>
+		</ul>
 
-			</div>
-			<!-- // 프로필 탭 메뉴 -->
+	</div>
+	<!-- // 프로필 탭 메뉴 -->
 </body>
 </html>
