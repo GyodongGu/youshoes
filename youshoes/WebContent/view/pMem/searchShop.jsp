@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!doctype html>
-<html lang="en" class="blue-theme">
+<html lang="en" class="brown-theme">
 <head>
 </head>
 <body>
@@ -35,146 +35,7 @@
 					</div>
 				</div>
 				<!-- // 구매 회원 가게 검색 페이지의 하얀 작은 네모 1 -->
-				<!-- 구매 회원 가게 검색 페이지의 하얀 작은 네모 2 -->
-				<div class="col-6 col-md-4 col-lg-3 col-xl-2">
-					<div class="card shadow-sm border-0 mb-4">
-						<div class="card-body">
-							<button class="btn btn-sm btn-link p-0">
-								<i class="material-icons md-18">favorite_outline</i>
-							</button>
-
-							<figure class="product-image">
-								<img src="${pageContext.request.contextPath}/view/img/shop2.JPG" alt="" class="">
-							</figure>
-
-							<a href="${pageContext.request.contextPath}/shop.jsp" class="text-dark mb-1 mt-2 h6 d-block">가게2</a>
-							<button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right">
-								<i class="material-icons md-18">shopping_cart</i>
-							</button>
-						</div>
-					</div>
-				</div>
-				<!-- //  구매 회원 가게 검색 페이지의 하얀 작은 네모 2 -->
-				<!-- 구매 회원 가게 검색 페이지의 하얀 작은 네모 3 -->
-				<div class="col-6 col-md-4 col-lg-3 col-xl-2">
-					<div class="card shadow-sm border-0 mb-4">
-						<div class="card-body">
-							<button class="btn btn-sm btn-link p-0">
-								<i class="material-icons md-18">favorite_outline</i>
-							</button>
-
-							<figure class="product-image">
-								<img src="../img/shop3.JPG" alt="" class="">
-							</figure>
-
-							<a href="../shop.jsp" class="text-dark mb-1 mt-2 h6 d-block">가게3</a>
-							<button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right">
-								<i class="material-icons md-18">shopping_cart</i>
-							</button>
-						</div>
-					</div>
-				</div>
-				<!-- // 구매 회원 가게 검색 페이지의 하얀 작은 네모 3 -->
-				<!-- 구매 회원 가게 검색 페이지의 하얀 작은 네모 4 -->
-				<div class="col-6 col-md-4 col-lg-3 col-xl-2">
-					<div class="card shadow-sm border-0 mb-4">
-						<div class="card-body">
-							<button class="btn btn-sm btn-link p-0">
-								<i class="material-icons md-18">favorite_outline</i>
-							</button>
-
-							<figure class="product-image">
-								<img src="../img/shop4.JPG" alt="" class="">
-							</figure>
-
-							<a href="../shop.jsp" class="text-dark mb-1 mt-2 h6 d-block">가게4</a>
-							<button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right">
-								<i class="material-icons md-18">shopping_cart</i>
-							</button>
-						</div>
-					</div>
-				</div>
-				<!-- // 구매 회원 가게 검색 페이지의 하얀 작은 네모 4 -->
-				<!-- 구매 회원 가게 검색 페이지의 하얀 작은 네모 5 -->
-				<div class="col-6 col-md-4 col-lg-3 col-xl-2">
-					<div class="card shadow-sm border-0 mb-4">
-						<div class="card-body">
-							<button class="btn btn-sm btn-link p-0">
-								<i class="material-icons md-18">favorite_outline</i>
-							</button>
-
-							<figure class="product-image">
-								<img src="../img/shop5.JPG" alt="" class="">
-							</figure>
-
-							<a href="../shop.jsp" class="text-dark mb-1 mt-2 h6 d-block">가게5</a>
-							<button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right">
-								<i class="material-icons md-18">shopping_cart</i>
-							</button>
-						</div>
-					</div>
-				</div>
-				<!-- // 구매 회원 가게 검색 페이지의 하얀 작은 네모 5 -->
-				<!-- 구매 회원 가게 검색 페이지의 하얀 작은 네모 6 -->
-				<div class="col-6 col-md-4 col-lg-3 col-xl-2">
-					<div class="card shadow-sm border-0 mb-4">
-						<div class="card-body">
-							<button class="btn btn-sm btn-link p-0">
-								<i class="material-icons md-18">favorite_outline</i>
-							</button>
-
-							<figure class="product-image">
-								<img src="../img/shop6.PNG" alt="" class="">
-							</figure>
-
-							<a href="../shop.jsp" class="text-dark mb-1 mt-2 h6 d-block">가게6</a>
-							<button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right">
-								<i class="material-icons md-18">shopping_cart</i>
-							</button>
-						</div>
-					</div>
-				</div>
-				<!-- // 구매 회원 가게 검색 페이지의 하얀 작은 네모 6 -->
-				<!-- 구매 회원 가게 검색 페이지의 하얀 작은 네모 7 -->
-				<div class="col-6 col-md-4 col-lg-3 col-xl-2">
-					<div class="card shadow-sm border-0 mb-4">
-						<div class="card-body">
-							<button class="btn btn-sm btn-link p-0">
-								<i class="material-icons md-18">favorite_outline</i>
-							</button>
-
-							<figure class="product-image">
-								<img src="../img/shop7.PNG" alt="" class="">
-							</figure>
-
-							<a href="../shop.jsp" class="text-dark mb-1 mt-2 h6 d-block">가게7</a>
-							<button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right">
-								<i class="material-icons md-18">shopping_cart</i>
-							</button>
-						</div>
-					</div>
-				</div>
-				<!-- // 구매 회원 가게 검색 페이지의 하얀 작은 네모 7 -->
-				<!-- 구매 회원 가게 검색 페이지의 하얀 작은 네모 8 -->
-				<div class="col-6 col-md-4 col-lg-3 col-xl-2">
-					<div class="card shadow-sm border-0 mb-4">
-						<div class="card-body">
-							<button class="btn btn-sm btn-link p-0">
-								<i class="material-icons md-18">favorite_outline</i>
-							</button>
-
-							<figure class="product-image">
-								<img src="../img/shop8.PNG" alt="" class="">
-							</figure>
-
-							<a href="../shop.jsp" class="text-dark mb-1 mt-2 h6 d-block">가게8</a>
-							<button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right">
-								<i class="material-icons md-18">shopping_cart</i>
-							</button>
-						</div>
-					</div>
-				</div>
-				<!-- // 구매 회원 가게 검색 페이지의 하얀 작은 네모 8 -->
+				
 				<!-- 구매 회원 가게 검색 페이지의 하얀 작은 네모 9 -->
 				<div class="col-6 col-md-4 col-lg-3 col-xl-2">
 					<div class="card shadow-sm border-0 mb-4">
@@ -195,66 +56,7 @@
 					</div>
 				</div>
 				<!-- // 구매 회원 가게 검색 페이지의 하얀 작은 네모 9 -->
-				<!-- 구매 회원 가게 검색 페이지의 하얀 작은 네모 10 -->
-				<div class="col-6 col-md-4 col-lg-3 col-xl-2">
-					<div class="card shadow-sm border-0 mb-4">
-						<div class="card-body">
-							<button class="btn btn-sm btn-link p-0">
-								<i class="material-icons md-18">favorite_outline</i>
-							</button>
-
-							<figure class="product-image">
-								<img src="../img/shop1.jpg" alt="" class="">
-							</figure>
-
-							<a href="../shop.jsp" class="text-dark mb-1 mt-2 h6 d-block">가게10</a>
-							<button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right">
-								<i class="material-icons md-18">shopping_cart</i>
-							</button>
-						</div>
-					</div>
-				</div>
-				<!-- // 구매 회원 가게 검색 페이지의 하얀 작은 네모 10 -->
-				<!-- 구매 회원 가게 검색 페이지의 하얀 작은 네모 11 -->
-				<div class="col-6 col-md-4 col-lg-3 col-xl-2">
-					<div class="card shadow-sm border-0 mb-4">
-						<div class="card-body">
-							<button class="btn btn-sm btn-link p-0">
-								<i class="material-icons md-18">favorite_outline</i>
-							</button>
-
-							<figure class="product-image">
-								<img src="../img/shop2.JPG" alt="" class="">
-							</figure>
-
-							<a href="../shop.jsp" class="text-dark mb-1 mt-2 h6 d-block">가게11</a>
-							<button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right">
-								<i class="material-icons md-18">shopping_cart</i>
-							</button>
-						</div>
-					</div>
-				</div>
-				<!-- // 구매 회원 가게 검색 페이지의 하얀 작은 네모 11 -->
-				<!-- 구매 회원 가게 검색 페이지의 하얀 작은 네모 12 -->
-				<div class="col-6 col-md-4 col-lg-3 col-xl-2">
-					<div class="card shadow-sm border-0 mb-4">
-						<div class="card-body">
-							<button class="btn btn-sm btn-link p-0">
-								<i class="material-icons md-18">favorite_outline</i>
-							</button>
-
-							<figure class="product-image">
-								<img src="../img/shop3.JPG" alt="" class="">
-							</figure>
-
-							<a href="../shop.jsp" class="text-dark mb-1 mt-2 h6 d-block">가게12</a>
-							<button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right">
-								<i class="material-icons md-18">shopping_cart</i>
-							</button>
-						</div>
-					</div>
-				</div>
-				<!-- // 구매 회원 가게 검색 페이지의 하얀 작은 네모 12 -->
+				
 			</div>
 			<!-- // 구매 회원 가게검색페이지의 카테고리 내부 내용 -->
 	<!-- page level script -->

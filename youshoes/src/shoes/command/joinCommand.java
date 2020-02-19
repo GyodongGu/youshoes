@@ -14,7 +14,7 @@ public class joinCommand implements Command {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		return "view/join.jsp";
+		return "/view/join.jsp";
 	}
 
 }

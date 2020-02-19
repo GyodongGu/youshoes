@@ -13,6 +13,8 @@ public class pMemCommand implements Command{
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
+		
 		return "view/pMem/pMem.jsp";
 	}
 

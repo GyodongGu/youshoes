@@ -17,6 +17,7 @@ public class pointCommand implements Command {
 		pmDAO pdao = new pmDAO();
 		
 		
+		
 		int ppoint = pdao.selectPoint(1);
 		request.setAttribute("point", ppoint);
 		
