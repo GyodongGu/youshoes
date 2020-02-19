@@ -33,19 +33,16 @@
         new daum.Postcode({
             oncomplete: function(data) {
                 // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
-
                 // 각 주소의 노출 규칙에 따라 주소를 조합한다.
                 // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
                 var addr = ''; // 주소 변수
                 var extraAddr = ''; // 참고항목 변수
-
                 //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
                 if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
                     addr = data.roadAddress;
                 } else { // 사용자가 지번 주소를 선택했을 경우(J)
                     addr = data.jibunAddress;
                 }
-
                 // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
                 if(data.userSelectedType === 'R'){
                     // 법정동명이 있을 경우 추가한다. (법정리는 제외)
@@ -67,7 +64,6 @@
                 } else {
                     document.getElementById("pm_addr3").value = '';
                 }
-
                 // 우편번호와 주소 정보를 해당 필드에 넣는다.
                 document.getElementById('pm_post').value = data.zonecode;
                 document.getElementById("pm_addr1").value = addr;
@@ -100,17 +96,14 @@
 		alert("아이디값을 입력후 확인하세요.");
 		frm.pm_id.focus();
 	} else {
-		window.open("../idOverlapOk.do?pm_id=" + id, "idChkAlert", "width=500, height=200, top=50, left=50, scrollbars=no, status=no, toolbar=no, menubar=no, resizeable=no, location=no");
+		window.open("../idOverlapOk.do?pm_id=" + id, "ID 중복체크", "width=300, heigh=200, top=50, left=50");
 	}
 }
     </script>
 </head>
 
 <body>
-	<!-- id중복체크 창 안뜨고 알림창만 뜨게 -->
-	<iframe width=0 height=0 name="idChkAlert" style="display: none;"></iframe>
-
-	<div class="row no-gutters vh-100 loader-screen">
+    <div class="row no-gutters vh-100 loader-screen">
         <div class="col align-self-center text-white text-center">
             <img src="img/logo.png" alt="logo">
             <h1><span class="font-weight-light">You</span>Shoes</h1>
@@ -147,7 +140,7 @@
                 </div>
                 
                 <div class="form-group float-label active">
-                    <input type="date" id="pm_birth" name="pm_birth" class="form-control" required>
+                    <input type="date" id="pm_birth" name="pm_birth" class="form-control" required >
                     <label for="pm_birth" class="form-control-label"><font color="red">*</font>생년월일</label>
                 </div>
                 
@@ -190,6 +183,11 @@
                         <a href="javascript:document.frm.submit();" class="btn btn-lg btn-default btn-rounded shadow">
                         <span>회원가입</span><i class="material-icons">arrow_forward</i></a>
                     </div>
+                    <!-- 
+                    <span>[네이버 회원가입(api)]</span>
+                    <span>[카카오 회원가입(api)]</span>
+                    <span>[구글 회원가입(api)]</span>
+                     -->
                 </div>
             </form>
             <p class="text-center text-white">
