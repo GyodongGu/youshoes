@@ -106,6 +106,7 @@
 		</div>
 		</div>
 		</div>
+		
 		<h6 class="subtitle"><b>주문자 정보</b></h6>
 		<div class="card shadow-sm border-0 mb-4">
 		<div class="card-body">
@@ -127,6 +128,7 @@
 		</div>
 		</div>
 		</div>
+	 	<c:if test="${pdt_type eq 'C'}"> 
 		<h6 class="subtitle"><b>선택하신 예약날짜 및 예약번호</b></h6> 
 		<div class="card shadow-sm border-0 mb-4">
 		<div class="card-body">
@@ -140,11 +142,11 @@
 				<label class="form-control-label">예약번호</label>
 					<input type="text" class="form-control" required="" value="'${ dto.res_no}번'" disabled="disabled"> 
 				</div>  
-				
 			</div>
 		</div>
 		</div>
 		</div> 
+		</c:if> 
 		<h6 class="subtitle"><b>선택하신 제품사양</b></h6>
 		<div class="card shadow-sm border-0 mb-4">
 		<div class="card-body">
@@ -159,7 +161,9 @@
                                        <!--  <span class="badge badge-success d-inline-block ml-2"><small>10% off</small></span> -->
                                     </h5>
                                     <p class="text-secondary small text-mute mb-0">사이즈 : 230</p>
-                                     <p class="text-secondary small text-mute mb-0">수량 : 1ea</p>
+                                    <p class="text-secondary small text-mute mb-0">색상 : 검정</p>
+                                     <p class="text-secondary small text-mute mb-0">수량 : 1ea</p> 
+                                     
                                 </div>
                             </div>
                             </div>
