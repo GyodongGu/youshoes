@@ -18,6 +18,9 @@
 <!--<pattern>/logout.do</pattern> -->
 	<pattern>/myReview.do</pattern>
 	<pattern>/point.do</pattern>
+
+
+
 	
 	<pattern>/profileSet.do</pattern>
 	<pattern>/view/pMem/review.jsp</pattern>

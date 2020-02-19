@@ -37,23 +37,20 @@
 				<div class="row">
 					<div class="col-12 col-md-6">
 						<div class="form-group float-label active">
-							<input type="text" class="form-control" id="pm_name" name="pm_name" value="${pmDTO.pm_name }"> 
-							<label class="form-control-label">이름</label>
-							
+							<input type="text" class="form-control" id="pm_name" name="pm_name" value="${pmDTO.pm_name }"> <label class="form-control-label">이름</label>
+
 						</div>
 					</div>
 					<div class="col-12 col-md-6">
 						<div class="form-group float-label active">
-							<input type="email" class="form-control" id="pm_email" name="pm_email"  value="${pmDTO.pm_email }"> 
-							<label class="form-control-label">이메일</label>
+							<input type="email" class="form-control" id="pm_email" name="pm_email" value="${pmDTO.pm_email }"> <label class="form-control-label">이메일</label>
 						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-12 col-md-6">
 						<div class="form-group float-label active">
-							<input type="tel" class="form-control" id="pm_tell" name="pm_tell" value="${pmDTO.pm_tell }"> 
-							<label class="form-control-label">전화번호</label>
+							<input type="tel" class="form-control" id="pm_tell" name="pm_tell" value="${pmDTO.pm_tell }"> <label class="form-control-label">전화번호</label>
 						</div>
 					</div>
 				</div>
@@ -70,38 +67,34 @@
 					<div class="row">
 						<div class="col-6">
 							<div class="form-group float-label active">
-								<input type="text" class="form-control" id="pm_post" style="width: 100px;"  value="${pmDTO.pm_post }"> 
-								<label class="form-control-label">우편 번호</label>
+								<input type="text" class="form-control" id="pm_post" style="width: 100px;" value="${pmDTO.pm_post }"> <label class="form-control-label">우편 번호</label>
 							</div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12 col-6">
 							<div class="form-group float-label active">
-								<input type="text" class="form-control" id="pm_addr1" value="${pmDTO.pm_addr1 }"> 
-								<label class="form-control-label">주소</label>
+								<input type="text" class="form-control" id="pm_addr1" value="${pmDTO.pm_addr1 }"> <label class="form-control-label">주소</label>
 							</div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12 col-6">
 							<div class="form-group float-label active">
-								<input type="text" class="form-control" id="pm_addr2" value="${pmDTO.pm_addr2 }"> 
-								<label class="form-control-label">상세주소</label>
+								<input type="text" class="form-control" id="pm_addr2" value="${pmDTO.pm_addr2 }"> <label class="form-control-label">상세주소</label>
 							</div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12 col-6">
 							<div class="form-group float-label active">
-								<input type="text" class="form-control" id="pm_addr3" value="${pmDTO.pm_addr3 }">
-								<label class="form-control-label">참고항목</label>
+								<input type="text" class="form-control" id="pm_addr3" value="${pmDTO.pm_addr3 }"> <label class="form-control-label">참고항목</label>
 							</div>
 						</div>
 					</div>
 				</div>
 				<!--//카카오 주소 API  -->
-				
+
 				<button type="submit" class="btn btn-lg btn-default text-white btn-block btn-rounded shadow">수정완료</button>
 			</form>
 		</div>

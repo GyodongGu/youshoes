@@ -73,7 +73,7 @@
 			<div class="row">
 				<div class="col">
 					<p class="text-secondary small mb-0">현재 포인트</p>
-					<h3 class="text-dark my-0" id="pmPoint">${point}</h3>
+					<h3 class="text-dark my-0" id="pmPoint">${pmDTO.point_now}</h3>
 				</div>
 			</div>
 		</div>
@@ -92,7 +92,7 @@
 	</select>
 
 	<br>
-	<button type="button" class="btn btn-primary btn-lg btn-block" onclick="payBtn_click();">포인트 충전</button>
+	<button type="button" class="btn btn-secondary btn-lg btn-block" onclick="payBtn_click();">포인트 충전</button>
 	<!-- // 얼마를 충전할지 구매회원이 선택하는 부분 -->
 
 </body>

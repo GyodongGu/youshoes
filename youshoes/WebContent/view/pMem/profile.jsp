@@ -3,6 +3,7 @@
 <%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator" prefix="decorator"%>
 <!doctype html>
 <html lang="ko" class="blue-theme">
+
 <head>
 <!-- Tab키 스크립트 및 CSS -->
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -10,24 +11,26 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <!-- // Tab키 스크립트 및 CSS -->
-<!-- 탭 메뉴를 위한 스크립트 -->
+<!-- 탭 메뉴  로드 실패시 보여줄 스크립트 -->
 <script>
-	$(function() {
-		$("#tabs")
-				.tabs(
-						{
-							beforeLoad : function(event, ui) {
-								ui.jqXHR
-										.fail(function() {
-											ui.panel
-													.html("Couldn't load this tab. We'll try to fix this as soon as possible. "
-															+ "If this wouldn't be a demo.");
-										});
-							}
-						});
-	});
+$( function() {
+    $( "#tabs" ).tabs({
+      beforeLoad: function( event, ui ) {
+        ui.jqXHR.fail(function() {
+          ui.panel.html(
+            "Couldn't load this tab. We'll try to fix this as soon as possible. " +
+            "If this wouldn't be a demo." );
+        });
+      }
+    });
+  });
 </script>
+<!-- // 탭 메뉴  로드 실패시 보여줄 스크립트 -->
+
+
+
 </head>
+
 <body>
 	<!-- 프로필 이미지 사진  -->
 	<div class="text-center">
