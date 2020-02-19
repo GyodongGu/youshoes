@@ -82,11 +82,11 @@ var event;
 				custom1 :{
 					text :'주문 계속 진행',
 					click: function() {
-						location.href="${pageContext.request.contextPath}/ProductOrder.do";
+						location.href="${pageContext.request.contextPath}/ProductOrder.do?type=C";
 					}
 				}
 			},
-			eventClick : function (info) {
+			eventClick : function (info) {  
 				var del = confirm("예약 일정을 삭제 할까요 ? ");
 				var Hnum = {"res_no" : info.event.id};
 				if(del == true) {
@@ -150,8 +150,8 @@ var event;
 <body> 
 <br>  
 <br>
-<br>
-	<div id="calendar" align="center">원하시는 날짜를 클릭하시면 예약시간을 <br>선택 하실 수 있습니다.<br></div> 
+<br> 
+	<div id="calendar" align="center">원하시는 날짜를 클릭하시면 예약시간을 선택 하실 수 있습니다.<br></div> 
 	<div id="modal-form">
 	<!-- The Modal -->
   	<form>

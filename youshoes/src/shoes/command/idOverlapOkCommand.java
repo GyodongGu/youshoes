@@ -24,7 +24,7 @@ public class idOverlapOkCommand implements Command {
 		request.setAttribute("idCheck", b);
 		request.setAttribute("pm_id", id);
 
-		return "view/idOverlapOk.jsp";
+		return "/view/idOverlapOk.jsp";
 	}
 
 }

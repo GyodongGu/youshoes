@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,17 +8,20 @@
 <title>회원가입여부</title>
 </head>
 <body>
-<div align="center">
+	<div align="center">
 		<div>
-			<br />
 			<c:choose>
 				<c:when test="${pass == 0 }">
-					<h1>회원가입 실패</h1>
-					<button type="button" onclick="location.href='view/join.jsp'">확 인</button>
+					<script>
+						alert('회원가입이 되지 않았습니다.');
+						location.href = 'view/join.jsp';
+					</script>
 				</c:when>
 				<c:otherwise>
-					<h1>회원가입 성공</h1>
-					<button type="button" onclick="location.href='view/login.jsp'">확 인</button>
+					<script>
+						alert('회원가입이 완료되었습니다.');
+						location.href = 'view/login.jsp';
+					</script>
 				</c:otherwise>
 			</c:choose>
 		</div>

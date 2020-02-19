@@ -23,21 +23,22 @@ function openFormClose(n) {
 		<div>
 			<c:choose>
 				<c:when test="${idCheck == true }">
-					<h1>${pm_id }는 사용할 수 있는 아이디입니다.</h1>
-					<div>
-						<br />
-						<button type="button" onclick="openFormClose(1)">확 인</button>
-					</div>
+					<script>
+						alert('${pm_id }는 사용할 수 있는 아이디입니다.');
+						location.href = 'openFormClose(1)';
+						window.close();
+					</script>
 				</c:when>
 				<c:otherwise>
-					<h1>${pm_id }는 이미 사용중인 아이디입니다.</h1>
-					<div>
-						<br />
-						<button type="button" onclick="openFormClose(0)">확 인</button>
-					</div>
+					<script>
+						alert('${pm_id }는 이미 사용중인 아이디입니다.');
+						location.href = 'openFormClose(0)';
+						window.close();
+					</script>
 				</c:otherwise>
 			</c:choose>
 		</div>
 	</div>
+	<script>window.close();</script>
 </body>
 </html>

@@ -3,6 +3,7 @@ package shoes.dao;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 
+import shoes.dto.pdtDTO;
 import shoes.dto.pmDTO;
 import shoes.dto.reservationDTO;
 
@@ -15,7 +16,7 @@ public class ProductOrderDAO extends DAO {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
-			if (rs.next()) {
+			while (rs.next()) {
 				dto.setPm_no(rs.getInt("pm_no"));
 			}
 		} catch (SQLException e) {
@@ -24,7 +25,7 @@ public class ProductOrderDAO extends DAO {
 		return dto; // 한 회원의 정보를 넘김
 	}
 
-	public reservationDTO datingSelect(int no) { 
+	public reservationDTO datingSelect(int no) {  
 		reservationDTO dto = new reservationDTO();
 		String sql = "select res_date, res_no from reservation where pm_no = ?";
 		try {
@@ -39,4 +40,5 @@ public class ProductOrderDAO extends DAO {
 		}
 		return dto;  // pm_no당 reservation 정보 리턴
 	}
+	
 }

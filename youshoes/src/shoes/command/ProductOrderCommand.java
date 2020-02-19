@@ -3,7 +3,6 @@ package shoes.command;
 import java.io.IOException;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
-import java.util.logging.SimpleFormatter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -35,6 +34,10 @@ public class ProductOrderCommand implements Command {
 		String format = chan.format(date2);
 		request.setAttribute("dto", dto2);
 		request.setAttribute("res_date", format);
+		
+		String pdt_type = request.getParameter("type");
+		request.setAttribute("pdt_type", pdt_type);
+		
 		return "/view/pMem/productOrder.jsp";
 	}
 
