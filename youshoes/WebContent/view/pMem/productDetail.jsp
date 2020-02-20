@@ -53,12 +53,15 @@
 	<div class="row" id="sizediv">
 		<div class="col-12 px-0">
 			<div class="form-group">
-				<label>Size(color)</label> <select
-					class="form-control form-control-lg" id="selectsize">
+			<c:if test="${pdto.pdt_type_cd eq 'P' }">
+				<label>Size(color)</label> 
+				<select	class="form-control form-control-lg" id="selectsize">
+					<option value="">사이즈선택</option>
 					<c:forEach items="${pdto.optlist }" var="op">
 						<option value="${op.pdt_size_cd }">${op.pdt_size_cd }</option>
 					</c:forEach>
 				</select>
+			</c:if>	
 				<c:forEach items="${pdto.optlist }" var="op">
 					<datalist id="colorlist${op.pdt_size_cd }">
 						<c:forEach items="${op.pdt_color_cd.split(',') }" var="c">
@@ -207,6 +210,8 @@
 
 					//$('.pbox').append($('.cntbox').eq(0).clone()).css("display","block");		//ul태그 안에 li태그 복사해서 붙여넣기
 					//$('.cntbox').css("display","block");
+					if ($(this).val()=="")
+						return
 					var newbox = $('.cntbox').eq(0).clone(); //clone 생성
 
 					newbox.appendTo($('.pbox')).css("display", "block"); //생성된 clone의 display 변경
@@ -216,6 +221,7 @@
 
 					newbox.find('.color').append(
 							$('#colorlist' + $(this).val()).html()); //clone에 색상선택 datalist를 append
+					$(this).val("");
 				});
 
 		/*==================
@@ -231,7 +237,12 @@
 		 $('form').attr("action","${pageContext.request.contextPath}/Reserv.do");
 	 })
 	 $('.order').click(function(){
-		 $('form').attr("action","${pageContext.request.contextPath}/ProductOrder.do");
+		 if($('.cntbox').length==1){
+			 alert("사이즈를 선택하시오");
+		 }else{
+			 $('form').attr("action","${pageContext.request.contextPath}/ProductOrder.do");
+		 }
+		 
 	 })
 	</script>
 

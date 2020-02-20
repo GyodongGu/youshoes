@@ -17,8 +17,9 @@ public class ReservationCommand implements Command {
 		
 		
 		String smid = request.getParameter("sm_id");
-		
+		int pdtno=Integer.parseInt(request.getParameter("pdt_no"));
 		request.setAttribute("smid", smid);
+		request.setAttribute("pdtno", pdtno);
 		
 		return "/view/pMem/reservation.jsp";
 	}

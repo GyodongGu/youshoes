@@ -151,6 +151,7 @@
 		<h6 class="subtitle"><b>선택하신 제품사양</b></h6>
 		<div class="card shadow-sm border-0 mb-4">
 		<div class="card-body">
+				<c:if test="${pdto.pdt_type_cd eq 'P' }">
 				<c:forEach var="i" begin="0" end="${fn:length(ocolor)-1 }">
                             <div class="row"> 
                                 <div class="col-3 col-md-2 col-lg-2 align-self-center">
@@ -169,6 +170,10 @@
                                 </div>
                             </div>
                 </c:forEach>
+                </c:if>
+                <c:if test="${pdto.pdt_type_cd eq 'C' }">
+                
+                </c:if>
                             </div>
                             </div>
          <div class="card-body">

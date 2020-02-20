@@ -17,7 +17,6 @@ public class reservationDTO {
 		this.res_no = res_no;
 	}
 
-
 	public int getPm_no() {
 		return pm_no;
 	}
