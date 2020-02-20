@@ -4,7 +4,7 @@ import java.sql.Date;
 
 public class deliveryDTO {
 	
-	private int invoice_no;
+	private String invoice_no;
 	private Date dlvy_date;
 	private String dlvy_name;
 	private String dlvy_tell;
@@ -22,10 +22,10 @@ public class deliveryDTO {
 	public void setOrd_no(int ord_no) {
 		this.ord_no = ord_no;
 	}
-	public int getInvoice_no() {
+	public String getInvoice_no() {
 		return invoice_no;
 	}
-	public void setInvoice_no(int invoice_no) {
+	public void setInvoice_no(String invoice_no) {
 		this.invoice_no = invoice_no;
 	}
 	public Date getDlvy_date() {
