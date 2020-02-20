@@ -15,12 +15,11 @@ public class ordDAO extends DAO {
 	public List<ordDTO> selectOrderList(int id) {
 		List<ordDTO> list = new ArrayList<ordDTO>();
 		
-		String sql= "select * from ord where ord_no=?";
+		String sql= "select * from ord where pm_no=?";
 		try { 
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setInt(1, id);
-			rs=pstmt.executeQuery();
-			
+			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
 				ordDTO oddto = new ordDTO();
@@ -30,7 +29,6 @@ public class ordDAO extends DAO {
 				oddto.setOrd_date(rs.getDate("ord_date"));
 				oddto.setOrd_point(rs.getInt("ord_point"));
 				oddto.setOrd_stat_cd(rs.getString("ord_stat_cd"));
-				
 				list.add(oddto);
 			}
 		} catch (SQLException e) {

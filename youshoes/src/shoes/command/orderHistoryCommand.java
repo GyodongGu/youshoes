@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import shoes.common.Command;
 import shoes.dao.ordDAO;
 import shoes.dto.ordDTO;
+import shoes.dto.pmDTO;
 
 public class orderHistoryCommand implements Command {
 
@@ -18,8 +19,10 @@ public class orderHistoryCommand implements Command {
 			throws ServletException, IOException {
 		ordDAO ohdao = new ordDAO();
 		
-		List<ordDTO> orderHistory = ohdao.selectOrderList(4);
-		request.setAttribute("orderHistory", orderHistory);
+		int pmNO = ((pmDTO)request.getSession().getAttribute("pmDTO")).getPm_no();
+
+		List<ordDTO> ordHistory = ohdao.selectOrderList(pmNO);
+		request.setAttribute("ordHistory", ordHistory);
 		
 		return "/view/pMem/orderHistory.jsp";
 	}

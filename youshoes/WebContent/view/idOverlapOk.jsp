@@ -39,6 +39,5 @@ function openFormClose(n) {
 			</c:choose>
 		</div>
 	</div>
-	<script>window.close();</script>
 </body>
 </html>

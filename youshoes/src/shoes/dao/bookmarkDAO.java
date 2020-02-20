@@ -27,7 +27,7 @@ public class bookmarkDAO extends DAO {
 	}
 	
 	
-	public List<bookmarkDTO> bookmarkGet(String id) {  // 1. 즐겨찾기한 목록 갖고오기 bookmarkGet()
+	public List<bookmarkDTO> bookmarkGet(int id) {  // 1. 즐겨찾기한 목록 갖고오기 bookmarkGet()
 		List<bookmarkDTO> list = new ArrayList<bookmarkDTO>();
 		String sql = "select p.*, getimage('I02', p.pdt_no) as img_name " 
 				   + "from bookmark bk join product p "
@@ -35,7 +35,7 @@ public class bookmarkDAO extends DAO {
 				   + "where pm_no=?";  // 접속한 유저의 찜 목록의 이름 갖고오기
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, id);
+			pstmt.setInt(1, id);
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {

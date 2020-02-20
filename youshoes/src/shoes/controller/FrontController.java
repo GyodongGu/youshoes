@@ -25,6 +25,7 @@ import shoes.command.ShopCommand;
 import shoes.command.bookmarkCommand;
 import shoes.command.idOverlapOkCommand;
 import shoes.command.indexCommand;
+import shoes.command.insertReviewCommand;
 import shoes.command.joinCommand;
 import shoes.command.loginCommand;
 import shoes.command.loginOkCommand;
@@ -86,10 +87,10 @@ public class FrontController extends HttpServlet {
 		cont.put("/pMemEvent.do", new pMemEventCommand());     	   // 구매 회원 이벤트 목록 보기
 		cont.put("/bookmark.do", new bookmarkCommand());       	   // 구매 회원 즐겨찾기 상품 보기
 		cont.put("/logout.do", new logoutCommand());           	   // 로그아웃
-//		cont.put("/review.do", new reviewCommand());           	   // 로그아웃
+		cont.put("/insertReview.do", new insertReviewCommand());   // 구매회원 리뷰 작성 페이지
 		
 		// 가게 및 상품 검색,리뷰,예약,댓글
-		cont.put("/Review.do",new ReviewCommand());				//리뷰페이지 호출
+		cont.put("/Review.do",new ReviewCommand());				//리뷰페이지 호출	
 		cont.put("/Shop.do", new ShopCommand());				//상점페이지 호출
 		cont.put("/ReplyList.do", new ReplyListCommand());		//댓글리스트 호출
 		cont.put("/ReplyInsert.do",new ReplyInsertCommand());	//댓글 입력
