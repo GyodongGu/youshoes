@@ -144,31 +144,32 @@ public class reviewListDAO extends DAO {
 		return 0;
 	}
 
-	public List<reviewDTO> myReviewCreate(int pmNO) {    // 5. 리뷰 생성
-		List<reviewDTO> list = new ArrayList<reviewDTO>();
-		int myReviewNO = getNewReviewNO();
-		int myReviewStar = ;
-	    String myReviewContent = ; 
-		
-		String sql = "insert into purchase_review ( rw_no, pdt_no, pm_id, rw_cnt, rw_stars, rw_date, rw_content) " 
-		           + "values ( ? , ?, ? , 0, ?, sysdate , ?)"
-		           + "where pm_id = ?";
-		try {
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, myReviewNO);
-			pstmt.setInt(2, x);
-			pstmt.setString(3, x);
-			pstmt.setInt(4, x);
-			pstmt.setInt(5, x);
-			pstmt.setDate(6, x);
-			pstmt.setShort(7, x);
-			pstmt.executeUpdate();
-		} catch(SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close();
-		}
-		return list;
-	}
+//	public List<reviewDTO> myReviewCreate(int pmNO) {    // 5. 리뷰 생성
+//		List<reviewDTO> list = new ArrayList<reviewDTO>();
+//		int myReviewNO = getNewReviewNO();
+//		int myReviewStar = ;
+//	    String myReviewContent = ; 
+//		
+//		String sql = "insert into purchase_review ( rw_no, pdt_no, pm_id, rw_cnt, rw_stars, rw_date, rw_content) " 
+//		           + "values ( ? , ?, ? , 0, ?, sysdate , ?)"
+//		           + "where pm_id = ?";
+//		try {
+//			pstmt = conn.prepareStatement(sql);
+//			pstmt.setInt(1, myReviewNO);
+//			pstmt.setInt(2, x);
+//			pstmt.setString(3, x);
+//			pstmt.setInt(4, x);
+//			pstmt.setInt(5, x);
+//			pstmt.setDate(6, x);
+//			pstmt.setShort(7, x);
+//			pstmt.executeUpdate();
+//		} catch(SQLException e) {
+//			e.printStackTrace();
+//		} finally {
+//			close();
+//		}
+//		return list;
+//	}
+
 
 }

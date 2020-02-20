@@ -3,8 +3,8 @@ package shoes.dto;
 import java.sql.Date;
 
 public class deliveryDTO {
-	private int order_d_no;
-	private int invoice_no;
+	
+	private String invoice_no;
 	private Date dlvy_date;
 	private String dlvy_name;
 	private String dlvy_tell;
@@ -13,19 +13,19 @@ public class deliveryDTO {
 	private String dlvy_addr2;
 	private String dlvy_addr3;
 	private String dlvy_remark;
+	private int ord_no;
 
 	
-
-	public int getOrder_d_no() {
-		return order_d_no;
+	public int getOrd_no() {
+		return ord_no;
 	}
-	public void setOrder_d_no(int order_d_no) {
-		this.order_d_no = order_d_no;
+	public void setOrd_no(int ord_no) {
+		this.ord_no = ord_no;
 	}
-	public int getInvoice_no() {
+	public String getInvoice_no() {
 		return invoice_no;
 	}
-	public void setInvoice_no(int invoice_no) {
+	public void setInvoice_no(String invoice_no) {
 		this.invoice_no = invoice_no;
 	}
 	public Date getDlvy_date() {
@@ -75,6 +75,14 @@ public class deliveryDTO {
 	}
 	public void setDlvy_remark(String dlvy_remark) {
 		this.dlvy_remark = dlvy_remark;
+	}
+	
+	@Override
+	public String toString() {
+		return "deliveryDTO [invoice_no=" + invoice_no + ", dlvy_date=" + dlvy_date + ", dlvy_name=" + dlvy_name
+				+ ", dlvy_tell=" + dlvy_tell + ", dlvy_post=" + dlvy_post + ", dlvy_addr1=" + dlvy_addr1
+				+ ", dlvy_addr2=" + dlvy_addr2 + ", dlvy_addr3=" + dlvy_addr3 + ", dlvy_remark=" + dlvy_remark
+				+ ", ord_no=" + ord_no + "]";
 	}
 
 	

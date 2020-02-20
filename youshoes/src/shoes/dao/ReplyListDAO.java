@@ -44,8 +44,8 @@ public class ReplyListDAO extends DAO{
 		try {
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setInt(1, rdto.getRw_no());
-			pstmt.setString(2, rdto.getReply_content());
-			pstmt.setString(3, rdto.getReply_member());
+			pstmt.setString(2, rdto.getReply_member());
+			pstmt.setString(3, rdto.getReply_content());
 			result=pstmt.executeUpdate();
 			
 		} catch (SQLException e) {

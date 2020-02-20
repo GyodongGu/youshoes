@@ -82,7 +82,7 @@ var event;
 				custom1 :{
 					text :'주문 계속 진행',
 					click: function() {
-						location.href="${pageContext.request.contextPath}/ProductOrder.do?type=C";
+						location.href="${pageContext.request.contextPath}/ProductOrder.do?type=C&sm_id=${smid}&pdt_no=${pdtno}";
 					}
 				}
 			},

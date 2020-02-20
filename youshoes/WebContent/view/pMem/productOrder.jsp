@@ -3,6 +3,7 @@
 	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 	<%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator"
 	prefix="decorator"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -150,28 +151,63 @@
 		<h6 class="subtitle"><b>선택하신 제품사양</b></h6>
 		<div class="card shadow-sm border-0 mb-4">
 		<div class="card-body">
+				<c:if test="${pdto.pdt_type_cd eq 'P' }">
+				<c:forEach var="i" begin="0" end="${fn:length(ocolor)-1 }">
                             <div class="row"> 
                                 <div class="col-3 col-md-2 col-lg-2 align-self-center">
-                                    <figure class="product-image"><img src="${pageContext.request.contextPath}/view/img/shoes05.png" alt="" class=""></figure>
+                                    <figure class="product-image"><img src="${pageContext.request.contextPath}/view/img/${pdto.img_name[0].img_name}" alt="" class=""></figure>
                                 </div> 
                                 <div class="col">  
-                                    <a href="" class="text-dark mb-1 h6 d-block"><b>여성용 구두</b></a> <!-- 하이퍼링크에 제품 링크 걸어도 됨  -->
+                                    <a href="" class="text-dark mb-1 h6 d-block"><b>${pdto.pdt_name }</b></a> <!-- 하이퍼링크에 제품 링크 걸어도 됨  -->
                                     <p class="text-secondary small mb-2">주문제작</p>
-                                    <h5 class="text-success font-weight-normal mb-0">금액 : ￦ 70,000
+                                    <h5 class="text-success font-weight-normal mb-0">금액 : ￦ ${odpoint[i+1] }
                                        <!--  <span class="badge badge-success d-inline-block ml-2"><small>10% off</small></span> -->
                                     </h5>
-                                    <p class="text-secondary small text-mute mb-0">사이즈 : 230</p>
-                                    <p class="text-secondary small text-mute mb-0">색상 : 검정</p>
-                                     <p class="text-secondary small text-mute mb-0">수량 : 1ea</p> 
+                                    <p class="text-secondary small text-mute mb-0">사이즈 : ${osize[i+1] }</p>
+                                    <p class="text-secondary small text-mute mb-0">색상 : ${ocolor[i] }</p>
+                                     <p class="text-secondary small text-mute mb-0">수량 : ${ocnt[i+1] }ea</p> 
                                      
                                 </div>
                             </div>
+                </c:forEach>
+                </c:if>
+                <c:if test="${pdto.pdt_type_cd eq 'C' }">
+                
+                </c:if>
                             </div>
                             </div>
+         <div class="card-body">
+         	<p class="text-dark mb-1 h6 d-block">결제 될 총 포인트</p>
+         	<p class="text-dark mb-1 h4 d-block" id="total"></p>
+         </div>
           <button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right"><i class="material-icons md-18">shopping_cart</i></button>
  		<br>
 		<a href="profile-edit.html" class="btn btn-lg btn-default text-white btn-block btn-rounded shadow"><span>결제하기</span>
 		<i class="material-icons">arrow_forward</i></a> <br>
+
+<script>
+	window.onload=function(){
+		var total=document.getElementById("total");
+		var cnt=0;
+		console.log(${fn:length(ocolor) });
+		for(i=0; i<=${fn:length(ocolor)-1 }; i++){
+			cnt=cnt+${odpoint[i+1] };
+			
+		}
+		total.innerHTML=cnt;
+		
+/* 		$.ajax({
+			type:"POST",
+			url:"${pageContext.request.contextPath}/ProductOrder.do",
+			dataType:"text",
+			success: function(text){
+				
+			}
+		}); */
+		
+		
+	}
+</script>
 
 
 </body>

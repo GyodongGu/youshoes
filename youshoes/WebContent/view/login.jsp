@@ -2,6 +2,7 @@
 <!doctype html>
 <html lang="en" class="brown-theme">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <!-- 아이디 기억하기 script -->
 <script>
 	$(document).ready(function() {
@@ -61,11 +62,34 @@
 		return unescape(cookieValue);
 	}
 </script>
+<!-- /아이디 기억하기 script -->
+<!-- 카카오 로그인하기 script -->
+<script type='text/javascript'>
+	//<![CDATA[
+	// 사용할 앱의 JavaScript 키를 설정해 주세요.
+	Kakao.init('008ee297ad6a65321153983313058dd3');
+	function loginWithKakao() {
+		// 로그인 창을 띄웁니다.
+		Kakao.Auth.login({
+			success : function(authObj) {
+				/* window.location.replace("http://localhost:9090/youshoes/view/pMem/pMem.jsp"); */
+				location.href="http://localhost:9090/youshoes/view/pMem/pMem.jsp";
+			},
+			fail : function(err) {
+				alert(JSON.stringify(err));
+			}
+		});
+	};
+	//]]>
+</script>
+<!-- /카카오 로그인하기 script -->
 <head>
 <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover, user-scalable=no">
 <meta name="description" content="">
 <meta name="author" content="Maxartkiller">
+
 
 <title>로그인</title>
 
@@ -126,8 +150,11 @@
 
 				<div class="row">
 					<div class="col-auto">
-						<input type=submit value="" style="background-color: transparent; border: 0px transparent solid;"> <a href="javascript:document.frm.submit();" class="btn btn-lg btn-default btn-rounded shadow "> <span>로그인</span><i class="material-icons">arrow_forward</i>
-						</a>
+						<input type=submit value="" style="background-color: transparent; border: 0px transparent solid;"> 
+						<a href="javascript:document.frm.submit();" class="btn btn-lg btn-default btn-rounded shadow"> 
+						<span>로그인</span><i class="material-icons">arrow_forward</i></a>
+						<a id="custom-login-btn" href="javascript:loginWithKakao()">
+						<img src="img/kakao_login_btn_medium.png"/></a>
 					</div>
 				</div>
 			</form>

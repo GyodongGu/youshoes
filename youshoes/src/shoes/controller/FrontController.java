@@ -104,7 +104,7 @@ public class FrontController extends HttpServlet {
 		cont.put("/ajax/Like.do", new LikeCommand());				//좋아요
 		cont.put("/ProductDetail.do", new ProductDetailCommand());	//제품상세정보
 
-		cont.put("/ProductOrder.do", new ProductOrderCommand()); //결제페이지 예약날짜 출력
+		cont.put("/ProductOrder.do", new ProductOrderCommand()); //결제페이지
 
 
 			
