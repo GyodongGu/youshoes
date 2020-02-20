@@ -30,7 +30,7 @@ public class ordDAO extends DAO {
 				oddto.setOrd_date(rs.getDate("ord_date"));
 				oddto.setOrd_point(rs.getInt("ord_point"));
 				oddto.setOrd_stat_cd(rs.getString("ord_stat_cd"));
-				oddto.setOrd_cnt(rs.getInt("ord_cnt"));
+				
 				list.add(oddto);
 			}
 		} catch (SQLException e) {

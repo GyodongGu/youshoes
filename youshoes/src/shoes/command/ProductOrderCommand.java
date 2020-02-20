@@ -10,7 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import shoes.common.Command;
+import shoes.dao.ProductDAO;
 import shoes.dao.ProductOrderDAO;
+import shoes.dto.pdtDTO;
 import shoes.dto.pmDTO;
 import shoes.dto.reservationDTO;
 
@@ -25,18 +27,42 @@ public class ProductOrderCommand implements Command {
 		ProductOrderDAO dao1 = new ProductOrderDAO();
 		dto1 = dao1.select(id);
 		
-		int no = dto1.getPm_no();
+		int no = dto1.getPm_no();					//회원 id에 해당하는 회원번호
 		reservationDTO dto2 = new reservationDTO();
 		ProductOrderDAO dao2 = new ProductOrderDAO();
 		dto2 = dao2.datingSelect(no);
 		Date date2 = dto2.getRes_date();
 		SimpleDateFormat chan = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 		String format = chan.format(date2);
-		request.setAttribute("dto", dto2);
-		request.setAttribute("res_date", format);
+		request.setAttribute("dto", dto2);			//회원의 예약번호
+		request.setAttribute("res_date", format);	//회원의 예약날짜
 		
+		//맞춤화 코드 전송
 		String pdt_type = request.getParameter("type");
 		request.setAttribute("pdt_type", pdt_type);
+		
+		//======================================================================//
+		
+		String smid = request.getParameter("sm_id");
+		String pdt_no= request.getParameter("pdt_no");
+		String[] osize=request.getParameterValues("ord_size");
+		String[] odpoint=request.getParameterValues("ord_detail_point");
+		String[] ocolor=request.getParameterValues("ord_color");
+		String[] ocnt=request.getParameterValues("ord_cnt");
+		
+		ProductDAO pDAO = new ProductDAO();
+		pdtDTO pdto = new pdtDTO();
+		pdto = pDAO.productDetail(Integer.parseInt(pdt_no));
+		
+		
+		request.setAttribute("smid", smid);
+		request.setAttribute("pdt_no", pdt_no);
+		request.setAttribute("osize", osize);
+		request.setAttribute("odpoint", odpoint);
+		request.setAttribute("ocolor", ocolor);
+		request.setAttribute("ocnt", ocnt);
+		request.setAttribute("pdto", pdto);
+		
 		
 		return "/view/pMem/productOrder.jsp";
 	}
