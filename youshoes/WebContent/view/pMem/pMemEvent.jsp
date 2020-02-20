@@ -12,7 +12,7 @@
 <body>
 	<div class="wrapper">
 		<div class="container">
-			<p class="h3" align="center">현재 진행중인 이벤트</p>
+			<p class="h3" align="center">공지사항 및 이벤트</p>
 			<br>
 			<table class="table">
 				<thead>

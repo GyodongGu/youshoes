@@ -14,37 +14,26 @@
 				<th scope="col">주문번호</th>
 				<th scope="col">주문일자</th>
 				<th scope="col">주문금액</th>
-				<th scope="col">주문수량</th>
 				<th scope="col">주문 및 배송상태</th>
 				<th scope="col">후기 작성</th>
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach items="${orderHistory}" var="pMemOrdHistory">
+			<c:forEach items="${ordHistory}" var="OrdHistory">
 				<tr>
-					<td>${pMemOrdHistory.ord_no}</td>
-					<td>${pMemOrdHistory.ord_date}</td>
-					<td>${pMemOrdHistory.ord_point}</td>
-					<td>${pMemOrdHistory.ord_cnt}</td>
-					<td>${pMemOrdHistory.ord_stat_cd}</td>
-					<td><button class="mb-2 btn btn-default" onclick="location.href='${pageContext.request.contextPath}/review.do'">작성</button></td>
+					<td>${OrdHistory.ord_no}</td>
+					<td>${OrdHistory.ord_date}</td>
+					<td>${OrdHistory.ord_point}</td>
+					<td>${OrdHistory.ord_stat_cd}</td>
+					<td>
+						<button class="mb-2 btn btn-default" onclick="location.href='${pageContext.request.contextPath}/insertReview.do'">작성</button>
+					</td>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
-	
+
 	<!-- 페이징 -->
-	<my:paging jsfunc="doList" paging="${paging}"/>
-	<script>
-	function doList(p) {
-		document.searchFrm.p.value = p;
-		document.searchFrm.submit();
-	}
-	</script>
-	
-	
-	
-	
 	<nav aria-label="Page navigation example" class="text-center">
 		<ul class="pagination">
 			<li class="page-item"><a class="page-link" href="#" aria-label="Previous"> <span aria-hidden="true">&laquo;</span></a></li>

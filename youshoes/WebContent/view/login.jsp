@@ -126,7 +126,8 @@
 
 				<div class="row">
 					<div class="col-auto">
-						<input type=submit value="" style="background-color: transparent; border: 0px transparent solid;"> <a href="javascript:document.frm.submit();" class="btn btn-lg btn-default btn-rounded shadow"> <span>로그인</span><i class="material-icons">arrow_forward</i></a>
+						<input type=submit value="" style="background-color: transparent; border: 0px transparent solid;"> <a href="javascript:document.frm.submit();" class="btn btn-lg btn-default btn-rounded shadow "> <span>로그인</span><i class="material-icons">arrow_forward</i>
+						</a>
 					</div>
 				</div>
 			</form>

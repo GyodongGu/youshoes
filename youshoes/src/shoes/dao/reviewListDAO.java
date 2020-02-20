@@ -10,36 +10,28 @@ import shoes.dto.imageDetailDTO;
 import shoes.dto.likeDTO;
 import shoes.dto.reviewDTO;
 
-
-
 /**
- * @author User
- * 1.
- * 2. 
- * 3. 구매회원이 자기가 쓴 리뷰페이지 보기 myReview() - 승우
+ * @author User 1. 2. 3. 구매회원이 자기가 쓴 리뷰페이지 보기 myReview() - 승우 4. 구매회원이 자기가 구매한
+ *         상품에 리뷰 쓰기 myReviewCreate() - 승우 5. 구매회원이 자기가 구매한 상품에 리뷰 업데이트
+ *         myReviewUpdate() - 승우
  *
  */
-public class reviewListDAO extends DAO{
-	public List<reviewDTO> reviewlist(String smid, String pmid){
-		
-		List<reviewDTO> list= new ArrayList<reviewDTO>();
-		
-		String sql="select * from product p join purchase_review r on p.pdt_no=r.pdt_no where sm_id=?";
-		
-		String sql1="select img_name from image i join image_detail d on i.img_no=d.img_no where section='I03' and section_no=?";
-		
-		String sql2="select * from push_like where rw_no=? and pm_id=? ";
-		
+public class reviewListDAO extends DAO {
+	public List<reviewDTO> reviewlist(String smid, String pmid) {
+
+		List<reviewDTO> list = new ArrayList<reviewDTO>();
+
+		String sql = "select * from product p join purchase_review r on p.pdt_no=r.pdt_no where sm_id=?";
+
+		String sql1 = "select img_name from image i join image_detail d on i.img_no=d.img_no where section='I03' and section_no=?";
+
+		String sql2 = "select * from push_like where rw_no=? and pm_id=? ";
 
 		PreparedStatement pstmt1;
 		ResultSet rs1;
 
-		
 		PreparedStatement pstmt2;
 		ResultSet rs2;
-		
-
-
 
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -67,23 +59,22 @@ public class reviewListDAO extends DAO{
 					imgList.add(imgDTO);
 				}
 				rdto.setImg_name(imgList);
-				
-				likeDTO ldto= new likeDTO();
-				pstmt2=conn.prepareStatement(sql2);
+
+				likeDTO ldto = new likeDTO();
+				pstmt2 = conn.prepareStatement(sql2);
 				pstmt2.setInt(1, rs.getInt("rw_no"));
-				pstmt2.setString(2, pmid); //문제부분
-				rs2=pstmt2.executeQuery();
-				while(rs2.next()) {
+				pstmt2.setString(2, pmid); // 문제부분
+				rs2 = pstmt2.executeQuery();
+				while (rs2.next()) {
 					ldto.setRw_no(rs2.getInt("rw_no"));
 					ldto.setPm_id(rs2.getString("pm_id"));
 				}
 				rdto.setLikeview(ldto);
-				
+
 				list.add(rdto);
 			}
 
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			close();
@@ -113,7 +104,6 @@ public class reviewListDAO extends DAO{
 		return name;
 	}
 
-
 	public List<reviewDTO> myReview(String id) { // 3. 구매회원이 자기가 쓴 리뷰페이지 보기
 		List<reviewDTO> list = new ArrayList<reviewDTO>();
 		String sql = "select rw_no, rw_content, pm_id, rw_date from purchase_review where pm_id = ?";
@@ -138,5 +128,47 @@ public class reviewListDAO extends DAO{
 		return list;
 	}
 
+	public int getNewReviewNO() {      // 4. 기본 후기 글 번호 중 가장 큰 값을 가져와 +1 더함
+		String sql = "select max(rw_no) from purchase_review";
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			if (rs.next())   // 가장 큰 번호에 + 1한 값 반환
+				return (rs.getInt(1) + 1);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return 0;
+	}
+
+	public List<reviewDTO> myReviewCreate(int pmNO) {    // 5. 리뷰 생성
+		List<reviewDTO> list = new ArrayList<reviewDTO>();
+		int myReviewNO = getNewReviewNO();
+		int myReviewStar = ;
+	    String myReviewContent = ; 
+		
+		String sql = "insert into purchase_review ( rw_no, pdt_no, pm_id, rw_cnt, rw_stars, rw_date, rw_content) " 
+		           + "values ( ? , ?, ? , 0, ?, sysdate , ?)"
+		           + "where pm_id = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, myReviewNO);
+			pstmt.setInt(2, x);
+			pstmt.setString(3, x);
+			pstmt.setInt(4, x);
+			pstmt.setInt(5, x);
+			pstmt.setDate(6, x);
+			pstmt.setShort(7, x);
+			pstmt.executeUpdate();
+		} catch(SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return list;
+	}
 
 }

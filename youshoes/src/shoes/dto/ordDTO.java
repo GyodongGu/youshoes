@@ -10,6 +10,8 @@ public class ordDTO {
 	private int ord_point;
 	private String ord_stat_cd;
 	private int ord_cnt;
+	
+	
 	public int getOrd_no() {
 		return ord_no;
 	}
