@@ -55,7 +55,8 @@
 						<input type="text" class="form-control" required="" value="최종결제금액 : " disabled="disabled"> 
 						<input type="text" class="form-control" required="" value="제작현황 : " disabled="disabled">
 						<input type="text" class="form-control" required="" value="배송현황 : " disabled="disabled">
-						<a href="https://tracker.delivery/#/kr.epost/${ord.invoice_no }" target="_blank"> 배송조회</a>
+						<%-- <a href="https://tracker.delivery/#/kr.epost/${ord.invoice_no }" target="_blank"> 배송조회</a> --%>
+						<a href="https://tracker.delivery/#/kr.cjlogistics/${ord.invoice_no }" target="_blank">배송조회</a>
 					</div>
 				</div>
 			</div>

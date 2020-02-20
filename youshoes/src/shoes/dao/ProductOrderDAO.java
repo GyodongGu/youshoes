@@ -43,7 +43,7 @@ public class ProductOrderDAO extends DAO {
 			while (rs.next()) {
 				deliveryDTO dto = new deliveryDTO();
 				dto.setOrd_no(rs.getInt("ord_no"));
-				dto.setInvoice_no(rs.getInt("invoice_no"));
+				dto.setInvoice_no(rs.getString("invoice_no"));
 				list.add(dto);
 				System.out.println(dto.getInvoice_no());
 				System.out.println(dto.getOrd_no());
