@@ -113,30 +113,4 @@ public class reviewListDAO extends DAO{
 		return name;
 	}
 
-
-	public List<reviewDTO> myReview(String id) { // 3. 구매회원이 자기가 쓴 리뷰페이지 보기
-		List<reviewDTO> list = new ArrayList<reviewDTO>();
-		String sql = "select rw_no, rw_content, pm_id, rw_date from purchase_review where pm_id = ?";
-
-		try {
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, id);
-			rs = pstmt.executeQuery();
-			while (rs.next()) {
-				reviewDTO dto = new reviewDTO();
-				dto.setRw_no(rs.getInt("rw_no"));
-				dto.setRw_content(rs.getString("rw_content"));
-				dto.setPm_id(rs.getString("pm_id"));
-				dto.setRw_date(rs.getDate("rw_date"));
-				list.add(dto);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close();
-		}
-		return list;
-	}
-
-
 }

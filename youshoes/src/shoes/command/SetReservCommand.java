@@ -21,6 +21,7 @@ public class SetReservCommand implements Command {
 			reservationDTO dto = new reservationDTO();
 			String reserv1 = request.getParameter("res_date");
 			String smid = request.getParameter("sm_id");
+			
 			try {
 				dto.setRes_date(new java.sql.Date(new SimpleDateFormat("yyyy-MM-dd hh:mm").parse(reserv1).getTime()));
 				dto.setSm_id(smid);
