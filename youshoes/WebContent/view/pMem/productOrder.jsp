@@ -172,7 +172,18 @@
                 </c:forEach>
                 </c:if>
                 <c:if test="${pdto.pdt_type_cd eq 'C' }">
-                
+                			<div class="row">
+                				<div class="col-3 col-md-2 col-lg-2 align-self-center">
+                					<figure class="product-image"><img src="${pageContext.request.contextPath}/view/img/${pdto.img_name[0].img_name}" alt="" class=""></figure>
+                				</div>
+                				<div class="col">
+                					<p class="text-dark mb-1 h6 d-block">${pdto.pdt_name }</p>
+                					<p class="text-secondary small mb-2">맞춤제작</p>
+                					<p class="text-secondary small text-mute mb-0">가격 : ${pdto.pdt_price }</p>
+                					<p class="text-secondary small text-mute mb-0">예약 방문 시 사이즈와 색상을 선택할 수 있습니다.</p>
+                                     
+                				</div>
+                			</div>
                 </c:if>
                             </div>
                             </div>
