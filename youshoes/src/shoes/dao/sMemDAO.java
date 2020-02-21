@@ -57,5 +57,44 @@ public class sMemDAO extends DAO{
 			
 		return smdto;
 	}
+	public List<smDTO> sMemListFive(){
+		List<smDTO> list = new ArrayList<smDTO>();
+		
+		String sql = "select * from sales_member where rownum<=5";
+		String sql1="select img_name from image i join image_detail d on i.img_no=d.img_no where section='I01' and section_no=?";
+
+		PreparedStatement pstmt1;
+		ResultSet rs1;
+		
+		try {
+			pstmt=conn.prepareStatement(sql);
+			rs=pstmt.executeQuery();
+			
+			while(rs.next()) {
+				smDTO sdto = new smDTO();
+				sdto.setSm_id(rs.getString("sm_id"));
+				sdto.setShop_name(rs.getString("shop_name"));
+				sdto.setSm_name(rs.getString("sm_name"));
+				pstmt1=conn.prepareStatement(sql1);
+				pstmt1.setString(1, rs.getString("sm_id"));
+				rs1=pstmt1.executeQuery();
+				List<imageDetailDTO> imgList=new ArrayList<imageDetailDTO>();
+				while(rs1.next()) {
+					imageDetailDTO imgDTO = new imageDetailDTO();
+					imgDTO.setImg_name(rs1.getString("img_name"));
+					imgList.add(imgDTO);
+				}
+				sdto.setImg_name(imgList);
+				list.add(sdto);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		
+		return list;
+	}
 
 }

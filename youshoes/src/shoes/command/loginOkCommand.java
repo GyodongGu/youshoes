@@ -38,7 +38,7 @@ public class loginOkCommand implements Command {
 			httpsession.setAttribute("grant", grant);
 			httpsession.setAttribute("pmDTO", dto);
 
-			return "redirect:view/pMem/pMem.jsp";
+			return "redirect:pMem.do";
 		}
 	}
 

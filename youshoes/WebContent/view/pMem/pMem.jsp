@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator" prefix="decorator"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!doctype html>
 <html lang="en" class="brown-theme">
 <head>
@@ -15,19 +16,23 @@
 		가게 <a href="searchShop.jsp" class="float-right small">가게 더보기</a>
 	</h6>
 	<div class="row">
+	<c:forEach items="${smfive }" var="sm">
+	
 		<div class="col-6 col-md-4 col-lg-3 col-xl-2">
 			<div class="card shadow-sm border-0 mb-4">
 				<div class="card-body">
 					<figure class="product-image">
-						<img src="${pageContext.request.contextPath}/view/img/shop1.jpg" alt="" class="">
+						<img src="${pageContext.request.contextPath}/view/img/${sm.img_name[0].img_name}" alt="" class="">
 					</figure>
-					<a href="${pageContext.request.contextPath}/Shop.do" class="text-dark mb-1 mt-2 h6 d-block">가게1</a>
+					<a href="${pageContext.request.contextPath}/Shop.do?sm_id=${sm.sm_id}" class="text-dark mb-1 mt-2 h6 d-block">${sm.shop_name }</a>
 					<button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right">
 						<i class="material-icons md-18">shopping_cart</i>
 					</button>
 				</div>
 			</div>
 		</div>
+		
+	</c:forEach>
 	</div>
 	<!-- // 구매 회원 메인 페이지의 가게 -->
 	
