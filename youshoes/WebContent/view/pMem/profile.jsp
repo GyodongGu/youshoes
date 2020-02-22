@@ -37,7 +37,7 @@
 	<div class="text-center">
 		<div class="figure-profile shadow my-4">
 			<figure>
-				<img src="${pageContext.request.contextPath}/view/img/user1.png" alt="">
+				<img src="${pageContext.request.contextPath}/view/img/user1.jpg" alt="">
 			</figure>
 			<div class="btn btn-dark text-white floating-btn">
 				<i class="material-icons">camera_alt</i> <input type="file" class="float-file">

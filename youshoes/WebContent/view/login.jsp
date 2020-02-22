@@ -127,7 +127,7 @@
 	</div>
 
 	<div class="row no-gutters vh-100 proh bg-template">
-		<img src="img/shoes20.png" alt="logo" class="apple right-image align-self-center">
+<!-- 		<img src="img/shoes20.png" alt="logo" class="apple right-image align-self-center"> -->
 		<div class="col align-self-center px-3 text-center">
 			<img src="img/logo.png" alt="logo" class="logo-small">
 			<h2 class="text-white ">

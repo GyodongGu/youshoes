@@ -8,7 +8,7 @@
 <meta name="description" content="" />
 <meta name="author" content="" />
 <title>404에러</title>
-<link href="../css/salesStyle.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/view/css/salesStyle.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -19,7 +19,7 @@
 					<div class="row justify-content-center">
 						<div class="col-lg-6">
 							<div class="text-center mt-4">
-								<img class="mb-4 img-error" style="width: 500px; height: 500px;" src="${pageContext.request.contextPath}/view/assets/img/error-404-monochrome.svg" />
+								<h1 class="display-1">404</h1>
 								<p class="lead">404에러, 서버에서 URL을 찾을 수 가 없습니다.</p>
 								<a href="${pageContext.request.contextPath}/index.jsp"><i class="fas fa-arrow-left mr-1"></i>메인화면으로(index.jsp)</a>
 							</div>
@@ -31,6 +31,6 @@
 	</div>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-	<script src="../js/scripts.js"></script>
+	<script src="${pageContext.request.contextPath}/view/js/scripts.js"></script>
 </body>
 </html>
