@@ -164,7 +164,7 @@
                                        <!--  <span class="badge badge-success d-inline-block ml-2"><small>10% off</small></span> -->
                                     </h5>
                                     <p class="text-secondary small text-mute mb-0">사이즈 : ${osize[i+1] }</p>
-                                    <p class="text-secondary small text-mute mb-0">색상 : ${ocolor[i] }</p>
+                                    <p class="text-secondary small text-mute mb-0">색상 : ${ocolor[i] } ${oname[i] }</p>
                                      <p class="text-secondary small text-mute mb-0">수량 : ${ocnt[i+1] }ea</p> 
                                      
                                 </div>
