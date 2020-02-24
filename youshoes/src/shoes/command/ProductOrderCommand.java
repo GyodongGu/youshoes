@@ -13,6 +13,7 @@ import shoes.common.Command;
 import shoes.dao.CodeDAO;
 import shoes.dao.ProductDAO;
 import shoes.dao.ProductOrderDAO;
+import shoes.dao.pmDAO;
 import shoes.dto.pdtDTO;
 import shoes.dto.pmDTO;
 import shoes.dto.reservationDTO;
@@ -66,6 +67,11 @@ public class ProductOrderCommand implements Command {
 		}
 		
 		
+		pmDAO pmdao = new pmDAO();
+		pmDTO pmdto = new pmDTO();
+		pmdto = pmdao.selectOne(id);
+		
+		
 		request.setAttribute("smid", smid);
 		request.setAttribute("pdt_no", pdt_no);
 		request.setAttribute("osize", osize);
@@ -74,6 +80,12 @@ public class ProductOrderCommand implements Command {
 		request.setAttribute("oname", oname);
 		request.setAttribute("ocnt", ocnt);
 		request.setAttribute("pdto", pdto);
+		request.setAttribute("pmdto", pmdto);
+		
+		for(int i =0; i<ocolor.length; i++) {
+			System.out.println(ocolor[i]+"색깔dd");
+			System.out.println(odpoint[i+1] +"포인트");
+		}
 		
 		
 		return "/view/pMem/productOrder.jsp";

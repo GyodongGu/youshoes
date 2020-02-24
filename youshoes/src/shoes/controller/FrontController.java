@@ -14,6 +14,7 @@ import shoes.command.ChargePointCommand;
 import shoes.command.DelReservCommand;
 import shoes.command.GetReservCommand;
 import shoes.command.LikeCommand;
+import shoes.command.OrderPaymentCommand;
 import shoes.command.ProductDetailCommand;
 import shoes.command.ProductOrderCommand;
 import shoes.command.ReplyInsertCommand;
@@ -23,7 +24,6 @@ import shoes.command.ReviewCommand;
 import shoes.command.SetReservCommand;
 import shoes.command.ShopCommand;
 import shoes.command.bookmarkCommand;
-import shoes.command.idOverlapOkCommand;
 import shoes.command.indexCommand;
 import shoes.command.insertReviewCommand;
 import shoes.command.joinCommand;
@@ -105,6 +105,7 @@ public class FrontController extends HttpServlet {
 		cont.put("/ProductDetail.do", new ProductDetailCommand());	//제품상세정보
 
 		cont.put("/ProductOrder.do", new ProductOrderCommand()); //결제페이지
+		cont.put("/OrderPayment.do", new OrderPaymentCommand());
 
 
 			

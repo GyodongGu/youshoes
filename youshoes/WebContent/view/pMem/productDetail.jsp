@@ -106,9 +106,9 @@
 								<h5 class="text-success font-weight-normal mb-0">${pdto.pdt_price }P</h5>
 								<p class="text-secondary small text-mute mb-0 size" id="size">size
 									${pdto.optlist[0].pdt_size_cd }</p>
-								<input type="text" class="text-secondary small text-mute mb-0 size"
+								<input type="hidden" class="text-secondary small text-mute mb-0 size"
 								 id="ord_size" name="ord_size" value="${pdto.optlist[0].pdt_size_cd }">
-								<input type="hidden" class="text-secondary small text-mute mb-0 price"
+								<input type="text" class="text-secondary small text-mute mb-0 price"
 								 id="ord_detail_point" name="ord_detail_point" value="${pdto.pdt_price }">
 
 							</div>

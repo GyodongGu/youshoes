@@ -24,8 +24,6 @@ public class OrderPaymentDAO extends DAO{
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} finally {
-			close();
 		}
 		return result;
 	}
@@ -34,15 +32,15 @@ public class OrderPaymentDAO extends DAO{
 	public int InsertOrdDetail(ordDetailDTO oddto) {
 		int result = 0;
 		
-		String sql= "insert into ord_detail values((select max(ord_detail_no)+1 from ord_detail),?,?,?,?,?)";
+		String sql= "insert into ord_detail values((select max(ord_detail_no)+1 from ord_detail),?,?,?,?,(select max(ord_no) from ord))";
 		
 		try {
 			pstmt=conn.prepareStatement(sql);
-			pstmt.setInt(1, oddto.getOrd_cnt());
+			pstmt.setInt(1, oddto.getOrd_size());
 			pstmt.setString(2, oddto.getOrd_color());
 			pstmt.setInt(3, oddto.getOrd_cnt());
 			pstmt.setInt(4, oddto.getOrd_detail_point());
-			pstmt.setInt(5, oddto.getOrd_no());
+			
 			
 			result=pstmt.executeUpdate();
 			
