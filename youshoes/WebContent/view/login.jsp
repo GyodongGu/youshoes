@@ -133,7 +133,7 @@
 			<h2 class="text-white ">
 				<span class="font-weight-light">You</span>Shoes
 			</h2>
-			<form class="form-signin shadow" id="frm" name="frm" action="../loginOk.do" method="post">
+			<form class="form-signin shadow" id="frm" name="frm" action="${pageContext.request.contextPath}/loginOk.do" method="post">
 				<div class="form-group float-label">
 					<input type="text" id="pm_id" name="pm_id" class="form-control" required autofocus> <label for="pm_id" class="form-control-label">아이디를 입력해주세요</label>
 				</div>
