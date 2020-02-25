@@ -2,6 +2,7 @@ package shoes.dao;
 
 import java.sql.SQLException;
 
+import shoes.dto.deliveryDTO;
 import shoes.dto.ordDetailDTO;
 import shoes.dto.payHistoryDTO;
 
@@ -91,10 +92,65 @@ public class OrderPaymentDAO extends DAO{
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	
+	//주문한 정보 배송테이블에 입력하기
+	public int insertDelivery(deliveryDTO ddto) {
+		int result=0;
+		String sql = "insert into delivery(ord_no, dlvy_date, dlvy_name, dlvy_tell, dlvy_post, dlvy_addr1, dlvy_addr2, dlvy_addr3, dlvy_remark) "
+					+" values((select max(ord_no) from ord),sysdate,?,?,?,?,?,?,?)";
+		
+		try {
+			pstmt=conn.prepareStatement(sql);
+			
+			
+			pstmt.setString(1, ddto.getDlvy_name());
+			pstmt.setString(2, ddto.getDlvy_tell());
+			pstmt.setString(3, ddto.getDlvy_post());
+			pstmt.setString(4, ddto.getDlvy_addr1());
+			pstmt.setString(5, ddto.getDlvy_addr2());
+			pstmt.setString(6, ddto.getDlvy_addr3());
+			pstmt.setString(7, ddto.getDlvy_remark());
+			
+			result = pstmt.executeUpdate();
+			System.out.println("배송정보가 "+result + "건 입력되었습니다.");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		} finally {
 			close();
 		}
 		
+		return result;
+	}
+	public int insertReservDelivery(deliveryDTO ddto) {
+		int result=0;
+		String sql = "insert into delivery(ord_no, dlvy_date, dlvy_name, dlvy_tell, dlvy_post, dlvy_addr1, dlvy_addr2, dlvy_addr3, dlvy_remark) "
+					+" values((select max(ord_no) from ord),?,?,?,?,?,?,?,?)";
+		
+		try {
+			pstmt=conn.prepareStatement(sql);
+			
+			pstmt.setDate(1, ddto.getDlvy_date());
+			pstmt.setString(2, ddto.getDlvy_name());
+			pstmt.setString(3, ddto.getDlvy_tell());
+			pstmt.setString(4, ddto.getDlvy_post());
+			pstmt.setString(5, ddto.getDlvy_addr1());
+			pstmt.setString(6, ddto.getDlvy_addr2());
+			pstmt.setString(7, ddto.getDlvy_addr3());
+			pstmt.setString(8, ddto.getDlvy_remark());
+			
+			result = pstmt.executeUpdate();
+			System.out.println("배송정보가 "+result + "건 입력되었습니다.");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			close();
+		}
 		
 		return result;
 	}

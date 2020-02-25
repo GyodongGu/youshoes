@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import shoes.common.Command;
 import shoes.dao.OrderPaymentDAO;
+import shoes.dto.deliveryDTO;
 import shoes.dto.ordDetailDTO;
 
 public class OrderPaymentCommand implements Command {
@@ -42,6 +43,18 @@ public class OrderPaymentCommand implements Command {
 		
 		int point = Integer.parseInt(request.getParameter("point_now"));
 		opDAO.updatePmPoint(point, pmno);
+		
+		deliveryDTO ddto = new deliveryDTO();
+		ddto.setDlvy_name(request.getParameter("pm_name"));
+		ddto.setDlvy_tell(request.getParameter("pm_tell"));
+		ddto.setDlvy_post(request.getParameter("pm_postcode"));
+		ddto.setDlvy_addr1(request.getParameter("pm_address"));
+		ddto.setDlvy_addr2(request.getParameter("pm_detailAddress"));
+		ddto.setDlvy_addr3(request.getParameter("pm_extraAddress"));
+		ddto.setDlvy_remark(request.getParameter("remarkSelect"));
+		
+		
+		opDAO.insertDelivery(ddto);
 			
 		
 		return "/orderHistory.do";
