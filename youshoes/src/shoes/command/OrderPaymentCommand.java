@@ -31,15 +31,22 @@ public class OrderPaymentCommand implements Command {
 		String[] ocolor=request.getParameterValues("ord_color");
 		String[] ocnt=request.getParameterValues("ord_cnt");
 		
-		for(int i=0; i<osize.length; i++) {
+		if(osize !=null && ocolor !=null && ocnt !=null) {
+			for(int i=0; i<osize.length; i++) {
+				ordDetailDTO oddto = new ordDetailDTO();
+				oddto.setOrd_size(Integer.parseInt(osize[i]));
+				oddto.setOrd_color(ocolor[i]);
+				oddto.setOrd_cnt(Integer.parseInt(ocnt[i]));
+				oddto.setOrd_detail_point(Integer.parseInt(odpoint[i]));
+				
+				opDAO.InsertOrdDetail(oddto);
+			}
+		}else {
 			ordDetailDTO oddto = new ordDetailDTO();
-			oddto.setOrd_size(Integer.parseInt(osize[i]));
-			oddto.setOrd_color(ocolor[i]);
-			oddto.setOrd_cnt(Integer.parseInt(ocnt[i]));
-			oddto.setOrd_detail_point(Integer.parseInt(odpoint[i]));
-			
+			oddto.setOrd_detail_point(Integer.parseInt(odpoint[0]));
 			opDAO.InsertOrdDetail(oddto);
 		}
+		
 		
 		int point = Integer.parseInt(request.getParameter("point_now"));
 		opDAO.updatePmPoint(point, pmno);

@@ -60,11 +60,16 @@ public class ProductOrderCommand implements Command {
 		pdtDTO pdto = new pdtDTO();
 		pdto = pDAO.productDetail(Integer.parseInt(pdt_no));
 		
-		CodeDAO cDAO = new CodeDAO();
-		String[] oname = new String[ocolor.length];
-		for(int i=0;i<ocolor.length;i++) {
-			oname[i]=cDAO.CodeName(ocolor[i]);
+		
+		String[] oname=null;
+		if(ocolor!=null) {
+			CodeDAO cDAO = new CodeDAO();
+			oname = new String[ocolor.length];
+			for(int i=0;i<ocolor.length;i++) {
+				oname[i]=cDAO.CodeName(ocolor[i]);
+			}
 		}
+		
 		
 		
 		pmDAO pmdao = new pmDAO();
@@ -82,10 +87,10 @@ public class ProductOrderCommand implements Command {
 		request.setAttribute("pdto", pdto);
 		request.setAttribute("pmdto", pmdto);
 		
-		for(int i =0; i<ocolor.length; i++) {
-			System.out.println(ocolor[i]+"색깔dd");
-			System.out.println(odpoint[i+1] +"포인트");
-		}
+		/*
+		 * for(int i =0; i<ocolor.length; i++) { System.out.println(ocolor[i]+"색깔dd");
+		 * System.out.println(odpoint[i+1] +"포인트"); }
+		 */
 		
 		
 		return "/view/pMem/productOrder.jsp";

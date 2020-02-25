@@ -73,7 +73,7 @@
 </script>
 </head>
 <body> 
-	<form action="${pageContext.request.contextPath}/OrderPayment.do" id="frm" name="frm">
+	<form action="${pageContext.request.contextPath}/OrderPayment.do" id="frm" name="frm" onsubmit="return payment()">
 		<h6 class="subtitle"><b>배송 주소</b></h6> 
 		<div class="card shadow-sm border-0 mb-4">
 		<div class="card-body">
@@ -185,6 +185,7 @@
                 					<p class="text-dark mb-1 h6 d-block">${pdto.pdt_name }</p>
                 					<p class="text-secondary small mb-2">맞춤제작</p>
                 					<p class="text-secondary small text-mute mb-0">가격 : ${pdto.pdt_price }</p>
+                					<input type="hidden" class = "ord_detail_point" id="ord_detail_point" name="ord_detail_point" value="${pdto.pdt_price }">
                 					<p class="text-secondary small text-mute mb-0">예약 방문 시 사이즈와 색상을 선택할 수 있습니다.</p>
                                      
                 				</div>
@@ -204,25 +205,14 @@
          	<input type="hidden" id = "ord_point" name="ord_point" value="">
          	<input type="hidden" id = "point_now" name="point_now" value="">
          </div>
-          <button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right"><i class="material-icons md-18">shopping_cart</i></button>
+          <!-- <button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right"><i class="material-icons md-18">shopping_cart</i></button> -->
  		<br>
-		<button type="submit" class="btn btn-lg btn-default text-white btn-block btn-rounded shadow"><span>결제하기</span>
+		<button type="submit" class="btn btn-lg btn-default text-white btn-block btn-rounded shadow" id="btn" name="btn"><span>결제하기</span>
 		<i class="material-icons">arrow_forward</i></button> <br>
 	</form>	
 
 <script>
-	/* window.onload=function(){ */
-/* 		var total=document.getElementById("total");
-		var cnt=0;
-		console.log(${fn:length(ocolor) });
-		var len=${fn:length(ocolor) };
-		for(var i=0; i<=len; i++){
-			cnt=cnt+${odpoint[i+1] };
-			console.log(${odpoint[i+1] });
-			console.log(cnt);
-			
-		} */
-		
+
 		var odp = document.getElementsByClassName("ord_detail_point");	//각 세부제품
 		
 		var cnt=0;
@@ -243,8 +233,24 @@
 		var result = document.getElementById("resultpoint");
 		
 		result.innerHTML = ${pmdto.point_now } - cnt;
+		
 		var nowpoint = document.getElementById("point_now");
 		nowpoint.value=result.innerHTML;
+		
+		
+		function payment(){
+			if(document.getElementById("point_now").value < 0){
+				alert("보유 포인트가 부족합니다.");
+				return false;
+			}else{
+				var result = confirm("결제하시겠습니까?");
+				if(result){
+					return true;
+				}else{
+					return false;	
+				}
+			} 
+		}
 			  
 	
 </script>
