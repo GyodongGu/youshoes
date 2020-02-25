@@ -38,6 +38,7 @@ import shoes.command.pMemManageCommand;
 import shoes.command.pointCommand;
 import shoes.command.profileSetCommand;
 import shoes.command.profileUpdateCommand;
+import shoes.command.searchShopCommand;
 import shoes.command.sidebar1Command;
 import shoes.common.Command;
 
@@ -70,24 +71,25 @@ public class FrontController extends HttpServlet {
 		cont.put("/loginOk.do", new loginOkCommand());         // 로그인 체크
 		cont.put("/join.do", new joinCommand());               // 회원가입
 	//	cont.put("/joinOk.do", new joinOkCommand());           // 회원가입 체크
-	//	cont.put("/idOverlapOk.do", new idOverlapOkCommand());   // 구매회원 아이디 중복체크
-		cont.put("/pMem.do", new pMemCommand());			   // 로그인후 화면(잘안됨)
+	//	cont.put("/idOverlapOk.do", new idOverlapOkCommand()); // 구매회원 아이디 중복체크
+		cont.put("/pMem.do", new pMemCommand());			   // 로그인 후 메인화면
+		cont.put("/searchShop.do", new searchShopCommand());   // 가게 더보기
 		
 		
 		// 프로필 부분
-		cont.put("/myReview.do", new myReviewCommand());       	   // 구매 회원이 자기가 작성한 후기 보기
-		cont.put("/orderHistory.do", new orderHistoryCommand());   // 구매 회원이 자기의 결제내역 확인
+		cont.put("/myReview.do", new myReviewCommand());       	    // 구매 회원이 자기가 작성한 후기 보기
+		cont.put("/orderHistory.do", new orderHistoryCommand());    // 구매 회원이 자기의 결제내역 확인
 		
-		cont.put("/point.do", new pointCommand());                 // 구매 회원 현재 포인트 확인
-		cont.put("/ajax/ChargePoint.do", new ChargePointCommand());     // 구매 회원 결제한 포인트를 에 추가
+		cont.put("/point.do", new pointCommand());                  // 구매 회원 현재 포인트 확인
+		cont.put("/ajax/ChargePoint.do", new ChargePointCommand()); // 구매 회원 결제한 포인트 추가
 		
-		cont.put("/sidebar1.do", new sidebar1Command());           // 구매 회원의 사이드바 현재 포인트 확인
-		cont.put("/profileSet.do", new profileSetCommand());  	   // 구매 회원 프로필 메인
-		cont.put("/profileUpdate.do", new profileUpdateCommand()); // 구매 회원 프로필 수정
-		cont.put("/pMemEvent.do", new pMemEventCommand());     	   // 구매 회원 이벤트 목록 보기
-		cont.put("/bookmark.do", new bookmarkCommand());       	   // 구매 회원 즐겨찾기 상품 보기
-		cont.put("/logout.do", new logoutCommand());           	   // 로그아웃
-		cont.put("/insertReview.do", new insertReviewCommand());   // 구매회원 리뷰 작성 페이지
+		cont.put("/sidebar1.do", new sidebar1Command());            // 구매 회원의 사이드바 현재 포인트 확인
+		cont.put("/profileSet.do", new profileSetCommand());  	    // 구매 회원 프로필 메인
+		cont.put("/profileUpdate.do", new profileUpdateCommand());  // 구매 회원 프로필 수정
+		cont.put("/pMemEvent.do", new pMemEventCommand());     	    // 구매 회원 이벤트 목록 보기
+		cont.put("/bookmark.do", new bookmarkCommand());       	    // 구매 회원 즐겨찾기 상품 보기
+		cont.put("/logout.do", new logoutCommand());           	    // 로그아웃
+		cont.put("/insertReview.do", new insertReviewCommand());    // 구매회원 리뷰 작성 페이지
 		
 		// 가게 및 상품 검색,리뷰,예약,댓글
 		cont.put("/Review.do",new ReviewCommand());				//리뷰페이지 호출	
