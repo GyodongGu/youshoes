@@ -243,7 +243,7 @@
 				alert("보유 포인트가 부족합니다.");
 				return false;
 			}else{
-				var result = confirm("결제하시겠습니까?");
+				var result = confirm("결제 하시겠습니까?");
 				if(result){
 					return true;
 				}else{
