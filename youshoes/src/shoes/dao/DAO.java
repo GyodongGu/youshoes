@@ -15,7 +15,7 @@ public class DAO {
 	protected DataSource ds;
 	
 	private String driver = "oracle.jdbc.driver.OracleDriver";
-	private String url = "jdbc:oracle:thin:@localhost:1521:orcl";
+	private String url = "jdbc:oracle:thin:@localhost:1521:xe";
 	private String user = "you";
 	private String pw = "you";
 	

@@ -1,15 +1,20 @@
 package shoes.command;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import shoes.common.Command;
+import shoes.dao.CallenderDAO;
 import shoes.dao.OrderPaymentDAO;
 import shoes.dto.deliveryDTO;
 import shoes.dto.ordDetailDTO;
+import shoes.dto.reservationDTO;
 
 public class OrderPaymentCommand implements Command {
 
@@ -62,6 +67,37 @@ public class OrderPaymentCommand implements Command {
 		
 		
 		opDAO.insertDelivery(ddto);
+		
+		
+		CallenderDAO dao1 = new CallenderDAO();
+		reservationDTO dto1 = new reservationDTO();
+		String reserv1 = request.getParameter("res_date");
+		String smid = request.getParameter("sm_id");
+		System.out.println(smid);
+		
+		/*
+		 * try {
+		 * 
+		 * dto1.setReserv_date((String)(new
+		 * SimpleDateFormat("yyyy-MM-dd hh:mm").parse(reserv1).getTime())); } catch
+		 * (ParseException e) { // TODO Auto-generated catch block e.printStackTrace();
+		 * }
+		 */
+		
+		/*
+		 * SimpleDateFormat simple= new SimpleDateFormat("yyyy-MM-dd hh:mm"); String
+		 * insertdate=simple.format(reserv1.gettim);
+		 */
+		if(reserv1!=null) {
+			dto1.setReserv_date(reserv1);
+			dto1.setSm_id(smid);
+			dto1.setPm_no(pmno);
+			int r;
+			r=dao1.insertform(dto1);
+			System.out.println(r+"건 예약되었습니다.");
+		}
+		
+		
 			
 		
 		return "/orderHistory.do";

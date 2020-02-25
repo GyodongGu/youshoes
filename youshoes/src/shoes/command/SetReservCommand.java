@@ -32,6 +32,7 @@ public class SetReservCommand implements Command {
 			reservationDTO dto1 = new reservationDTO();
 			String reserv1 = request.getParameter("res_date");
 			String smid = request.getParameter("sm_id");
+			/**
 			int pmno = dto.getPm_no();
 			try {
 				dto1.setRes_date(new java.sql.Date(new SimpleDateFormat("yyyy-MM-dd hh:mm").parse(reserv1).getTime()));
@@ -42,6 +43,7 @@ public class SetReservCommand implements Command {
 			}
 			int r;
 			r=dao1.insertform(dto1);
+			**/
 		return "ajax:" + reserv1;
 	}
 

@@ -25,22 +25,21 @@ public class ProductOrderCommand implements Command {
 			throws ServletException, IOException {
 		HttpSession session = request.getSession(false);
 		String id = (String) session.getAttribute("id");
-		pmDTO dto1 = new pmDTO();
-		ProductOrderDAO dao1 = new ProductOrderDAO();
-		dto1 = dao1.select(id);
+		/*
+		 * pmDTO dto1 = new pmDTO(); ProductOrderDAO dao1 = new ProductOrderDAO(); dto1
+		 * = dao1.select(id);
+		 * 
+		 * int no = dto1.getPm_no(); //회원 id에 해당하는 회원번호 reservationDTO dto2 = new
+		 * reservationDTO(); ProductOrderDAO dao2 = new ProductOrderDAO(); dto2 =
+		 * dao2.datingSelect(no); //System.out.println(dto2); if(dto2.getRes_date() !=
+		 * null) { Date date2 = dto2.getRes_date(); SimpleDateFormat chan = new
+		 * SimpleDateFormat("yyyy-MM-dd HH:mm"); String format = chan.format(date2);
+		 * request.setAttribute("dto", dto2); //회원의 예약번호
+		 * request.setAttribute("res_date", format); //회원의 예약날짜 }
+		 */
 		
-		int no = dto1.getPm_no();					//회원 id에 해당하는 회원번호
-		reservationDTO dto2 = new reservationDTO();
-		ProductOrderDAO dao2 = new ProductOrderDAO();
-		dto2 = dao2.datingSelect(no);
-		//System.out.println(dto2);
-		if(dto2.getRes_date() != null) {
-			Date date2 = dto2.getRes_date();
-			SimpleDateFormat chan = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-			String format = chan.format(date2);
-			request.setAttribute("dto", dto2);			//회원의 예약번호
-			request.setAttribute("res_date", format);	//회원의 예약날짜
-		}
+		String resdate = request.getParameter("result");
+		request.setAttribute("resdate", resdate);
 		
 		
 		//맞춤화 코드 전송

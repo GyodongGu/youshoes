@@ -138,12 +138,9 @@
 			<div class="col-12 col-md-6">  
 				<div class="form-group float-label active">
 				<label class="form-control-label">예약일</label>
-					<input type="text" class="form-control" id="res_date" name="res_date" required="" value="${res_date}" disabled="disabled"> 
+					<input type="text" class="form-control" id="res_date" name="res_date" required="" value="${resdate}"> 
 				</div>   
-				<div class="form-group float-label active"> 
-				<label class="form-control-label">예약번호</label>
-					<input type="text" class="form-control" id="res_no" name="res_no" required="" value="'${ dto.res_no}번'" disabled="disabled"> 
-				</div>  
+				 
 			</div>
 		</div>
 		</div>
@@ -187,6 +184,7 @@
                 					<p class="text-secondary small text-mute mb-0">가격 : ${pdto.pdt_price }</p>
                 					<input type="hidden" class = "ord_detail_point" id="ord_detail_point" name="ord_detail_point" value="${pdto.pdt_price }">
                 					<p class="text-secondary small text-mute mb-0">예약 방문 시 사이즈와 색상을 선택할 수 있습니다.</p>
+                					<input type="hidden" id="sm_id" name="sm_id" value="${pdto.sm_id }">
                                      
                 				</div>
                 			</div>
