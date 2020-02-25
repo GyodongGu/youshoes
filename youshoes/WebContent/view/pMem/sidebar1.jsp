@@ -90,7 +90,7 @@
 		<div class="text-center">
 			<div class="figure-menu shadow">
 				<figure>
-					<img src="${pageContext.request.contextPath}/view/img/user1.png" alt="">
+					<img src="${pageContext.request.contextPath}/view/img/user1.jpg" alt="">
 				</figure>
 			</div>
 			<h5 class="mb-1 ">${pmDTO.pm_name} 님( ${pmDTO.pm_id} )</h5>
@@ -115,9 +115,8 @@
 					<span>Menu</span>
 				</h5>
 				<div class="list-group main-menu">
-					<a href="${pageContext.request.contextPath}/view/pMem/searchShop.jsp" class="list-group-item list-group-item-action">스토어</a> 
+					<a href="${pageContext.request.contextPath}/searchShop.do" class="list-group-item list-group-item-action">스토어</a> 
 					<a href="${pageContext.request.contextPath}/pMemEvent.do" class="list-group-item list-group-item-action">이벤트</a> 
-					<a href="${pageContext.request.contextPath}/view/pMem/product.jsp" class="list-group-item list-group-item-action">모든 제품</a> 
 					<a href="${pageContext.request.contextPath}/orderHistory.do" class="list-group-item list-group-item-action">주문내역</a> 
 					<a href="${pageContext.request.contextPath}/view/pMem/profile.jsp" class="list-group-item list-group-item-action">프로필</a> 
 					<a href="${pageContext.request.contextPath}/logout.do" class="list-group-item list-group-item-action mt-4">로그아웃</a>
