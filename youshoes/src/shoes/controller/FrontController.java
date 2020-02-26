@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import shoes.command.ChargePointCommand;
 import shoes.command.DelReservCommand;
 import shoes.command.GetReservCommand;
+import shoes.command.InsertReviewCommand;
 import shoes.command.LikeCommand;
 import shoes.command.OrderPaymentCommand;
 import shoes.command.ProductDetailCommand;
@@ -90,6 +91,7 @@ public class FrontController extends HttpServlet {
 		cont.put("/bookmark.do", new bookmarkCommand());       	    // 구매 회원 즐겨찾기 상품 보기
 		cont.put("/logout.do", new logoutCommand());           	    // 로그아웃
 		cont.put("/insertReview.do", new insertReviewFormCommand());    // 구매회원 리뷰 작성 페이지
+		cont.put("/insertReviewComplete.do", new InsertReviewCommand());	//리뷰작성
 		
 		// 가게 및 상품 검색,리뷰,예약,댓글
 		cont.put("/Review.do",new ReviewCommand());				//리뷰페이지 호출	
