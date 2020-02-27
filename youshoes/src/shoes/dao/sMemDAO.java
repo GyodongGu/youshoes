@@ -24,6 +24,7 @@ public class sMemDAO extends DAO{
 			
 			rs=pstmt.executeQuery();
 			while(rs.next()) {
+				smdto.setSm_id(rs.getString("sm_id"));
 				smdto.setShop_name(rs.getString("shop_name"));
 				smdto.setSm_name(rs.getString("sm_name"));
 				smdto.setSm_tell(rs.getString("sm_tell"));

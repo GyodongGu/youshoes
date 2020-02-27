@@ -25,6 +25,9 @@ public class ProductOrderCommand implements Command {
 			throws ServletException, IOException {
 		HttpSession session = request.getSession(false);
 		String id = (String) session.getAttribute("id");
+		pmDTO ppmdto = new pmDTO();
+		ppmdto=(pmDTO) session.getAttribute("pmDTO");
+		int pmno = ppmdto.getPm_no();
 		/*
 		 * pmDTO dto1 = new pmDTO(); ProductOrderDAO dao1 = new ProductOrderDAO(); dto1
 		 * = dao1.select(id);
@@ -57,7 +60,7 @@ public class ProductOrderCommand implements Command {
 		
 		ProductDAO pDAO = new ProductDAO();
 		pdtDTO pdto = new pdtDTO();
-		pdto = pDAO.productDetail(Integer.parseInt(pdt_no));
+		pdto = pDAO.productDetail(Integer.parseInt(pdt_no),pmno);
 		
 		
 		String[] oname=null;

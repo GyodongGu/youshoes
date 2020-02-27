@@ -61,4 +61,69 @@ public class bookmarkDAO extends DAO {
 		}
 		return list;
 	}
+	
+	
+	public boolean SelectBookMark(bookmarkDTO bdto) {
+		boolean x= false;
+		String sql = "select * from bookmark where pm_no=? and pdt_no=?";
+		
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1, bdto.getPm_no());
+			pstmt.setInt(2, bdto.getPdt_no());
+			rs=pstmt.executeQuery();
+			
+			if(rs.next()) {
+				x=true;
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return x;
+	}
+	public int InsertBookmark(bookmarkDTO bdto) {
+		int result=0;
+		
+		String sql ="insert into bookmark values(?,?)";
+		
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1, bdto.getPm_no());
+			pstmt.setInt(2, bdto.getPdt_no());
+			result = pstmt.executeUpdate();
+			System.out.println("bookmark "+result + "건 입력되었습니다.");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		
+		return result;
+	}
+	
+	public int DeleteBookmark(bookmarkDTO bdto) {
+		int result=0;
+		
+		String sql = "delete from bookmark where pm_no=? and pdt_no=?";
+		
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1, bdto.getPm_no());
+			pstmt.setInt(2, bdto.getPdt_no());
+			result=pstmt.executeUpdate();
+			
+			System.out.println("bookmark "+result+"건 삭제되었습니다.");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		
+		return result;
+	}
+	
 }

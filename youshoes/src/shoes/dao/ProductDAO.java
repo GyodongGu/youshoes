@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import shoes.dto.bookmarkDTO;
 import shoes.dto.imageDetailDTO;
 import shoes.dto.optDTO;
 import shoes.dto.pdtDTO;
@@ -153,17 +154,21 @@ public class ProductDAO extends DAO{
 		return kindlist;
 	}
 	
-	public pdtDTO productDetail(int no) {
+	public pdtDTO productDetail(int no, int pmno) {
 		
 		pdtDTO pdto = new pdtDTO();
 		String sql = "select * from product where pdt_no=?";
 		String sql1="select img_name from image i join image_detail d on i.img_no=d.img_no where section='I02' and section_no=?";
 		String sql2="select * from opt where pdt_no=?";
+		String sql3 = "select * from bookmark where pm_no=? and pdt_no=?";
 		PreparedStatement pstmt1;
 		ResultSet rs1;
 
 		PreparedStatement pstmt2;
 		ResultSet rs2;
+		
+		PreparedStatement pstmt3;
+		ResultSet rs3;
 		
 		try {
 			pstmt=conn.prepareStatement(sql);
@@ -206,6 +211,16 @@ public class ProductDAO extends DAO{
 				}
 				pdto.setOptlist(optlist);
 				
+				pstmt3=conn.prepareStatement(sql3);
+				pstmt3.setInt(1, pmno);
+				pstmt3.setInt(2, no);
+				rs3=pstmt3.executeQuery();
+				bookmarkDTO bdto = new bookmarkDTO();
+				if(rs3.next()) {
+					bdto.setPm_no(rs3.getInt("pm_no"));
+					bdto.setPdt_no(rs3.getInt("pdt_no"));
+				}
+				pdto.setBookmark(bdto);
 			}
 			
 			

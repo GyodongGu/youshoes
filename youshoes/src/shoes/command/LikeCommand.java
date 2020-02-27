@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import shoes.common.Command;
 import shoes.dao.LikeDAO;
@@ -22,8 +23,10 @@ public class LikeCommand implements Command {
 		int rw_no = Integer.parseInt(request.getParameter("rw_no"));
 		System.out.println(rw_no);
 		
+		HttpSession httpsession = request.getSession(true);
+		String pmid= (String) httpsession.getAttribute("id");
 		ldto.setRw_no(rw_no);
-		ldto.setPm_id("pur01");
+		ldto.setPm_id(pmid);
 		boolean x = ldao.SelectLike(ldto);
 		
 		if(x) {
