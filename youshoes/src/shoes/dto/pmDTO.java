@@ -17,8 +17,16 @@ public class pmDTO {
 	private String pm_addr2;
 	private String pm_addr3;
 	private int point_now;
+	private String mgr_auth_cd;
 	
 	
+	
+	public String getMgr_auth_cd() {
+		return mgr_auth_cd;
+	}
+	public void setMgr_auth_cd(String mgr_auth_cd) {
+		this.mgr_auth_cd = mgr_auth_cd;
+	}
 	public int getPm_no() {
 		return pm_no;
 	}

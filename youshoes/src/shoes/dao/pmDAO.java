@@ -1,5 +1,7 @@
 package shoes.dao;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
@@ -56,6 +58,7 @@ public class pmDAO extends DAO {
 				dto.setPm_addr2(rs.getString("pm_addr2"));
 				dto.setPm_addr3(rs.getString("pm_addr3"));
 				dto.setPoint_now(rs.getInt("point_now"));
+				dto.setMgr_auth_cd(rs.getString("mgr_auth_cd"));
 				list.add(dto);
 			}
 		} catch (SQLException e) {
@@ -70,7 +73,7 @@ public class pmDAO extends DAO {
 		int n = 0;
 		/* 유승우 2020.02.10 뭘 넣어야 할지 아직 모르겠음 */
 		String sql = "insert into purchase_member(pm_no, pm_id, pm_pw, pm_name, pm_stat_cd, pm_birth, pm_email, pm_date, pm_tell, pm_post, pm_addr1, pm_addr2, pm_addr3, point_now )"
-				+ " values((select max(pm_no)+1 from purchase_member), ?, ?, ?, 'ACT04', ?, ?, sysdate, ?, ?, ?, ?, ?, 500)";
+				+ " values((select max(pm_no)+1 from purchase_member), ?, ?, ?, 'ACT04', ?, ?, sysdate, ?, ?, ?, ?, ?, 500,'M03')";
 
 		// 회원번호, 아이디, 비번, 이름, 상태, 생년월일, 이메일, 가입일, 전화번호, 우편번호, 주소1, 주소2, 주소3, 포인트
 		try {
@@ -149,7 +152,12 @@ public class pmDAO extends DAO {
 
 	public String loginCheck(String id, String pw) { // 6. 로그인 체크 loginCheck()
 		String grant = null;
-		String sql = "select pm_stat_cd from purchase_member where pm_id = ? and pm_pw=?";
+		String sql = "select mgr_auth_cd from purchase_member where pm_id = ? and pm_pw=?";
+		String sql1 = "select mgr_auth_cd from sales_member where sm_id=? and sm_pw=?";
+		
+		PreparedStatement pstmt1;
+		ResultSet rs1;
+		
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, id);
@@ -157,7 +165,18 @@ public class pmDAO extends DAO {
 			rs = pstmt.executeQuery();
 
 			if (rs.next())
-				grant = rs.getString("pm_stat_cd");
+				grant = rs.getString("mgr_auth_cd");
+			
+			if(grant==null) {
+				pstmt1=conn.prepareStatement(sql1);
+				pstmt1.setString(1, id);
+				pstmt1.setString(2, pw);
+				rs1=pstmt1.executeQuery();
+				if(rs1.next()) {
+					grant=rs1.getString("mgr_auth_cd");
+				}
+			}
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -209,6 +228,7 @@ public class pmDAO extends DAO {
 				dto.setPm_addr2(rs.getString("pm_addr2"));
 				dto.setPm_addr3(rs.getString("pm_addr3"));
 				dto.setPoint_now(rs.getInt("point_now"));
+				dto.setMgr_auth_cd(rs.getString("mgr_auth_cd"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
