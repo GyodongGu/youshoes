@@ -37,6 +37,9 @@ public class loginOkCommand implements Command {
 			httpsession.setAttribute("id", id);
 			httpsession.setAttribute("grant", grant);
 			httpsession.setAttribute("pmDTO", dto);
+			httpsession.getServletContext().setAttribute("nid", id);
+			httpsession.getServletContext().setAttribute("ngrant", grant);
+			httpsession.getServletContext().setAttribute("npmDTO", dto);
 			System.out.println(grant);
 			if(grant.equals("M03")) {
 				return "redirect:pMem.do";
