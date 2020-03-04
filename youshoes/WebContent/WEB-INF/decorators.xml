@@ -17,7 +17,6 @@
 		<pattern>*.do*</pattern>
 	</decorator>
 	<excludes>
-	
 	<pattern>sidebar1.jsp</pattern>
 	<pattern>/Review.do*</pattern>
 	
