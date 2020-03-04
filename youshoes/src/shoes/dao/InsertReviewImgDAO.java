@@ -24,7 +24,7 @@ public class InsertReviewImgDAO extends DAO{
 			pstmt1.setString(1, imgName);
 			pstmt1.setInt(2, size);
 			result1 = pstmt1.executeUpdate();
-			System.out.println("image_detail 테이블에 "+result+"건 입력되었습니다.");
+			System.out.println("image_detail 테이블에 "+result1+"건 입력되었습니다.");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
