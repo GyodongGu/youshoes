@@ -13,6 +13,7 @@ import shoes.common.Command;
 import shoes.dao.CodeDAO;
 import shoes.dao.ProductDAO;
 import shoes.dao.ProductOrderDAO;
+import shoes.dao.pmDAO;
 import shoes.dto.pdtDTO;
 import shoes.dto.pmDTO;
 import shoes.dto.reservationDTO;
@@ -24,22 +25,24 @@ public class ProductOrderCommand implements Command {
 			throws ServletException, IOException {
 		HttpSession session = request.getSession(false);
 		String id = (String) session.getAttribute("id");
-		pmDTO dto1 = new pmDTO();
-		ProductOrderDAO dao1 = new ProductOrderDAO();
-		dto1 = dao1.select(id);
+		pmDTO ppmdto = new pmDTO();
+		ppmdto=(pmDTO) session.getAttribute("pmDTO");
+		int pmno = ppmdto.getPm_no();
+		/*
+		 * pmDTO dto1 = new pmDTO(); ProductOrderDAO dao1 = new ProductOrderDAO(); dto1
+		 * = dao1.select(id);
+		 * 
+		 * int no = dto1.getPm_no(); //회원 id에 해당하는 회원번호 reservationDTO dto2 = new
+		 * reservationDTO(); ProductOrderDAO dao2 = new ProductOrderDAO(); dto2 =
+		 * dao2.datingSelect(no); //System.out.println(dto2); if(dto2.getRes_date() !=
+		 * null) { Date date2 = dto2.getRes_date(); SimpleDateFormat chan = new
+		 * SimpleDateFormat("yyyy-MM-dd HH:mm"); String format = chan.format(date2);
+		 * request.setAttribute("dto", dto2); //회원의 예약번호
+		 * request.setAttribute("res_date", format); //회원의 예약날짜 }
+		 */
 		
-		int no = dto1.getPm_no();					//회원 id에 해당하는 회원번호
-		reservationDTO dto2 = new reservationDTO();
-		ProductOrderDAO dao2 = new ProductOrderDAO();
-		dto2 = dao2.datingSelect(no);
-		//System.out.println(dto2);
-		if(dto2.getRes_date() != null) {
-			Date date2 = dto2.getRes_date();
-			SimpleDateFormat chan = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-			String format = chan.format(date2);
-			request.setAttribute("dto", dto2);			//회원의 예약번호
-			request.setAttribute("res_date", format);	//회원의 예약날짜
-		}
+		String resdate = request.getParameter("result");
+		request.setAttribute("resdate", resdate);
 		
 		
 		//맞춤화 코드 전송
@@ -57,13 +60,23 @@ public class ProductOrderCommand implements Command {
 		
 		ProductDAO pDAO = new ProductDAO();
 		pdtDTO pdto = new pdtDTO();
-		pdto = pDAO.productDetail(Integer.parseInt(pdt_no));
+		pdto = pDAO.productDetail(Integer.parseInt(pdt_no),pmno);
 		
-		CodeDAO cDAO = new CodeDAO();
-		String[] oname = new String[ocolor.length];
-		for(int i=0;i<ocolor.length;i++) {
-			oname[i]=cDAO.CodeName(ocolor[i]);
+		
+		String[] oname=null;
+		if(ocolor!=null) {
+			CodeDAO cDAO = new CodeDAO();
+			oname = new String[ocolor.length];
+			for(int i=0;i<ocolor.length;i++) {
+				oname[i]=cDAO.CodeName(ocolor[i]);
+			}
 		}
+		
+		
+		
+		pmDAO pmdao = new pmDAO();
+		pmDTO pmdto = new pmDTO();
+		pmdto = pmdao.selectOne(id);
 		
 		
 		request.setAttribute("smid", smid);
@@ -74,6 +87,12 @@ public class ProductOrderCommand implements Command {
 		request.setAttribute("oname", oname);
 		request.setAttribute("ocnt", ocnt);
 		request.setAttribute("pdto", pdto);
+		request.setAttribute("pmdto", pmdto);
+		
+		/*
+		 * for(int i =0; i<ocolor.length; i++) { System.out.println(ocolor[i]+"색깔dd");
+		 * System.out.println(odpoint[i+1] +"포인트"); }
+		 */
 		
 		
 		return "/view/pMem/productOrder.jsp";

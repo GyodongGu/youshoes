@@ -10,6 +10,16 @@ public class reservationDTO {
 	private String res_remark;
 	private int pm_no;
 	
+	private String reserv_date;
+	
+	
+	
+	public String getReserv_date() {
+		return reserv_date;
+	}
+	public void setReserv_date(String reserv_date) {
+		this.reserv_date = reserv_date;
+	}
 	public int getRes_no() {
 		return res_no;
 	}

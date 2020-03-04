@@ -15,9 +15,17 @@ public class pdtDTO {
 	private Date pdt_date;
 	private List<imageDetailDTO> img_name;
 	private List<optDTO> optlist;
+	private bookmarkDTO bookmark;
 	
 	
 	
+	
+	public bookmarkDTO getBookmark() {
+		return bookmark;
+	}
+	public void setBookmark(bookmarkDTO bookmark) {
+		this.bookmark = bookmark;
+	}
 	public List<optDTO> getOptlist() {
 		return optlist;
 	}

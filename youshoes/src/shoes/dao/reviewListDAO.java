@@ -170,6 +170,32 @@ public class reviewListDAO extends DAO {
 //		}
 //		return list;
 //	}
+	
+	public int insertReview(reviewDTO rdto) {
+		
+		int result = 0;
+		String sql ="insert into purchase_review values((select max(rw_no)+1 from purchase_review),?,?,1,?,sysdate,? )";
+		
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1, rdto.getPdt_no());
+			pstmt.setString(2, rdto.getPm_id());
+			pstmt.setInt(3, rdto.getRw_stars());
+			pstmt.setString(4, rdto.getRw_content());
+			
+			result = pstmt.executeUpdate();
+			System.out.println("리뷰가 "+result+"건 입력되었습니다.");
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		
+		
+		return result;
+	}
 
 
 }

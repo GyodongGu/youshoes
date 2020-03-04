@@ -13,16 +13,19 @@ import shoes.dao.reviewListDAO;
 import shoes.dto.pmDTO;
 import shoes.dto.reviewDTO;
 
-public class insertReviewCommand implements Command {
+public class insertReviewFormCommand implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		reviewListDAO rwDAO = new reviewListDAO();
-		int pmNO = ((pmDTO)request.getSession().getAttribute("pmDTO")).getPm_no();
 		
-		List<reviewDTO> rwDTO = rwDAO.myReviewCreate(pmNO);
-		request.setAttribute("rwDTO", rwDTO);
+		int pdtno = Integer.parseInt(request.getParameter("pdt_no"));
+		
+		HttpSession httpsession = request.getSession(true);
+		String pmid = (String)httpsession.getAttribute("id");
+		
+		request.setAttribute("pdtno", pdtno);
+		request.setAttribute("pmid", pmid);
 		
 		return "/view/pMem/insertReview.jsp";
 	}

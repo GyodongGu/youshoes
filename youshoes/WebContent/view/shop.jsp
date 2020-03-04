@@ -143,7 +143,7 @@ tr, td {
 		<div id="tabs">
 			<ul>
 				<li><a href="#tabs-1">가게 정보</a></li>
-				<li><a href="${pageContext.request.contextPath}/Review.do">스토리</a></li>
+				<li><a href="${pageContext.request.contextPath}/Review.do?sm_id=${smem.sm_id}">스토리</a></li>
 				<!-- <li><a href="#tabs-3">Aenean lacinia</a></li> -->
 			</ul>
 			<div id="tabs-1">
@@ -649,8 +649,8 @@ tr, td {
 	</div>
 	<!-- // 가게별 페이지 탭 부분 -->
 	<!-- 카카오 지도 api -->
-	<script type="text/javascript"
-		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0455f4a5cfbe071aa318ca7ca4db976b&libraries=services"></script>
+
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0455f4a5cfbe071aa318ca7ca4db976b&libraries=services"></script>
 
 	<script>
 		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 

@@ -14,7 +14,7 @@
 		<div class="col-auto mx-auto">
 			<div class="row no-gutters justify-content-center">
 				<div class="col-auto">
-					<a href="${pageContext.request.contextPath}/view/pMem/pMem.jsp" class="btn btn-link-default"> <i class="material-icons">home</i>
+					<a href="${pageContext.request.contextPath}/pMem.do" class="btn btn-link-default"> <i class="material-icons">home</i>
 					</a>
 				</div>
 				<div class="col-auto">
@@ -22,7 +22,7 @@
 					</a>
 				</div>
 				<div class="col-auto">
-					<a href="${pageContext.request.contextPath}/view/pMem/searchShop.jsp" class="btn btn-default shadow centerbutton"> <i class="material-icons">local_mall</i>
+					<a href="${pageContext.request.contextPath}/searchShop.do" class="btn btn-default shadow centerbutton"> <i class="material-icons">local_mall</i>
 					</a>
 				</div>
 				<div class="col-auto">

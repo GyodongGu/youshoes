@@ -138,10 +138,15 @@ var event;
 							title : '예약',	
 							start :retime
 						});
-						alert("'"+result +"''"+" 날짜로 예약 진행 되었습니다.");
+						//alert("'"+result +"''"+" 날짜로 예약 진행 되었습니다.");
+						var con = confirm("'"+result +"''"+" 날짜로 예약 진행하겠습니까?");
+						if(con){
+							dialog.dialog("close");
+							location.href="${pageContext.request.contextPath}/ProductOrder.do?type=C&sm_id=${smid}&pdt_no=${pdtno}&result="+result;
+						}
 					} 
 				})
-				dialog.dialog("close");
+				//dialog.dialog("close");
 			}
 		calendar.render(); 
 	});

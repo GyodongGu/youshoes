@@ -26,7 +26,7 @@
 					<td>${OrdHistory.ord_point}</td>
 					<td>${OrdHistory.ord_stat_cd}</td>
 					<td>
-						<button class="mb-2 btn btn-default" onclick="location.href='${pageContext.request.contextPath}/insertReview.do'">작성</button>
+						<button class="mb-2 btn btn-default" onclick="location.href='${pageContext.request.contextPath}/insertReview.do?pdt_no=${OrdHistory.pdt_no }'">작성</button>
 					</td>
 				</tr>
 			</c:forEach>

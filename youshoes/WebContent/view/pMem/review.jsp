@@ -10,7 +10,7 @@
     <meta name="author" content="Maxartkiller">
  -->
     <title>Product · GoFurniture</title>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
  <%--    <!-- Material design icons CSS -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/view/vendor/materializeicon/material-icons.css">
 
@@ -49,13 +49,6 @@
 					</c:forEach>
 						
 					</p>
-<!-- 					<p>
-						<i class="material-icons text-warning md-18 vm">star</i> <i
-							class="material-icons text-warning md-18 vm">star</i> <i
-							class="material-icons text-warning md-18 vm">star</i> <i
-							class="material-icons text-secondary md-18 vm">star</i> <i
-							class="material-icons text-secondary md-18 vm">star</i>
-					</p> -->
 				</div>
 				<div class="col-6 mb-3 text-right">
 					<p class="text-muted small">${dto.getRw_date()}</p>
@@ -66,7 +59,7 @@
 					</figure>
 				</div>
 				<div class="col">
-					<h6>${dto.getPm_id()}${dto.getLikeview() }</h6>
+					<h6>${dto.getPm_id()}</h6>
 					
 				</div>
 				<div class="col-12">
@@ -87,7 +80,6 @@
 					
 					</c:choose>
 					
-					
 <!-- 					<button class="btn btn-sm btn-link p-0"><font size="5"><strong><i class="material-icons md-18">favorite</i>좋아요</strong></font></button>
  -->					
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -106,11 +98,10 @@
     <script>
     	$(".btnlike").bind("click",funclike);
     
-    	
     	function funclike(){
     		var i = this.parentNode.dataset.like;		//부모노드의 data-like속성을 가져온다
     		console.log(i);
-    		var thisbtn = $(this)
+    		var thisbtn = $(this);
     		$.ajax({
     			type:"POST",
     			url:"/youshoes/ajax/Like.do",

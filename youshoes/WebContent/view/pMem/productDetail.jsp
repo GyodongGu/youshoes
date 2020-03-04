@@ -43,13 +43,38 @@
 		<!-- 가게 사진 이미지의 pagination -->
 		<div class="swiper-pagination"></div>
 	</div>
+	
+	<div class="row">
+		<p class="text-secondary my-1">즐겨찾기</p>&nbsp;
+		<p data-like="${pdto.pdt_no }">
+		<c:choose>
+		<c:when test="${pdto.bookmark.pdt_no==0 }">
+		<button class="btn btn-sm btn-link p-0 bookmark"><i class="material-icons text-secondary md-18 vm">star</i></button>
+		</c:when>
+		<c:otherwise>
+		<button class="btn btn-sm btn-link p-0 bookmark"><i class="material-icons text-warning md-18 vm">star</i></button>
+		</c:otherwise>
+		</c:choose>
+		</p>
+	</div>
 
 	<div class="subtitle h6">
 		<div class="d-inline-block">
-			제품 상세정보<br>
-
+			제품 상세정보<br><br>
+			<p class="text-secondary my-1">제품명</p>
+			<h5 class="mb-0">&nbsp;&nbsp;${pdto.pdt_name }</h5><br>
+			<p class="text-secondary my-1">사이즈</p>
+			<h5 class="mb-0">
+				<c:forEach items="${pdto.optlist }" var="op">
+					&nbsp;&nbsp;${op.pdt_size_cd }
+				</c:forEach>
+			</h5><br>
+			<p class="text-secondary my-1">제품가격</p>
+			<h5 class="mb-0">&nbsp;&nbsp;${pdto.pdt_price } point</h5>
+			
 		</div>
 	</div>
+	<br>
 	<div class="row" id="sizediv">
 		<div class="col-12 px-0">
 			<div class="form-group">
@@ -106,7 +131,7 @@
 								<h5 class="text-success font-weight-normal mb-0">${pdto.pdt_price }P</h5>
 								<p class="text-secondary small text-mute mb-0 size" id="size">size
 									${pdto.optlist[0].pdt_size_cd }</p>
-								<input type="text" class="text-secondary small text-mute mb-0 size"
+								<input type="hidden" class="text-secondary small text-mute mb-0 size"
 								 id="ord_size" name="ord_size" value="${pdto.optlist[0].pdt_size_cd }">
 								<input type="hidden" class="text-secondary small text-mute mb-0 price"
 								 id="ord_detail_point" name="ord_detail_point" value="${pdto.pdt_price }">
@@ -146,12 +171,11 @@
 
 
 
-		<div class="card mb-4 border-0 shadow-sm border-top-dashed">
-			<div class="card-body text-center">
-				<p class="text-secondary my-1">총 수량</p>
+		
+				<%-- <p class="text-secondary my-1">총 수량</p>
 				<h3 class="mb-0" id="totalcnt" name="totalcnt">1</h3>
 				<p class="text-secondary my-1">결제해야할 포인트</p>
-				<h3 class="mb-0" id="point" name="point">${pdto.pdt_price }P</h3>
+				<h3 class="mb-0" id="point" name="point">${pdto.pdt_price }P</h3> --%>
 				<input type="hidden" id="sm_id" name="sm_id" value="${pdto.sm_id}">
 				<input type="hidden" id="pdt_no" name="pdt_no" value="${pdto.pdt_no }">
 				
@@ -167,8 +191,7 @@
 					</button>
 				</c:if>
 
-			</div>
-		</div>
+			
 	</form>
 
 	<script>
@@ -179,7 +202,7 @@
 
 			var num = $(this).parent().prev().val();
 			$(this).parent().prev().val(num * 1 + 1);
-			$('#totalcnt').text(num * 1 + 1);
+			/* $('#totalcnt').text(num * 1 + 1); */
 			$(this).closest('.prodcnt').prev().prev().find('.price').val(${pdto.pdt_price }*(num*1+1));
 		});
 		/*==================
@@ -191,7 +214,7 @@
 			var num = $(this).parent().next().val();
 			if (num > 1) {
 				$(this).parent().next().val(num * 1 - 1);
-				$('#totalcnt').text(num * 1 - 1);
+				/* $('#totalcnt').text(num * 1 - 1); */
 				$(this).closest('.prodcnt').prev().prev().find('.price').val(${pdto.pdt_price }*(num*1-1));
 			}
 
@@ -244,6 +267,28 @@
 		 }
 		 
 	 })
+	</script>
+	<script>
+	$(".bookmark").bind("click",funcbook);
+	
+	function funcbook(){
+		var i = this.parentNode.dataset.like;
+		console.log(i);
+		var thisbtn=$(this);
+		$.ajax({
+			type:"POST",
+			url:"/youshoes/ajax/BookmarkCheck.do",
+			data:{pdt_no : i}
+		}).done(function(result){
+			console.log(result);
+			if(result=="true"){
+				thisbtn.find("i").attr('class','material-icons text-secondary md-18 vm');
+			}else{
+				thisbtn.find("i").attr('class','material-icons text-warning md-18 vm')
+			}
+		})
+	}
+	
 	</script>
 
 
