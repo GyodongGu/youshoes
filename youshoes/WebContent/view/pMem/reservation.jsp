@@ -89,7 +89,10 @@ var event;
 			eventClick : function (info) {  
 				var del = confirm("예약 일정을 삭제 할까요 ? ");
 				var Hnum = {"res_no" : info.event.id};
-				if(del == true) {
+				if(info.event.title == '휴일') {
+				alert('선택하신 일정은 업체의 휴일입니다.');	
+				
+				}else if(del == true) {
 					$.ajax({
 						url: "${pageContext.request.contextPath}/ajax/DelReserv.do",
 						type:'GET',
@@ -100,7 +103,6 @@ var event;
 							}  
 					}) 
 				} 
- 
 			}, 
 		dateClick : function (date) {   
 			var ttdate = Tdate1(date.date);  
