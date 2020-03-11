@@ -45,7 +45,7 @@ public class ProductDAO extends DAO{
 				pdto.setPdt_price(rs.getInt("pdt_price"));
 				pdto.setPdt_stat_cd(rs.getString("pdt_stat_cd"));
 				pdto.setPdt_date(rs.getDate("pdt_date"));
-				
+				pdto.setPdt_remark(rs.getString("pdt_remark"));
 				pstmt1 = conn.prepareStatement(sql1);
 				pstmt1.setInt(1, rs.getInt("pdt_no"));
 				rs1=pstmt1.executeQuery();
@@ -185,6 +185,7 @@ public class ProductDAO extends DAO{
 				pdto.setPdt_price(rs.getInt("pdt_price"));
 				pdto.setPdt_stat_cd(rs.getString("pdt_stat_cd"));
 				pdto.setPdt_date(rs.getDate("pdt_date"));
+				pdto.setPdt_remark(rs.getString("pdt_remark"));
 				
 				pstmt1 = conn.prepareStatement(sql1);
 				pstmt1.setInt(1, rs.getInt("pdt_no"));

@@ -100,15 +100,15 @@ public class OrderPaymentDAO extends DAO{
 	//주문한 정보 배송테이블에 입력하기
 	public int insertDelivery(deliveryDTO ddto) {
 		int result=0;
-		String sql = "insert into delivery(ord_no, dlvy_date, dlvy_name, dlvy_tell, dlvy_post, dlvy_addr1, dlvy_addr2, dlvy_addr3, dlvy_remark) "
+		String sql = "insert into delivery(ord_no, dlvy_date, dlvy_name, dlvy_tell, dlvy_post, dlvy_addr1, dlvy_addr2, dlvy_addr3, dlvy_cd, dlvy_remark) "
 					+" values((select max(ord_no) from ord)";
 		
 		int cnt=0;
 		if(ddto.getDlvy_date() == null) {
-			sql=sql+",sysdate,?,?,?,?,?,?,?)";
+			sql=sql+",sysdate,?,?,?,?,?,?,?,?)";
 			
 		}else {
-			sql=sql+",?,?,?,?,?,?,?,?)";
+			sql=sql+",?,?,?,?,?,?,?,?,?)";
 			cnt=1;
 		}
 		
@@ -124,6 +124,7 @@ public class OrderPaymentDAO extends DAO{
 			pstmt.setString(++cnt, ddto.getDlvy_addr1());
 			pstmt.setString(++cnt, ddto.getDlvy_addr2());
 			pstmt.setString(++cnt, ddto.getDlvy_addr3());
+			pstmt.setString(++cnt, ddto.getDlvy_cd());
 			pstmt.setString(++cnt, ddto.getDlvy_remark());
 			
 			result = pstmt.executeUpdate();

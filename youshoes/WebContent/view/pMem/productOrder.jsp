@@ -102,7 +102,7 @@
 						<option value="D03">부재시, 경비실에 맡겨주세요.</option> 
 						<option value="D04">직접 입력</option> 
                         </select>
-                        <input type="hidden" class="form-control" id="etc" value="(직접입력)" />
+                        <input type="hidden" class="form-control" id="etc" name="etc" value="(직접입력)" />
 				 </div> 
 			</div>
 		</div>
