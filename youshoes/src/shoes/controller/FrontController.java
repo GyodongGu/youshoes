@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import shoes.command.BookmarkCheckCommand;
 import shoes.command.ChargePointCommand;
 import shoes.command.DelReservCommand;
+import shoes.command.GetDailyWorkCommand;
 import shoes.command.GetReservCommand;
 import shoes.command.InsertReviewCommand;
 import shoes.command.LikeCommand;
@@ -105,6 +106,7 @@ public class FrontController extends HttpServlet {
 		cont.put("/Reserv.do", new ReservationCommand());		//예약페이지 호출
 		cont.put("/ajax/SetReserv.do", new SetReservCommand()); // 구매 예약 입력
 		cont.put("/ajax/GetReserv.do", new GetReservCommand()); //구매 예약 출력
+		cont.put("/ajax/GetDailyWorkCommand.do", new GetDailyWorkCommand()); // 휴일일정 뷰
 		cont.put("/ajax/DelReserv.do", new DelReservCommand());  //구매 예약 삭제
 
 		cont.put("/ajax/Like.do", new LikeCommand());				//좋아요

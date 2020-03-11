@@ -11,19 +11,18 @@ import javax.servlet.http.HttpServletResponse;
 import net.sf.json.JSONArray;
 import shoes.common.Command;
 import shoes.dao.CallenderDAO;
-import shoes.dto.reservationDTO;
 
-public class GetReservCommand implements Command {
+public class GetDailyWorkCommand implements Command{
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-			
-			CallenderDAO dao = new CallenderDAO();
-			String smid = request.getParameter("sm_id");
-			List<Map<String, Object>> list = dao.selectform(smid);
-			String result = JSONArray.fromObject(list).toString(); 
-			
+		
+		CallenderDAO dao = new CallenderDAO();
+		String smid = request.getParameter("sm_id");
+		List<Map<String, Object>> list = dao.selectRes(smid);
+		String result = JSONArray.fromObject(list).toString();
+
 		return "ajax:" + result;
 	}
 

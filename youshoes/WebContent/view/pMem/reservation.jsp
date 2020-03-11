@@ -64,7 +64,7 @@ var event;
 		calendar = new FullCalendar.Calendar(calendarEl, {
 			plugins : ['interaction', 'dayGrid' ], 
 			views: { dayGridMonth: { titleFormat: {year: 'numeric', month: 'short' } } }, 
-			eventSources: ['${pageContext.request.contextPath}/ajax/GetReserv.do?sm_id=${smid}'],
+			eventSources: ['${pageContext.request.contextPath}/ajax/GetReserv.do?sm_id=${smid}', '${pageContext.request.contextPath}/ajax/GetDailyWorkCommand.do?sm_id=${smid}'], 
 			eventColor: '#964B00',
 			eventTextColor: 'white',
 			displayEventTime : true, 
@@ -140,7 +140,7 @@ var event;
 						});
 						//alert("'"+result +"''"+" 날짜로 예약 진행 되었습니다.");
 						var con = confirm("'"+result +"''"+" 날짜로 예약 진행하겠습니까?");
-						if(con){
+						if(con == true){
 							dialog.dialog("close");
 							location.href="${pageContext.request.contextPath}/ProductOrder.do?type=C&sm_id=${smid}&pdt_no=${pdtno}&result="+result;
 						}
