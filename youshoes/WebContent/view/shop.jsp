@@ -107,19 +107,13 @@ tr, td {
 	<!-- 가게 사진 이미지 -->
 	<div class="swiper-container product-details">
 		<div class="swiper-wrapper">
-			<div class="swiper-slide" style="padding: 0px">
+			<c:forEach items="${smem.img_name }" var="simg">
+				<div class="swiper-slide" style="padding: 0px">
 				<img
-					src="${pageContext.request.contextPath}/view/img/${smem.img_name[0].img_name}"
+					src="${pageContext.request.contextPath}/view/img/${simg.img_name}"
 					alt="">
-			</div>
-			<div class="swiper-slide">
-				<img src="${pageContext.request.contextPath}/view/img/handmade.jpg"
-					alt="">
-			</div>
-			<div class="swiper-slide">
-				<img src="${pageContext.request.contextPath}/view/img/handmade.jpg"
-					alt="">
-			</div>
+				</div>
+			</c:forEach>
 		</div>
 		<!-- 가게 사진 이미지의 pagination -->
 		<div class="swiper-pagination"></div>
