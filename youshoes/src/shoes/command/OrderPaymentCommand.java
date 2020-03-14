@@ -63,8 +63,9 @@ public class OrderPaymentCommand implements Command {
 		ddto.setDlvy_addr1(request.getParameter("pm_address"));
 		ddto.setDlvy_addr2(request.getParameter("pm_detailAddress"));
 		ddto.setDlvy_addr3(request.getParameter("pm_extraAddress"));
-		ddto.setDlvy_remark(request.getParameter("remarkSelect"));
 		
+		ddto.setDlvy_cd(request.getParameter("remarkSelect"));
+		ddto.setDlvy_remark(request.getParameter("etc"));
 		
 		opDAO.insertDelivery(ddto);
 		

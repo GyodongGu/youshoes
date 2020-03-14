@@ -64,7 +64,7 @@ var event;
 		calendar = new FullCalendar.Calendar(calendarEl, {
 			plugins : ['interaction', 'dayGrid' ], 
 			views: { dayGridMonth: { titleFormat: {year: 'numeric', month: 'short' } } }, 
-			eventSources: ['${pageContext.request.contextPath}/ajax/GetReserv.do?sm_id=${smid}'],
+			eventSources: ['${pageContext.request.contextPath}/ajax/GetReserv.do?sm_id=${smid}', '${pageContext.request.contextPath}/ajax/GetDailyWorkCommand.do?sm_id=${smid}'], 
 			eventColor: '#964B00',
 			eventTextColor: 'white',
 			displayEventTime : true, 
@@ -89,7 +89,10 @@ var event;
 			eventClick : function (info) {  
 				var del = confirm("예약 일정을 삭제 할까요 ? ");
 				var Hnum = {"res_no" : info.event.id};
-				if(del == true) {
+				if(info.event.title == '휴일') {
+				alert('선택하신 일정은 업체의 휴일입니다.');	
+				
+				}else if(del == true) {
 					$.ajax({
 						url: "${pageContext.request.contextPath}/ajax/DelReserv.do",
 						type:'GET',
@@ -100,7 +103,6 @@ var event;
 							}  
 					}) 
 				} 
- 
 			}, 
 		dateClick : function (date) {   
 			var ttdate = Tdate1(date.date);  
@@ -140,7 +142,7 @@ var event;
 						});
 						//alert("'"+result +"''"+" 날짜로 예약 진행 되었습니다.");
 						var con = confirm("'"+result +"''"+" 날짜로 예약 진행하겠습니까?");
-						if(con){
+						if(con == true){
 							dialog.dialog("close");
 							location.href="${pageContext.request.contextPath}/ProductOrder.do?type=C&sm_id=${smid}&pdt_no=${pdtno}&result="+result;
 						}

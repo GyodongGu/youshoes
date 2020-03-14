@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import shoes.dto.dailyWorkDTO;
 import shoes.dto.reservationDTO;
 
 public class CallenderDAO extends DAO{
@@ -28,12 +30,12 @@ public class CallenderDAO extends DAO{
 	}
 	
 	//예약 일정 뷰
-	public List<Map<String, Object>> selectform(String smid) {
+	public List<Map<String, Object>> selectform(String id) {
 		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 		try {
 			String sql = "select to_char(res_date, 'yyyy-mm-dd')||'T'||to_char(res_date, 'hh24:mi:ss') res_date, res_no from reservation where sm_id = ?";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, smid);
+			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
 				Map<String, Object> map = new HashMap<String, Object>();
@@ -42,6 +44,30 @@ public class CallenderDAO extends DAO{
 				map.put("id", rs.getInt("res_no"));
 				list.add(map);
 				
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return list;
+	}
+	
+	//휴일 일정 뷰
+	public List<Map<String, Object>> selectRes(String id) {
+		List<Map<String, Object>> list = new ArrayList<Map<String,Object>>();
+		try {
+			String sql = "select to_char(rest_date, 'yyyy-mm-dd') rest_date \r\n" + 
+					"from daily_work \r\n" + 
+					"where sm_id = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1,  id);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				Map<String, Object> map = new HashMap<String, Object>();
+				map.put("title", "휴일");
+				map.put("start", rs.getString("rest_date"));
+				list.add(map);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
