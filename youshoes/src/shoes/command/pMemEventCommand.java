@@ -18,8 +18,7 @@ import shoes.dto.reviewDTO;
 public class pMemEventCommand implements Command {
 
 	@Override
-	public String execute(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		noticeDAO ndao = new noticeDAO();
 		List<noticeDTO> pmemEvent = ndao.noticeSelect();
 		request.setAttribute("pmemEvent", pmemEvent);

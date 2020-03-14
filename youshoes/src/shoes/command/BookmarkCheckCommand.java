@@ -15,29 +15,27 @@ import shoes.dto.pmDTO;
 public class BookmarkCheckCommand implements Command {
 
 	@Override
-	public String execute(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		bookmarkDAO bdao = new bookmarkDAO();
 		bookmarkDTO bdto = new bookmarkDTO();
-		
+
 		int pdt_no = Integer.parseInt(request.getParameter("pdt_no"));
-		
+
 		HttpSession httpsession = request.getSession(true);
 		pmDTO pmdto = new pmDTO();
-		pmdto=(pmDTO) httpsession.getAttribute("pmDTO");
+		pmdto = (pmDTO) httpsession.getAttribute("pmDTO");
 		int pmno = pmdto.getPm_no();
-		
+
 		bdto.setPm_no(pmno);
 		bdto.setPdt_no(pdt_no);
 		boolean x = bdao.SelectBookMark(bdto);
-		
-		if(x) {
+
+		if (x) {
 			bdao.DeleteBookmark(bdto);
-		}else {
+		} else {
 			bdao.InsertBookmark(bdto);
 		}
-		return "ajax:"+x;
+		return "ajax:" + x;
 	}
 
 }

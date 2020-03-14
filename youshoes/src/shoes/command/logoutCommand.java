@@ -11,8 +11,7 @@ import shoes.common.Command;
 public class logoutCommand implements Command {
 
 	@Override
-	public String execute(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		return "view/pMem/logout.jsp";
 	}
 
