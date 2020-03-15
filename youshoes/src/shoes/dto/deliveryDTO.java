@@ -1,6 +1,7 @@
 package shoes.dto;
 
 import java.sql.Date;
+import java.util.List;
 
 public class deliveryDTO {
 	
@@ -15,10 +16,17 @@ public class deliveryDTO {
 	private String dlvy_cd;
 	private String dlvy_remark;
 	private int ord_no;
+	private List<ordDetailDTO> ordDetail;
 
 	
 	
 	
+	public List<ordDetailDTO> getOrdDetail() {
+		return ordDetail;
+	}
+	public void setOrdDetail(List<ordDetailDTO> ordDetail) {
+		this.ordDetail = ordDetail;
+	}
 	public String getDlvy_cd() {
 		return dlvy_cd;
 	}

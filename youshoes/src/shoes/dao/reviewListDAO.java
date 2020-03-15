@@ -47,6 +47,7 @@ public class reviewListDAO extends DAO {
 				rdto.setRw_stars(rs.getInt("rw_stars"));
 				rdto.setRw_date(rs.getDate("rw_date"));
 				rdto.setRw_content(rs.getString("rw_content"));
+				rdto.setSm_id(rs.getString("sm_id"));
 
 				pstmt1 = conn.prepareStatement(sql1);
 				pstmt1.setInt(1, rs.getInt("rw_no"));

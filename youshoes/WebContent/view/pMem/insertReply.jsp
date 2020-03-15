@@ -27,7 +27,7 @@
 	<div>
 		<!--상단 이전페이지 이동  -->
 		<h3>
-			<a href="${pageContext.request.contextPath}/Shop.do">←</a> 댓글
+			<a href="${pageContext.request.contextPath}/Shop.do?sm_id=${smid}">←</a> 댓글
 		</h3>
 		<hr>
 		

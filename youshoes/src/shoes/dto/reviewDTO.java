@@ -13,9 +13,16 @@ public class reviewDTO {
 	private String rw_content;
 	private List<imageDetailDTO> img_name;
 	private likeDTO likeview;
+	private String sm_id;
 	
 	
 	
+	public String getSm_id() {
+		return sm_id;
+	}
+	public void setSm_id(String sm_id) {
+		this.sm_id = sm_id;
+	}
 	public likeDTO getLikeview() {
 		return likeview;
 	}

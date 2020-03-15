@@ -34,12 +34,20 @@
 					<!-- 하이퍼링크에 제품 링크 걸어도 됨  --> 
 					<p class="text-secondary small mb-2">주문제작</p> 
 					<h5 class="text-success font-weight-normal mb-0"> 
-						금액 : ￦ 70,000
+						<c:forEach items="${ord.ordDetail }" var="price" varStatus="status">
+							<c:set var="total" value="${total + price.ord_detail_point }"></c:set>
+							
+						</c:forEach>
+						${total } point
 						<!--  <span class="badge badge-success d-inline-block ml-2"><small>10% off</small></span> -->
 					</h5>
-					<p class="text-secondary small text-mute mb-0">사이즈 : 230</p>
-					<p class="text-secondary small text-mute mb-0">색상 : 검정</p>
-					<p class="text-secondary small text-mute mb-0">수량 : 1ea</p>
+					<c:forEach items="${ord.ordDetail }" var="detail">
+						<span class="text-secondary small text-mute mb-0">사이즈 : ${detail.ord_size }</span>&nbsp;&nbsp;
+						<span class="text-secondary small text-mute mb-0">색상 : ${detail.ord_color }</span>&nbsp;&nbsp;
+						<span class="text-secondary small text-mute mb-0">수량 : ${detail.ord_cnt }</span>&nbsp;&nbsp;
+						<br>
+					</c:forEach>
+					
 				</div>
 			</div>
 		
@@ -48,11 +56,11 @@
 				<div class="col-12 col-md-6"> 
 					<div class="form-group float-label active"> 
 					<label class="form-control-label"><h6><b>주문고객정보</b></h6></label>
-						<input type="text" class="form-control" required="" value="주문고객 : " disabled="disabled">
+						<input type="text" class="form-control" required="" value="주문고객 : ${ord.dlvy_name }" disabled="disabled">
 						<input type="text" class="form-control" required="" value="받으실분 : " disabled="disabled"> 
-						<input type="text" class="form-control" required="" value="연락처 : " disabled="disabled"> 
-						<input type="text" class="form-control" required="" value="배송주소 : " disabled="disabled">
-						<input type="text" class="form-control" required="" value="최종결제금액 : " disabled="disabled"> 
+						<input type="text" class="form-control" required="" value="연락처 : ${ord.dlvy_tell }" disabled="disabled"> 
+						<input type="text" class="form-control" required="" value="배송주소 : ${ord.dlvy_addr1 }" disabled="disabled">
+						<input type="text" class="form-control" required="" value="최종결제금액 : ${total } point" disabled="disabled"> 
 						<input type="text" class="form-control" required="" value="제작현황 : " disabled="disabled">
 						<input type="text" class="form-control" required="" value="배송현황 : " disabled="disabled">
 						<%-- <a href="https://tracker.delivery/#/kr.epost/${ord.invoice_no }" target="_blank"> 배송조회</a> --%>

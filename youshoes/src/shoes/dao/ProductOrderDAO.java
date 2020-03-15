@@ -1,5 +1,7 @@
 package shoes.dao;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -30,23 +32,55 @@ public class ProductOrderDAO extends DAO {
 		return dto; // 한 회원의 정보를 넘김
 	}
 	
+	/**
+	 * @param id
+	 * @return
+	 */
 	public List<deliveryDTO> select2(int id) {
 		List<deliveryDTO> list = new ArrayList<deliveryDTO>();
-		String sql = "select b.ord_no ord_no, a.invoice_no invoice_no, b.pm_no  pm_no \r\n" + 
+		String sql = "select * " + 
 				"from delivery a, ord b \r\n" + 
 				"where a.ord_no = b.ord_no \r\n" + 
 				"and b.pm_no = ?";
+		String sql1 ="select * from ord_detail where ord_no=?";
+		
+		PreparedStatement pstmt1;
+		ResultSet rs1;
+		
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, id);
-			rs = pstmt.executeQuery();
+			rs = pstmt.executeQuery();	
 			while (rs.next()) {
 				deliveryDTO dto = new deliveryDTO();
 				dto.setOrd_no(rs.getInt("ord_no"));
 				dto.setInvoice_no(rs.getString("invoice_no"));
+				dto.setDlvy_name(rs.getString("dlvy_name"));
+				dto.setDlvy_tell(rs.getString("dlvy_tell"));
+				dto.setDlvy_post(rs.getString("dlvy_post"));
+				dto.setDlvy_addr1(rs.getString("dlvy_addr1"));
+				dto.setDlvy_addr2(rs.getString("dlvy_addr2"));
+				dto.setDlvy_addr3(rs.getString("dlvy_addr3"));
+				dto.setDlvy_cd(rs.getString("dlvy_cd"));
+				
+				pstmt1=conn.prepareStatement(sql1);
+				pstmt1.setInt(1, rs.getInt("ord_no"));
+				rs1=pstmt1.executeQuery();
+				List<ordDetailDTO> olist = new ArrayList<ordDetailDTO>();
+				
+				while(rs1.next()) {
+					ordDetailDTO odto = new ordDetailDTO();
+					odto.setOrder_detail_no(rs1.getInt("ord_detail_no"));
+					odto.setOrd_size(rs1.getInt("ord_size"));
+					odto.setOrd_color(rs1.getString("ord_color"));
+					odto.setOrd_cnt(rs1.getInt("ord_cnt"));
+					odto.setOrd_detail_point(rs1.getInt("ord_detail_point"));
+					olist.add(odto);
+					dto.setOrdDetail(olist);
+				}
+				
+				
 				list.add(dto);
-				System.out.println(dto.getInvoice_no());
-				System.out.println(dto.getOrd_no());
 				
 			}
 		} catch (SQLException e) {
