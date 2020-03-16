@@ -1,6 +1,7 @@
 package shoes.command;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -22,7 +23,22 @@ public class orderHistoryCommand implements Command {
 		int pmNO = ((pmDTO)request.getSession().getAttribute("pmDTO")).getPm_no();
 
 		List<ordDTO> ordHistory = ohdao.selectOrderList(pmNO);
-		request.setAttribute("ordHistory", ordHistory);
+		
+		String page = request.getParameter("p");
+		int pageNum = 1;
+		if(page !=null) {
+			pageNum = Integer.parseInt(page);
+		}
+		
+		int count = ohdao.ordListCount(pmNO);
+		
+		List<ordDTO> list = new ArrayList<ordDTO>();
+		list = ohdao.OrdListPager(pmNO, pageNum);
+		
+		
+		//request.setAttribute("ordHistory", ordHistory);
+		request.setAttribute("olist", list);
+		request.setAttribute("count", count);
 		
 		return "/view/pMem/orderHistory.jsp";
 	}

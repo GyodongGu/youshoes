@@ -3,6 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 	<%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator"
 	prefix="decorator"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,13 +33,23 @@
 				<div class="col">
 					<a href="" class="text-dark mb-1 h6 d-block"><b>여성용 구두</b></a>
 					<!-- 하이퍼링크에 제품 링크 걸어도 됨  --> 
-					<p class="text-secondary small mb-2">주문제작</p> 
+					<c:if test="${ord.ordDetail[0].ord_size == 0 }">
+						<p class="text-secondary small mb-2">맞춤화</p> 
+					</c:if>
+					<c:if test="${ord.ordDetail[0].ord_size != 0 }">
+						<p class="text-secondary small mb-2">기성화</p>
+					</c:if>
+					
 					<h5 class="text-success font-weight-normal mb-0"> 
-						<c:forEach items="${ord.ordDetail }" var="price" varStatus="status">
-							<c:set var="total" value="${total + price.ord_detail_point }"></c:set>
+						
+						<c:if test="${ord.ordDetail[0].ord_cnt != 0 }">
 							
-						</c:forEach>
-						${total } point
+							<fmt:formatNumber value="${ord.ordDetail[0].ord_detail_point div ord.ordDetail[0].ord_cnt}" type="number"></fmt:formatNumber>
+						</c:if>
+						<c:if test="${ord.ordDetail[0].ord_cnt == 0 }">
+							<fmt:formatNumber value="${ord.ordDetail[0].ord_detail_point div 1}" type="number"></fmt:formatNumber>
+							
+						</c:if>	
 						<!--  <span class="badge badge-success d-inline-block ml-2"><small>10% off</small></span> -->
 					</h5>
 					<c:forEach items="${ord.ordDetail }" var="detail">
@@ -50,16 +61,18 @@
 					
 				</div>
 			</div>
+			<c:forEach items="${ord.ordDetail }" var="price" varStatus="status">
+							<c:set var="total" value="${total + price.ord_detail_point }"></c:set>
+			</c:forEach>
 		
 			<br>
 			<div class="row">
 				<div class="col-12 col-md-6"> 
 					<div class="form-group float-label active"> 
 					<label class="form-control-label"><h6><b>주문고객정보</b></h6></label>
-						<input type="text" class="form-control" required="" value="주문고객 : ${ord.dlvy_name }" disabled="disabled">
-						<input type="text" class="form-control" required="" value="받으실분 : " disabled="disabled"> 
+						<input type="text" class="form-control" required="" value="받으실분 : ${ord.dlvy_name }" disabled="disabled"> 
 						<input type="text" class="form-control" required="" value="연락처 : ${ord.dlvy_tell }" disabled="disabled"> 
-						<input type="text" class="form-control" required="" value="배송주소 : ${ord.dlvy_addr1 }" disabled="disabled">
+						<input type="text" class="form-control" required="" value="배송주소 : ${ord.dlvy_addr1 } ${ord.dlvy_addr2 } ${ord.dlvy_addr3 }" disabled="disabled">
 						<input type="text" class="form-control" required="" value="최종결제금액 : ${total } point" disabled="disabled"> 
 						<input type="text" class="form-control" required="" value="제작현황 : " disabled="disabled">
 						<input type="text" class="form-control" required="" value="배송현황 : " disabled="disabled">
@@ -70,6 +83,21 @@
 			</div>
 		</div>
 	</div>
+	<c:set var="total" value="0"></c:set>
+	</c:forEach>
+		<!-- 페이징 -->
+	<nav aria-label="Page navigation example" class="text-center">
+	<c:set var="pager" value="${(param.p == null) ? 1:param.p }"></c:set>
+	<c:set var="startNum" value="${pager-(pager-1)%5 }"></c:set>
+		<ul class="pagination">
+			<li class="page-item"><a class="page-link" href="#" aria-label="Previous"> <span aria-hidden="true">&laquo;</span></a></li>
+			
+			<c:forEach var="i" begin="0" end="4">
+				<li class="page-item"><a class="page-link" href="?p=${startNum+i }">${startNum+i }</a></li>
 			</c:forEach>
+			<li class="page-item"><a class="page-link" href="#" aria-label="Next"> <span aria-hidden="true">&raquo;</span></a></li>
+		</ul>
+		
+	</nav>
 </body>
 </html>
