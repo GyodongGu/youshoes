@@ -15,16 +15,23 @@ import shoes.dto.noticeDTO;
  */
 
 public class noticeDAO extends DAO {
-	public List<noticeDTO> noticeSelect() { // 1. 공지사항 전체 가져오기 noticeSelect()
+	public List<noticeDTO> noticeSelect(int page) { // 1. 공지사항 전체 가져오기 noticeSelect()
 		List<noticeDTO> list = new ArrayList<noticeDTO>();
-		String sql = "select * from notice";
+		String sql="select * from ( " + 
+				" select rownum num, n.* " + 
+				" from (select * from notice order by notice_no desc) n " + 
+				" ) " + 
+				" where num between ? and ?";
 
 		try {
 			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, 1+(page-1)*5);
+			pstmt.setInt(2, page*5);
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
 				// notice_no, notice_title, notice_date, notice_content
 				noticeDTO ndto = new noticeDTO();
+				ndto.setNum(rs.getInt("num"));
 				ndto.setNotice_no(rs.getInt("notice_no"));
 				ndto.setNotice_title(rs.getString("notice_title"));
 				ndto.setNotice_date(rs.getDate("notice_date"));
@@ -33,11 +40,31 @@ public class noticeDAO extends DAO {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} finally {
-			close();
 		}
 		return list;
 	}
+	
+	public int eventCount() {
+		int result=0;
+		
+		String sql = "select count(notice_no) count from notice";
+		
+		try {
+			pstmt=conn.prepareStatement(sql);
+			rs=pstmt.executeQuery();
+			
+			if(rs.next()) {
+				result=rs.getInt("count");
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	
+	
 
 //	public List<noticeDTO> noticeInsert(int no, String title, ) { // 2. 관리자 공지사항 등록 noticeInsert()
 //		List<noticeDTO> insertList = new ArrayList<noticeDTO>();

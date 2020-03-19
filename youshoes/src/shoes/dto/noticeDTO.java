@@ -7,7 +7,16 @@ public class noticeDTO {
 	private String notice_title;
 	private Date notice_date;
 	private String notice_content;
+	private int num;
 	
+	
+	
+	public int getNum() {
+		return num;
+	}
+	public void setNum(int num) {
+		this.num = num;
+	}
 	public int getNotice_no() {
 		return notice_no;
 	}

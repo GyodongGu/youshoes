@@ -19,10 +19,22 @@ public class pMemEventCommand implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String page = request.getParameter("p");
+		int pageNum = 1;
+		if(page !=null) {
+			pageNum = Integer.parseInt(page);
+		}
+		
 		noticeDAO ndao = new noticeDAO();
-		List<noticeDTO> pmemEvent = ndao.noticeSelect();
+		List<noticeDTO> pmemEvent = ndao.noticeSelect(pageNum);
+		
+		int count = 0;
+		count = ndao.eventCount();
+		
 		request.setAttribute("pmemEvent", pmemEvent);
-
+		request.setAttribute("count", count);
+		
 		return "/view/pMem/pMemEvent.jsp";
 	}
 

@@ -58,7 +58,6 @@
 				<li class="page-item"><a class="page-link" onclick="alert('이전 페이지가 없습니다.')" aria-label="Previous"> <span aria-hidden="true">&laquo;</span></a></li>
 			</c:if>
 			
-			
 			<c:forEach var="i" begin="0" end="4">
 				<c:if test="${(startNum+i)<= lastNum }">
 					<li class="page-item"><a class="page-link" href="?p=${startNum+i }">${startNum+i }</a></li>
