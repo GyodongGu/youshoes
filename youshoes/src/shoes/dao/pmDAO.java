@@ -72,7 +72,7 @@ public class pmDAO extends DAO {
 	public int pmInsert(pmDTO dto) { // 2. 회원 등록 (회원 가입) pmInsert()
 		int n = 0;
 		/* 유승우 2020.02.10 뭘 넣어야 할지 아직 모르겠음 */
-		String sql = "insert into purchase_member(pm_no, pm_id, pm_pw, pm_name, pm_stat_cd, pm_birth, pm_email, pm_date, pm_tell, pm_post, pm_addr1, pm_addr2, pm_addr3, point_now )"
+		String sql = "insert into purchase_member(pm_no, pm_id, pm_pw, pm_name, pm_stat_cd, pm_birth, pm_email, pm_date, pm_tell, pm_post, pm_addr1, pm_addr2, pm_addr3, point_now, mgr_auth_cd )"
 				+ " values((select max(pm_no)+1 from purchase_member), ?, ?, ?, 'ACT04', ?, ?, sysdate, ?, ?, ?, ?, ?, 500,'M03')";
 
 		// 회원번호, 아이디, 비번, 이름, 상태, 생년월일, 이메일, 가입일, 전화번호, 우편번호, 주소1, 주소2, 주소3, 포인트
@@ -113,6 +113,7 @@ public class pmDAO extends DAO {
 			pstmt.setString(8, pmId);
 			
 			p = pstmt.executeUpdate();
+			System.out.println("회원정보가 "+p+"건 변경되었습니다.");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} 
@@ -140,12 +141,15 @@ public class pmDAO extends DAO {
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
-				bol = false;
+				if(rs.getString("pm_id")==null || rs.getString("pm_id")=="" ) {
+					bol=true;
+				}else {
+					bol=false;
+				}
+				
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} finally {
-			close();
 		}
 		return bol;
 	}
@@ -187,15 +191,15 @@ public class pmDAO extends DAO {
 
 	public int selectPoint(int id) { // 7. 구매회원 현재 포인트 확인 selectPoint()
 		int n = 0;
-		String sql = "select sum(point_charge) as idpoint from point where pm_no=?";
-
+		//String sql = "select sum(point_charge) as idpoint from point where pm_no=?";
+		String sql = "select point_now from purchase_member where pm_no=?";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, id);
 			rs = pstmt.executeQuery();
 
 			if (rs.next()) {
-				n = rs.getInt("idpoint");
+				n = rs.getInt("point_now");
 			}
 
 		} catch (SQLException e) {

@@ -32,25 +32,25 @@
 			<!-- // 프로필 이미지 사진  -->
 
 			<!-- 안쪽에 프로필 수정하려는 입력 값 받는 곳 -->
-			<form action="profileUpdate.do" method="post" id="profileUpdate" name="profileUpdate">
+			<form action="profileUpdate.do" method="post" id="profileUpdate" name="profileUpdate" onsubmit="return updateprofile()">
 				<h6 class="subtitle">기본 정보</h6>
 				<div class="row">
 					<div class="col-12 col-md-6">
 						<div class="form-group float-label active">
-							<input type="text" class="form-control" id="pm_name" name="pm_name" value="${pmDTO.pm_name }"> <label class="form-control-label">이름</label>
+							<input type="text" class="form-control" id="pm_name" name="pm_name" value="${pdto.pm_name }" readonly> <label class="form-control-label">이름</label>
 
 						</div>
 					</div>
 					<div class="col-12 col-md-6">
 						<div class="form-group float-label active">
-							<input type="email" class="form-control" id="pm_email" name="pm_email" value="${pmDTO.pm_email }"> <label class="form-control-label">이메일</label>
+							<input type="email" class="form-control" id="pm_email" name="pm_email" value="${pdto.pm_email }"> <label class="form-control-label">이메일</label>
 						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-12 col-md-6">
 						<div class="form-group float-label active">
-							<input type="tel" class="form-control" id="pm_tell" name="pm_tell" value="${pmDTO.pm_tell }"> <label class="form-control-label">전화번호</label>
+							<input type="tel" class="form-control" id="pm_tell" name="pm_tell" value="${pdto.pm_tell }"> <label class="form-control-label">전화번호</label>
 						</div>
 					</div>
 				</div>
@@ -67,28 +67,28 @@
 					<div class="row">
 						<div class="col-6">
 							<div class="form-group float-label active">
-								<input type="text" class="form-control" id="pm_post" style="width: 100px;" value="${pmDTO.pm_post }"> <label class="form-control-label">우편 번호</label>
+								<input type="text" class="form-control" id="pm_post" name="pm_post" style="width: 100px;" value="${pdto.pm_post }"> <label class="form-control-label">우편 번호</label>
 							</div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12 col-6">
 							<div class="form-group float-label active">
-								<input type="text" class="form-control" id="pm_addr1" value="${pmDTO.pm_addr1 }"> <label class="form-control-label">주소</label>
+								<input type="text" class="form-control" id="pm_addr1" name="pm_addr1" value="${pdto.pm_addr1 }"> <label class="form-control-label">주소</label>
 							</div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12 col-6">
 							<div class="form-group float-label active">
-								<input type="text" class="form-control" id="pm_addr2" value="${pmDTO.pm_addr2 }"> <label class="form-control-label">상세주소</label>
+								<input type="text" class="form-control" id="pm_addr2" name="pm_addr2" value="${pdto.pm_addr2 }"> <label class="form-control-label">상세주소</label>
 							</div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12 col-6">
 							<div class="form-group float-label active">
-								<input type="text" class="form-control" id="pm_addr3" value="${pmDTO.pm_addr3 }"> <label class="form-control-label">참고항목</label>
+								<input type="text" class="form-control" id="pm_addr3" name="pm_addr3" value="${pdto.pm_addr3 }"> <label class="form-control-label">참고항목</label>
 							</div>
 						</div>
 					</div>
@@ -180,6 +180,37 @@
 
 			// iframe을 넣은 element를 보이게 한다.
 			element_wrap.style.display = 'block';
+		}
+	</script>
+	<script>
+		function updateprofile(){
+			if(profileUpdate.pm_email.value==""){
+				alert("이메일을 입력하세요");
+				profileUpdate.pm_email.focus();
+				return false;
+			}
+			if(profileUpdate.pm_tell.value==""){
+				alert("전화번호를 입력하세요");
+				profileUpdate.pm_tell.focus();
+				return false;
+			}
+			if(profileUpdate.pm_post.value==""){
+				alert("우편번호를 입력하세요");
+				profileUpdate.pm_post.focus();
+				return false;
+			}
+			if(profileUpdate.pm_addr1.value==""){
+				alert("주소를 입력하세요");
+				profileUpdate.pm_addr1.focus();
+				return false;
+			}
+			
+			var result = confirm("정보를 수정하시겠습니까?");
+			if(result){
+				return true;
+			}else{
+				return false;
+			}
 		}
 	</script>
 </body>

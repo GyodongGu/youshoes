@@ -25,14 +25,16 @@ function openFormClose(n) {
 				<c:when test="${idCheck == true }">
 					<script>
 						alert('${pm_id }는 사용할 수 있는 아이디입니다.');
-						location.href = 'openFormClose(1)';
+						//location.href = 'openFormClose(1)';
+						openFormClose(1);
 						window.close();
 					</script>
 				</c:when>
 				<c:otherwise>
 					<script>
 						alert('${pm_id }는 이미 사용중인 아이디입니다.');
-						location.href = 'openFormClose(0)';
+						//location.href = 'openFormClose(0)';
+						openFormClose(0);
 						window.close();
 					</script>
 				</c:otherwise>

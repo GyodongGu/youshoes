@@ -27,9 +27,11 @@ import shoes.command.ReviewCommand;
 import shoes.command.SetReservCommand;
 import shoes.command.ShopCommand;
 import shoes.command.bookmarkCommand;
+import shoes.command.idOverlapOkCommand;
 import shoes.command.indexCommand;
 import shoes.command.insertReviewFormCommand;
 import shoes.command.joinCommand;
+import shoes.command.joinOkCommand;
 import shoes.command.loginCommand;
 import shoes.command.loginOkCommand;
 import shoes.command.logoutCommand;
@@ -37,10 +39,10 @@ import shoes.command.myReviewCommand;
 import shoes.command.orderHistoryCommand;
 import shoes.command.pMemCommand;
 import shoes.command.pMemEventCommand;
-import shoes.command.pMemManageCommand;
 import shoes.command.pointCommand;
 import shoes.command.profileSetCommand;
 import shoes.command.profileUpdateCommand;
+import shoes.command.profileUpdateFormCommand;
 import shoes.command.searchShopCommand;
 import shoes.command.sidebar1Command;
 import shoes.common.Command;
@@ -70,8 +72,8 @@ public class FrontController extends HttpServlet {
 		cont.put("/login.do", new loginCommand()); 				   // 로그인
 		cont.put("/loginOk.do", new loginOkCommand());  		   // 로그인 체크
 		cont.put("/join.do", new joinCommand()); 				   // 회원가입
-		//	cont.put("/joinOk.do", new joinOkCommand());           // 회원가입 체크
-		//	cont.put("/idOverlapOk.do", new idOverlapOkCommand()); // 구매회원 아이디 중복체크
+		cont.put("/joinOk.do", new joinOkCommand());           // 회원가입 체크
+		cont.put("/idOverlapOk.do", new idOverlapOkCommand()); // 구매회원 아이디 중복체크
 		cont.put("/pMem.do", new pMemCommand()); 				   // 로그인 후 메인화면
 		cont.put("/searchShop.do", new searchShopCommand()); 	   // 가게 더보기
 
@@ -84,6 +86,7 @@ public class FrontController extends HttpServlet {
 
 		cont.put("/sidebar1.do", new sidebar1Command()); 				 // 구매 회원의 사이드바 현재 포인트 확인
 		cont.put("/profileSet.do", new profileSetCommand()); 			 // 구매 회원 프로필 메인
+		cont.put("/profileUpdateForm.do", new profileUpdateFormCommand());//구매 회원 프로필 수정 폼
 		cont.put("/profileUpdate.do", new profileUpdateCommand());  	 // 구매 회원 프로필 수정
 		cont.put("/pMemEvent.do", new pMemEventCommand()); 				 // 구매 회원 이벤트 목록 보기
 		cont.put("/bookmark.do", new bookmarkCommand()); 				 // 구매 회원 즐겨찾기 상품 보기
