@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import shoes.dto.codeDTO;
 import shoes.dto.ordDTO;
 
 /**
@@ -61,8 +62,10 @@ public class ordDAO extends DAO {
 				oddto.setPdt_no(rs.getInt("pdt_no"));
 				oddto.setOrd_date(rs.getDate("ord_date"));
 				oddto.setOrd_point(rs.getInt("ord_point"));
-				oddto.setOrd_stat_cd(rs.getString("ord_stat_cd"));
+				CodeDAO cdao = new CodeDAO();
+				oddto.setOrd_stat_cd(cdao.CodeName(rs.getString("ord_stat_cd")));
 				list.add(oddto);
+				
 			}
 			
 		} catch (SQLException e) {

@@ -12,7 +12,7 @@ public class OrderPaymentDAO extends DAO{
 	public int InsertOrd(int pmno, int pdtno, int point) {
 		int result=0;
 		
-		String sql = "insert into ord values((select max(ord_no)+1 from ord),?,?,sysdate,?,'001')";
+		String sql = "insert into ord values((select max(ord_no)+1 from ord),?,?,sysdate,?,'O01')";
 		
 		try {
 			pstmt=conn.prepareStatement(sql);
