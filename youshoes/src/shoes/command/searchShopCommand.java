@@ -19,7 +19,17 @@ public class searchShopCommand implements Command {
 			throws ServletException, IOException {
 		sMemDAO smdao = new sMemDAO();
 		List<smDTO> list = new ArrayList<smDTO>();
-		list = smdao.sMemListFive();
+		String query = null;
+		String pquery = request.getParameter("q");
+		
+		if(pquery != null) {
+			query=pquery;
+		}
+		if(pquery=="") {
+			query=null;
+		}
+		
+		list = smdao.sMemList(query);
 		
 		request.setAttribute("smfive", list);
 		

@@ -6,7 +6,9 @@
 </head>
 <body>
 			<!-- 검색창 부분 -->
-			<input type="text" class="form-control form-control-lg search my-3" placeholder="검색">
+			<form name="searchFrm" action="${pageContext.request.contextPath}/searchShop.do" >
+			<input type="text" class="form-control form-control-lg search my-3" placeholder="검색" name="q" value="${param.q }">
+			</form>
 			<!-- 구매 회원 가게검색페이지의 카테고리 -->
 			<div class="subtitle h6">
 				<div class="d-inline-block">
