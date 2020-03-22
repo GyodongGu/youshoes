@@ -58,10 +58,15 @@ public class sMemDAO extends DAO{
 			
 		return smdto;
 	}
-	public List<smDTO> sMemListFive(){
+	public List<smDTO> sMemListFive(String query){
 		List<smDTO> list = new ArrayList<smDTO>();
 		
 		String sql = "select * from sales_member where rownum<=5";
+		
+		if(query != null) {
+			sql = "select * from sales_member where shop_name=?";
+		}
+		
 		String sql1="select img_name from image i join image_detail d on i.img_no=d.img_no where section='I01' and section_no=?";
 
 		PreparedStatement pstmt1;
@@ -69,6 +74,9 @@ public class sMemDAO extends DAO{
 		
 		try {
 			pstmt=conn.prepareStatement(sql);
+			if(query!=null) {
+				pstmt.setString(1, query);
+			}
 			rs=pstmt.executeQuery();
 			
 			while(rs.next()) {

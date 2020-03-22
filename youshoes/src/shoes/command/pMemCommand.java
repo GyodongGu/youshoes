@@ -19,8 +19,17 @@ public class pMemCommand implements Command{
 			throws ServletException, IOException {
 		
 		sMemDAO smdao = new sMemDAO();
+		String query = null;
+		String pquery = request.getParameter("q");
+		
+		if(pquery != null) {
+			query=pquery;
+		}
+		if(pquery=="") {
+			query=null;
+		}
 		List<smDTO> list = new ArrayList<smDTO>();
-		list = smdao.sMemListFive();
+		list = smdao.sMemListFive(query);
 		
 		request.setAttribute("smfive", list);
 		

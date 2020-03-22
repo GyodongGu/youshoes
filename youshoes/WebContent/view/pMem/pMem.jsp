@@ -8,8 +8,9 @@
 </head>
 <body>
 	<!-- 검색창 부분 -->
-	<form name=searchFrm">
-		<input type="text" class="form-control form-control-lg search my-3" placeholder="검색">
+	<form name="searchFrm" action="${pageContext.request.contextPath}/pMem.do" >
+		<input type="text" class="form-control form-control-lg search my-3" placeholder="검색" aria-label="Search" name="q" value="${param.q }">
+		<!-- <button type="submit">Search</button> -->
 	</form>
 	<!-- 구매 회원 메인 페이지의 가게 -->
 	<h6 class="subtitle">
