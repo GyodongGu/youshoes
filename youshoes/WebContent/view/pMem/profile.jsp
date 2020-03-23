@@ -37,11 +37,15 @@
 	<div class="text-center">
 		<div class="figure-profile shadow my-4">
 			<figure>
-				<img src="${pageContext.request.contextPath}/view/img/user1.jpg" alt="">
+				<c:if test="${empty pdto.img_name}">
+					<img src="${pageContext.request.contextPath}/view/img/user1.jpg" alt="">
+				</c:if>
+				<c:if test="${!empty pdto.img_name}">
+					<img src="${pageContext.request.contextPath}/view/img/${pdto.img_name}" alt="">
+				</c:if>
+				
 			</figure>
-			<div class="btn btn-dark text-white floating-btn">
-				<i class="material-icons">camera_alt</i> <input type="file" class="float-file">
-			</div>
+			
 		</div>
 	</div>
 	<!-- // 프로필 이미지 사진  -->

@@ -8,12 +8,15 @@ import java.text.SimpleDateFormat;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import shoes.common.Command;
 import shoes.dao.CallenderDAO;
 import shoes.dao.OrderPaymentDAO;
+import shoes.dao.pmDAO;
 import shoes.dto.deliveryDTO;
 import shoes.dto.ordDetailDTO;
+import shoes.dto.pmDTO;
 import shoes.dto.reservationDTO;
 
 public class OrderPaymentCommand implements Command {
@@ -99,6 +102,13 @@ public class OrderPaymentCommand implements Command {
 		}
 		
 		
+		
+		HttpSession httpsession = request.getSession(); 
+		String id = (String) httpsession.getAttribute("id");
+		pmDAO dao = new pmDAO();
+		pmDTO dto = dao.selectOne(id);
+		
+		httpsession.setAttribute("pmDTO", dto);
 			
 		
 		return "/orderHistory.do";

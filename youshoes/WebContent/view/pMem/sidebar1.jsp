@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator" prefix="decorator"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!doctype html>
 <html lang="en" class="brown-theme">
 <head>
@@ -90,7 +91,12 @@
 		<div class="text-center">
 			<div class="figure-menu shadow">
 				<figure>
+					<c:if test="${empty pmDTO.img_name}">
 					<img src="${pageContext.request.contextPath}/view/img/user1.jpg" alt="">
+				</c:if>
+				<c:if test="${!empty pmDTO.img_name}">
+					<img src="${pageContext.request.contextPath}/view/img/${pmDTO.img_name}" alt="">
+				</c:if>
 				</figure>
 			</div>
 			<h5 class="mb-1 ">${pmDTO.pm_name} 님( ${pmDTO.pm_id} )</h5>

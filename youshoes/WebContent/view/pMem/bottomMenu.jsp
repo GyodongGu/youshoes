@@ -30,7 +30,7 @@
 					</a>
 				</div>
 				<div class="col-auto">
-					<a href="${pageContext.request.contextPath}/view/pMem/profile.jsp" class="btn btn-link-default default"> <i class="material-icons">account_circle</i>
+					<a href="${pageContext.request.contextPath}/profile.do" class="btn btn-link-default default"> <i class="material-icons">account_circle</i>
 					</a>
 				</div>
 			</div>

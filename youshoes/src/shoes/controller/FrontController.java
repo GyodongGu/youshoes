@@ -40,6 +40,7 @@ import shoes.command.orderHistoryCommand;
 import shoes.command.pMemCommand;
 import shoes.command.pMemEventCommand;
 import shoes.command.pointCommand;
+import shoes.command.profileCommand;
 import shoes.command.profileSetCommand;
 import shoes.command.profileUpdateCommand;
 import shoes.command.profileUpdateFormCommand;
@@ -83,7 +84,7 @@ public class FrontController extends HttpServlet {
 
 		cont.put("/point.do", new pointCommand()); 					// 구매 회원 현재 포인트 확인
 		cont.put("/ajax/ChargePoint.do", new ChargePointCommand()); // 구매 회원 결제한 포인트 추가
-
+		cont.put("/profile.do", new profileCommand());					 //프로필화면
 		cont.put("/sidebar1.do", new sidebar1Command()); 				 // 구매 회원의 사이드바 현재 포인트 확인
 		cont.put("/profileSet.do", new profileSetCommand()); 			 // 구매 회원 프로필 메인
 		cont.put("/profileUpdateForm.do", new profileUpdateFormCommand());//구매 회원 프로필 수정 폼

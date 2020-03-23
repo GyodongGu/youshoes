@@ -25,13 +25,24 @@ public class myReviewCommand implements Command {
 		
 		HttpSession session = request.getSession(false);
 		String id = (String) session.getAttribute("id");
+		String ordno = request.getParameter("ord_no");
+		
 		pmDTO dto = new pmDTO();
 		ProductOrderDAO dao = new ProductOrderDAO();
 		dto = dao.select(id);
 		
-		int ordno = dto.getPm_no();
-		List<deliveryDTO> deli = dao.select2(ordno);
+		int pmno = dto.getPm_no();
+		List<deliveryDTO> deli = dao.select2(pmno);
+		
+		
+		
+		ProductOrderDAO pdao = new ProductOrderDAO();
+		deliveryDTO ddto = new deliveryDTO();
+		ddto = pdao.ordHistory(Integer.parseInt(ordno));
+		
+		
 		request.setAttribute("list", deli);
+		request.setAttribute("ddto", ddto);
 		
 		return "/view/pMem/myReview.jsp";
 	}
