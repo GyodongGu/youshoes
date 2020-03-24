@@ -20,6 +20,7 @@
 <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 <!-- Custom styles for this template -->
 <link href="${contextPath}/view/css/agency.min.css" rel="stylesheet">
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 </head>
 <body id="page-top">
 	<!-- Navigation -->
@@ -32,9 +33,9 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav text-uppercase ml-auto">
-					<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Services</a></li>
-					<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
-					<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Team</a></li>
+					<li class="nav-item" id="serbtn"><a class="nav-link js-scroll-trigger" >Services</a></li>
+					<li class="nav-item" id="abobtn"><a class="nav-link js-scroll-trigger" >About</a></li>
+					<li class="nav-item" id="teambtn"><a class="nav-link js-scroll-trigger" >Team</a></li>
 				</ul>
 			</div>
 		</div>
@@ -196,6 +197,23 @@
 			</div>
 		</div>
 	</section>
+	
+	<script type="text/javascript">
+		$('#serbtn').on('click',function(){
+			var offset = $('#services').offset();
+			$('html').animate({scrollTop : offset.top}, 400);
+		})
+		$('#abobtn').on('click',function(){
+			var aoffset = $('#about').offset();
+			$('html').animate({scrollTop : aoffset.top}, 400);
+		})
+		$('#teambtn').on('click',function(){
+			var toffset = $('#team').offset();
+			$('html').animate({scrollTop : toffset.top}, 400);
+		})
+	</script>
+	
+	
 	<!-- Bootstrap core JavaScript -->
 	<script src="${contextPath}/view/vendor/jquery/jquery.min.js"></script>
 	<script src="${contextPath}/view/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

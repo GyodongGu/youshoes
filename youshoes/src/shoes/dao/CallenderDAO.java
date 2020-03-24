@@ -15,11 +15,10 @@ public class CallenderDAO extends DAO{
 	public int insertform(reservationDTO dto) {
 		int result = 0;
 		try {
-			String sql = "insert into reservation(res_no, sm_id, res_date, pm_no) values ((select max(res_no)+1 from reservation), ?, to_date(?,'yyyy/mm/dd hh24:mi:ss'), ?)";
+			String sql = "insert into reservation(res_no, sm_id, res_date, ord_no) values ((select max(res_no)+1 from reservation), ?, to_date(?,'yyyy/mm/dd hh24:mi:ss'), (select max(ord_no) from ord))";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, dto.getSm_id());
 			pstmt.setString(2,  dto.getReserv_date());
-			pstmt.setInt(3, dto.getPm_no());
 			result = pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();

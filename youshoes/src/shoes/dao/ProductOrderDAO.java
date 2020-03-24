@@ -3,14 +3,12 @@ package shoes.dao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
 import shoes.dto.deliveryDTO;
-import shoes.dto.ordDTO;
+import shoes.dto.imageDetailDTO;
 import shoes.dto.ordDetailDTO;
-import shoes.dto.pdtDTO;
 import shoes.dto.pmDTO;
 import shoes.dto.reservationDTO;
 
@@ -126,8 +124,13 @@ public class ProductOrderDAO extends DAO {
 		String sql = "select * from delivery d join ord o on d.ord_no=o.ord_no where o.ord_no=?";
 		String sql1= "select * from ord_detail where ord_no=?";
 		
+		String sql2="select img_name from image i join image_detail d on i.img_no = d.img_no where section = 'I02' and section_no=?";
+		
 		PreparedStatement pstmt1;
 		ResultSet rs1;
+		
+		PreparedStatement pstmt2;
+		ResultSet rs2;
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -154,13 +157,27 @@ public class ProductOrderDAO extends DAO {
 					ordDetailDTO odto = new ordDetailDTO();
 					odto.setOrder_detail_no(rs1.getInt("ord_detail_no"));
 					odto.setOrd_size(rs1.getInt("ord_size"));
-					odto.setOrd_color(rs1.getString("ord_color"));
+					CodeDAO cdao = new CodeDAO();
+					String cname = cdao.CodeName(rs1.getString("ord_color"));
+					odto.setOrd_color(cname);
 					odto.setOrd_cnt(rs1.getInt("ord_cnt"));
 					odto.setOrd_detail_point(rs1.getInt("ord_detail_point"));
 					olist.add(odto);
 					
 				}
 				ddto.setOrdDetail(olist);
+				
+				pstmt2=conn.prepareStatement(sql2);
+				pstmt2.setInt(1, rs.getInt("pdt_no"));
+				rs2=pstmt2.executeQuery();
+				List<imageDetailDTO>idlist = new ArrayList<imageDetailDTO>();
+				while(rs2.next()) {
+					imageDetailDTO iddto = new imageDetailDTO();
+					iddto.setImg_name(rs2.getString("img_name"));
+					idlist.add(iddto);
+				}
+				ddto.setImgDetail(idlist);
+				
 			}
 			
 		} catch (SQLException e) {

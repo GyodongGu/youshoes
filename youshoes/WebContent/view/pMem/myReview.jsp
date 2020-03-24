@@ -27,7 +27,7 @@
 			<div class="row">
 				<div class="col-3 col-md-2 col-lg-2 align-self-center">
 					<figure class="product-image">
-						<img src="${pageContext.request.contextPath}/view/img/shoes05.png" alt="" class="">
+						<img src="${pageContext.request.contextPath}/view/img/${ddto.imgDetail[0].img_name}" alt="" class="">
 					</figure>
 				</div>
 				<div class="col">
@@ -53,10 +53,13 @@
 						<!--  <span class="badge badge-success d-inline-block ml-2"><small>10% off</small></span> -->
 					</h5>
 					<c:forEach items="${ddto.ordDetail }" var="detail">
+					<c:if test="${detail.ord_size!=0 }">
 						<span class="text-secondary small text-mute mb-0">사이즈 : ${detail.ord_size }</span>&nbsp;&nbsp;
 						<span class="text-secondary small text-mute mb-0">색상 : ${detail.ord_color }</span>&nbsp;&nbsp;
 						<span class="text-secondary small text-mute mb-0">수량 : ${detail.ord_cnt }</span>&nbsp;&nbsp;
 						<br>
+					</c:if>
+						
 					</c:forEach>
 					
 				</div>
@@ -67,17 +70,18 @@
 		
 			<br>
 			<div class="row">
-				<div class="col-12 col-md-6"> 
+				<div class="col"> 
 					<div class="form-group float-label active"> 
 					<label class="form-control-label"><h6><b>주문고객정보</b></h6></label>
 						<input type="text" class="form-control" required="" value="받으실분 : ${ddto.dlvy_name }" disabled="disabled"> 
 						<input type="text" class="form-control" required="" value="연락처 : ${ddto.dlvy_tell }" disabled="disabled"> 
 						<input type="text" class="form-control" required="" value="배송주소 : ${ddto.dlvy_addr1 } ${ddto.dlvy_addr2 } ${ddto.dlvy_addr3 }" disabled="disabled">
 						<input type="text" class="form-control" required="" value="최종결제금액 : ${total } point" disabled="disabled"> 
-						<input type="text" class="form-control" required="" value="제작현황 : " disabled="disabled">
-						<input type="text" class="form-control" required="" value="배송현황 : " disabled="disabled">
+						<!-- <input type="text" class="form-control" required="" value="제작현황 : " disabled="disabled"> -->
+						
 						<%-- <a href="https://tracker.delivery/#/kr.epost/${ord.invoice_no }" target="_blank"> 배송조회</a> --%>
 						<a href="https://tracker.delivery/#/kr.cjlogistics/${ddto.invoice_no }" target="_blank">배송조회</a>
+						<!-- <a href="https://tracker.delivery/#/kr.cjlogistics/629611906695" target="_blank">배송조회</a> -->
 					</div>
 				</div>
 			</div>
@@ -85,19 +89,5 @@
 	</div>
 	<c:set var="total" value="0"></c:set>
 	
-<%-- 		<!-- 페이징 -->
-	<nav aria-label="Page navigation example" class="text-center">
-	<c:set var="pager" value="${(param.p == null) ? 1:param.p }"></c:set>
-	<c:set var="startNum" value="${pager-(pager-1)%5 }"></c:set>
-		<ul class="pagination">
-			<li class="page-item"><a class="page-link" href="#" aria-label="Previous"> <span aria-hidden="true">&laquo;</span></a></li>
-			
-			<c:forEach var="i" begin="0" end="4">
-				<li class="page-item"><a class="page-link" href="?p=${startNum+i }">${startNum+i }</a></li>
-			</c:forEach>
-			<li class="page-item"><a class="page-link" href="#" aria-label="Next"> <span aria-hidden="true">&raquo;</span></a></li>
-		</ul>
-		
-	</nav> --%>
 </body>
 </html>

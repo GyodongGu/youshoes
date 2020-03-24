@@ -26,7 +26,7 @@
 						<figure class="product-image">
 							<img src="${pageContext.request.contextPath}/view/img/${bookMarks.img_name.img_name}" alt="즐겨찾기 상품" class="">
 						</figure>
-						<a href="#" class="text-dark mb-1 mt-2 h6 d-block">${bookMarks.pdt_name.pdt_name}</a>
+						<a href="${pageContext.request.contextPath}/ProductDetail.do?pdt_no=${bookMarks.pdt_no}" class="text-dark mb-1 mt-2 h6 d-block">${bookMarks.pdt_name.pdt_name}</a>
 					</div>
 				</div>
 			</div>

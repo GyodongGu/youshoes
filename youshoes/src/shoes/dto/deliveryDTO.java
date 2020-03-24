@@ -17,10 +17,24 @@ public class deliveryDTO {
 	private String dlvy_remark;
 	private int ord_no;
 	private List<ordDetailDTO> ordDetail;
-
+	private int pdt_no;
+	private List<imageDetailDTO> imgDetail;
 	
 	
 	
+	
+	public List<imageDetailDTO> getImgDetail() {
+		return imgDetail;
+	}
+	public void setImgDetail(List<imageDetailDTO> imgDetail) {
+		this.imgDetail = imgDetail;
+	}
+	public int getPdt_no() {
+		return pdt_no;
+	}
+	public void setPdt_no(int pdt_no) {
+		this.pdt_no = pdt_no;
+	}
 	public List<ordDetailDTO> getOrdDetail() {
 		return ordDetail;
 	}
