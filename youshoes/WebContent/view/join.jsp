@@ -179,11 +179,11 @@
                 	<br />
                 	<div class="form-group float-label">
                     <input type="text" id="pm_post" name="pm_post" class="form-control" placeholder="" required style="width:120px;">
-                    <label for="pm_post" class="form-control-label active">우편번호&nbsp;&nbsp;<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" /></label>
+                    <label for="pm_post" class="form-control-label active"><font color="red">*</font>우편번호&nbsp;&nbsp;<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" /></label>
                 	</div>
                 	<div class="form-group float-label">
                     <input type="text" id="pm_addr1" name="pm_addr1" class="form-control" placeholder="">
-                    <label for="pm_addr1" class="form-control-label active">주소</label>
+                    <label for="pm_addr1" class="form-control-label active"><font color="red">*</font>주소</label>
                 	</div>
                 	<div class="form-group float-label">
                     <input type="text" id="pm_addr2" name="pm_addr2" class="form-control" placeholder="">
