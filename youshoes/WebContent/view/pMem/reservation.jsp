@@ -68,30 +68,23 @@ var event;
 			eventColor: '#964B00',
 			eventTextColor: 'white',
 			displayEventTime : true, 
-			eventLimit: true,
 			height: 'parent',
 			contentHeight: 450,
 			eventTimeFormat: { hour: 'numeric', minute: '2-digit' }, 
 			defaultView : 'dayGridMonth',  
+			selectable : true,
 			footer : {
 				left : '',
 				center : '',
 				right : 'custom1'
 			},  
-			customButtons: {
-				custom1 :{
-					text :'주문 계속 진행',
-					click: function() {
-						location.href="${pageContext.request.contextPath}/ProductOrder.do?type=C&sm_id=${smid}&pdt_no=${pdtno}";
-					}
-				}
-			},
-			eventClick : function (info) {  
+			/* eventClick : function (info) {  
 				var del = confirm("예약 일정을 삭제 할까요 ? ");
 				var Hnum = {"res_no" : info.event.id};
-				if(info.event.title == '휴일') {
-				alert('선택하신 일정은 업체의 휴일입니다.');	
-				
+				if(del != true){
+					close();
+				}else if(info.event.title == '휴일') {
+					alert('선택하신 일정은 업체의 휴일입니다.');		
 				}else if(del == true) {
 					$.ajax({
 						url: "${pageContext.request.contextPath}/ajax/DelReserv.do",
@@ -101,29 +94,38 @@ var event;
 								alert(Tdate1(info.event.start) + ', 예약 일정이 삭제 되었습니다.');	
 								info.event.remove()
 							}  
-					}) 
-				} 
-			}, 
+					});  
+				}
+			}, */ 
 		dateClick : function (date) {   
-			var ttdate = Tdate1(date.date);  
+			var ttdate = Tdate1(date.date);   
 			var today = Tdate1(new Date()); 
 			var events = calendar.getEvents();
 			$('input').attr('disabled', false);
 			for( var i = 0; i < events.length; i++){ 
-				if (Tdate2(date.date) == Tdate2(events[i].start)) {
+			
+			if (Tdate2(date.date) == Tdate2(events[i].start)) {
 					$('[value="'+Tdate3(events[i].start)+'"]').attr('disabled', 'disabled'); 
 					}	
-				} 
-			var ttoday = today.toString();   
+				}
+			var ttoday = today.toString();
+			
+			for(var i=0; i < events.length; i++) { 
+			if(Tdate1(events[i].start) == Tdate1(date.date) && events[i].title == '휴일') {
+				alert("이 날짜는 업체의 휴일 입니다. 다른 날짜를 선택해 주세요.");
+				return;
+	 			}
+			}
+			
 			if(date.dateStr > ttoday) {
-				 dialog.dialog( "open" );  
+				 dialog.dialog( "open" );   
 				 	$('#daytime').html(date.dateStr);  
-				 	daytime = date.dateStr;
-			 } else {
-				 alert("예약 할 수 없는 날짜 입니다. 다시 선택해주세요.");
+				 	daytime = date.dateStr; 
+			
+	 		} else {
+				 alert("예약 할 수 없는 날짜 입니다. 다시 선택해 주세요.");
 			 }
-			 
-		}
+			}	 
 		}) 
 		
 		function addreserv() {  
@@ -136,19 +138,19 @@ var event;
 					data: rdate,
 					success : function (result) {
 						var retime = new Date(result);
-						calendar.addEvent({
+						var event = calendar.addEvent({
 							title : '예약',	
 							start :retime
 						});
-						//alert("'"+result +"''"+" 날짜로 예약 진행 되었습니다.");
 						var con = confirm("'"+result +"''"+" 날짜로 예약 진행하겠습니까?");
 						if(con == true){
 							dialog.dialog("close");
 							location.href="${pageContext.request.contextPath}/ProductOrder.do?type=C&sm_id=${smid}&pdt_no=${pdtno}&result="+result;
+						}else if(con == false) {
+							event.remove();
 						}
 					} 
 				})
-				//dialog.dialog("close");
 			}
 		calendar.render(); 
 	});
