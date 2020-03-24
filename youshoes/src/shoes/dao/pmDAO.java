@@ -213,6 +213,8 @@ public class pmDAO extends DAO {
 	public pmDTO selectOne(String id) { // 8. 단건조회 selectOne()
 		pmDTO dto = new pmDTO();
 		String sql = "select * from purchase_member where pm_id = ? ";
+		
+		
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, id);
