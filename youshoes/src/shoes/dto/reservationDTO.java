@@ -26,7 +26,6 @@ public class reservationDTO {
 	public void setRes_no(int res_no) {
 		this.res_no = res_no;
 	}
-
 	public int getPm_no() {
 		return pm_no;
 	}
@@ -55,7 +54,7 @@ public class reservationDTO {
 	@Override
 	public String toString() {
 		return "reservationDTO [res_no=" + res_no + ", sm_id=" + sm_id + ", res_date=" + res_date + ", res_remark="
-				+ res_remark + ", pm_no=" + pm_no + "]";
+				+ res_remark + ", pm_no=" + pm_no+ "]";
 	}
 
 	
