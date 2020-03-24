@@ -10,9 +10,16 @@ public class ordDTO {
 	private int ord_point;
 	private String ord_stat_cd;
 	private int num;
+	private String pdt_type_cd;
 	
 	
 	
+	public String getPdt_type_cd() {
+		return pdt_type_cd;
+	}
+	public void setPdt_type_cd(String pdt_type_cd) {
+		this.pdt_type_cd = pdt_type_cd;
+	}
 	public int getNum() {
 		return num;
 	}

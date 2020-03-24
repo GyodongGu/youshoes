@@ -95,7 +95,6 @@ public class OrderPaymentCommand implements Command {
 		if(reserv1!=null) {
 			dto1.setReserv_date(reserv1);
 			dto1.setSm_id(smid);
-			dto1.setPm_no(pmno);
 			int r;
 			r=dao1.insertform(dto1);
 			System.out.println(r+"건 예약되었습니다.");
@@ -111,7 +110,7 @@ public class OrderPaymentCommand implements Command {
 		httpsession.setAttribute("pmDTO", dto);
 			
 		
-		return "/orderHistory.do";
+		return "redirect:/youshoes/orderHistory.do";
 	}
 
 }

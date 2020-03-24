@@ -16,7 +16,7 @@ public class ordDAO extends DAO {
 	public List<ordDTO> selectOrderList(int id) {
 		List<ordDTO> list = new ArrayList<ordDTO>();
 		
-		String sql= "select * from ord where pm_no=?";
+		String sql= "select * from ord o join product p on o.pdt_no = p.pdt_no where pm_no =?";
 		try { 
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setInt(1, id);
@@ -30,6 +30,7 @@ public class ordDAO extends DAO {
 				oddto.setOrd_date(rs.getDate("ord_date"));
 				oddto.setOrd_point(rs.getInt("ord_point"));
 				oddto.setOrd_stat_cd(rs.getString("ord_stat_cd"));
+				oddto.setPdt_type_cd(rs.getString("pdt_type_cd"));
 				list.add(oddto);
 			}
 		} catch (SQLException e) {
@@ -42,7 +43,7 @@ public class ordDAO extends DAO {
 		
 		String sql="select * from ( " + 
 				" select rownum num, n.* " + 
-				" from (select * from ord where pm_no=? order by ord_no desc) n " + 
+				" from (select * from ord o join product p on o.pdt_no = p.pdt_no where pm_no =? order by ord_no desc) n " + 
 				" ) " + 
 				" where num between ? and ?";
 		
@@ -64,6 +65,7 @@ public class ordDAO extends DAO {
 				oddto.setOrd_point(rs.getInt("ord_point"));
 				CodeDAO cdao = new CodeDAO();
 				oddto.setOrd_stat_cd(cdao.CodeName(rs.getString("ord_stat_cd")));
+				oddto.setPdt_type_cd(cdao.CodeName(rs.getString("pdt_type_cd")));
 				list.add(oddto);
 				
 			}
