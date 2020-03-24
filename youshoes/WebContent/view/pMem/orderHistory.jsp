@@ -16,6 +16,7 @@
 				<th scope="col">주문일자</th>
 				<th scope="col">주문금액</th>
 				<th scope="col">주문 및 배송상태</th>
+				<th scope="col">주문 상세정보</th>
 				<th scope="col">후기 작성</th>
 			</tr>
 		</thead>
@@ -37,6 +38,7 @@
 					<td>${history.ord_date}</td>
 					<td>${history.ord_point}</td>
 					<td>${history.ord_stat_cd}</td>
+					<td><button class="mb-2 btn btn-default" onclick="location.href='${pageContext.request.contextPath}/myReview.do?ord_no=${history.ord_no}'">상세정보</button></td>
 					<td>
 						<button class="mb-2 btn btn-default" onclick="location.href='${pageContext.request.contextPath}/insertReview.do?pdt_no=${history.pdt_no }'">작성</button>
 					</td>

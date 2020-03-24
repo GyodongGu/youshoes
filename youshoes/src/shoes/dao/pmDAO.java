@@ -213,7 +213,10 @@ public class pmDAO extends DAO {
 	public pmDTO selectOne(String id) { // 8. 단건조회 selectOne()
 		pmDTO dto = new pmDTO();
 		String sql = "select * from purchase_member where pm_id = ? ";
+		String sql1="select img_name from image i join image_detail d on i.img_no=d.img_no where section='I04' and section_no=?";
 		
+		PreparedStatement pstmt1;
+		ResultSet rs1;
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -235,6 +238,14 @@ public class pmDAO extends DAO {
 				dto.setPm_addr3(rs.getString("pm_addr3"));
 				dto.setPoint_now(rs.getInt("point_now"));
 				dto.setMgr_auth_cd(rs.getString("mgr_auth_cd"));
+				
+				pstmt1=conn.prepareStatement(sql1);
+				pstmt1.setString(1, id);
+				rs1 = pstmt1.executeQuery();
+				if(rs1.next()) {
+					dto.setImg_name(rs1.getString("img_name"));
+				}
+				
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

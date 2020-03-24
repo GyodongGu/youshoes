@@ -11,27 +11,22 @@ import shoes.common.Command;
 import shoes.dao.pmDAO;
 import shoes.dto.pmDTO;
 
-public class profileUpdateFormCommand implements Command {
+public class profileCommand implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		HttpSession httpsession = request.getSession(true);
-		String pmid= (String) httpsession.getAttribute("id");
-		
-		
+		HttpSession session = request.getSession();
+		String id = (String) session.getAttribute("id");
 		
 		pmDAO pdao = new pmDAO();
 		pmDTO pdto = new pmDTO();
-		pdto = pdao.selectOne(pmid);
-		
+		pdto = pdao.selectOne(id);
 		request.setAttribute("pdto", pdto);
 		
-		httpsession.setAttribute("pmDTO",pdto);
-		
-		return "view/pMem/profileUpdate.jsp";
+		return "/view/pMem/profile.jsp";
 	}
 
 }

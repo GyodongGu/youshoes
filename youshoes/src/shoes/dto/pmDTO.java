@@ -18,9 +18,15 @@ public class pmDTO {
 	private String pm_addr3;
 	private int point_now;
 	private String mgr_auth_cd;
+	private String img_name;
 	
 	
-	
+	public String getImg_name() {
+		return img_name;
+	}
+	public void setImg_name(String img_name) {
+		this.img_name = img_name;
+	}
 	public String getMgr_auth_cd() {
 		return mgr_auth_cd;
 	}

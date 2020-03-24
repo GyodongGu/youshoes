@@ -19,20 +19,26 @@
 		<!-- 내부 내용 전체 감싸는 부분 -->
 		<div class="container">
 			<!-- 프로필 이미지 사진  -->
+			<form action="profileUpdate.do" method="POST" id="profileUpdate" name="profileUpdate" enctype="multipart/form-data" onsubmit="return updateprofile()">
 			<div class="text-center">
 				<div class="figure-profile shadow my-4">
 					<figure>
-						<img src="view/img/user1.png" alt="프로필사진">
+						<c:if test="${empty pdto.img_name}">
+					<img src="${pageContext.request.contextPath}/view/img/user1.jpg" alt="">
+				</c:if>
+				<c:if test="${!empty pdto.img_name}">
+					<img src="${pageContext.request.contextPath}/view/img/${pdto.img_name}" alt="">
+				</c:if>
 					</figure>
 					<div class="btn btn-dark text-white floating-btn">
-						<i class="material-icons">camera_alt</i> <input type="file" class="float-file">
+						<i class="material-icons">camera_alt</i> <input type="file" name="profileimg" class="float-file">
 					</div>
 				</div>
 			</div>
 			<!-- // 프로필 이미지 사진  -->
 
 			<!-- 안쪽에 프로필 수정하려는 입력 값 받는 곳 -->
-			<form action="profileUpdate.do" method="post" id="profileUpdate" name="profileUpdate" onsubmit="return updateprofile()">
+			
 				<h6 class="subtitle">기본 정보</h6>
 				<div class="row">
 					<div class="col-12 col-md-6">

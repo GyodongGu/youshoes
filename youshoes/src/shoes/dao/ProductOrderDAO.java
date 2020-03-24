@@ -118,4 +118,59 @@ public class ProductOrderDAO extends DAO {
 	 * e.printStackTrace(); } return dto; //pm_id와 ord_no를 통한 운송장번호와 주문번호를 리턴 }
 	 */
 	
+	
+	public deliveryDTO ordHistory(int ordno){
+		deliveryDTO ddto = new deliveryDTO();
+		
+		
+		String sql = "select * from delivery d join ord o on d.ord_no=o.ord_no where o.ord_no=?";
+		String sql1= "select * from ord_detail where ord_no=?";
+		
+		PreparedStatement pstmt1;
+		ResultSet rs1;
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, ordno);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				ddto.setOrd_no(rs.getInt("ord_no"));
+				ddto.setInvoice_no(rs.getString("invoice_no"));
+				ddto.setDlvy_name(rs.getString("dlvy_name"));
+				ddto.setDlvy_tell(rs.getString("dlvy_tell"));
+				ddto.setDlvy_post(rs.getString("dlvy_post"));
+				ddto.setDlvy_addr1(rs.getString("dlvy_addr1"));
+				ddto.setDlvy_addr2(rs.getString("dlvy_addr2"));
+				ddto.setDlvy_addr3(rs.getString("dlvy_addr3"));
+				ddto.setDlvy_cd(rs.getString("dlvy_cd"));
+				
+				pstmt1=conn.prepareStatement(sql1);
+				pstmt1.setInt(1, ordno);
+				rs1=pstmt1.executeQuery();
+				List<ordDetailDTO> olist = new ArrayList<ordDetailDTO>();
+				
+				while(rs1.next()) {
+					ordDetailDTO odto = new ordDetailDTO();
+					odto.setOrder_detail_no(rs1.getInt("ord_detail_no"));
+					odto.setOrd_size(rs1.getInt("ord_size"));
+					odto.setOrd_color(rs1.getString("ord_color"));
+					odto.setOrd_cnt(rs1.getInt("ord_cnt"));
+					odto.setOrd_detail_point(rs1.getInt("ord_detail_point"));
+					olist.add(odto);
+					
+				}
+				ddto.setOrdDetail(olist);
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		
+		return ddto;
+	}
+	
 }
