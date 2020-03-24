@@ -22,6 +22,7 @@
 					dialog.dialog('open');
 				})
 			})
+				
 	});
 </script>
 </head>
@@ -38,7 +39,7 @@
 				<th scope="col">번호</th>
 				<th scope="col">주문일자</th>
 				<th scope="col">주문 및 배송상태</th>
-				<th scope="col">제품종류</th>
+				<!-- <th scope="col">제품종류</th> -->
 				<th scope="col">주문 상세정보</th>
 				<th scope="col">후기 작성</th>
 			</tr>
@@ -60,10 +61,17 @@
 					<td>${history.num}</td>
 					<td>${history.ord_date}</td>
 					<td>${history.ord_stat_cd}</td>
-					<td>${history.pdt_type_cd}</td>
+					<%-- <td>${history.pdt_type_cd}</td> --%>
 					<td><button class="mb-2 btn btn-default detail" name="${history.ord_no}">상세정보</button></td>
 					<td>
-						<button class="mb-2 btn btn-default" onclick="location.href='${pageContext.request.contextPath}/insertReview.do?pdt_no=${history.pdt_no }'">작성</button>
+						<c:choose>
+							<c:when test="${history.ord_stat_cd eq '도착'}">
+								<button class="mb-2 btn btn-default review" onclick="location.href='${pageContext.request.contextPath}/insertReview.do?pdt_no=${history.pdt_no }'">작성</button>
+							</c:when>
+							<c:otherwise>
+								<button class="mb-2 btn btn-default review" onclick="location.href='${pageContext.request.contextPath}/insertReview.do?pdt_no=${history.pdt_no }'" disabled="disabled">작성</button>
+							</c:otherwise>
+						</c:choose>
 					</td>
 				</tr>
 			</c:forEach>

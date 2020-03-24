@@ -97,5 +97,55 @@ public class ordDAO extends DAO {
 		
 		return count;
 	}
+	public List<ordDTO> ordListCheck(int pmno){
+		List<ordDTO> list = new ArrayList<ordDTO>();
+		
+		String sql = "select o.*, p.pdt_name from ord o join product p on o.pdt_no = p.pdt_no where ord_stat_cd !='O04' and pm_no=?";
+
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1, pmno);
+			rs=pstmt.executeQuery();
+			
+			while(rs.next()) {
+				ordDTO odto = new ordDTO();
+				odto.setOrd_no(rs.getInt("ord_no"));
+				odto.setPm_no(rs.getInt("pm_no"));
+				odto.setPdt_no(rs.getInt("pdt_no"));
+				odto.setOrd_date(rs.getDate("ord_date"));
+				odto.setOrd_point(rs.getInt("ord_point"));
+				odto.setOrd_stat_cd(rs.getString("ord_stat_cd"));
+				odto.setPdt_name(rs.getString("pdt_name"));
+				list.add(odto);
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		
+		return list;
+	}
+	public int updateOrdStat(int ordno) {
+		int result = 0;
+		
+		String sql = "update ord set ord_stat_cd='O04' where ord_no=?";
+		
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1, ordno);
+			result = pstmt.executeUpdate();
+			System.out.println("ord_stat_cd가 "+result+"건 변경되었습니다.");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		
+		return result;
+	}
 
 }

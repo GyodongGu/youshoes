@@ -36,6 +36,8 @@ import shoes.command.loginCommand;
 import shoes.command.loginOkCommand;
 import shoes.command.logoutCommand;
 import shoes.command.myReviewCommand;
+import shoes.command.ordCheckCommand;
+import shoes.command.ordCheckFormCommand;
 import shoes.command.orderHistoryCommand;
 import shoes.command.pMemCommand;
 import shoes.command.pMemEventCommand;
@@ -79,9 +81,11 @@ public class FrontController extends HttpServlet {
 		cont.put("/searchShop.do", new searchShopCommand()); 	   // 가게 더보기
 
 		// 프로필 부분
-		cont.put("/myReview.do", new myReviewCommand()); 		 // 구매 회원이 자기가 작성한 후기 보기
+		cont.put("/myReview.do", new myReviewCommand()); 		 // 구매회원이 구매상세내역 확인
 		cont.put("/orderHistory.do", new orderHistoryCommand()); // 구매 회원이 자기의 결제내역 확인
-
+		cont.put("/ordCheck.do", new ordCheckCommand());			//구매완료기능
+		cont.put("/ordCheckForm.do", new ordCheckFormCommand());	//구매완료를 위한 구매목록
+		
 		cont.put("/point.do", new pointCommand()); 					// 구매 회원 현재 포인트 확인
 		cont.put("/ajax/ChargePoint.do", new ChargePointCommand()); // 구매 회원 결제한 포인트 추가
 		cont.put("/profile.do", new profileCommand());					 //프로필화면

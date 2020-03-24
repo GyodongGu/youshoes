@@ -11,9 +11,16 @@ public class ordDTO {
 	private String ord_stat_cd;
 	private int num;
 	private String pdt_type_cd;
+	private String pdt_name;
 	
 	
 	
+	public String getPdt_name() {
+		return pdt_name;
+	}
+	public void setPdt_name(String pdt_name) {
+		this.pdt_name = pdt_name;
+	}
 	public String getPdt_type_cd() {
 		return pdt_type_cd;
 	}
