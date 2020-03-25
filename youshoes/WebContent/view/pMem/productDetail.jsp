@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -70,7 +71,9 @@
 				</c:forEach>
 			</h5><br>
 			<p class="text-secondary my-1">제품가격</p>
-			<h5 class="mb-0">&nbsp;&nbsp;${pdto.pdt_price } point</h5>
+			<h5 class="mb-0">&nbsp;&nbsp;
+				<fmt:formatNumber value="${pdto.pdt_price }" pattern="#,###"/>point
+			</h5>
 			<p class="text-secondary my-1">제품 설명</p>
 			<h5 class="mb-0">&nbsp;&nbsp;${pdto.pdt_remark }</h5>
 		</div>

@@ -1,9 +1,6 @@
 package shoes.command;
 
 import java.io.IOException;
-import java.text.ParseException;
-import java.sql.Date;
-import java.text.SimpleDateFormat;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -13,6 +10,7 @@ import javax.servlet.http.HttpSession;
 import shoes.common.Command;
 import shoes.dao.CallenderDAO;
 import shoes.dao.OrderPaymentDAO;
+import shoes.dao.PayHistoryDAO;
 import shoes.dao.pmDAO;
 import shoes.dto.deliveryDTO;
 import shoes.dto.ordDetailDTO;
@@ -32,6 +30,10 @@ public class OrderPaymentCommand implements Command {
 		
 		
 		opDAO.InsertOrd(pmno, pdtno, ordpoint); //회원번호, 제품번호, 결제포인트
+		
+		
+		PayHistoryDAO pdao = new PayHistoryDAO();
+		pdao.insertPayHistory(ordpoint);
 		
 		//사이즈, 색상, 수량, 세부 포인트
 		String[] osize=request.getParameterValues("ord_size");

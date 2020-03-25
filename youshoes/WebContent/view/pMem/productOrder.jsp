@@ -4,6 +4,7 @@
 	<%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator"
 	prefix="decorator"%>
 	<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %> 
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -158,7 +159,8 @@
                                 <div class="col">  
                                     <a href="" class="text-dark mb-1 h6 d-block"><b>${pdto.pdt_name }</b></a> <!-- 하이퍼링크에 제품 링크 걸어도 됨  -->
                                     <p class="text-secondary small mb-2">주문제작</p>
-                                    <h5 class="text-success font-weight-normal mb-0">금액 : ￦ ${odpoint[i+1] }
+                                    <h5 class="text-success font-weight-normal mb-0">금액 : ￦ 
+                                    <fmt:formatNumber value="${odpoint[i+1] }" pattern="#,###"/>
                                     <input type="hidden" class = "ord_detail_point" id="ord_detail_point" name="ord_detail_point" value="${odpoint[i+1] }">
                                        <!--  <span class="badge badge-success d-inline-block ml-2"><small>10% off</small></span> -->
                                     </h5>
@@ -193,7 +195,9 @@
                             </div>
          <div class="card-body">
          	<p class="text-dark mb-1 h6 d-block">현재 보유 포인트</p>
-         	<p class="text-dark mb-1 h4 d-block" id="nowpoint">${pmdto.point_now }</p>
+         	<p class="text-dark mb-1 h4 d-block" id="nowpoint">
+         	<fmt:formatNumber value="${pmdto.point_now }" pattern="#,###"/>
+         	</p>
          	<p class="text-dark mb-1 h6 d-block">결제 될 총 포인트</p>
          	<p class="text-dark mb-1 h4 d-block" id="total"></p>
          	<p class="text-dark mb-1 h6 d-block">결제 후 잔여 포인트</p>
@@ -210,6 +214,9 @@
 	</form>	
 
 <script>
+		function numberFormat(inputNumber){
+			return inputNumber.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+		}
 
 		var odp = document.getElementsByClassName("ord_detail_point");	//각 세부제품
 		
@@ -221,7 +228,7 @@
 		
  		//제품 가격 총합
  		var total=document.getElementById("total");
- 		total.innerHTML=cnt;
+ 		total.innerHTML=numberFormat(cnt);
  		
  		//주문테이블 총합 포인트 등록용
 		var ordp = document.getElementById("ord_point");
@@ -230,7 +237,7 @@
 		
 		var result = document.getElementById("resultpoint");
 		
-		result.innerHTML = ${pmdto.point_now } - cnt;
+		result.innerHTML = numberFormat( ${pmdto.point_now } - cnt);
 		
 		var nowpoint = document.getElementById("point_now");
 		nowpoint.value=result.innerHTML;

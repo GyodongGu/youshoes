@@ -24,7 +24,7 @@
 </script>
 </head>
 <body>
-	<p class="h3" align="center">나의 결제내역</p>
+	<p class="h3" align="center">제품 수령 확인</p>
 	<br>
 	<table class="table">
 		<thead>
@@ -41,7 +41,9 @@
 			<tr>
 				
 				<td>${chk.ord_date }</td>
-				<td>${chk.ord_point }</td>
+				<td>
+					<fmt:formatNumber value="${chk.ord_point }" pattern="#,###"/>
+				</td>
 				<td>${chk.pdt_name }</td>
 				<td>
 					<button type="button" class="mb-2 btn btn-default update" name = "${chk.ord_no }">확인</button>

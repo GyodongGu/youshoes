@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator" prefix="decorator"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!doctype html>
 <html lang="en" class="brown-theme">
 <head>
@@ -110,7 +111,9 @@
 						<div class="row">
 							<div class="col">
 								<p class="text-secondary small mb-0">현재 포인트</p>
-								<h3 class="text-dark my-0">${pmDTO.point_now}</h3>
+								<h3 class="text-dark my-0">
+								<fmt:formatNumber value="${pmDTO.point_now}" pattern="#,###"/>
+								</h3>
 							</div>
 						</div>
 					</div>
@@ -124,7 +127,7 @@
 					<a href="${pageContext.request.contextPath}/searchShop.do" class="list-group-item list-group-item-action">스토어</a> 
 					<a href="${pageContext.request.contextPath}/pMemEvent.do" class="list-group-item list-group-item-action">이벤트</a> 
 					<a href="${pageContext.request.contextPath}/orderHistory.do" class="list-group-item list-group-item-action">주문내역</a> 
-					<a href="${pageContext.request.contextPath}/view/pMem/profile.jsp" class="list-group-item list-group-item-action">프로필</a> 
+					<a href="${pageContext.request.contextPath}/profile.do" class="list-group-item list-group-item-action">프로필</a> 
 					<a href="${pageContext.request.contextPath}/logout.do" class="list-group-item list-group-item-action mt-4">로그아웃</a>
 				</div>
 				<!-- // 사이드바의 메뉴바 -->

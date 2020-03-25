@@ -268,4 +268,26 @@ public class pmDAO extends DAO {
 		return upPoint;
 	}
 	
+	public int refundPoint(int pmno, int point) {
+		int result = 0;
+		
+		String sql ="update purchase_member set point_now = ? where pm_no=?";
+		
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1, point);
+			pstmt.setInt(2, pmno);
+			result = pstmt.executeUpdate();
+			System.out.println("보유포인트가 "+result +"건 변경되었습니다.");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		
+		
+		return result;
+	}
+	
 }

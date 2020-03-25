@@ -7,6 +7,23 @@
 <head>
 <meta charset="UTF-8">
 <title>후기 글 작성</title>
+<script>
+	var sel_file;
+	$(document).ready(function(){
+		$('#fileupload').on('change',function(e){
+			var files = e.target.files;
+			var filesArr = Array.prototype.slice.call(files);
+			filesArr.forEach(function(f){
+				sel_file=f;
+				var reader = new FileReader();
+				reader.onload = function(e){
+					$('#preview').attr('src',e.target.result);
+				}
+				reader.readAsDataURL(f);
+			});
+		})
+	})
+</script>
 
 </head>
 <body>
@@ -18,7 +35,7 @@
 
 		<div class="col-auto align-self-start">
 			<figure class="avatar avatar-50">
-				<img src="${pageContext.request.contextPath}/view/img/user1.png"
+				<img src="${pageContext.request.contextPath}/view/img/${pmdto.img_name}"
 					alt="">
 			</figure>
 			작성자 : ${pmid }
@@ -47,12 +64,12 @@
 			
 			<!-- 올린 이미지 표시될 부분 -->
 
-			<img id="preview" src="#" alt="신발 사진" width=500 height=300 /><br>
+			<img id="preview" src="" alt="신발 사진" width=500 height=300 /><br>
 
 			<!-- // 올린 이미지 표시될 부분 -->
 			
 			<!-- 후기글 내용 -->
-			<textarea class="form-conol" id="rw_content" name="rw_content" rows="3">
+			<textarea class="form-conol" id="rw_content" name="rw_content" rows="3" cols="100">
 			</textarea>
 			<!-- 후기글 내용 -->
 		</div>

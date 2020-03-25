@@ -76,7 +76,8 @@
 						<input type="text" class="form-control" required="" value="받으실분 : ${ddto.dlvy_name }" disabled="disabled"> 
 						<input type="text" class="form-control" required="" value="연락처 : ${ddto.dlvy_tell }" disabled="disabled"> 
 						<input type="text" class="form-control" required="" value="배송주소 : ${ddto.dlvy_addr1 } ${ddto.dlvy_addr2 } ${ddto.dlvy_addr3 }" disabled="disabled">
-						<input type="text" class="form-control" required="" value="최종결제금액 : ${total } point" disabled="disabled"> 
+						<input type="text" class="form-control" required="" value="최종결제금액 : <fmt:formatNumber value="${total }" pattern="#,###"/> point" disabled="disabled"> 
+						
 						<!-- <input type="text" class="form-control" required="" value="제작현황 : " disabled="disabled"> -->
 						
 						<%-- <a href="https://tracker.delivery/#/kr.epost/${ord.invoice_no }" target="_blank"> 배송조회</a> --%>

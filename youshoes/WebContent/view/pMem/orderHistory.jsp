@@ -8,6 +8,8 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script type="text/javascript">
+	
+	
 	$(document).ready(function(){
 		var dialog=$('#modal').dialog({
 			autoOpen: false,
@@ -22,6 +24,50 @@
 					dialog.dialog('open');
 				})
 			})
+			
+			
+			
+		$('.delete').on('click',function(){
+			var no = $(this).attr('name');
+			var result = confirm('정말 주문을 취소하시겠습니까?');
+			if(result){
+				location.href='${pageContext.request.contextPath}/deleteOrd.do?ord_no='+no;
+			}else{
+				return false;
+			}
+		})
+		function insertrefund(){
+				frm.submit();
+			}
+		
+		var refund=$('#refundForm').dialog({
+			autoOpen: false,
+			height:400,
+			width:900,
+			modal:true,
+			buttons:{
+				"환불신청":insertrefund,
+				Cancel:function(){
+					$(this).dialog('close');
+				}
+			}
+			
+		})
+		
+		$('.refund').on('click',function(){
+			var no = $(this).attr('name');
+			$('#ord_no').attr('value',no);
+			var result = confirm('환불하시겠습니까?');
+			if(result){
+				refund.dialog('open');
+			}else{
+				return false;
+			}
+		})
+		$('#close').on('click',function(){
+			refund.dialog('close');
+		})
+		
 				
 	});
 </script>
@@ -29,6 +75,17 @@
 <body>
 	<div id = "modal">
 	
+	</div>
+	
+	<div id = "refundForm" title="환불요청">
+		<form id="frm" name="frm" action="${pageContext.request.contextPath}/insertRefund.do">
+			<input type="hidden" id="ord_no" name="ord_no" value="">
+			<label for="refund_reason">환불사유</label>
+			<textarea rows="10" cols="100" id="refund_reason" name="refund_reason"></textarea>
+			
+			<!-- <button type="submit">환불</button>
+			<button type="button" id="close">닫기</button> -->
+		</form>
 	</div>
 
 	<p class="h3" align="center">나의 결제내역</p>
@@ -38,9 +95,9 @@
 			<tr>
 				<th scope="col">번호</th>
 				<th scope="col">주문일자</th>
-				<th scope="col">주문 및 배송상태</th>
-				<!-- <th scope="col">제품종류</th> -->
+				<th scope="col">상태</th>
 				<th scope="col">주문 상세정보</th>
+				<th scope="col">취소 및 환불</th>
 				<th scope="col">후기 작성</th>
 			</tr>
 		</thead>
@@ -62,7 +119,22 @@
 					<td>${history.ord_date}</td>
 					<td>${history.ord_stat_cd}</td>
 					<%-- <td>${history.pdt_type_cd}</td> --%>
-					<td><button class="mb-2 btn btn-default detail" name="${history.ord_no}">상세정보</button></td>
+					<td><button class="mb-2 btn btn-default detail" name="${history.ord_no}">정보</button></td>
+					<td>
+						<c:choose>
+							<c:when test="${history.ord_stat_cd eq '주문접수' }">
+								<button class="mb-2 btn btn-default delete" name="${history.ord_no}">취소</button>
+							</c:when>
+							<c:otherwise>
+								<c:if test="${history.refund ==1 }">
+									<button class="mb-2 btn btn-default refund" name="${history.ord_no}" disabled="disabled">환불완료</button>
+								</c:if>
+								<c:if test="${history.refund ==0 }">
+									<button class="mb-2 btn btn-default refund" name="${history.ord_no}">환불</button>
+								</c:if>
+							</c:otherwise>
+						</c:choose>
+					</td>
 					<td>
 						<c:choose>
 							<c:when test="${history.ord_stat_cd eq '도착'}">

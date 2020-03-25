@@ -66,6 +66,10 @@ public class ordDAO extends DAO {
 				CodeDAO cdao = new CodeDAO();
 				oddto.setOrd_stat_cd(cdao.CodeName(rs.getString("ord_stat_cd")));
 				oddto.setPdt_type_cd(cdao.CodeName(rs.getString("pdt_type_cd")));
+				
+				refundDAO rdao = new refundDAO();
+				int cnt = rdao.selectRefund(rs.getInt("ord_no"));
+				oddto.setRefund(cnt);
 				list.add(oddto);
 				
 			}
@@ -144,6 +148,46 @@ public class ordDAO extends DAO {
 		} finally {
 			close();
 		}
+		
+		return result;
+	}
+	public int deleteOrd(int ordno) {
+		int result = 0;
+		
+		String sql = "delete from ord where ord_no=?";
+		
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1, ordno);
+			result = pstmt.executeUpdate();
+			System.out.println("주문"+result + "건 삭제되었습니다.");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return result;
+	}
+	public int ordPoint(int ordno) {
+		int result=0;
+		
+		String sql = "select * from ord where ord_no = ?";
+		
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1, ordno);
+			rs=pstmt.executeQuery();
+			if(rs.next()) {
+				result = rs.getInt("ord_point");
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		
 		
 		return result;
 	}

@@ -23,9 +23,11 @@ public class insertReviewFormCommand implements Command {
 		
 		HttpSession httpsession = request.getSession(true);
 		String pmid = (String)httpsession.getAttribute("id");
+		pmDTO pmdto = (pmDTO)httpsession.getAttribute("pmDTO");
 		
 		request.setAttribute("pdtno", pdtno);
 		request.setAttribute("pmid", pmid);
+		request.setAttribute("pmdto", pmdto);
 		
 		return "/view/pMem/insertReview.jsp";
 	}

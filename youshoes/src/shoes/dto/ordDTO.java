@@ -12,9 +12,17 @@ public class ordDTO {
 	private int num;
 	private String pdt_type_cd;
 	private String pdt_name;
+	private int refund;
 	
 	
 	
+	
+	public int getRefund() {
+		return refund;
+	}
+	public void setRefund(int refund) {
+		this.refund = refund;
+	}
 	public String getPdt_name() {
 		return pdt_name;
 	}
