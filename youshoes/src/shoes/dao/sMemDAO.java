@@ -64,7 +64,7 @@ public class sMemDAO extends DAO{
 		String sql = "select * from sales_member where rownum<=5 and sm_id !='admin' ";
 		
 		if(query != null) {
-			sql = "select * from sales_member where shop_name=?";
+			sql = "select * from sales_member where shop_name like '%'||?||'%'";
 		}
 		
 		String sql1="select img_name from image i join image_detail d on i.img_no=d.img_no where section='I01' and section_no=?";

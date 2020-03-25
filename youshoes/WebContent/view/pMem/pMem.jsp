@@ -63,7 +63,7 @@
 		<div class="row">
 			<div class="col text-center">
 				<ul>
-					<li><a class="txt2" href="${pageContext.request.contextPath}/view/pMem/serviceTOS.jsp">이용약관</a> <span> | </span> <a class="txt2" href="privacy.jsp">개인정보 처리방침</a> <span> | </span> <a class="txt2" href="sMemInform.jsp">사업자 정보 확인</a> <span> | </span> <a class="txt2" href="privacyInformOther.jsp">개인정보 제 3자 제공 동의</a></li>
+					<li><a class="txt2" href="${pageContext.request.contextPath}/view/pMem/serviceTOS.jsp">이용약관</a> <span> | </span> <a class="txt2" href="${pageContext.request.contextPath}/view/pMem/privacy.jsp">개인정보 처리방침</a> <span> | </span> <a class="txt2" href="${pageContext.request.contextPath}/view/pMem/sMemInform.jsp">사업자 정보 확인</a> <span> | </span> <a class="txt2" href="${pageContext.request.contextPath}/view/pMem/privacyInformOther.jsp">개인정보 제 3자 제공 동의</a></li>
 					<li></li>
 				</ul>
 				<p class="text-secondary">

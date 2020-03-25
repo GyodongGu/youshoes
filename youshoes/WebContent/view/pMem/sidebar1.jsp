@@ -124,7 +124,7 @@
 					<a href="${pageContext.request.contextPath}/searchShop.do" class="list-group-item list-group-item-action">스토어</a> 
 					<a href="${pageContext.request.contextPath}/pMemEvent.do" class="list-group-item list-group-item-action">이벤트</a> 
 					<a href="${pageContext.request.contextPath}/orderHistory.do" class="list-group-item list-group-item-action">주문내역</a> 
-					<a href="${pageContext.request.contextPath}/view/pMem/profile.jsp" class="list-group-item list-group-item-action">프로필</a> 
+					<a href="${pageContext.request.contextPath}/profile.do" class="list-group-item list-group-item-action">프로필</a> 
 					<a href="${pageContext.request.contextPath}/logout.do" class="list-group-item list-group-item-action mt-4">로그아웃</a>
 				</div>
 				<!-- // 사이드바의 메뉴바 -->

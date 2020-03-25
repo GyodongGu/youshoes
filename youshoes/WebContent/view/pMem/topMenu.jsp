@@ -22,7 +22,7 @@
 				<img src="${pageContext.request.contextPath}/view/img/logo.png" alt="logo" class="header-logo" onclick="location.href='${pageContext.request.contextPath}/view/pMem/pMem.jsp'">YouShoes
 		</div>
 		<div class="col-auto">
-			<a href="${pageContext.request.contextPath}/view/pMem/profile.jsp" class="btn  btn-link text-dark">
+			<a href="${pageContext.request.contextPath}/profile.do" class="btn  btn-link text-dark">
 				<i class="material-icons">account_circle</i>
 			</a>
 		</div>
