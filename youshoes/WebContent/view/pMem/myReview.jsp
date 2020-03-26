@@ -12,7 +12,6 @@
 </head>
 <body>
 	
-	<h6 class="subtitle"><b>주문 상세 내역</b></h6>
 	<div class="card mb-3 border-0 shadow-sm bg-template-light">
 		<div class="card-body">
 			<div class="row">

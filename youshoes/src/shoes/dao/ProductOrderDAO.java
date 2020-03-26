@@ -26,6 +26,8 @@ public class ProductOrderDAO extends DAO {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			close();
 		}
 		return dto; // 한 회원의 정보를 넘김
 	}
@@ -83,6 +85,8 @@ public class ProductOrderDAO extends DAO {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			close();
 		}
 		return list; // 배송 테이블과 오더 테이블을 조인하여 주문자번호를 입력해서 주문번호와, 배송번호를 리턴
 	}

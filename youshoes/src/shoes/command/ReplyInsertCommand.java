@@ -34,14 +34,14 @@ public class ReplyInsertCommand implements Command {
 		//String name = "구교동";
 		
 		int rwno=Integer.parseInt(request.getParameter("rw_no"));
-		
+		String smid = request.getParameter("sm_id");
 		rdto.setRw_no(rwno);
 		rdto.setReply_content(con);
 		rdto.setReply_member(name);
 		
 		result=RlistDAO.insertReply(rdto);
 		System.out.println(result+"건 입력되었습니다.");
-		return "/ReplyList.do";
+		return "redirect:/youshoes/ReplyList.do?rw_no="+rwno+"&sm_id="+smid;
 	}
 
 }

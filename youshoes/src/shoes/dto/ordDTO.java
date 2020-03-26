@@ -13,10 +13,17 @@ public class ordDTO {
 	private String pdt_type_cd;
 	private String pdt_name;
 	private int refund;
+	private int ord_cnt;
 	
 	
 	
 	
+	public int getOrd_cnt() {
+		return ord_cnt;
+	}
+	public void setOrd_cnt(int ord_cnt) {
+		this.ord_cnt = ord_cnt;
+	}
 	public int getRefund() {
 		return refund;
 	}

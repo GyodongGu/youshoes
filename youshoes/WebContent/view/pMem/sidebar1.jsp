@@ -24,16 +24,15 @@
 <link href="${pageContext.request.contextPath}/view/vendor/swiper/css/swiper.min.css" rel="stylesheet">
 <script src="${pageContext.request.contextPath}/view/vendor/swiper/js/swiper.min.js"></script>
 <!-- jquery, popper and bootstrap js -->
-<script src="../js/popper.min.js"></script>
+
 <!-- nouislider js -->
-<script src="../vendor/nouislider/nouislider.min.js"></script>
+
 <!-- 상단 메뉴바의 왼쪽 사이드 열기 위해 필요한 CSS 및 js -->
+<link href="${pageContext.request.contextPath}/view/css/style.css" rel="stylesheet">
 <script src="${pageContext.request.contextPath}/view/js/jquery-3.3.1.min.js"></script>
 <script src="${pageContext.request.contextPath}/view/js/popper.min.js"></script>
 <script src="${pageContext.request.contextPath}/view/vendor/bootstrap-4.4.1/js/bootstrap.min.js"></script>
-<link href="${pageContext.request.contextPath}/view/css/style.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
 <!-- // 상단 메뉴바의 왼쪽 사이드 열기 위해 필요한 CSS -->
 <!-- 이미지가 들어가지 않은 img태그의  공간 표시 js -->
 <script src="${pageContext.request.contextPath}/view/js/main.js"></script>
@@ -81,6 +80,20 @@
 		$('.closenotification').on('click', function() {
 			$(this).closest('.notification').removeClass('active')
 		});
+		
+		
+		$('.deleteu').on('click',function(){
+			var result = confirm('회원탈퇴입니다. 정말 탈퇴하시겠습니까?');
+			if(result){
+				return true;
+			}else{
+				return false;
+			}
+			
+		})
+		
+		
+		
 	});
 </script>
 <!-- //  카테고리 넘기는 swiper 스크립트 -->
@@ -129,6 +142,7 @@
 					<a href="${pageContext.request.contextPath}/orderHistory.do" class="list-group-item list-group-item-action">주문내역</a> 
 					<a href="${pageContext.request.contextPath}/profile.do" class="list-group-item list-group-item-action">프로필</a> 
 					<a href="${pageContext.request.contextPath}/logout.do" class="list-group-item list-group-item-action mt-4">로그아웃</a>
+					
 				</div>
 				<!-- // 사이드바의 메뉴바 -->
 			</div>

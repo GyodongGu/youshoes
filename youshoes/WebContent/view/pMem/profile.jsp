@@ -5,16 +5,15 @@
 <html lang="ko" class="blue-theme">
 
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 
 <!-- Tab키 스크립트 및 CSS -->
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<link rel="stylesheet" href="/resources/demos/style.css">
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <!-- // Tab키 스크립트 및 CSS -->
-
+<script src="${pageContext.request.contextPath}/view/vendor/bootstrap-4.4.1/js/bootstrap.min.js"></script>
 
 <!-- 탭 메뉴  로드 실패시 보여줄 스크립트 -->
 <script>

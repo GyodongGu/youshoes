@@ -30,7 +30,8 @@ public class pMemEventCommand implements Command {
 		List<noticeDTO> pmemEvent = ndao.noticeSelect(pageNum);
 		
 		int count = 0;
-		count = ndao.eventCount();
+		noticeDAO cndao = new noticeDAO();
+		count = cndao.eventCount();
 		
 		request.setAttribute("pmemEvent", pmemEvent);
 		request.setAttribute("count", count);

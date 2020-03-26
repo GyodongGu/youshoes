@@ -74,14 +74,14 @@
 </script>
 </head>
 <body> 
-	<form action="${pageContext.request.contextPath}/OrderPayment.do" id="frm" name="frm" onsubmit="return payment()">
+	<form action="${pageContext.request.contextPath}/OrderPayment.do" id="frm" name="frm" method="post" onsubmit="return payment()">
 		<h6 class="subtitle"><b>배송 주소</b></h6> 
 		<div class="card shadow-sm border-0 mb-4">
 		<div class="card-body">
 		<div class="row">
 			<div class="col-12 col-md-6">
 				<div class="form-group float-label active"> 
-					<input type="text" class="form-control"  id="pm_postcode" name="pm_postcode" placeholder="" value="우편번호">
+					<input type="text" class="form-control"  id="pm_postcode" name="pm_postcode" placeholder="" value="${pmdto.pm_post }">
 					 <label class="form-control-label">우편번호</label> <br>
 					 <span><button type="button" class="mb-2 btn btn-sm btn-default" onclick="pm_execDaumPostcode()" value="우편번호 찾기">우편번호찾기</button></span> 
 				</div>  
@@ -89,13 +89,13 @@
 			<div class="col-12 col-md-6">  
 				<div class="form-group float-label active" style="margin-bottom: 0px"> 
 				<label class="form-control-label">주소입력</label>  
-				<input type="text" class="form-control" id="pm_address" name = "pm_address" placeholder="" value="주소">    
+				<input type="text" class="form-control" id="pm_address" name = "pm_address" placeholder="" value="${pmdto.pm_addr1 }">    
 					<label class="form-control-label"></label> 
 					</div> 
 					<div class="form-group float-label"  style="padding-top:0px"> 
-					 <input type="text" class="form-control" id="pm_detailAddress" name="pm_detailAddress" placeholder="" value="상세주소"> 
+					 <input type="text" class="form-control" id="pm_detailAddress" name="pm_detailAddress" placeholder="" value="${pmdto.pm_addr2 }"> 
 					 <label class="form-control-label"></label>  
-					 <input type="text" class="form-control" id="pm_extraAddress" name="pm_extraAddress" placeholder="" value="참고항목" >
+					 <input type="text" class="form-control" id="pm_extraAddress" name="pm_extraAddress" placeholder="" value="${pmdto.pm_addr3 }" >
 					<select class="form-control" id="remarkSelect" name="remarkSelect" onchange="selecting()">   
 						<option value="" selected="selected">배송시 요청사항 (선택사항)</option>  
 						<option value="D01">배송전, 연락바랍니다.</option>
@@ -116,7 +116,7 @@
 		<div class="row">
 			<div class="col-12 col-md-6"> 
 				<div class="form-group float-label active">
-					<input type="text" class="form-control" id="pm_name" name = "pm_name" required="" value="입력"> 
+					<input type="text" class="form-control" id="pm_name" name = "pm_name" required="" value="${pmdto.pm_name }"> 
 					<label class="form-control-label">Name</label>
 				</div>
 			</div>
@@ -124,7 +124,7 @@
 		<div class="row">
 			<div class="col-12 col-md-6">
 				<div class="form-group float-label active">
-					<input type="text" class="form-control" id="pm_tell" name="pm_tell" required="" value="입력"> 
+					<input type="text" class="form-control" id="pm_tell" name="pm_tell" required="" value="${pmdto.pm_tell }"> 
 					<label class="form-control-label">핸드폰 번호</label>
 				</div>
 			</div>
@@ -159,14 +159,14 @@
                                 <div class="col">  
                                     <a href="" class="text-dark mb-1 h6 d-block"><b>${pdto.pdt_name }</b></a> <!-- 하이퍼링크에 제품 링크 걸어도 됨  -->
                                     <p class="text-secondary small mb-2">주문제작</p>
-                                    <h5 class="text-success font-weight-normal mb-0">금액 : ￦ 
-                                    <fmt:formatNumber value="${odpoint[i+1] }" pattern="#,###"/>
+                                    <h5 class="text-success font-weight-normal mb-0">금액 : 
+                                    <fmt:formatNumber value="${odpoint[i+1] }" pattern="#,###"/> Point
                                     <input type="hidden" class = "ord_detail_point" id="ord_detail_point" name="ord_detail_point" value="${odpoint[i+1] }">
                                        <!--  <span class="badge badge-success d-inline-block ml-2"><small>10% off</small></span> -->
                                     </h5>
                                     <p class="text-secondary small text-mute mb-0">사이즈 : ${osize[i+1] }</p>
                                     <input type="hidden" id="ord_size" name="ord_size" value="${osize[i+1] }">
-                                    <p class="text-secondary small text-mute mb-0">색상 : ${ocolor[i] } ${oname[i] }</p>
+                                    <p class="text-secondary small text-mute mb-0">색상 :  ${oname[i] }</p>
                                     <input type="hidden" id="ord_color" name="ord_color" value="${ocolor[i] }">
                                     <p class="text-secondary small text-mute mb-0">수량 : ${ocnt[i+1] }ea</p>
                                     <input type="hidden" id="ord_cnt" name="ord_cnt" value="${ocnt[i+1] }">  

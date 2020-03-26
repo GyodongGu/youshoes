@@ -13,22 +13,23 @@
 		<pattern>/view/pMem/privacy.jsp</pattern>
 		<pattern>/view/pMem/sMemInform.jsp</pattern>
 		<pattern>/view/pMem/privacyInformOther.jsp</pattern>
-		
+
 		<pattern>*.do*</pattern>
 	</decorator>
 	<excludes>
-	<pattern>sidebar1.jsp</pattern>
-	<pattern>/Review.do*</pattern>
-	
-	<pattern></pattern>
-<!--<pattern>/logout.do</pattern> -->
-	<pattern>/myReview.do</pattern>
-	<pattern>/point.do</pattern>
-	<pattern>/ordCheckForm.do</pattern>
-	
-	
-	<pattern>/profileSet.do</pattern>
-	<pattern>/view/pMem/review.jsp*</pattern>
-	<pattern>/ajax/*</pattern>
+		<pattern>sidebar1.jsp</pattern>
+		<pattern>/Review.do*</pattern>
+
+		<pattern></pattern>
+		<!--<pattern>/logout.do</pattern> -->
+		
+		<pattern>/point.do</pattern>
+		<pattern>/ordCheckForm.do</pattern>
+
+
+		<pattern>/profileSet.do</pattern>
+		<pattern>/myReview.do*</pattern>
+		<pattern>/view/pMem/review.jsp*</pattern>
+		<pattern>/ajax/*</pattern>
 	</excludes>
 </decorators> 

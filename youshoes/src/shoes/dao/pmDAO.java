@@ -116,7 +116,9 @@ public class pmDAO extends DAO {
 			System.out.println("회원정보가 "+p+"건 변경되었습니다.");
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} 
+		} finally {
+			close();
+		}
 		return p;
 	}
 
@@ -249,7 +251,9 @@ public class pmDAO extends DAO {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} 
+		} finally {
+			close();
+		}
 		return dto; // 한 회원의 정보를 넘김
 	}
 	public int pointUpdate(int pmNo, int chargePoint) {   // 9. 구매 회원이 포인트를 충전하고 현재 포인트에 추가
@@ -286,6 +290,26 @@ public class pmDAO extends DAO {
 			close();
 		}
 		
+		
+		return result;
+	}
+	
+	public int deletePm(int pmno) {
+		int result = 0;
+		
+		String sql = "delete from purchase_member where pm_no = ?";
+		
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1, pmno);
+			result = pstmt.executeUpdate();
+			System.out.println("고객 정보가"+result+"건 삭제되었습니다.");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			close();
+		}
 		
 		return result;
 	}

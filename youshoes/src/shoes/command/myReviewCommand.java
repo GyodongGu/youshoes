@@ -32,7 +32,8 @@ public class myReviewCommand implements Command {
 		dto = dao.select(id);
 		
 		int pmno = dto.getPm_no();
-		List<deliveryDTO> deli = dao.select2(pmno);
+		ProductOrderDAO ddao = new ProductOrderDAO();
+		List<deliveryDTO> deli = ddao.select2(pmno);
 		
 		
 		

@@ -28,7 +28,8 @@ public class BookmarkCheckCommand implements Command {
 
 		bdto.setPm_no(pmno);
 		bdto.setPdt_no(pdt_no);
-		boolean x = bdao.SelectBookMark(bdto);
+		bookmarkDAO bbdao = new bookmarkDAO();
+		boolean x = bbdao.SelectBookMark(bdto);
 
 		if (x) {
 			bdao.DeleteBookmark(bdto);

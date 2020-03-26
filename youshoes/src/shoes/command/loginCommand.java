@@ -15,7 +15,7 @@ public class loginCommand implements Command {
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		return "/view/pMem/login.jsp";
+		return "/view/login.jsp";
 	}
 
 }

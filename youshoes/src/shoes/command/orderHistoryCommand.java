@@ -18,10 +18,10 @@ public class orderHistoryCommand implements Command {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		ordDAO ohdao = new ordDAO();
+		
 		
 		int pmNO = ((pmDTO)request.getSession().getAttribute("pmDTO")).getPm_no();
-
+		ordDAO ohdao = new ordDAO();
 		List<ordDTO> ordHistory = ohdao.selectOrderList(pmNO);
 		
 		String page = request.getParameter("p");
@@ -29,11 +29,12 @@ public class orderHistoryCommand implements Command {
 		if(page !=null) {
 			pageNum = Integer.parseInt(page);
 		}
+		ordDAO oohdao = new ordDAO();
+		int count = oohdao.ordListCount(pmNO);
 		
-		int count = ohdao.ordListCount(pmNO);
-		
+		ordDAO ooohdao = new ordDAO();
 		List<ordDTO> list = new ArrayList<ordDTO>();
-		list = ohdao.OrdListPager(pmNO, pageNum);
+		list = ooohdao.OrdListPager(pmNO, pageNum);
 		
 		
 		//request.setAttribute("ordHistory", ordHistory);

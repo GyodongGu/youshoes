@@ -73,6 +73,8 @@ public class ImageDAO extends DAO{
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} finally {
+			close();
 		}
 		return result;
 	}

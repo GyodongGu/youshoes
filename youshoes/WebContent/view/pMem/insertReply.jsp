@@ -43,10 +43,11 @@
 
 
 		<!--댓글 입력 창 (맨 밑 하단)  -->
-		<form action="ReplyInsert.do" id="reply" name="reply">
+		<form action="ReplyInsert.do" id="reply" name="reply" method="post">
 			<div class="input-group mb-3" id="inbtn">
 				<input type="text" class="form-control" placeholder="Search" id="Reply_content" name="Reply_content">
 				<input type="hidden" id="rw_no" name = "rw_no" value="${rwno }">
+				<input type="hidden" id="sm_id" name="sm_id" value="${smid }">
 				<div class="input-group-append">
 					<button class="btn btn-success" type="submit">확인</button>
 				</div>

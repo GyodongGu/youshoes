@@ -26,7 +26,8 @@ public class loginOkCommand implements Command {
 		pmDTO dto = dao.selectOne(id);
 		
 		// DB에서 아이디, 비밀번호 확인
-		String grant = dao.loginCheck(id, pw);
+		pmDAO pdao = new pmDAO();
+		String grant = pdao.loginCheck(id, pw);
 
 		if (grant == null) {   // id와 pw가 일치하지않다면
 			return "script:"+"alert('아이디/비밀번호를 알맞게 입력하세요.'); location.href='view/login.jsp';";

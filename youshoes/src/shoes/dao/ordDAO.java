@@ -35,6 +35,8 @@ public class ordDAO extends DAO {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			close();
 		}
 		return list;
 	}
@@ -65,7 +67,8 @@ public class ordDAO extends DAO {
 				oddto.setOrd_point(rs.getInt("ord_point"));
 				CodeDAO cdao = new CodeDAO();
 				oddto.setOrd_stat_cd(cdao.CodeName(rs.getString("ord_stat_cd")));
-				oddto.setPdt_type_cd(cdao.CodeName(rs.getString("pdt_type_cd")));
+				CodeDAO ctdao = new CodeDAO();
+				oddto.setPdt_type_cd(ctdao.CodeName(rs.getString("pdt_type_cd")));
 				
 				refundDAO rdao = new refundDAO();
 				int cnt = rdao.selectRefund(rs.getInt("ord_no"));
@@ -77,6 +80,8 @@ public class ordDAO extends DAO {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} finally {
+			close();
 		}
 		
 		return list;
@@ -97,6 +102,8 @@ public class ordDAO extends DAO {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} finally {
+			close();
 		}
 		
 		return count;
@@ -190,6 +197,38 @@ public class ordDAO extends DAO {
 		
 		
 		return result;
+	}
+	
+	public List<ordDTO> pmOrdList(int pmno){
+		List<ordDTO> list = new ArrayList<ordDTO>();
+		
+		String sql = "select o.ord_no,pm_no,pdt_no,ord_date,ord_point,ord_stat_cd, sum(ord_cnt) ord_cnt from ord o join ord_detail d on o.ord_no=d.ord_no where pm_no=? group by o.ord_no,pm_no,pdt_no,ord_date,ord_point,ord_stat_cd";
+		
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1, pmno);
+			rs=pstmt.executeQuery();
+			
+			while(rs.next()) {
+				ordDTO odto = new ordDTO();
+				odto.setOrd_no(rs.getInt("ord_no"));
+				odto.setPm_no(rs.getInt("pm_no"));
+				odto.setOrd_date(rs.getDate("ord_date"));
+				odto.setOrd_point(rs.getInt("ord_point"));
+				odto.setOrd_stat_cd(rs.getString("ord_stat_cd"));
+				odto.setOrd_cnt(rs.getInt("ord_cnt"));
+				odto.setPdt_no(rs.getInt("pdt_no"));
+				list.add(odto);
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		
+		return list;
 	}
 
 }

@@ -66,6 +66,8 @@ public class bookmarkDAO extends DAO {
 
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			close();
 		}
 		return x;
 	}

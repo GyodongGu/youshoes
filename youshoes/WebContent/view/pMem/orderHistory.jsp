@@ -7,6 +7,7 @@
 <head>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="${pageContext.request.contextPath}/view/vendor/bootstrap-4.4.1/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 	
 	
@@ -68,12 +69,16 @@
 			refund.dialog('close');
 		})
 		
+		$('.disreview').on('click',function(){
+			alert('제품 수령 완료시 버튼이 활성화됩니다.');
+		})
+		
 				
 	});
 </script>
 </head>
 <body>
-	<div id = "modal">
+	<div id = "modal" title="주문 상세 내역">
 	
 	</div>
 	
@@ -125,6 +130,9 @@
 							<c:when test="${history.ord_stat_cd eq '주문접수' }">
 								<button class="mb-2 btn btn-default delete" name="${history.ord_no}">취소</button>
 							</c:when>
+							<c:when test="${history.ord_stat_cd eq '제작발송' }">
+								<button class="mb-2 btn btn-default delete" name="${history.ord_no}" disabled="disabled">취소불가</button>
+							</c:when>
 							<c:otherwise>
 								<c:if test="${history.refund ==1 }">
 									<button class="mb-2 btn btn-default refund" name="${history.ord_no}" disabled="disabled">환불완료</button>
@@ -138,10 +146,11 @@
 					<td>
 						<c:choose>
 							<c:when test="${history.ord_stat_cd eq '도착'}">
-								<button class="mb-2 btn btn-default review" onclick="location.href='${pageContext.request.contextPath}/insertReview.do?pdt_no=${history.pdt_no }'">작성</button>
+								<button class="mb-2 btn btn-default review" onclick="location.href='${pageContext.request.contextPath}/insertReview.do?pdt_no=${history.pdt_no }'" data-toggle="tooltip" data-placement="top" title="" data-original-title="제품 수령 완료 시 활성화됩니다.">작성</button>
 							</c:when>
 							<c:otherwise>
-								<button class="mb-2 btn btn-default review" onclick="location.href='${pageContext.request.contextPath}/insertReview.do?pdt_no=${history.pdt_no }'" disabled="disabled">작성</button>
+								<button class="mb-2 btn btn-default review disreview" onclick="location.href='${pageContext.request.contextPath}/insertReview.do?pdt_no=${history.pdt_no }'"
+								data-toggle="tooltip" data-placement="top" title="" data-original-title="제품 수령 완료 시 활성화됩니다." disabled="disabled">작성</button>
 							</c:otherwise>
 						</c:choose>
 					</td>
@@ -176,5 +185,14 @@
 			</c:if>
 		</ul>
 	</nav>
+	<!-- page level script -->
+    <script>
+        $(window).on('load', function() {
+            $(function() {
+                $('[data-toggle="tooltip"]').tooltip()
+            })
+        });
+
+    </script>
 </body>
 </html>

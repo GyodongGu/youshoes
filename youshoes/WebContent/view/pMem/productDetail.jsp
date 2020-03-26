@@ -185,12 +185,12 @@
 				
 				<br>
 				<c:if test="${pdto.pdt_type_cd eq 'C' }">
-					<button type="submit"	class="btn btn-lg btn-default text-white btn-block btn-rounded shadow reservation">
+					<button type="button"	class="btn btn-lg btn-default text-white btn-block btn-rounded shadow reservation">
 						<span>예약</span><i class="material-icons">arrow_forward</i>
 					</button>
 				</c:if>
 				<c:if test="${pdto.pdt_type_cd eq 'P' }">
-					<button type="submit" class="btn btn-lg btn-default text-white btn-block btn-rounded shadow order">
+					<button type="button" class="btn btn-lg btn-default text-white btn-block btn-rounded shadow order">
 						<span>주문</span><i class="material-icons">arrow_forward</i>
 					</button>
 				</c:if>
@@ -262,12 +262,14 @@
 	<script>
 	 $('.reservation').click(function(){
 		 $('form').attr("action","${pageContext.request.contextPath}/Reserv.do");
+		 frm.submit();
 	 })
 	 $('.order').click(function(){
 		 if($('.cntbox').length==1){
 			 alert("사이즈를 선택하시오");
 		 }else{
 			 $('form').attr("action","${pageContext.request.contextPath}/ProductOrder.do");
+			 frm.submit();
 		 }
 		 
 	 })

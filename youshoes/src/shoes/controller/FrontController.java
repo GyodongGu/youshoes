@@ -14,6 +14,7 @@ import shoes.command.BookmarkCheckCommand;
 import shoes.command.ChargePointCommand;
 import shoes.command.DelReservCommand;
 import shoes.command.DeleteOrdCommand;
+import shoes.command.DeletePmCommand;
 import shoes.command.GetDailyWorkCommand;
 import shoes.command.GetReservCommand;
 import shoes.command.InsertRefundCommand;
@@ -88,7 +89,8 @@ public class FrontController extends HttpServlet {
 		cont.put("/ordCheck.do", new ordCheckCommand());			//구매완료기능
 		cont.put("/ordCheckForm.do", new ordCheckFormCommand());	//구매완료를 위한 구매목록
 		cont.put("/deleteOrd.do", new DeleteOrdCommand());			//주문 취소기능
-		cont.put("/insertRefund.do", new InsertRefundCommand());					//환불기능
+		cont.put("/insertRefund.do", new InsertRefundCommand());	//환불기능
+		cont.put("/deletePm.do", new DeletePmCommand());
 		
 		cont.put("/point.do", new pointCommand()); 					// 구매 회원 현재 포인트 확인
 		cont.put("/ajax/ChargePoint.do", new ChargePointCommand()); // 구매 회원 결제한 포인트 추가

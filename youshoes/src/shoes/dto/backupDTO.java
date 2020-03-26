@@ -3,78 +3,59 @@ package shoes.dto;
 import java.sql.Date;
 
 public class backupDTO {
-	private int order_no;
-	private Date order_date;
-	private int order_cnt;
-	private int order_point;
-	private String order_stat_cd;
-	private String group_dlvy_cd;
-	private int ep_order_point;
-	private int refund_point;
-	private Date refund_date;
+	private int ord_no;
+	private int pm_no;
+	private Date ord_date;
+	private int ord_cnt;
+	private int ord_point;
+	private String ord_stat_cd;
+	private int pdt_no;
 	
 	
-	public int getOrder_no() {
-		return order_no;
+	
+	public int getPdt_no() {
+		return pdt_no;
 	}
-	public void setOrder_no(int order_no) {
-		this.order_no = order_no;
+	public void setPdt_no(int pdt_no) {
+		this.pdt_no = pdt_no;
 	}
-	public Date getOrder_date() {
-		return order_date;
+	public int getOrd_no() {
+		return ord_no;
 	}
-	public void setOrder_date(Date order_date) {
-		this.order_date = order_date;
+	public void setOrd_no(int ord_no) {
+		this.ord_no = ord_no;
 	}
-	public int getOrder_cnt() {
-		return order_cnt;
+	public int getPm_no() {
+		return pm_no;
 	}
-	public void setOrder_cnt(int order_cnt) {
-		this.order_cnt = order_cnt;
+	public void setPm_no(int pm_no) {
+		this.pm_no = pm_no;
 	}
-	public int getOrder_point() {
-		return order_point;
+	public Date getOrd_date() {
+		return ord_date;
 	}
-	public void setOrder_point(int order_point) {
-		this.order_point = order_point;
+	public void setOrd_date(Date ord_date) {
+		this.ord_date = ord_date;
 	}
-	public String getOrder_stat_cd() {
-		return order_stat_cd;
+	public int getOrd_cnt() {
+		return ord_cnt;
 	}
-	public void setOrder_stat_cd(String order_stat_cd) {
-		this.order_stat_cd = order_stat_cd;
+	public void setOrd_cnt(int ord_cnt) {
+		this.ord_cnt = ord_cnt;
 	}
-	public String getGroup_dlvy_cd() {
-		return group_dlvy_cd;
+	public int getOrd_point() {
+		return ord_point;
 	}
-	public void setGroup_dlvy_cd(String group_dlvy_cd) {
-		this.group_dlvy_cd = group_dlvy_cd;
+	public void setOrd_point(int ord_point) {
+		this.ord_point = ord_point;
 	}
-	public int getEp_order_point() {
-		return ep_order_point;
+	public String getOrd_stat_cd() {
+		return ord_stat_cd;
 	}
-	public void setEp_order_point(int ep_order_point) {
-		this.ep_order_point = ep_order_point;
+	public void setOrd_stat_cd(String ord_stat_cd) {
+		this.ord_stat_cd = ord_stat_cd;
 	}
-	public int getRefund_point() {
-		return refund_point;
-	}
-	public void setRefund_point(int refund_point) {
-		this.refund_point = refund_point;
-	}
-	public Date getRefund_date() {
-		return refund_date;
-	}
-	public void setRefund_date(Date refund_date) {
-		this.refund_date = refund_date;
-	}
-	@Override
-	public String toString() {
-		return "backupDTO [order_no=" + order_no + ", order_date=" + order_date + ", order_cnt=" + order_cnt
-				+ ", order_point=" + order_point + ", order_stat_cd=" + order_stat_cd + ", group_dlvy_cd="
-				+ group_dlvy_cd + ", ep_order_point=" + ep_order_point + ", refund_point=" + refund_point
-				+ ", refund_date=" + refund_date + "]";
-	}
+
 	
 	
 	

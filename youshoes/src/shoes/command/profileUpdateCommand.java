@@ -23,7 +23,7 @@ public class profileUpdateCommand implements Command {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		String directory = "C:/Users/user/git/youshoes/youshoes/WebContent/view/img/";
+		String directory = request.getSession().getServletContext().getRealPath("/view/img");
 		int maxsize = 1024 * 1024 * 100;
 		String encoding = "UTF-8";
 
@@ -55,14 +55,16 @@ public class profileUpdateCommand implements Command {
 				
 				String img = idao.selectProfileImage(pmid);
 				System.out.println(img);
+				
+				ImageDAO iidao = new ImageDAO();
 				if(img== null) {
 					iddto.setImg_name(fileRealName);
 					iddto.setImg_size(10);
-					idao.insertProfileImage(pmid, iddto);
+					iidao.insertProfileImage(pmid, iddto);
 				}else {
 					iddto.setImg_name(fileRealName);
 					iddto.setImg_size(10);
-					idao.updateProfileImage(pmid, iddto);
+					iidao.updateProfileImage(pmid, iddto);
 				}
 				
 			}

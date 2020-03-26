@@ -23,12 +23,12 @@ public class OrderPaymentCommand implements Command {
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		OrderPaymentDAO opDAO = new OrderPaymentDAO();
+		
 		int pmno= Integer.parseInt(request.getParameter("pm_no"));
 		int pdtno = Integer.parseInt(request.getParameter("pdt_no"));
 		int ordpoint=Integer.parseInt(request.getParameter("ord_point"));
 		
-		
+		OrderPaymentDAO opDAO = new OrderPaymentDAO();
 		opDAO.InsertOrd(pmno, pdtno, ordpoint); //회원번호, 제품번호, 결제포인트
 		
 		
@@ -41,6 +41,7 @@ public class OrderPaymentCommand implements Command {
 		String[] ocolor=request.getParameterValues("ord_color");
 		String[] ocnt=request.getParameterValues("ord_cnt");
 		
+		OrderPaymentDAO oopDAO = new OrderPaymentDAO();
 		if(osize !=null && ocolor !=null && ocnt !=null) {
 			for(int i=0; i<osize.length; i++) {
 				ordDetailDTO oddto = new ordDetailDTO();
@@ -49,18 +50,19 @@ public class OrderPaymentCommand implements Command {
 				oddto.setOrd_cnt(Integer.parseInt(ocnt[i]));
 				oddto.setOrd_detail_point(Integer.parseInt(odpoint[i]));
 				
-				opDAO.InsertOrdDetail(oddto);
+				oopDAO.InsertOrdDetail(oddto);
 			}
 		}else {
 			ordDetailDTO oddto = new ordDetailDTO();
 			oddto.setOrd_detail_point(Integer.parseInt(odpoint[0]));
-			opDAO.InsertOrdDetail(oddto);
+			oopDAO.InsertOrdDetail(oddto);
 		}
 		
-		
+		OrderPaymentDAO ppopDAO = new OrderPaymentDAO();
 		int point = Integer.parseInt(request.getParameter("point_now"));
-		opDAO.updatePmPoint(point, pmno);
+		ppopDAO.updatePmPoint(point, pmno);
 		
+		OrderPaymentDAO dopDAO = new OrderPaymentDAO();
 		deliveryDTO ddto = new deliveryDTO();
 		ddto.setDlvy_name(request.getParameter("pm_name"));
 		ddto.setDlvy_tell(request.getParameter("pm_tell"));
@@ -72,7 +74,7 @@ public class OrderPaymentCommand implements Command {
 		ddto.setDlvy_cd(request.getParameter("remarkSelect"));
 		ddto.setDlvy_remark(request.getParameter("etc"));
 		
-		opDAO.insertDelivery(ddto);
+		dopDAO.insertDelivery(ddto);
 		
 		
 		CallenderDAO dao1 = new CallenderDAO();

@@ -27,7 +27,8 @@ public class LikeCommand implements Command {
 		String pmid= (String) httpsession.getAttribute("id");
 		ldto.setRw_no(rw_no);
 		ldto.setPm_id(pmid);
-		boolean x = ldao.SelectLike(ldto);
+		LikeDAO lddao = new LikeDAO();
+		boolean x = lddao.SelectLike(ldto);
 		
 		if(x) {
 			ldao.DeleteLike(ldto);
