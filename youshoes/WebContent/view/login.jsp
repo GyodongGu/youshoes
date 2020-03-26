@@ -72,8 +72,11 @@
 		// 로그인 창을 띄웁니다.
 		Kakao.Auth.login({
 			success : function(authObj) {
-				/* window.location.replace("http://localhost:9090/youshoes/view/pMem/pMem.jsp"); */
-				location.href="http://localhost:9090/youshoes/view/pMem/pMem.jsp";
+				//location.href="${pageContext.request.contextPath}/pMem.do";
+				console.log(JSON.stringify(authObj));
+				console.log(Kakao.Auth.getAccessToken());
+				
+				console.log(JSON.stringify(authObj.id));
 			},
 			fail : function(err) {
 				alert(JSON.stringify(err));
