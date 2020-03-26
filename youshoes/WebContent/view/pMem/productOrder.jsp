@@ -217,6 +217,10 @@
 		function numberFormat(inputNumber){
 			return inputNumber.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 		}
+		function uncomma(str) {
+		    str = String(str);
+		    return str.replace(/[^\d]+/g, '');
+		}
 
 		var odp = document.getElementsByClassName("ord_detail_point");	//각 세부제품
 		
@@ -240,7 +244,8 @@
 		result.innerHTML = numberFormat( ${pmdto.point_now } - cnt);
 		
 		var nowpoint = document.getElementById("point_now");
-		nowpoint.value=result.innerHTML;
+		
+		nowpoint.value=uncomma(result.innerHTML);
 		
 		
 		function payment(){
