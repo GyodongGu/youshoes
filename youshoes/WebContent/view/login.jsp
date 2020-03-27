@@ -75,14 +75,34 @@
 				//location.href="${pageContext.request.contextPath}/pMem.do";
 				console.log(JSON.stringify(authObj));
 				console.log(Kakao.Auth.getAccessToken());
+				//로그인 성공시 API 호출
+				Kakao.API.request({
+				      url: '/v2/user/me',
+				      success: function(res) {
+				       console.log(res);
+						console.log(JSON.stringify(res.kaccount_email));
+				       
+				       var userID = res.id;      //유저의 카카오톡 고유 id
+				       var userEmail = res.kaccount_email;   //유저의 이메일
+				       var userNickName = res.properties.nickname != undefined ? res.properties.nickname : '이름없음'; //유저가 등록한 별명
+				       
+				       console.log(userID);
+				       console.log(userEmail);
+				       console.log(userNickName);
+				       
+				       location.href="loginOk.do";
+				      },
+				      fail: function(error) {
+				       alert(JSON.stringify(error));
+				      }
+				     });
 				
-				console.log(JSON.stringify(authObj.id));
 			},
 			fail : function(err) {
 				alert(JSON.stringify(err));
 			}
-		});
-	};
+		})
+	}
 	//]]>
 </script>
 <!-- /카카오 로그인하기 script -->
