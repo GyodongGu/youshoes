@@ -5,7 +5,7 @@ import java.util.List;
 
 public class reviewDTO {
 	private int rw_no;
-	private int pdt_no;
+	private int ord_no;
 	private String pm_id;
 	private int rw_cnt;
 	private int rw_stars;
@@ -14,9 +14,16 @@ public class reviewDTO {
 	private List<imageDetailDTO> img_name;
 	private likeDTO likeview;
 	private String sm_id;
+	private String profile;
 	
 	
 	
+	public String getProfile() {
+		return profile;
+	}
+	public void setProfile(String profile) {
+		this.profile = profile;
+	}
 	public String getSm_id() {
 		return sm_id;
 	}
@@ -41,11 +48,11 @@ public class reviewDTO {
 	public void setRw_no(int rw_no) {
 		this.rw_no = rw_no;
 	}
-	public int getPdt_no() {
-		return pdt_no;
+	public int getOrd_no() {
+		return ord_no;
 	}
-	public void setPdt_no(int pdt_no) {
-		this.pdt_no = pdt_no;
+	public void setOrd_no(int ord_no) {
+		this.ord_no = ord_no;
 	}
 	public String getPm_id() {
 		return pm_id;
@@ -79,9 +86,11 @@ public class reviewDTO {
 	}
 	@Override
 	public String toString() {
-		return "reviewDTO [rw_no=" + rw_no + ", pdt_no=" + pdt_no + ", pm_id=" + pm_id + ", rw_cnt=" + rw_cnt
-				+ ", rw_stars=" + rw_stars + ", rw_date=" + rw_date + ", rw_content=" + rw_content + "]";
+		return "reviewDTO [rw_no=" + rw_no + ", ord_no=" + ord_no + ", pm_id=" + pm_id + ", rw_cnt=" + rw_cnt
+				+ ", rw_stars=" + rw_stars + ", rw_date=" + rw_date + ", rw_content=" + rw_content + ", img_name="
+				+ img_name + ", likeview=" + likeview + ", sm_id=" + sm_id + "]";
 	}
+
 	
 	
 }

@@ -7,6 +7,7 @@ import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import shoes.common.Command;
 import shoes.dao.ordDAO;
@@ -18,7 +19,8 @@ public class orderHistoryCommand implements Command {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+		HttpSession session = request.getSession(false);
+		String id = (String) session.getAttribute("id");
 		
 		int pmNO = ((pmDTO)request.getSession().getAttribute("pmDTO")).getPm_no();
 		ordDAO ohdao = new ordDAO();

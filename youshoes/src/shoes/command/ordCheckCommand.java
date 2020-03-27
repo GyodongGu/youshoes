@@ -21,7 +21,7 @@ public class ordCheckCommand implements Command {
 		
 		odao.updateOrdStat(Integer.parseInt(ordno));
 		
-		return "redirect:/youshoes/profile.do";
+		return "redirect:/youshoes/orderHistory.do";
 	}
 
 }

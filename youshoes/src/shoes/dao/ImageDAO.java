@@ -61,7 +61,7 @@ public class ImageDAO extends DAO{
 	public String selectProfileImage(String id) {
 		String result = null;
 		
-		String sql = "select * from image where section_no=?";
+		String sql = "select * from image where section_no=? and section='I04'";
 		
 		try {
 			pstmt=conn.prepareStatement(sql);
@@ -69,6 +69,65 @@ public class ImageDAO extends DAO{
 			rs=pstmt.executeQuery();
 			while(rs.next()) {
 				result = rs.getString("section_no");
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return result;
+	}
+	public int deleteProfileImage(int pmno) {
+		int result=0;
+		
+		String sql ="delete from image where section_no=(select pm_id from purchase_member where pm_no=?) and section='I04'";
+		
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1, pmno);
+			result = pstmt.executeUpdate();
+			System.out.println("프로필 이미지"+result+"건 삭제했습니다.");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		
+		return result;
+	}
+	
+	public int deleteReviewImage(String pmid) {
+		int result=0;
+		String sql="delete from image where section_no in(select rw_no from purchase_review where pm_id=?) and section='I03'";
+		
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, pmid);
+			result = pstmt.executeUpdate();
+			System.out.println("리뷰이미지 "+result+"건 삭제되었습니다.");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return result;
+	}
+	
+	public String ImageName(String pmid) {
+		String result = null;
+		
+		String sql = "select img_name from image i join image_detail d on i.img_no = d.img_no where section_no=? and section='I04'";
+		
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, pmid);
+			rs=pstmt.executeQuery();
+			
+			while(rs.next()) {
+				result = rs.getString("img_name");
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

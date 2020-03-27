@@ -21,7 +21,7 @@ public class reviewListDAO extends DAO {
 
 		List<reviewDTO> list = new ArrayList<reviewDTO>();
 
-		String sql = "select * from product p join purchase_review r on p.pdt_no=r.pdt_no where sm_id=?";
+		String sql = "select * from purchase_review r join ord o on r.ord_no=o.ord_no join product p on o.pdt_no= p.pdt_no where sm_id=?";
 
 		String sql1 = "select img_name from image i join image_detail d on i.img_no=d.img_no where section='I03' and section_no=?";
 
@@ -43,6 +43,9 @@ public class reviewListDAO extends DAO {
 				reviewDTO rdto = new reviewDTO();
 				rdto.setRw_no(rs.getInt("rw_no"));
 				rdto.setPm_id(rs.getString("pm_id"));
+				ImageDAO idao = new ImageDAO();
+				String pname = idao.ImageName(rs.getString("pm_id"));
+				rdto.setProfile(pname);
 				rdto.setRw_cnt(rs.getInt("rw_cnt"));
 				rdto.setRw_stars(rs.getInt("rw_stars"));
 				rdto.setRw_date(rs.getDate("rw_date"));
@@ -179,7 +182,7 @@ public class reviewListDAO extends DAO {
 		
 		try {
 			pstmt=conn.prepareStatement(sql);
-			pstmt.setInt(1, rdto.getPdt_no());
+			pstmt.setInt(1, rdto.getOrd_no());
 			pstmt.setString(2, rdto.getPm_id());
 			pstmt.setInt(3, rdto.getRw_stars());
 			pstmt.setString(4, rdto.getRw_content());

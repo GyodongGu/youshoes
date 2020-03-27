@@ -14,10 +14,16 @@ public class ordDTO {
 	private String pdt_name;
 	private int refund;
 	private int ord_cnt;
+	private int rw_no;
 	
 	
 	
-	
+	public int getRw_no() {
+		return rw_no;
+	}
+	public void setRw_no(int rw_no) {
+		this.rw_no = rw_no;
+	}
 	public int getOrd_cnt() {
 		return ord_cnt;
 	}

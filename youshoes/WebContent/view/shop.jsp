@@ -125,13 +125,7 @@ tr, td {
 		<p class="text-secondary">${smem.sm_remark }</p>
 		<!-- // 가게 문구  -->
 		<!-- 가게 사진 이미지 -->
-		<p class="text-center">
-			<i class="material-icons h3 text-warning vm">star</i> <i
-				class="material-icons h3 text-warning vm">star</i> <i
-				class="material-icons h3 text-warning vm">star</i> <i
-				class="material-icons h3 text-secondary vm">star</i> <i
-				class="material-icons h3 text-secondary vm">star</i>
-		</p>
+		
 		<!-- // 가게 사진 이미지 -->
 		<!-- 가게별 페이지 탭 부분 -->
 		<div id="tabs">

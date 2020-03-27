@@ -101,9 +101,12 @@
 				<th scope="col">번호</th>
 				<th scope="col">주문일자</th>
 				<th scope="col">상태</th>
-				<th scope="col">주문 상세정보</th>
-				<th scope="col">취소 및 환불</th>
-				<th scope="col">후기 작성</th>
+				<th scope="col">상세정보</th>
+				<th scope="col">취소/환불  
+				<span class="badge badge-primary mb-1" data-container="body" data-trigger="hover" data-toggle="popover" data-placement="top" data-content="배송되기 전에만 예약 취소가 가능합니다." data-original-title="" title="">?</span>
+				</th>
+				<th scope="col">후기 작성  
+				<span class="badge badge-primary mb-1" data-container="body" data-trigger="hover" data-toggle="popover" data-placement="top" data-content="제품 수령 완료시 버튼이 활성화 됩니다." data-original-title="" title="">?</span></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -146,11 +149,17 @@
 					<td>
 						<c:choose>
 							<c:when test="${history.ord_stat_cd eq '도착'}">
-								<button class="mb-2 btn btn-default review" onclick="location.href='${pageContext.request.contextPath}/insertReview.do?pdt_no=${history.pdt_no }'" data-toggle="tooltip" data-placement="top" title="" data-original-title="제품 수령 완료 시 활성화됩니다.">작성</button>
+								<c:choose>
+									<c:when test="${history.rw_no eq '0' }">
+										<button class="mb-2 btn btn-default review" onclick="location.href='${pageContext.request.contextPath}/insertReview.do?pdt_no=${history.pdt_no }&ord_no=${history.ord_no }'">작성</button>
+									</c:when>
+									<c:otherwise>
+										<button class="mb-2 btn btn-default review" onclick="location.href='${pageContext.request.contextPath}/insertReview.do?pdt_no=${history.pdt_no }'" disabled="disabled">작성완료</button>
+									</c:otherwise>
+								</c:choose>
 							</c:when>
 							<c:otherwise>
-								<button class="mb-2 btn btn-default review disreview" onclick="location.href='${pageContext.request.contextPath}/insertReview.do?pdt_no=${history.pdt_no }'"
-								data-toggle="tooltip" data-placement="top" title="" data-original-title="제품 수령 완료 시 활성화됩니다." disabled="disabled">작성</button>
+								<button class="mb-2 btn btn-default review disreview" onclick="location.href='${pageContext.request.contextPath}/insertReview.do?pdt_no=${history.pdt_no }'" disabled="disabled">작성</button>
 							</c:otherwise>
 						</c:choose>
 					</td>
@@ -185,11 +194,12 @@
 			</c:if>
 		</ul>
 	</nav>
-	<!-- page level script -->
+
+        <!-- page level script -->
     <script>
         $(window).on('load', function() {
             $(function() {
-                $('[data-toggle="tooltip"]').tooltip()
+                $('[data-toggle="popover"]').popover()
             })
         });
 

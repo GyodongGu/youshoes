@@ -1,5 +1,7 @@
 package shoes.dao;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -49,6 +51,10 @@ public class ordDAO extends DAO {
 				" ) " + 
 				" where num between ? and ?";
 		
+		String sql1="select rw_no from purchase_review where ord_no=?";
+		//주문번호, 회원번호
+		PreparedStatement pstmt1;
+		ResultSet rs1;
 		try {
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setInt(1, pmno);
@@ -73,6 +79,14 @@ public class ordDAO extends DAO {
 				refundDAO rdao = new refundDAO();
 				int cnt = rdao.selectRefund(rs.getInt("ord_no"));
 				oddto.setRefund(cnt);
+				
+				pstmt1=conn.prepareStatement(sql1);
+				pstmt1.setInt(1, rs.getInt("ord_no"));
+				rs1=pstmt1.executeQuery();
+				while(rs1.next()) {
+					oddto.setRw_no(rs1.getInt("rw_no"));
+				}
+				
 				list.add(oddto);
 				
 			}

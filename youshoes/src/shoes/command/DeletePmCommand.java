@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 
 import shoes.common.Command;
 import shoes.dao.BackupDAO;
+import shoes.dao.ImageDAO;
 import shoes.dao.ordDAO;
 import shoes.dao.pmDAO;
 import shoes.dto.backupDTO;
@@ -26,6 +27,7 @@ public class DeletePmCommand implements Command {
 		HttpSession session = request.getSession();
 		pmDTO pdto = (pmDTO)session.getAttribute("pmDTO");
 		int pmno = pdto.getPm_no();
+		String pmid = pdto.getPm_id();
 		
 		
 		//백업정보 입력
@@ -33,7 +35,7 @@ public class DeletePmCommand implements Command {
 		ordDAO odao = new ordDAO();
 		List<ordDTO> list = new ArrayList<ordDTO>();
 		list = odao.pmOrdList(pmno);
-		
+		System.out.println(list.size());
 		for(int i =0; i<list.size(); i++) {
 			ordDTO odto = new ordDTO();
 			odto = list.get(i);
@@ -50,6 +52,13 @@ public class DeletePmCommand implements Command {
 			BackupDAO bdao = new BackupDAO();
 			bdao.insertBackup(bdto);
 		}
+		
+		//해당 회원 프로필 사진 삭제
+		ImageDAO idao = new ImageDAO();
+		idao.deleteProfileImage(pmno);
+		//해당 해원 리뷰사진 삭제
+		ImageDAO ridao = new ImageDAO();
+		ridao.deleteReviewImage(pmid);
 		
 		//해당 회원정보 삭제
 		pmDAO pdao = new pmDAO();

@@ -53,9 +53,11 @@ public class InsertReviewCommand implements Command {
 		String pmid = (String)httpsession.getAttribute("id");
 		
 		int rwstars = Integer.parseInt(multi.getParameter("rw_stars"));
-		
+		String ordno = multi.getParameter("ord_no");
+		int ord_no = 0;
+		ord_no = Integer.parseInt(ordno);
 		rdto.setRw_content(rwcontent);
-		rdto.setPdt_no(pdtno);
+		rdto.setOrd_no(ord_no);
 		rdto.setPm_id(pmid);
 		rdto.setRw_stars(rwstars);
 		
