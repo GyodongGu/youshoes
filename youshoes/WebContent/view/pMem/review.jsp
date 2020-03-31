@@ -72,7 +72,7 @@
 						</p>
 					<img src="${pageContext.request.contextPath}/view/img/${dto.img_name[0].img_name}" height="50%" width="90%">
 					<br><br>
-					<p style="text-align:center" data-like="${dto.getRw_no() } ">
+					<p style="text-align:center" data-like="${dto.getRw_no() }">
 					
 					
 					<c:choose>

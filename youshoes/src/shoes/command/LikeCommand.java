@@ -19,8 +19,8 @@ public class LikeCommand implements Command {
 		// TODO Auto-generated method stub
 		LikeDAO ldao = new LikeDAO();
 		likeDTO ldto = new likeDTO();
-		
-		int rw_no = Integer.parseInt(request.getParameter("rw_no"));
+		String rwno = request.getParameter("rw_no");
+		int rw_no = Integer.parseInt(rwno);
 		System.out.println(rw_no);
 		
 		HttpSession httpsession = request.getSession(true);
