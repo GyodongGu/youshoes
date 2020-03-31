@@ -115,7 +115,7 @@
 		}
     }
     </script>
-
+	
 </head>
 
 <body>
@@ -136,7 +136,7 @@
             <h2 class="text-white"><span class="font-weight-light">회원가입</span></h2>
             <form class="form-signin shadow" id="frm" name="frm" action="${pageContext.request.contextPath}/joinOk.do" method="post" onsubmit="return chkjoin()">
                  <div class="form-group float-label">
-                    <input type="text" id="pm_id" name="pm_id" class="form-control" required autofocus >
+                    <input type="text" id="pm_id" name="pm_id" class="form-control" required autofocus>
                     <label for="pm_id" class="form-control-label"><font color="red">*</font>아이디
                     <button type="button" id="idChk" name="idChk" value="unCheck" onclick="idCheck()">중복확인</button>
                     </label>
@@ -164,13 +164,13 @@
                 </div>
                 
                 <div class="form-group float-label">
-                    <input type="email" id="pm_email" name="pm_email" class="form-control" required >
+                    <input type="email" id="pm_email" name="pm_email" class="form-control" required>
                     <label for="pm_email" class="form-control-label"><font color="red">*</font>이메일</label>
                 </div>
                 
                 <div class="form-group float-label">
-                    <input type="tel" id="pm_tell" name="pm_tell" class="form-control" required maxlength="15">
-                    <label for="pm_tell" class="form-control-label"><font color="red">* </font>전화번호</label>
+                    <input type="tel" id="pm_tell" name="pm_tell" class="form-control" required maxlength="15" pattern="^[0-9-]{2,20}$">
+                    <label for="pm_tell" class="form-control-label"><font color="red">* </font>전화번호 (숫자, -만 입력)</label>
                 </div>
                 
                 <!-- 카카오 주소 API -->
