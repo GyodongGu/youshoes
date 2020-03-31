@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="Maxartkiller">
 
-    <title>join.jsp</title>
+    <title>회원가입</title>
 
     <!-- Material design icons CSS -->
     <link rel="stylesheet" href="vendor/materializeicon/material-icons.css">
