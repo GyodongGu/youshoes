@@ -2,7 +2,6 @@
 <!doctype html>
 <html lang="en" class="brown-theme">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <!-- 아이디 기억하기 script -->
 <script>
 	$(document).ready(function() {
@@ -63,49 +62,6 @@
 	}
 </script>
 <!-- /아이디 기억하기 script -->
-<!-- 카카오 로그인하기 script -->
-<script type='text/javascript'>
-	//<![CDATA[
-	// 사용할 앱의 JavaScript 키를 설정해 주세요.
-	Kakao.init('008ee297ad6a65321153983313058dd3');
-	function loginWithKakao() {
-		// 로그인 창을 띄웁니다.
-		Kakao.Auth.login({
-			success : function(authObj) {
-				//location.href="${pageContext.request.contextPath}/pMem.do";
-				console.log(JSON.stringify(authObj));
-				console.log(Kakao.Auth.getAccessToken());
-				//로그인 성공시 API 호출
-				Kakao.API.request({
-				      url: '/v2/user/me',
-				      success: function(res) {
-				       console.log(res);
-						console.log(JSON.stringify(res.kaccount_email));
-				       
-				       var userID = res.id;      //유저의 카카오톡 고유 id
-				       var userEmail = res.kaccount_email;   //유저의 이메일
-				       var userNickName = res.properties.nickname != undefined ? res.properties.nickname : '이름없음'; //유저가 등록한 별명
-				       
-				       console.log(userID);
-				       console.log(userEmail);
-				       console.log(userNickName);
-				       
-				       location.href="loginOk.do";
-				      },
-				      fail: function(error) {
-				       alert(JSON.stringify(error));
-				      }
-				     });
-				
-			},
-			fail : function(err) {
-				alert(JSON.stringify(err));
-			}
-		})
-	}
-	//]]>
-</script>
-<!-- /카카오 로그인하기 script -->
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -176,8 +132,6 @@
 						<input type=submit value="" style="background-color: transparent; border: 0px transparent solid;"> 
 						<a href="javascript:document.frm.submit();" class="btn btn-lg btn-default btn-rounded shadow"> 
 						<span>로그인</span><i class="material-icons">arrow_forward</i></a>
-						<a id="custom-login-btn" href="javascript:loginWithKakao()">
-						<img src="img/kakao_login_btn_medium.png"/></a>
 					</div>
 				</div>
 			</form>
