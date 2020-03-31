@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator" prefix="decorator"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!doctype html>
 <html lang="en" class="brown-theme">
 <head>
@@ -11,7 +12,7 @@
 	<div class="subtitle h6">
 		<div class="d-inline-block">
 			찜한 상품<br>
-			<p class="small text-mute">4개의 상품</p>
+			<p class="small text-mute">${fn:length(bookmark)}개의 상품</p>
 		</div>
 		<div class="float-right">
 			<div class="btn-group " role="group" aria-label="Basic example"></div>
